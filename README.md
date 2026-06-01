@@ -1,6 +1,6 @@
 ![Banner](https://github.com/Adityakanoi2001/Adityakanoi2001/blob/8b3abf28d4d62728caf9ee9c177f48b058cbb997/assets/ASK%20Banner%20Image%20Github.png)
 
-<img alt="Saludo" src="https://raw.githubusercontent.com/AVS1508/AVS1508/master/assets/Hand%20Wave.gif" width='40' align="left"/><h2 align="left">¡Hola! Soy AndresArrMuch</h2>
+<img alt="Saludo" src="https://raw.githubusercontent.com/AVS1508/AVS1508/master/assets/Hand%20Wave.gif" width='40' align="left"/><h2 align="left">¡Hola! Soy Andres</h2>
 
 ### 👨🏻‍💻 Sobre Mí
 
