@@ -25,7 +25,6 @@
 ### 🗃 &nbsp;Bases de Datos
 
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)&nbsp;
-![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)&nbsp;
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)&nbsp;
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)&nbsp;
 
@@ -57,14 +56,6 @@
 <a href="https://www.linkedin.com/in/TU_LINKEDIN_AQUI/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
 <a href="mailto:tu_correo@gmail.com"><img src="https://img.shields.io/badge/-Email-D14836?style=flat&logo=Gmail&logoColor=white"/></a>
 </p>
-
-### 🐍 &nbsp;Actividad de Commits
-
-<div align="center">
-  <a href="https://github.com/AndresArrMuch/">
-    <img src="https://github.com/1999AZZAR/1999AZZAR/blob/readme/resources/img/grid-snake.svg" alt="snake" />
-  </a>
-</div>
 
 ### 🐍 &nbsp;Actividad de Commits
 
