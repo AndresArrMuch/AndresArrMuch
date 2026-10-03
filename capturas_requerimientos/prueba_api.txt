@@ -1,0 +1,64 @@
+== A) Migracion: transferencias antiguas (creadas con main)
+   {'TRF-00001': ('draft', 'stock_desc', 'guia', 'TTT1-000002'), 'TRF-00002': ('approved', 'stock_desc', 'guia', 'TTT1-000003')}
+  OK    Despachar L2 antigua: 200 Transferencia en transito | sin guia nueva ni descuento extra (ALM P1=46.0 P2=20.0 | MAL P1=3.0 P2=0.0)
+  OK    Anular L1 antigua (Borrador): Transferencia anulada - stock devuelto al origen -> devuelve 2 (ALM P1=48.0 P2=20.0 | MAL P1=3.0 P2=0.0)
+== B) Crear requerimiento: permisos y validaciones
+  OK    ventas no puede crear: 403 Solo los usuarios de tienda (con su almacen asignado) pueden crear requerimientos
+  OK    central no puede crear: 403 Solo los usuarios de tienda (con su almacen asignado) pueden crear requerimientos
+  OK    admin no puede crear: 403 Solo los usuarios de tienda (con su almacen asignado) pueden crear requerimientos
+  OK    malvinas a si misma: 400 No puedes pedirte mercaderia a tu propio almacen
+  OK    cantidad 0: 400 Cantidad invalida para P0001
+  OK    malvinas crea: 201 Requerimiento REQ-00001 enviado a ALMFIKA
+  OK    REQ-00001: TDA FIKA MALVINAS pide a ALMFIKA
+  OK    aviso (pendientes que cada uno puede atender): {'central': 1, 'admin': 1, 'capon': 0, 'malvinas': 0, 'ventas': 0}
+  OK    capon no ve el requerimiento de malvinas
+  OK    ventas (sin almacen) no ve requerimientos
+== C) Atender (jalar) el requerimiento
+  OK    capon no puede atender: 403 Solo el almacen al que se hizo el pedido (o un administrador) puede atender este requerimiento
+  OK    agregar item no pedido: 400 P0003 no fue pedido en REQ-00001: solo se puede enviar lo que pidio la tienda
+  OK    mas de lo pedido: 400 P0001: se pidieron 10.00, no se pueden enviar 11
+  OK    otro destino: 400 El origen y destino deben ser los del requerimiento
+  OK    central atiende P1 x6 (quita P2): 201 Transferencia creada en Borrador. La guia se emite al Despachar.
+  OK    al crear: sin guia y sin descontar stock (ALM P1=48.0 P2=20.0 | MAL P1=3.0 P2=0.0)
+  OK    TRF-00003 vinculada a REQ-00001
+  OK    requerimiento: partial con TRF-00003; lineas [('P0001', 10.0, 6.0), ('P0002', 5.0, 0.0)]
+  OK    jalarlo 2da vez: 409 El requerimiento REQ-00001 ya fue atendido con TRF-00003. No se puede jalar de nuevo.
+  OK    aviso de central baja a 0
+== D) Despachar: se valida todo antes de emitir guia y descontar
+  OK    sin placa: 400 Para transporte privado complete placa, DNI, nombres, apellidos y licencia del conductor
+  OK    serie invalida: 400 Serie de guia invalida. Debe tener 4 caracteres y empezar con T (ejemplo: TTT1).
+  OK    ubigeo invalido: 400 Ubigeo de partida y llegada deben tener 6 digitos (ejemplo: 150101)
+  OK    tras datos invalidos: sin guia, sin descuento, sigue Aprobada (ALM P1=48.0 P2=20.0 | MAL P1=3.0 P2=0.0)
+  OK    NubeCont rechaza: 400 La guia no fue aceptada por NubeCont: Simulado: NubeCont rechazo la guia. No se desconto stock; la transferencia sigue Aprobada.
+  OK    tras rechazo de NubeCont: sin descuento, sigue Aprobada (ALM P1=48.0 P2=20.0 | MAL P1=3.0 P2=0.0)
+  OK    reintento: 200 Transferencia despachada: guia TTT1-000004 emitida y stock descontado del origen
+   guias enviadas en D: [('TTT1', 4, [['TERMOMETRO DIGITAL', '6.0']], 'RECHAZADA'), ('TTT1', 4, [['TERMOMETRO DIGITAL', '6.0']], 'ok')]
+  OK    el reintento usa el MISMO numero de guia
+  OK    recien ahora se desconto (ALM P1=42.0 P2=20.0 | MAL P1=3.0 P2=0.0)
+  OK    despachar 2 veces: 400 Debe estar aprobada
+== E) Tienda rechaza -> stock vuelve y requerimiento a Pendiente
+  OK    malvinas rechaza: 200 Transferencia rechazada y stock revertido al origen (ALM P1=48.0 P2=20.0 | MAL P1=3.0 P2=0.0)
+  OK    requerimiento de nuevo: pending, aviso central 1
+  OK    central lo atiende completo: 201 Transferencia creada en Borrador. La guia se emite al Despachar.
+  OK    requerimiento Atendido (completo)
+  OK    despacho: Transferencia despachada: guia TTT1-000005 emitida y stock descontado del origen
+  OK    malvinas recibe: Transferencia recibida - stock agregado al destino (ALM P1=38.0 P2=15.0 | MAL P1=13.0 P2=5.0)
+   malvinas ve: attended TRF-00004 received guia TTT1-000005
+== F) Anular transferencia en Borrador / anular y rechazar requerimientos
+  capon crea REQ-00002
+  OK    anular borrador: Transferencia anulada (sin mover stock)
+  OK    requerimiento de capon vuelve a Pendiente
+  OK    malvinas no puede anular el de capon: 403 Solo la tienda que hizo el pedido puede anularlo
+  OK    rechazar sin motivo: 400 Indica el motivo del rechazo
+  OK    central rechaza: Requerimiento REQ-00002 rechazado
+  OK    jalar uno rechazado: 409 El requerimiento REQ-00002 ya fue rechazado. No se puede jalar de nuevo.
+  OK    capon pide a MALVINAS: aviso de malvinas = 1
+  OK    capon lo anula: Requerimiento REQ-00003 anulado
+== G) Transferencia normal (sin requerimiento) sigue funcionando
+  OK    crear: Transferencia creada en Borrador. La guia se emite al Despachar.
+  OK    Transferencia despachada: guia TTT1-000007 emitida y stock descontado del origen
+  OK    capon recibe: Transferencia recibida - stock agregado al destino
+== Guias emitidas (todas): [('TTT1', 4, 'RECHAZADA'), ('TTT1', 4, 'ok'), ('TTT1', 5, 'ok'), ('TTT1', 7, 'ok')]
+== Transferencias: {'TRF-00001': ('cancelled', 'TTT1-000002', None), 'TRF-00002': ('in_transit', 'TTT1-000003', None), 'TRF-00003': ('cancelled', 'TTT1-000004', 'REQ-00001'), 'TRF-00004': ('received', 'TTT1-000005', 'REQ-00001'), 'TRF-00005': ('cancelled', None, 'REQ-00002'), 'TRF-00006': ('received', 'TTT1-000007', None)}
+
+RESULTADO: TODO OK
