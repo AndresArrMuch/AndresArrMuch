@@ -1,0 +1,5 @@
+1 XML responde 500  -> {'ok': True, 'complete': False, 'partida': '', 'llegada': '', 'motivo': 'El XML de NubeFact respondio HTTP 500'} | consultas a NubeCont: 1
+2 se repite (no debe venir de memoria) -> {'ok': True, 'complete': False, 'partida': '', 'llegada': '', 'motivo': 'El XML de NubeFact respondio HTTP 500'} | consultas: 2
+3 XML responde 406  -> {'ok': True, 'complete': False, 'partida': '', 'llegada': '', 'motivo': 'El XML de NubeFact respondio HTTP 406'} | consultas: 3
+4 XML ya responde   -> {'ok': True, 'complete': True, 'partida': 'PARTIDA', 'llegada': 'LLEGADA', 'motivo': ''} | consultas: 4
+5 se repite (ahora SI de memoria) -> {'ok': True, 'complete': True, 'partida': 'PARTIDA', 'llegada': 'LLEGADA', 'motivo': ''} | consultas: 4

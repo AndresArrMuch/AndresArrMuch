@@ -38,3 +38,16 @@ En estas pruebas NubeFact está simulado (`serve_dig.py`, `api_test.py`); las di
 | `dig_digemid_periodo.xlsx` | Excel bajado eligiendo solo el periodo |
 | `dig_ventas.xlsx` | Excel de facturas, con la columna de guía sugerida |
 | `excels_ajustes_leidos.txt` | Contenido de esos dos Excel |
+
+## Tercera entrega (ddeb0e8): "Traer partida/llegada y PDF" en pantalla
+
+Prueba con 126 guías, NubeFact simulado a 0.4 s por guía (`serve_vol.py`):
+- las guías terminadas en 5 tienen PDF pero su XML responde HTTP 500;
+- la tercera tanda de guide-places falla con 502.
+
+| Archivo | Qué contiene |
+|---|---|
+| `vol_antes.txt` / `antes_vol_*` | Código anterior (8055e33): Exportar habilitado y sin avance; exportando a los 3 s salen 0 de 130 filas con partida, llegada o PDF; el aviso de fallas queda tapado por el modal; el reintento no vuelve a consultar |
+| `vol_despues.txt` / `despues_vol_*` | Código corregido: Exportar deshabilitado mientras trae; aviso dentro del modal con 21 guías y su motivo; confirmación antes de exportar; el reintento recupera la tanda fallida (de 21 a 12, las 12 con XML en error) |
+| `vol_conteo_excel.txt` | Filas con partida, llegada y PDF en cada Excel |
+| `cache_res.txt` | El servidor no guarda en memoria resultados incompletos (HTTP 500 o 406 se vuelven a consultar); sí guarda el resultado completo |

@@ -1,0 +1,9 @@
+{"srv":"antes","paso":"1 buscar setiembre","info":"130 filas · 126 guías"}
+{"srv":"antes","paso":"2 a los 3 s de presionar Traer","info":"130 filas · 126 guías","aviso_global":"Sesion iniciada. Cargando modulos del ERP...","aviso_global_tapado_por_el_modal":true,"alerta_en_el_modal":null,"exportar_habilitado":true}
+{"srv":"antes","paso":"3 exportar a los 3 s","archivo":"descargado"}
+{"srv":"antes","paso":"4 al terminar","segundos":49,"info":"130 filas · 126 guías","aviso_global":"10 guía(s) no se pudieron leer en NubeFact: sus celdas quedan vacías","aviso_global_tapado_por_el_modal":true,"alerta_en_el_modal":null,"exportar_habilitado":true}
+{"srv":"antes","paso":"5 exportar al terminar","dialogos":[]}
+{"srv":"antes","paso":"6 segundo Traer (reintento)","info":"130 filas · 126 guías","aviso_global":"Excel exportado: guias_digemid_2026-09-01_2026-09-30.xlsx","aviso_global_tapado_por_el_modal":true,"alerta_en_el_modal":null,"exportar_habilitado":true}
+{"srv":"antes","erroresJS":[]}
+
+[exited with code 0]
