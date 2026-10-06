@@ -1,0 +1,13 @@
+* TC | cotizacion mezclada ya facturada (F001-000001) sin guia
+    HTTP 400 DIGEMID_SPLIT_NOT_ACCEPTED | guias=[] | registradas=[]
+    contadores TTT1=19 -> TTT1=19
+    nubecont: (ninguna llamada)
+    mensaje: Esta cotizacion mezcla productos DIGEMID y no DIGEMID y ya no esta aceptada (ya se facturo): no se puede separar aqui. Emite las guias desde la factura (boton "→ Guia"): ahi se separan en TTT4 y la serie normal. No se uso ningun n
+* GF | la misma factura F001-000001 desde "-> Guia"
+    HTTP 201  | guias=['TTT4-000001', 'TTT1-000020'] | registradas=['TTT1-000020 [P0001/NIU] factura', 'TTT4-000001 [P0003/PAR] factura']
+    contadores TTT1=19 -> TTT1=20 TTT4=1
+    nubecont: TTT4-000001(ok) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]; TTT1-000020(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]
+* TC | cotizacion 100% DIGEMID ya facturada (F001-000002) sin guia
+    HTTP 201  | guias=['TTT4-000002'] | registradas=['TTT4-000002 [P0003/PAR] factura']
+    contadores TTT1=20 TTT4=1 -> TTT1=20 TTT4=2
+    nubecont: TTT4-000002(ok) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]
