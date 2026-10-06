@@ -21,8 +21,11 @@ const W = (p, ms) => p.waitForTimeout(ms);
   await p.click('button[data-view="sales"]'); await W(p, 1500);
   await p.evaluate(() => { state.salesTab = 'guides'; }); const gt = p.locator('[data-tab="guides"]'); if (await gt.count()) { await gt.first().click(); await W(p, 3000); }
   await p.click('text=Guías para DIGEMID'); await W(p, 1000);
-  await p.fill('#dgr-from', '2026-09-01'); await p.fill('#dgr-to', '2026-09-30');
-  await p.click('#dgr-search'); await W(p, 2500);
+  log({ paso: '2a valores por defecto', solo_digemid: await p.isChecked('#dgr-only-digemid'), traslados: await p.isChecked('#dgr-include-transfers'), periodo: await p.inputValue('#dgr-period') });
+  await p.fill('#dgr-period', '2026-09'); await p.dispatchEvent('#dgr-period', 'change'); await W(p, 3000);
+  log({ paso: '2b periodo 2026-09 elegido', desde: await p.inputValue('#dgr-from'), hasta: await p.inputValue('#dgr-to') });
+  const [dl0] = await Promise.all([p.waitForEvent('download'), p.click('#dgr-export')]);
+  await dl0.saveAs(OUT + '_digemid_periodo.xlsx'); log({ paso: '2c Excel directo del periodo', archivo: dl0.suggestedFilename() });
   log({ paso: '2 reporte DIGEMID por defecto', info: await p.textContent('#dgr-info'), productos_digemid_en_filtro: await p.locator('#dgr-item option').count() - 1 });
   await p.screenshot({ path: OUT + '_digemid_1.png', fullPage: false });
   await p.click('#dgr-places'); await W(p, 4000);

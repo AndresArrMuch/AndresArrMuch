@@ -47,6 +47,15 @@ with app.app_context():
         for it, q in lines:
             db.session.add(SalesWorkflowLine(workflow_id=w.id, company_id=c.id, inventory_item_id=it.id, warehouse_id=wh.id, description=it.description, quantity=q, unit='NIU', unit_price=10))
         return w
+    # Productos con nombre largo como los de FLUMISA (la linea de la guia viene recortada a 60 caracteres)
+    largos = [
+        ('D003', 'GUANTE DE NITRILO AZUL X 100 UNID 3.5 GRAMOS F.F 01-2026 F.V 01-2029 LTE. IN25029097 R.S. DM-10293-E'),
+        ('D004', 'MASCARILLA QUIRURGICA 3 PLIEGUES X 50 UNID LTE. MQ2408 F.F. 08-2024 F.V. 08-2027'),
+        ('D005', 'JERINGA DESCARTABLE 5ML C/AGUJA 21G X 100 UNID LTE. 2405117 F.V. 05/2029'),
+        ('D006', 'ALCOHOL ETILICO 70 GRADOS 1 LT'),                      # sin rotulos: celdas vacias
+        ('D007', 'GASA ESTERIL 10X10 CM X 100 SOBRES LOTE SIN NUMERO F.V. VER EMPAQUE'),  # rotulos sin dato: vacias
+    ]
+    largos = [item(c, d, True) for c, d in largos]
     s1 = sale('000001', cu, [(i1, 5)])                                   # una guia
     s2 = sale('000002', cu, [(i1, 2), (i3, 1)])                          # dos guias (venta + parte DIGEMID)
     s3 = sale('000003', cu2, [(i2, 4)], notes='Guia de remision: TTT4-000009')   # DIGEMID sin guia
@@ -60,6 +69,11 @@ with app.app_context():
     g5 = guia(cu2, 'TTT4', '000003', [(i2, 1)], None, status='guide_voided', notes='[DIGEMID]', wh=alm2)  # anulada SUNAT
     g6 = guia(cu, 'TTT1', '000003', [(i3, 3)], None)                     # guia de venta sin DIGEMID
     g7 = guia(cu2, 'TTT1', '000004', [(i2, 1)], None, voided=True, qn='GDIR-000001')  # directa de baja interna
+    g8 = guia(cu2, 'TTT4', '000010', [(x, 2) for x in largos], None, notes='[DIGEMID] parte', dia=12, wh=alm2)
+    for l in g8.lines: l.description = l.description[:60]    # como en produccion: la linea recortada
+    s7 = sale('000007', cu2, [(largos[0], 2)], notes='Venta mostrador | Guia de remision: TTT4-000010')   # sugerida: misma guia y cliente
+    s8 = sale('000008', cu2, [(largos[1], 1)], notes='Guia de remision: TTT1-000001')   # guia de OTRO cliente: no se sugiere
+    s9 = sale('000009', cu2, [(largos[2], 1)], notes='Ver guia TTT4-777')               # guia que no existe: no se sugiere
     t1 = StockTransfer(company_id=c.id, transfer_number='TR-0001', from_warehouse_id=alm.id, to_warehouse_id=alm2.id, transfer_date=D(2026,9,7), status='received', notes='Reposicion\n[TRF_GUIDE:TTT5-000001]', guide_sent=True)
     db.session.add(t1); db.session.flush()
     db.session.add(StockTransferLine(transfer_id=t1.id, company_id=c.id, item_id=i2.id, quantity_requested=10, quantity_sent=10))
@@ -70,5 +84,5 @@ with app.app_context():
     rol = Role(name='Administrador', company_id=c.id); db.session.add(rol); db.session.flush()
     u = User(email='admin@t.pe', username='admin', password_hash=generate_password_hash('p'), first_name='A', last_name='B', role_id=rol.id, company_id=c.id, is_active=True)
     db.session.add(u); db.session.commit()
-    json.dump(dict(CID=c.id, C2=c2.id, UID=u.id, I1=i1.id, I2=i2.id, S1=s1.id, S2=s2.id, S3=s3.id, G1=g1.id, G4=g4.id, T1=t1.id), open('/tmp/claude-0/repro/dig/ids.json', 'w'))
+    json.dump(dict(CID=c.id, C2=c2.id, UID=u.id, I1=i1.id, I2=i2.id, S1=s1.id, S2=s2.id, S3=s3.id, S7=s7.id, S8=s8.id, S9=s9.id, G8=g8.id, G1=g1.id, G4=g4.id, T1=t1.id), open('/tmp/claude-0/repro/dig/ids.json', 'w'))
     print(c.id)

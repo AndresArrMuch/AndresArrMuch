@@ -1,0 +1,24 @@
+BEGIN
+SELECT 7
+SELECT 7
+   empresa   | productos_digemid | con_lote | con_vencimiento | con_lote_y_vencimiento | con_fabricacion | con_registro_sanitario | sin_ningun_dato 
+-------------+-------------------+----------+-----------------+------------------------+-----------------+------------------------+-----------------
+ FIKA PRUEBA |                 7 |        4 |               4 |                      4 |               2 |                      3 |               2
+(1 row)
+
+   empresa   | item_code | lote | vencimiento |                                texto                                
+-------------+-----------+------+-------------+---------------------------------------------------------------------
+ FIKA PRUEBA | D002      | -    | -           | MASCARILLA KN95 REG. SAN. DM7788E
+ FIKA PRUEBA | D006      | -    | -           | ALCOHOL ETILICO 70 GRADOS 1 LT
+ FIKA PRUEBA | D007      | -    | -           | GASA ESTERIL 10X10 CM X 100 SOBRES LOTE SIN NUMERO F.V. VER EMPAQUE
+(3 rows)
+
+ item_code |    lote    | fabricacion | vencimiento | registro_sanitario |                                                texto                                                 
+-----------+------------+-------------+-------------+--------------------+------------------------------------------------------------------------------------------------------
+ D001      | A123       |             | 12/2027     | DM-12345-E         | GUANTE NITRILO M R.S. DM-12345-E LOTE A123 F.V. 12/2027
+ D003      | IN25029097 | 01-2026     | 01-2029     | DM-10293-E         | GUANTE DE NITRILO AZUL X 100 UNID 3.5 GRAMOS F.F 01-2026 F.V 01-2029 LTE. IN25029097 R.S. DM-10293-E
+ D004      | MQ2408     | 08-2024     | 08-2027     |                    | MASCARILLA QUIRURGICA 3 PLIEGUES X 50 UNID LTE. MQ2408 F.F. 08-2024 F.V. 08-2027
+ D005      | 2405117    |             | 05/2029     |                    | JERINGA DESCARTABLE 5ML C/AGUJA 21G X 100 UNID LTE. 2405117 F.V. 05/2029
+(4 rows)
+
+ROLLBACK

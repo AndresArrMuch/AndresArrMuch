@@ -1,0 +1,20 @@
+== Reporte DIGEMID, periodo setiembre 2026 (por defecto: solo DIGEMID, sin traslados)
+  TTT1-000001  Guia de venta  fact=F001-000001  sugerida=-            D001 | linea='GUANTE NITRILO M R.S. DM-12345-E LOTE A123 F.V. 12/2027' | lote=A123 ff=- fv=12/2027 rs=DM-12345-E | Facturada
+  TTT1-000004  Guia directa   fact=-            sugerida=-            D002 | linea='MASCARILLA KN95' | lote=- ff=- fv=- rs=DM7788E | De baja (interna)
+  TTT4-000001  Parte DIGEMID  fact=F001-000002  sugerida=-            D001 | linea='GUANTE NITRILO M R.S. DM-12345-E LOTE A123 F.V. 12/2027' | lote=A123 ff=- fv=12/2027 rs=DM-12345-E | Facturada
+  TTT4-000003  Parte DIGEMID  fact=-            sugerida=-            D002 | linea='MASCARILLA KN95' | lote=- ff=- fv=- rs=DM7788E | Anulada (SUNAT)
+  TTT4-000002  Parte DIGEMID  fact=-            sugerida=-            D002 | linea='MASCARILLA KN95' | lote=- ff=- fv=- rs=DM7788E | Emitida
+  TTT4-000010  Parte DIGEMID  fact=-            sugerida=F001-000007  D006 | linea='ALCOHOL ETILICO 70 GRADOS 1 LT' | lote=- ff=- fv=- rs=- | Emitida
+  TTT4-000010  Parte DIGEMID  fact=-            sugerida=F001-000007  D003 | linea='GUANTE DE NITRILO AZUL X 100 UNID 3.5 GRAMOS F.F 01-2026 F.V' | lote=IN25029097 ff=01-2026 fv=01-2029 rs=DM-10293-E | Emitida
+  TTT4-000010  Parte DIGEMID  fact=-            sugerida=F001-000007  D005 | linea='JERINGA DESCARTABLE 5ML C/AGUJA 21G X 100 UNID LTE. 2405117 ' | lote=2405117 ff=- fv=05/2029 rs=- | Emitida
+  TTT4-000010  Parte DIGEMID  fact=-            sugerida=F001-000007  D004 | linea='MASCARILLA QUIRURGICA 3 PLIEGUES X 50 UNID LTE. MQ2408 F.F. ' | lote=MQ2408 ff=08-2024 fv=08-2027 rs=- | Emitida
+  TTT4-000010  Parte DIGEMID  fact=-            sugerida=F001-000007  D007 | linea='GASA ESTERIL 10X10 CM X 100 SOBRES LOTE SIN NUMERO F.V. VER ' | lote=- ff=- fv=- rs=- | Emitida
+  guias no DIGEMID en el reporte (TTT1-000002, TTT1-000003): []
+  traslados en el reporte: []
+== sale-guides setiembre: guia sugerida de las facturas sin guia
+  F001-1                                        vinculadas=['TTT1-000001'] sugerida=[]
+  F001-2                                        vinculadas=['TTT1-000002', 'TTT4-000001'] sugerida=[]
+  F001-3 (nota: TTT4-000009, no existe)         vinculadas=[] sugerida=[]
+  F001-7 (nota: TTT4-000010, mismo cliente)     vinculadas=[] sugerida=['TTT4-000010']
+  F001-8 (nota: TTT1-000001, de OTRO cliente)   vinculadas=[] sugerida=[]
+  F001-9 (nota: TTT4-777, no existe)            vinculadas=[] sugerida=[]
