@@ -1,0 +1,21 @@
+BEGIN
+SELECT 1
+SELECT 10
+ vendedor | pct  | cotizaciones | cot_total | ventas_antes | base_antes | comision_antes | base_despues_con_igv | base_despues_sin_igv | comision_despues_con_igv | comision_despues_sin_igv 
+----------+------+--------------+-----------+--------------+------------+----------------+----------------------+----------------------+--------------------------+--------------------------
+ AC0001   | 1.00 |            2 |   1680.00 |      4268.00 |    5948.00 |          59.48 |              3340.00 |              2830.52 |                    33.40 |                    28.31
+(1 row)
+
+                                       calculo                                       | docs | bruto_f_b_nd | notas_credito | total_con_igv | total_sin_igv 
+-------------------------------------------------------------------------------------+------+--------------+---------------+---------------+---------------
+ ANTES: periodo contable, NC sumadas, USD sin convertir, sin anuladas, solo enviadas |    6 |              |               |       2711.00 |       2297.46
+ DESPUES A: mismo periodo contable y mismos documentos, NC restan, USD x TC          |    6 |      2750.00 |       -236.00 |       2514.00 |       2130.52
+ DESPUES B: fecha de emision, ventas netas (F+B+ND-NC, sin anuladas, USD x TC)       |    8 |      3576.00 |       -236.00 |       3340.00 |       2830.52
+(3 rows)
+
+ ventas_del_rango | inactivas_del_rango | total_inactivas | documentos  
+------------------+---------------------+-----------------+-------------
+               10 |                   1 |          200.00 | F001-000007
+(1 row)
+
+ROLLBACK
