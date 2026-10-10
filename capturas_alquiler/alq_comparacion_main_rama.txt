@@ -1,0 +1,15 @@
+Compras normales y RxH: main 8e763f2 frente a rama (sin ids aleatorios)
+  pago_normal_parcial: IGUAL
+  pago_varios: IGUAL
+  ref_repetida: IGUAL
+  anular_pago: IGUAL
+  asientos: IGUAL
+  compras: IGUAL
+  pagos: IGUAL
+  lista_compras: IGUAL
+Asientos (iguales en ambos):
+   payment | Pago F001-0000100 - Ref: N-001 | [('421201', 500.0, 0.0), ('104101', 0.0, 500.0)]
+   purchase | Por la provision de compra Factura F001-0000100 | [('601101', 1000.0, 0.0), ('401101', 180.0, 0.0), ('421201', 0.0, 1180.0)]
+   purchase | Por la provision de compra Recibo por Honorarios E001-55 | [('632101', 1000.0, 0.0), ('424101', 0.0, 920.0), ('401721', 0.0, 80.0)]
+Compras: [['E001-55', '02', 1000.0, 0.0, 'unpaid'], ['F001-0000100', '01', 1180.0, 500.0, 'partial']]
+Pagos: [['N-001', 500.0, 'applied', 'PEN'], ['N-002', 1600.0, 'voided', 'PEN']]
