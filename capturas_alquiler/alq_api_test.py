@@ -200,6 +200,35 @@ else:
           e and e['lineas'])
     check('6. Alquiler USD pagado', purchase(au_id)['payment_status'] == 'paid')
 
+
+    # Segundo alquiler en dolares con dos pagos posteriores: perdida y ganancia por diferencia de cambio
+    st, d = call('post', RENT, {'supplier_id': 'sup-arr1', 'correlative': 'NOV-2026', 'emission_date': '2026-10-05', 'currency': 'USD',
+                                'exchange_rate': 3.75, 'amount': 200, 'description': 'Alquiler cochera (USD)'})
+    check('6b. Mensaje del alta en USD indica las cuentas del asiento (Debe 635201 / Haber 469903)', st == 201 and 'Haber 469903' in d.get('message', ''), d.get('message'))
+    a2_id = d.get('data', {}).get('id'); e = entry_for(f'purchase:{a2_id}')
+    check('6b. Asiento: Debe 635201 750 (US$ 200) / Haber 469903 750 (US$ 200)',
+          e and [(l[0], l[1], l[2], l[3], l[4]) for l in e['lineas']] == [('635201', 750.0, 0.0, 200.0, 0.0), ('469903', 0.0, 750.0, 0.0, 200.0)], e and e['lineas'])
+    st, d = pay([{'purchase_id': a2_id, 'amount': 100, 'currency': 'USD'}], 'OP-USD-2', '2026-10-20', bank='bank-usd', rate=3.80)
+    e = entry_for(f"payment:{d.get('data', {}).get('payment_id')}"); rent['pago_usd_parcial_perdida'] = e
+    check('6b. Pago parcial US$ 100 al 3.80: Debe 469903 375 (US$ 100) + 676101 5 / Haber 104102 380',
+          st == 201 and e and [(l[0], l[1], l[2], l[3], l[4]) for l in e['lineas']] == [('469903', 375.0, 0.0, 100.0, 0.0), ('676101', 5.0, 0.0, 0.0, 0.0), ('104102', 0.0, 380.0, 0.0, 100.0)], e and e['lineas'])
+    check('6b. Saldo US$ 100 (S/ 375) y estado parcial', purchase(a2_id)['payment_status'] == 'partial' and purchase(a2_id)['balance_due'] == 375.0, purchase(a2_id)['balance_due'])
+    st, d = pay([{'purchase_id': a2_id, 'amount': 100, 'currency': 'USD'}], 'OP-USD-3', '2026-10-21', bank='bank-usd', rate=3.70)
+    e = entry_for(f"payment:{d.get('data', {}).get('payment_id')}"); rent['pago_usd_saldo_ganancia'] = e
+    check('6b. Pago del saldo US$ 100 al 3.70: Debe 469903 375 (US$ 100) / Haber 776101 5 + 104102 370',
+          st == 201 and e and sorted([(l[0], l[1], l[2], l[3], l[4]) for l in e['lineas']]) == sorted([('469903', 375.0, 0.0, 100.0, 0.0), ('776101', 0.0, 5.0, 0.0, 0.0), ('104102', 0.0, 370.0, 0.0, 100.0)]), e and e['lineas'])
+    check('6b. Alquiler USD pagado', purchase(a2_id)['payment_status'] == 'paid')
+
+    # Sin respaldo: si 469903 no acepta movimiento, el alquiler en dolares no se registra (no cae a 469901 ni 469902)
+    with app.app_context():
+        from app.models import ChartOfAccount
+        acc = ChartOfAccount.query.filter_by(company_id=CID, account_code='469903').first(); acc.accepts_movement = False; db.session.commit()
+    st, d = call('post', RENT, {'supplier_id': 'sup-arr1', 'correlative': 'X-1', 'emission_date': '2026-10-05', 'currency': 'USD',
+                                'exchange_rate': 3.75, 'amount': 10, 'description': 'x'})
+    check('Sin 469903 con movimiento: alquiler en USD rechazado con mensaje de 469903', st == 400 and '469903' in json.dumps(d), (st, d.get('error', {}).get('message') if isinstance(d.get('error'), dict) else d))
+    with app.app_context():
+        acc = ChartOfAccount.query.filter_by(company_id=CID, account_code='469903').first(); acc.accepts_movement = True; db.session.commit()
+
     # Anticipos, PLE y registro de compras
     st, d = call('post', f'/api/payments/{CID}/anticipos/apply-to-purchase', {'purchase_id': a1_id, 'application_date': '2026-10-20', 'applications': [{'anticipo_id': 'x', 'amount': 1}]})
     check('Pagar con anticipo un alquiler bloqueado (cancelaria 4212 en vez de 469901)', st == 400 and 'alquiler' in json.dumps(d).lower(), (st, d.get('message')))
@@ -208,5 +237,12 @@ else:
     check('Registro de Compras / PLE TXT: no incluye alquileres', st == 200 and prev.get('lines_count') == 2 and not any('|AL|' in l for l in prev.get('preview', [])),
           (st, prev.get('lines_count'), prev.get('preview')))
 
+if MODE != 'main':
+    with app.app_context():
+        from app.models import JournalEntryLine, ChartOfAccount
+        n = (JournalEntryLine.query.join(ChartOfAccount, ChartOfAccount.id == JournalEntryLine.chart_account_id)
+             .filter(ChartOfAccount.company_id == CID, ChartOfAccount.account_code == '469902').count())
+        exists = ChartOfAccount.query.filter_by(company_id=CID, account_code='469902').first() is not None
+    check('Ninguna prueba usa 469902 (la cuenta existe en el plan de prueba y tiene 0 lineas)', exists and n == 0, (exists, n))
 json.dump({'comun': common, 'alquiler': rent, 'resultados': results}, open(OUT, 'w'), indent=1, ensure_ascii=False, default=str)
 print('fallas:', sum(1 for r in results if not r['ok']), 'de', len(results))

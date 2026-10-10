@@ -2,14 +2,14 @@ Pestanas: ["Compra local","Compra extranjero","Recibos por Honorarios","Alquiler
 Cuenta de gasto: 635201 - ALQUILERES EDIFICACIONES (fija)
 Periodo elegido por la fecha: 2026-10
 Total en pantalla: S/ 1,500.00
-Aviso: Alquiler AL10203040-000123 registrado
+Aviso: Alquiler AL10203040-000123 registrado (Debe 635201 / Haber 469901)
 Lista: ["AL10203040-000123 JUAN PEREZ ARRENDADOR 10203040 Alquiler 05/10/2026 15/10/2026 S/ 1,500.00 S/ 0.00 S/ 1,500.00 S/ 1,500.00 Pendiente Editar Anular","Total 1 comprobante(s) en soles S/ 1,500.00 S/ 0.00 S/ 1,500.00 S/ 1,500.00"]
 Duplicado: No se pudo guardar el alquiler: Ya existe un alquiler de JUAN PEREZ ARRENDADOR con el correlativo 000123
 USD: TC 3.75 | US$ 400.00 | Equivale a S/ 1500.00 (TC 3.75)
-Aviso: Alquiler AL50607080-OCT-2026 registrado
+Aviso: Alquiler AL50607080-OCT-2026 registrado (Debe 635201 / Haber 469903)
 Lista: ["AL50607080-OCT-2026 MARIA LOPEZ ARRENDADORA 50607080 Alquiler 05/10/2026 10/10/2026 US$ 400.00 S/ 1,500.00 US$ 0.00 S/ 0.00 US$ 400.00 S/ 1,500.00 US$ 400.00 Pendiente Editar Anular","AL10203040-000123 JUAN PEREZ ARRENDADOR 10203040 Alquiler 05/10/2026 15/10/2026 S/ 1,500.00 S/ 0.00 S/ 1,500.00 S/ 1,500.00 Pendiente Editar Anular","Total 2 comprobante(s) en soles S/ 3,000.00 S/ 0.00 S/ 3,000.00 S/ 3,000.00"]
 Editar: titulo Editar alquiler AL10203040-000123 | monto 1500 | proveedor 10203040 - JUAN PEREZ ARRENDADOR
-Aviso: Alquiler AL10203040-000123 actualizado
+Aviso: Alquiler AL10203040-000123 actualizado (Debe 635201 / Haber 469901)
 Lista: ["AL50607080-OCT-2026 MARIA LOPEZ ARRENDADORA 50607080 Alquiler 05/10/2026 10/10/2026 US$ 400.00 S/ 1,500.00 US$ 0.00 S/ 0.00 US$ 400.00 S/ 1,500.00 US$ 400.00 Pendiente Editar Anular","AL10203040-000123 JUAN PEREZ ARRENDADOR 10203040 Alquiler 05/10/2026 15/10/2026 S/ 1,600.00 S/ 0.00 S/ 1,600.00 S/ 1,600.00 Pendiente Editar Anular","Total 2 comprobante(s) en soles S/ 3,100.00 S/ 0.00 S/ 3,100.00 S/ 3,100.00"]
 Compra local muestra alquileres: false
 Reportes por periodo muestra alquileres: false
