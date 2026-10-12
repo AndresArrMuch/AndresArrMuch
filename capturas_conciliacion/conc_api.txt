@@ -1,0 +1,10 @@
+== conc_main
+POST cuenta FLUMISA bajo FIKA: 200 None
+POST sin filas: 200 None
+GET estado octubre: 404 null
+BD importes: [(True, 'bank-pen', '2026-09', 'BCP_MN_setiembre.xlsx', 2), (True, 'bank-pen', '2026-10', 'vacio.xlsx', 0), (True, 'bank-usd', '2026-10', 'BCP_ME_octubre.xlsx', 2), (True, 'bank-flu', '2026-11', 'x.xlsx', 1)]
+== conc_rama
+POST cuenta FLUMISA bajo FIKA: 400 {'code': 'ACCOUNT_NOT_IN_COMPANY', 'data': None, 'message': 'La cuenta bancaria no pertenece a la empresa activa: el extracto NO se guardo. Vuelve a elegir la cuenta y carga el Excel otra vez.'}
+POST sin filas: 400 {'code': 'NO_ROWS', 'data': None, 'message': 'El extracto no tiene movimientos: no se guardo nada'}
+GET estado octubre: 200 {"cuentas": [{"account_number": "191-0001", "bank_account_id": "bank-pen", "bank_name": "BCP", "cargado_el": "12/10/2026 11:46", "cargado_por": "Admin Prueba", "cuenta": "BCP PEN", "currency": "PEN", "empresa": "FIKA PRUEBA SAC", "filas": 6, "filename": "BCP_MN_octubre.xlsx", "periodo": "2026-10", "tiene_excel": true}, {"account_number": "191-0002", "bank_account_id": "bank-usd", "bank_name": "BCP", "cargado_el": "12/10/2026 12:46", "cargado_por": "Admin Prueba", "cuenta": "BCP USD", "currency": "USD", "empresa": "FIKA PRUEBA SAC", "filas": 2, "filename": "BCP_ME_octubre.xlsx", "periodo": "202
+BD importes: [(True, 'bank-pen', '2026-09', 'BCP_MN_setiembre.xlsx', 2), (True, 'bank-pen', '2026-10', 'BCP_MN_octubre.xlsx', 6), (True, 'bank-usd', '2026-10', 'BCP_ME_octubre.xlsx', 2)]
