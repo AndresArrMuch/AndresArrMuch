@@ -1,0 +1,163 @@
+{
+ "01_vista_general": {
+  "emojis_visibles": "💰 🛒 📝 🏦 🏢 📋 📦 💼 👤 📑 💱 ⬆ 🔎",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "02_dashboard": {
+  "emojis_visibles": "🏦 💰 🛒 📋 📄 📊 🔴 🟡 ✓ ⚡",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "03_ventas_facturas": {
+  "emojis_visibles": "",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "04_ventas_cotizaciones": {
+  "emojis_visibles": "",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "05_ventas_reportes": {
+  "emojis_visibles": "📊 🔍 ⚡ 📄 💾 📈",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "06_compras_local": {
+  "emojis_visibles": "📊 💾",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "07_compras_reportes": {
+  "emojis_visibles": "📊",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "08_inventario_items": {
+  "emojis_visibles": "🗂 🔄 🎁 📝 🚫 ☰ 📊",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "09_inventario_transferencias": {
+  "emojis_visibles": "🗂 🔄 🎁 📝 🚫 ➜ 👁 ✓ ✕ 🚚",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "10_inventario_gratuitas": {
+  "emojis_visibles": "🗂 🔄 🎁 📝 🚫 ✕ 📊",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "11_inventario_requerimientos": {
+  "emojis_visibles": "🗂 🔄 🎁 📝 🚫",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "12_cobranza_cobros": {
+  "emojis_visibles": "💵 🧾 📊 📄",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "13_cobranza_pagos": {
+  "emojis_visibles": "💵 🧾 📊 📄",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "14_bancos_conciliacion": {
+  "emojis_visibles": "☁ 🟢 🔴 🟠",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "15_bancos_cuentas": {
+  "emojis_visibles": "⚙",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "16_planilla": {
+  "emojis_visibles": "🧾 👥 🏖 🎁 💼 📄 ⚙ 🔄 💾",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "17_libro_diario": {
+  "emojis_visibles": "📊",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "18_tributario": {
+  "emojis_visibles": "",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "19_vendedores": {
+  "emojis_visibles": "💰",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "20_rendicion": {
+  "emojis_visibles": "",
+  "iconos": 0,
+  "iconos_sin_fuente": 0,
+  "codigo_visible": false,
+  "botones_con_iconos_dobles": 0,
+  "iconos_dobles": []
+ },
+ "errores_js": []
+}
