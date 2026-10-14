@@ -1,0 +1,151 @@
+{
+ "tiene_transferencias_gratuitas": false,
+ "reportes_antes": {
+  "dashboard": [
+   200,
+   "b3bc5b205da7551d"
+  ],
+  "ventas_lista": [
+   200,
+   "19b4743fa70d4f02"
+  ],
+  "cotizaciones_guias": [
+   200,
+   "438c1bc7dd41b89d"
+  ],
+  "periodos_reporte": [
+   200,
+   "780f136aa8ab4a51"
+  ],
+  "pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "anticipos": [
+   200,
+   "f245d482e151dbd6"
+  ],
+  "transferencias_almacenes": [
+   200,
+   "563d7ec53ad0096b"
+  ],
+  "conciliacion_estado_oct": [
+   200,
+   "5263c0caed0d91c6"
+  ],
+  "asientos": [
+   200,
+   "c003307c998dcd3e"
+  ],
+  "reporte_ventas_periodo_oct": [
+   200,
+   "b0945de4f1b66c6b"
+  ],
+  "tendencia_ventas": [
+   200,
+   "111b881ec420c372"
+  ],
+  "txt_sunat_ventas_oct": [
+   200,
+   "3e0aae65a3322d0f"
+  ],
+  "ple_ventas_oct": [
+   200,
+   "ef16eb64d253aa20"
+  ],
+  "ventas_bd": [
+   10,
+   "4327.00",
+   "FD01-000001"
+  ],
+  "series_ventas": [
+   "B001",
+   "F001",
+   "FC01",
+   "FD01"
+  ],
+  "series_guias": [
+   "TTT1"
+  ],
+  "cxc_asientos": 0
+ },
+ "saldos_antes": {
+  "P0001@ALMFIKA": 23.0,
+  "P0002@ALMFIKA": 14.0,
+  "P0003@ALMFIKA": 8.0,
+  "P0001@TDAFIKAMALVINAS": 13.0,
+  "P0002@TDAFIKACAPON": 3.0
+ },
+ "llamadas_nubefact_o_red": [],
+ "reportes_despues": {
+  "dashboard": [
+   200,
+   "b3bc5b205da7551d"
+  ],
+  "ventas_lista": [
+   200,
+   "19b4743fa70d4f02"
+  ],
+  "cotizaciones_guias": [
+   200,
+   "438c1bc7dd41b89d"
+  ],
+  "periodos_reporte": [
+   200,
+   "780f136aa8ab4a51"
+  ],
+  "pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "anticipos": [
+   200,
+   "f245d482e151dbd6"
+  ],
+  "transferencias_almacenes": [
+   200,
+   "563d7ec53ad0096b"
+  ],
+  "conciliacion_estado_oct": [
+   200,
+   "5263c0caed0d91c6"
+  ],
+  "asientos": [
+   200,
+   "c003307c998dcd3e"
+  ],
+  "reporte_ventas_periodo_oct": [
+   200,
+   "b0945de4f1b66c6b"
+  ],
+  "tendencia_ventas": [
+   200,
+   "111b881ec420c372"
+  ],
+  "txt_sunat_ventas_oct": [
+   200,
+   "3e0aae65a3322d0f"
+  ],
+  "ple_ventas_oct": [
+   200,
+   "ef16eb64d253aa20"
+  ],
+  "ventas_bd": [
+   10,
+   "4327.00",
+   "FD01-000001"
+  ],
+  "series_ventas": [
+   "B001",
+   "F001",
+   "FC01",
+   "FD01"
+  ],
+  "series_guias": [
+   "TTT1"
+  ],
+  "cxc_asientos": 0
+ },
+ "reportes_identicos": true,
+ "reportes_diferencias": {}
+}

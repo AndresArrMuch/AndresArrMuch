@@ -1,0 +1,388 @@
+{
+ "tiene_transferencias_gratuitas": true,
+ "reportes_antes": {
+  "dashboard": [
+   200,
+   "b3bc5b205da7551d"
+  ],
+  "ventas_lista": [
+   200,
+   "19b4743fa70d4f02"
+  ],
+  "cotizaciones_guias": [
+   200,
+   "438c1bc7dd41b89d"
+  ],
+  "periodos_reporte": [
+   200,
+   "780f136aa8ab4a51"
+  ],
+  "pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "anticipos": [
+   200,
+   "f245d482e151dbd6"
+  ],
+  "transferencias_almacenes": [
+   200,
+   "563d7ec53ad0096b"
+  ],
+  "conciliacion_estado_oct": [
+   200,
+   "5263c0caed0d91c6"
+  ],
+  "asientos": [
+   200,
+   "c003307c998dcd3e"
+  ],
+  "reporte_ventas_periodo_oct": [
+   200,
+   "b0945de4f1b66c6b"
+  ],
+  "tendencia_ventas": [
+   200,
+   "111b881ec420c372"
+  ],
+  "txt_sunat_ventas_oct": [
+   200,
+   "3e0aae65a3322d0f"
+  ],
+  "ple_ventas_oct": [
+   200,
+   "ef16eb64d253aa20"
+  ],
+  "ventas_bd": [
+   10,
+   "4327.00",
+   "FD01-000001"
+  ],
+  "series_ventas": [
+   "B001",
+   "F001",
+   "FC01",
+   "FD01"
+  ],
+  "series_guias": [
+   "TTT1"
+  ],
+  "cxc_asientos": 0
+ },
+ "saldos_antes": {
+  "P0001@ALMFIKA": 23.0,
+  "P0002@ALMFIKA": 14.0,
+  "P0003@ALMFIKA": 8.0,
+  "P0001@TDAFIKAMALVINAS": 13.0,
+  "P0002@TDAFIKACAPON": 3.0
+ },
+ "opciones_admin": {
+  "status": 200,
+  "serie": "TGR01",
+  "siguiente": "TGR01-000001",
+  "almacenes": [
+   "ALMFIKA",
+   "TDAFIKACAPON",
+   "TDAFIKAMALVINAS"
+  ],
+  "motivos": [
+   "Muestra comercial",
+   "Obsequio",
+   "Donacion",
+   "Uso interno",
+   "Otro"
+  ],
+  "puede_anular": true
+ },
+ "opciones_nilton": {
+  "status": 200,
+  "almacenes": [
+   "ALMFIKA",
+   "TDAFIKAMALVINAS"
+  ],
+  "restringido": true,
+  "almacen_por_defecto": [
+   "TDAFIKAMALVINAS"
+  ],
+  "puede_anular": false
+ },
+ "1_crear": {
+  "status": 201,
+  "numero": "TGR01-000001",
+  "estado": "issued",
+  "mensaje": "Transferencia gratuita TGR01-000001 registrada",
+  "lineas": [
+   [
+    "P0001",
+    3.0
+   ],
+   [
+    "P0002",
+    2.0
+   ]
+  ],
+  "tiene_precio": false
+ },
+ "1_saldos_despues": {
+  "P0001@ALMFIKA": 20.0,
+  "P0002@ALMFIKA": 12.0,
+  "P0001@TDAFIKAMALVINAS (otro almacen, no cambia)": 13.0
+ },
+ "1_kardex": [
+  [
+   "ALMFIKA",
+   "P0002",
+   "out",
+   "free_transfer",
+   2.0,
+   12.0
+  ],
+  [
+   "ALMFIKA",
+   "P0001",
+   "out",
+   "free_transfer",
+   3.0,
+   20.0
+  ]
+ ],
+ "1_kardex_nota_bd": [
+  "TRANSFERENCIA GRATUITA TGR01-000001 - Muestra comercial"
+ ],
+ "2_sobre_stock": {
+  "status": 400,
+  "codigo": "INSUFFICIENT_STOCK",
+  "mensaje": "Stock insuficiente: \"OXIMETRO DEDO\" en ALMFIKA: disponible 8.00, solicitado 9",
+  "documentos_creados": 0,
+  "saldo_P0003@ALMFIKA": 8.0,
+  "saldo_P0001@ALMFIKA": 20.0
+ },
+ "2_producto_sin_stock_en_ese_almacen": [
+  400,
+  "Stock insuficiente: \"NEBULIZADOR\" en TDA FIKA MALVINAS: disponible 0, solicitado 1"
+ ],
+ "3_doble_envio_seguido": {
+  "estados": [
+   201,
+   200
+  ],
+  "numeros": [
+   "TGR01-000002",
+   "TGR01-000002"
+  ],
+  "segundo_idempotente": true
+ },
+ "3_documentos_con_ese_envio": 1,
+ "3_movimientos_de_ese_doc": 1,
+ "4_nilton_desde_capon": [
+  403,
+  "WAREHOUSE_FORBIDDEN"
+ ],
+ "4_nilton_desde_su_tienda": [
+  201,
+  "TGR01-000003",
+  11.0
+ ],
+ "4_nilton_stock_capon": 403,
+ "4_nilton_stock_central": 200,
+ "4_admin_desde_capon": [
+  201,
+  "TGR01-000004"
+ ],
+ "4_lista_nilton": [
+  "TGR01-000001 ALMFIKA",
+  "TGR01-000002 ALMFIKA",
+  "TGR01-000003 TDAFIKAMALVINAS"
+ ],
+ "4_lista_saul_capon": [
+  "TGR01-000001 ALMFIKA",
+  "TGR01-000002 ALMFIKA",
+  "TGR01-000004 TDAFIKACAPON"
+ ],
+ "4_nilton_ver_doc_capon": 403,
+ "5_fecha_futura": "FUTURE_DATE",
+ "5_fecha_antes_ultimo_mov": "\"TERMOMETRO DIGITAL\" tiene movimientos en ALMFIKA hasta el 14/10/2026: usa esa fecha o una posterior",
+ "5_sin_destinatario": "RECIPIENT_REQUIRED",
+ "5_motivo_otro_sin_detalle": "REASON_DETAIL_REQUIRED",
+ "5_cantidad_cero": "INVALID_LINE",
+ "6_anular_nilton": 403,
+ "6_anular_almacenero": 403,
+ "6_anular_sin_motivo": "VOID_REASON_REQUIRED",
+ "6_anular": {
+  "status": 200,
+  "estado": "voided",
+  "motivo": "Muestras devueltas por el vendedor",
+  "anulado_por": "Admin Prueba",
+  "P0001@ALMFIKA": 23.0,
+  "P0002@ALMFIKA": 13.0
+ },
+ "6_kardex_del_documento": [
+  [
+   "P0001",
+   "in",
+   "free_transfer_void",
+   3.0
+  ],
+  [
+   "P0001",
+   "out",
+   "free_transfer",
+   3.0
+  ],
+  [
+   "P0002",
+   "in",
+   "free_transfer_void",
+   2.0
+  ],
+  [
+   "P0002",
+   "out",
+   "free_transfer",
+   2.0
+  ]
+ ],
+ "6_anular_otra_vez": "ALREADY_VOIDED",
+ "6_sigue_visible_anulada": [
+  [
+   "TGR01-000001",
+   "voided"
+  ]
+ ],
+ "7_filtro_producto_P0001": [
+  "TGR01-000001",
+  "TGR01-000003"
+ ],
+ "7_filtro_motivo_obsequio": [
+  "TGR01-000003"
+ ],
+ "7_filtro_almacen_capon": [
+  "TGR01-000004"
+ ],
+ "7_filtro_destinatario": 4,
+ "7_filtro_fechas_sin_resultado": 0,
+ "7_excel": {
+  "status": 200,
+  "titulo": "TRANSFERENCIAS GRATUITAS - documentos internos sin valor comercial (no son ventas)",
+  "cabecera": [
+   "Numero",
+   "Fecha",
+   "Estado",
+   "Almacen",
+   "Motivo",
+   "Destinatario",
+   "Doc. destinatario",
+   "Responsable",
+   "Codigo",
+   "Producto",
+   "Unidad",
+   "Cantidad",
+   "Observaciones",
+   "Registrado por",
+   "Anulado el",
+   "Motivo de anulacion"
+  ],
+  "filas": 5,
+  "primera_fila": [
+   "TGR01-000001",
+   "2026-10-14 00:00:00",
+   "ANULADA",
+   "ALMFIKA",
+   "Muestra comercial",
+   "cliente generico",
+   "None",
+   "Vendedor de prueba",
+   "P0001",
+   "TERMOMETRO DIGITAL",
+   "NIU",
+   "3",
+   "Muestras para visita",
+   "Admin Prueba",
+   "14/10/2026 14:47",
+   "Muestras devueltas por el vendedor"
+  ]
+ },
+ "7_excel_nilton_almacenes": [
+  "ALMFIKA",
+  "TDA FIKA MALVINAS"
+ ],
+ "8_numeros_internos": [
+  "TGR01-000001",
+  "TGR01-000002",
+  "TGR01-000003",
+  "TGR01-000004"
+ ],
+ "8_choque_con_ventas": 0,
+ "llamadas_nubefact_o_red": [],
+ "reportes_despues": {
+  "dashboard": [
+   200,
+   "b3bc5b205da7551d"
+  ],
+  "ventas_lista": [
+   200,
+   "19b4743fa70d4f02"
+  ],
+  "cotizaciones_guias": [
+   200,
+   "438c1bc7dd41b89d"
+  ],
+  "periodos_reporte": [
+   200,
+   "780f136aa8ab4a51"
+  ],
+  "pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "anticipos": [
+   200,
+   "f245d482e151dbd6"
+  ],
+  "transferencias_almacenes": [
+   200,
+   "563d7ec53ad0096b"
+  ],
+  "conciliacion_estado_oct": [
+   200,
+   "5263c0caed0d91c6"
+  ],
+  "asientos": [
+   200,
+   "c003307c998dcd3e"
+  ],
+  "reporte_ventas_periodo_oct": [
+   200,
+   "b0945de4f1b66c6b"
+  ],
+  "tendencia_ventas": [
+   200,
+   "111b881ec420c372"
+  ],
+  "txt_sunat_ventas_oct": [
+   200,
+   "3e0aae65a3322d0f"
+  ],
+  "ple_ventas_oct": [
+   200,
+   "ef16eb64d253aa20"
+  ],
+  "ventas_bd": [
+   10,
+   "4327.00",
+   "FD01-000001"
+  ],
+  "series_ventas": [
+   "B001",
+   "F001",
+   "FC01",
+   "FD01"
+  ],
+  "series_guias": [
+   "TTT1"
+  ],
+  "cxc_asientos": 0
+ },
+ "reportes_identicos": true,
+ "reportes_diferencias": {}
+}
