@@ -1,0 +1,169 @@
+{
+ "errores_js": [],
+ "gerencia_fika": {
+  "inicial": [
+   {
+    "numero": "TGR01-000004",
+    "otras_columnas": "TGR01-000004 | 14/10/2026 | ALMFIKA | Muestra comercial | cliente generico | Vendedor Prueba | Anulada Muestras devueltas | Imprimir",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "M1003 ALCOHOL GEL 1L × 2",
+     "M1004 JERINGA 5ML × 3"
+    ],
+    "alto_fila": 75
+   },
+   {
+    "numero": "TGR01-000003",
+    "otras_columnas": "TGR01-000003 | 13/10/2026 | ALMFIKA | Muestra comercial | FLUMISA EIRL | Vendedor Prueba | Emitida | Imprimir Anular",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "M1001 GUANTE NITRILO M × 1",
+     "M1002 MASCARILLA KN95 × 3"
+    ],
+    "alto_fila": 75
+   },
+   {
+    "numero": "TGR01-000002",
+    "otras_columnas": "TGR01-000002 | 12/10/2026 | ALMFIKA | Obsequio | SANDOVAL SANTISTEBAN JOSE DEL CARMEN | Vendedor Prueba | Emitida | Imprimir Anular",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "M1020 GUANTE QUIRURGICO × 1"
+    ],
+    "alto_fila": 64
+   },
+   {
+    "numero": "TGR01-000001",
+    "otras_columnas": "TGR01-000001 | 11/10/2026 | ALMFIKA | Muestra comercial | cliente generico | Vendedor Prueba | Emitida | Imprimir Anular",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "M1001 GUANTE NITRILO M × 2",
+     "M1002 MASCARILLA KN95 × 2",
+     "M1003 ALCOHOL GEL 1L × 2",
+     "M1004 JERINGA 5ML × 2",
+     "M1005 GASA ESTERIL × 1",
+     "M1006 ESPARADRAPO × 1",
+     "M1007 TERMOMETRO INFRARROJO × 1",
+     "M1008 BAJALENGUA × 1",
+     "M1009 ALGODON 500G × 1",
+     "M1010 VENDA ELASTICA × 1",
+     "M1011 CATETER 22G × 1",
+     "M1012 GORRO DESCARTABLE × 1",
+     "M1013 BOTA DESCARTABLE × 1",
+     "M1014 LANCETA × 1",
+     "M1015 TIRA GLUCOSA × 1",
+     "M1016 APOSITO × 1",
+     "M1017 SUERO FISIOLOGICO × 1",
+     "M1018 BOLSA ROJA × 1",
+     "M1019 CUBREZAPATO × 1"
+    ],
+    "alto_fila": 523
+   }
+  ]
+ },
+ "impresion_TGR01_000001": {
+  "filas_productos": 22,
+  "texto": "FIKA PRUEBA SAC RUC 20000000009 TRANSFERENCIA GRATUITA Documento interno TGR01-000001 SIN VALOR COMERCIAL — Entrega a título gratuito. No es comprobante de pago ni se envía a SUNAT. Fecha: 11/10/2026 Almacén de salida: ALMFIKA Destinatario: cliente generico Motivo: Muestra comercial Responsable que entrega: Vendedor Prueba Registrado por: # Código Producto Unidad Cantidad 1 M1001 GUANTE NITRILO M NIU 2 2 M1002 MASCARILLA KN95 NIU 2 3 M1003 ALCOHOL GEL 1L NIU 2 4 M1004 JERINGA 5ML NIU 2 5 M1005 GASA ESTERIL NIU 1 6 M1006 ESPARADRAPO NIU 1 7 M1007 TERMOMETRO INFRARROJO NIU 1 8 M1008 BAJALENGUA NIU 1 9 M1009 ALGODON 500G NIU 1 10 M1010 VENDA ELASTICA NIU 1 11 M1011 CATETER 22G NIU 1 12 M1012 GORRO DESCARTABLE NIU 1 13 M1013 BOTA DESCARTABLE NIU 1 14 M1014 LANCETA NIU 1 15 M1015 TIRA GLUCOSA NIU 1 16 M1016 APOSITO NIU 1 17 M1017 SUERO FISIOLOGICO NIU 1 18 M1018 BOLSA ROJA NIU 1 19 M1019 CUBREZAPATO NIU 1 Entregado por Vendedor Prueba Recibido por Nombre, DNI y firma Autorizado por"
+ },
+ "excel_status": 200,
+ "otras": {
+  "inventario_items": "Items / Almacenes / Kardex |  Catálogo |  Transferencias |  Transferencias gratuitas |  Requerimientos |  Items desactivados | ITEMS | 30 | ALMACENES | 3 | COSTO PROM. | S/ 8.00 | MOVIMIENTOS | 34 | + | Nuevo almacen | Almacenes | CODIGO\tNOMBRE\tDIRECCION\tTELEFONO\tRESPONSABLE\tESTADO\tACCIONES | ALMFIKA\tALMFIKA\tJr. Central 100, Lima\t-\t-\tActivo\tEditarDesactivarEliminar | TDAFIKACAPON\tTDA FIKA CAPON\tJr. Ucayali 300, Lima\t-\t-\tActivo\tEditarDesactivarEliminar | TDAFIKAMALVINAS\tTDA FIKA MALVINAS\tAv. Argentina 200, Lima\t-\t-\tActivo\tEditarDesactivarEliminar | + | Nuevo item de inventario | + | Registrar movimiento | Todos los almacenes | ALMFIKA - ALMFIKA | TDAFIKACAPON - TDA FIKA CAPON | TDAFIKAMALVINAS - TDA FIKA MALVINAS | Todos | Solo DIGEMID | Solo Normales | Exportar Reporte Detallado | Limpiar | Items de inventario | 30 items | CODIGO / C.BARRA\tDESCRIPCION\tCATEGORIA\tDIGEMID\tMARCA\tUND.\tCOSTO UNIT.\tPRECIO VENTA\tSTOCK\tESTADO\tACCIONES | M1001 | C.Barra: —\t | GUANTE NITRILO M | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1002 | C.Barra: —\t | MASCARILLA KN95 | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1003 | C.Barra: —\t | ALCOHOL GEL 1L | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1004 | C.Barra: —\t | JERINGA 5ML | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1005 | C.Barra: —\t | GASA ESTERIL | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1006 | C.Barra: —\t | ESPARADRAPO | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1007 | C.Barra: —\t | TERMOMETRO INFRARROJO | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1008 | C.Barra: —\t | BAJALENGUA | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1009 | C.Barra: —\t | ALGODON 500G | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1010 | C.Barra: —\t | VENDA ELASTICA | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1011 | C.Barra: —\t | CATETER 22G | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1012 | C.Barra: —\t | GORRO DESCARTABLE | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1013 | C.Barra: —\t | BOTA DESCARTABLE | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1014 | C.Barra: —\t | LANCETA | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1015 | C.Barra: —\t | TIRA GLUCOSA | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1016 | C.Barra: —\t | APOSITO | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1017 | C.Barra: —\t | SUERO FISIOLOGICO | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1018 | C.Barra: —\t | BOLSA ROJA | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1019 | C.Barra: —\t | CUBREZAPATO | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | M1020 | C.Barra: —\t | GUANTE QUIRURGICO | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t0\tActivo\tEditarEliminacion global | P0001 | C.Barra: —\t | TERMOMETRO DIGITAL | \tMEDICOS\tNo\t—\tNIU\tS/ 10.00\tS/ 50.00\t36\tActivo\tEditarEliminacion global | P0002 | C.Barra: —\t | TENSIOMETRO BRAZO | \tMEDICOS\tNo\t—\tBX\tS/ 10.00\tS/ 50.00\t22\tActivo\tEditarEliminacion global | P0003 | C.Barra: —\t | OXIMETRO DEDO | \tMEDICOS\tSi\t—\tPAR\tS/ 10.00\tS/ 50.00\t10\tActivo\tEditarEliminacion global | P0004 | C.Barra: —\t | NEBULIZADOR | \tMEDICOS\tNo\t—\tPAR\tS/ 10.00\tS/ 50.00\t4\tActivo\tEditarEliminacion global | TG1 | C.Barra: —\t | GUANTES DE NITRILO X100 | \tX\tNo\t—\tNIU\tS/ 0.00\tS/ 10.00\t0\tActivo\tEditarEliminacion global | TG2 | C.Barra: —\t | CAJA DE MASCARILLAS | \tX\tNo\t—\tNIU\tS/ 0.00\tS/ 10.00\t0\tActivo\tEditarEliminacion global | TG3 | C.Barra: —\t | JERINGA 10ML | \tX\tNo\t—\tNIU\tS/ 0.00\tS/ 10.00\t0\tActivo\tEditarEliminacion global | TG4 | C.Barra: —\t | GASA X 50 UND | \tX\tNo\t—\tNIU\tS/ 0.00\tS/ 10.00\t0\tActivo\tEditarEliminacion global | TG5 | C.Barra: —\t | CAJAMARCA TEST | \tX\tNo\t—\tNIU\tS/ 0.00\tS/ 10.00\t0\tActivo\tEditarEliminacion global | TG6 | C.Barra: —\t | TERMOMETRO X1 | \tX\tNo\t—\tNIU\tS/ 0.00\tS/ 10.00\t0\tActivo\tEditarEliminacion global |  Stock consolidado por almacen | Kardex de movimientos | Todos los almacenes | ALMFIKA | TDAFIKACAPON | TDAFIKAMALVINAS |  Exportar Kardex Completo | 34 movimientos",
+  "inventario_transferencias": "Items / Almacenes / Kardex |  Catálogo |  Transferencias |  Transferencias gratuitas |  Requerimientos |  Items desactivados | Nueva transferencia | ALMACÉN ORIGEN | ALMFIKA | TDA FIKA CAPON | TDA FIKA MALVINAS | ALMACÉN DESTINO | ALMFIKA | TDA FIKA CAPON | TDA FIKA MALVINAS | FECHA | NOTAS | ITEMS A TRANSFERIR | + Agregar ítem | CÓDIGO / PRODUCTO\tSTOCK DISPONIBLE\tCANTIDAD\t | Sin items agregados. Haz clic en \"+ Agregar ítem\". | Crear transferencia | Transferencias registradas | Mostrando 23 de 23 | BUSCAR | DESDE | HASTA | ALMACÉN | Todos | ALMFIKA | TDA FIKA CAPON | TDA FIKA MALVINAS | Todos23 | Borrador1 | Aprobado1 | Despachado16 | Recibido2 | Anulado3 | N° / ESTADO | FECHA | ORIGEN  DESTINO | ÍTEMS | ACCIONES | TRF-00014 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00023 | Aprobado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Despachar |  Anular | TRF-00012 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00019 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00010 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00013 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00011 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00015 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00017 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00020 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00018 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00016 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00021 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00022 | Despachado | 04/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00007 | Despachado |  REQ-00004 | 03/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00008 | Despachado |  REQ-00005 | 03/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00006 | Recibido | 03/10/2026 | ALMFIKA | TDA FIKA CAPON | 1 ítem · 1 und. | P0002 |  Ver detalle |  Recibido | TRF-00005 | Anulado |  REQ-00002 | 03/10/2026 | ALMFIKA | TDA FIKA CAPON | 1 ítem · 2 und. | P0003 |  Ver detalle | TRF-00003 | Anulado |  REQ-00001 | 03/10/2026 | ALMFIKA | TDA FIKA MALVINAS |  Atiende REQ-00001 | 1 ítem · 6 und. | P0001 |  Ver detalle |  Rechazado | Ver motivo | TRF-00004 | Recibido |  REQ-00001 | 03/10/2026 | ALMFIKA | TDA FIKA MALVINAS |  Atiende REQ-00001 | 2 ítems · 15 und. | P0001, P0002 |  Ver detalle |  Recibido | TRF-00009 | Borrador |  REQ-00006 | 03/10/2026 | ALMFIKA | TDA FIKA MALVINAS | 1 ítem · 1 und. | P0001 |  Ver detalle |  Aprobar |  Anular | TRF-00002 | Despachado | 02/10/2026 | ALMFIKA | TDA FIKA MALVINAS |  Legacy 2 | 1 ítem · 2 und. | P0001 |  Ver detalle |  Confirmar recepcion |  Rechazar | TRF-00001 | Anulado | 02/10/2026 | ALMFIKA | TDA FIKA MALVINAS |  Legacy 1 | 1 ítem · 2 und. | P0001 |  Ver detalle",
+  "ventas_facturas": "Cotizaciones | Guías | Facturación | Reportes por período | Fichas Técnicas | Comprobantes Electrónicos | Facturación electrónica integrada con NubeFact · SUNAT | + Emitir Comprobante | Últimas ventas registradas | 9 comprobantes | DESDE | HASTA | TIPO DOC. | Todos | Factura | Boleta | Nota Crédito | Nota Débito | SERIE | Todas | B001 | F001 | FC01 | FD01 | ESTADO | Todos | Emitido | Anulado | Filtrar | Limpiar | FECHA | \tTIPO DOC.\t | SERIE-NÚMERO | RUC / DNI | CLIENTE | VENDEDOR | ALMACEN | Todos | ALMFIKA | TDAFIKACAPON | TDAFIKAMALVINAS | \tGUÍA\tTOTAL S/\t | ESTADO | Todos | Emitido | Anulado | \tACCIONES | 08/10/2026\tFactura\tF001-000006\t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t-\t-\tS/ 1,018.00\t | Emitido | NC | ND | Anular | → Guía | PDF | XML | CDR | Elim. | 07/10/2026\tFactura\tF001-000004\t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t-\t-\tUS$ 100.00\t | Emitido | NC | ND | Anular | → Guía | PDF | XML | CDR | Elim. | 06/10/2026\tFactura\tF001-000003\t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t-\t-\tS/ 354.00\t | Emitido | NC | ND | Anular | → Guía | PDF | XML | CDR | Elim. | 05/10/2026\tFactura\tF001-000002\t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t-\t-\tS/ 590.00\t | Anulado | NC | ND | Anular | → Guía | PDF | XML | CDR | Elim. | 04/10/2026\tNota Débito\tFD01-000001 | Ref: F001-000001 | \t20100047218\tCLIENTE PRUEBA SAC\t-\t-\t-\tS/ 59.00\t | Emitido | NC | ND | Anular | PDF | XML | CDR | Elim. | 03/10/2026\tNota Crédito\tFC01-000001 | Ref: F001-000001 | \t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t-\t-\tS/ 236.00\t | Emitido | NC | ND | Anular | PDF | XML | CDR | Elim. | 02/10/2026\tBoleta\tB001-000001\t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t-\t-\tS/ 118.00\t | Emitido | NC | ND | Anular | → Guía | PDF | XML | CDR | Elim. | 02/10/2026\tFactura\tF001-000005\t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t-\t-\tS/ 472.00\t | Emitido | NC | ND | Anular | → Guía | PDF | XML | CDR | Elim. | 01/10/2026\tFactura\tF001-000001 | ND FD01-000001, NC FC01-000001 | \t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t-\t-\tS/ 1,180.00\t | Emitido | NC FC01-000001 | ND | Anular | → Guía | PDF | XML | CDR | Elim.",
+  "ventas_cotizaciones": "Cotizaciones | Guías | Facturación | Reportes por período | Fichas Técnicas | Nueva Cotizacion | Las guías se gestionan desde la pestaña Guías o desde transferencias de inventario. | + Crear cotizacion | Cotizaciones registradas | COTIZACION | RUC | CLIENTE | VENDEDOR | \tFECHA EMISION\tFECHA VENCIMIENTO\tMONEDA\tTOTAL\t | ESTADO | Todos | Cotizada | Aceptada | Rechazada | Entregada | Facturada | \tEXPORTAR\tACCION | COT-V2\t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t09/10/2026\t-\tPEN\tS/ 500.00\tRechazada\t | PDF | WhatsApp | Gmail | Editar | Eliminar | COT-V1\t20100047218\tCLIENTE PRUEBA SAC\tAC0001\t01/10/2026\t-\tPEN\tS/ 1,180.00\tFacturada\t | PDF | WhatsApp | Gmail | Editar | Eliminar",
+  "dashboard": "Dashboard Ejecutivo | 2026-10 · FIKA PRUEBA SAC | SALDO BANCARIO | S/ 0.00 | Total en cuentas | VENTAS DEL MES | S/ 2,711.00 | 6 comprobantes | COMPRAS DEL MES | S/ 0.00 | 0 comprobantes | POR COBRAR | S/ 2,947.00 | 6 docs vencidos | POR PAGAR | S/ 0.00 | 0 docs vencidos | FLUJO DEL MES | S/ 0.00 | Ingresos - Egresos |  Clientes con deuda vencida | 6 facturas · S/ 2,947.00 total | CLIENTE PRUEBA SAC | S/ 2,947.00 |  Proveedores por pagar | 0 facturas vencidas · S/ 0.00 total |  Sin deudas pendientes |  Saldos por cuenta | Sin cuentas bancarias |  Últimos movimientos bancarios | FECHA\tDESCRIPCIÓN\tIMPORTE | Sin movimientos | IGV VENTAS DEL MES | S/ 413.54 | IGV COMPRAS DEL MES | S/ 0.00 | IGV NETO A PAGAR | S/ 413.54 |  Antigüedad de Cuentas por Cobrar (CxC) | Facturas de venta pendientes de cobro agrupadas por vencimiento | CLIENTE\tPOR VENCER\t0-30 DÍAS\t31-60 DÍAS\t61-90 DÍAS\t+90 DÍAS\tTOTAL | CLIENTE PRUEBA SAC\t-\tS/ 2,947.00\t-\t-\t-\tS/ 2,947.00 | TOTAL\t-\tS/ 2,947.00\t-\t-\t-\tS/ 2,947.00 |  Antigüedad de Cuentas por Pagar (CxP) | Facturas de compra pendientes de pago agrupadas por vencimiento | PROVEEDOR\tPOR VENCER\t0-30 DÍAS\t31-60 DÍAS\t61-90 DÍAS\t+90 DÍAS\tTOTAL |  Sin cuentas por pagar pendientes"
+ },
+ "gerencia_flumisa": {
+  "inicial": [
+   {
+    "numero": "TGR01-000002",
+    "otras_columnas": "TGR01-000002 | 12/10/2026 | ALM FLUMISA | Uso interno | cliente generico | Vendedor Prueba | Emitida | Imprimir Anular",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "N1002 MASCARILLA KN95 × 1",
+     "N1003 ALCOHOL GEL 1L × 1",
+     "N1004 JERINGA 5ML × 1"
+    ],
+    "alto_fila": 89
+   },
+   {
+    "numero": "TGR01-000001",
+    "otras_columnas": "TGR01-000001 | 11/10/2026 | ALM FLUMISA | Muestra comercial | cliente generico | Vendedor Prueba | Emitida | Imprimir Anular",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "N1001 GUANTE NITRILO M × 2"
+    ],
+    "alto_fila": 49
+   }
+  ]
+ },
+ "tienda_fika": {
+  "inicial": [
+   {
+    "numero": "TGR01-000004",
+    "otras_columnas": "TGR01-000004 | 14/10/2026 | ALMFIKA | Muestra comercial | cliente generico | Vendedor Prueba | Anulada Muestras devueltas | Imprimir",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "M1003 ALCOHOL GEL 1L × 2",
+     "M1004 JERINGA 5ML × 3"
+    ],
+    "alto_fila": 62
+   },
+   {
+    "numero": "TGR01-000003",
+    "otras_columnas": "TGR01-000003 | 13/10/2026 | ALMFIKA | Muestra comercial | FLUMISA EIRL | Vendedor Prueba | Emitida | Imprimir",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "M1001 GUANTE NITRILO M × 1",
+     "M1002 MASCARILLA KN95 × 3"
+    ],
+    "alto_fila": 75
+   },
+   {
+    "numero": "TGR01-000002",
+    "otras_columnas": "TGR01-000002 | 12/10/2026 | ALMFIKA | Obsequio | SANDOVAL SANTISTEBAN JOSE DEL CARMEN | Vendedor Prueba | Emitida | Imprimir",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "M1020 GUANTE QUIRURGICO × 1"
+    ],
+    "alto_fila": 49
+   },
+   {
+    "numero": "TGR01-000001",
+    "otras_columnas": "TGR01-000001 | 11/10/2026 | ALMFIKA | Muestra comercial | cliente generico | Vendedor Prueba | Emitida | Imprimir",
+    "resumen": null,
+    "abierto": null,
+    "productos": [
+     "M1001 GUANTE NITRILO M × 2",
+     "M1002 MASCARILLA KN95 × 2",
+     "M1003 ALCOHOL GEL 1L × 2",
+     "M1004 JERINGA 5ML × 2",
+     "M1005 GASA ESTERIL × 1",
+     "M1006 ESPARADRAPO × 1",
+     "M1007 TERMOMETRO INFRARROJO × 1",
+     "M1008 BAJALENGUA × 1",
+     "M1009 ALGODON 500G × 1",
+     "M1010 VENDA ELASTICA × 1",
+     "M1011 CATETER 22G × 1",
+     "M1012 GORRO DESCARTABLE × 1",
+     "M1013 BOTA DESCARTABLE × 1",
+     "M1014 LANCETA × 1",
+     "M1015 TIRA GLUCOSA × 1",
+     "M1016 APOSITO × 1",
+     "M1017 SUERO FISIOLOGICO × 1",
+     "M1018 BOLSA ROJA × 1",
+     "M1019 CUBREZAPATO × 1"
+    ],
+    "alto_fila": 453
+   }
+  ]
+ }
+}
