@@ -1,0 +1,217 @@
+{
+ "tc_registrados": [
+  [
+   "2026-07-01",
+   "3.5700"
+  ],
+  [
+   "2026-10-07",
+   "3.7480"
+  ],
+  [
+   "2026-10-09",
+   "3.7520"
+  ],
+  [
+   "2026-10-14",
+   "3.7590"
+  ],
+  [
+   "2026-10-15",
+   "3.7610"
+  ]
+ ],
+ "rate": {
+  "sabado 17/10": [
+   200,
+   "2026-10-15",
+   2,
+   null
+  ],
+  "domingo 18/10": [
+   200,
+   "2026-10-15",
+   3,
+   null
+  ],
+  "feriado jueves 08/10": [
+   200,
+   "2026-10-07",
+   1,
+   null
+  ],
+  "martes 13/10": [
+   200,
+   "2026-10-09",
+   4,
+   null
+  ],
+  "7 dias exactos 22/10": [
+   200,
+   "2026-10-15",
+   7,
+   null
+  ],
+  "8 dias 23/10": [
+   404,
+   null,
+   null,
+   "El ultimo tipo de cambio registrado es del 15/10/2026, hace 8 dias; registra uno mas reciente en Tipo de cambio (se acepta hasta 7 dias)."
+  ],
+  "sin ningun TC 20/06": [
+   404,
+   null,
+   null,
+   "No hay ningun tipo de cambio registrado hasta el 20/06/2026; registralo en Tipo de cambio."
+  ]
+ },
+ "bancos": {
+  "dolares sabado 17/10": [
+   201,
+   null,
+   3.761,
+   "2026-10-15",
+   [
+    [
+     376.1,
+     0.0,
+     100.0,
+     0
+    ],
+    [
+     0.0,
+     376.1,
+     0,
+     100.0
+    ]
+   ]
+  ],
+  "dolares domingo 18/10": [
+   201,
+   null,
+   3.761,
+   "2026-10-15",
+   [
+    [
+     376.1,
+     0.0,
+     100.0,
+     0
+    ],
+    [
+     0.0,
+     376.1,
+     0,
+     100.0
+    ]
+   ]
+  ],
+  "dolares feriado 08/10": [
+   201,
+   null,
+   3.748,
+   "2026-10-07",
+   [
+    [
+     374.8,
+     0.0,
+     100.0,
+     0
+    ],
+    [
+     0.0,
+     374.8,
+     0,
+     100.0
+    ]
+   ]
+  ],
+  "dolares 7 dias 22/10": [
+   201,
+   null,
+   3.761,
+   "2026-10-15",
+   [
+    [
+     376.1,
+     0.0,
+     100.0,
+     0
+    ],
+    [
+     0.0,
+     376.1,
+     0,
+     100.0
+    ]
+   ]
+  ],
+  "dolares 8 dias 23/10": [
+   400,
+   "El ultimo tipo de cambio registrado es del 15/10/2026, hace 8 dias; registra uno mas reciente en Tipo de cambio (se acepta hasta 7 dias). (el asiento tiene una cuenta en dolares)",
+   null,
+   null,
+   []
+  ],
+  "soles 8 dias 23/10": [
+   201,
+   null,
+   0.0,
+   "2026-10-23",
+   [
+    [
+     100.0,
+     0.0,
+     0,
+     0
+    ],
+    [
+     0.0,
+     100.0,
+     0,
+     0
+    ]
+   ]
+  ],
+  "soles sin ningun TC 20/06": [
+   201,
+   null,
+   0.0,
+   "2026-06-20",
+   [
+    [
+     100.0,
+     0.0,
+     0,
+     0
+    ],
+    [
+     0.0,
+     100.0,
+     0,
+     0
+    ]
+   ]
+  ]
+ },
+ "diario": {
+  "dolares 8 dias 23/10": [
+   400,
+   "El ultimo tipo de cambio registrado es del 15/10/2026, hace 8 dias; registra uno mas reciente en Tipo de cambio (se acepta hasta 7 dias). (el asiento tiene una cuenta en dolares)",
+   null,
+   null
+  ],
+  "dolares 7 dias 22/10": [
+   201,
+   null,
+   3.761,
+   "2026-10-15"
+  ],
+  "soles 8 dias 23/10": [
+   201,
+   null,
+   0.0,
+   "2026-10-23"
+  ]
+ }
+}

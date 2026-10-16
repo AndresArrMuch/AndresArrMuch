@@ -1,0 +1,8 @@
+bk-fika-bcp-mn 01104038 2026-10-14 -975.00 Registrado
+bk-fika-bcp-mn 01108170 2026-10-14 -100.00 Registrado
+bk-fika-bcp-mn 01117932 2026-10-14 -3000.00 Registrado
+bk-fika-bcp-mn 01200001 2026-10-14 -500.00 Registrado
+bk-fika-ibk-mn 33300001 2026-10-14 500.00 Error
+bk-flu-bcp-mn 02104038 2026-10-14 975.00 Registrado
+bk-flu-bcp-mn 02108170 2026-10-14 100.00 Error
+bk-flu-bcp-mn 02117932 2026-10-14 3000.00 Registrado
