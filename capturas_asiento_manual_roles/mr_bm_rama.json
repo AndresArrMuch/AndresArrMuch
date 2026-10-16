@@ -1,0 +1,713 @@
+{
+ "antes": {
+  "admin_fika:diario": [
+   200,
+   "aa9e7dcb6440e951"
+  ],
+  "admin_fika:libro_paginado": [
+   200,
+   "9f144dfaf314dcd4"
+  ],
+  "admin_fika:resumen_dashboard": [
+   200,
+   "ba3fb49819e546c9"
+  ],
+  "admin_fika:movimientos_banco": [
+   200,
+   "fd1f3c4e65ea8276"
+  ],
+  "admin_fika:cuentas_banco": [
+   200,
+   "faf1054afbeb3ba3"
+  ],
+  "admin_fika:pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "admin_fika:dashboard": [
+   200,
+   "0dfcc68a864031c5"
+  ],
+  "admin_fika:periodos": [
+   200,
+   "d6e258e846d17cf9"
+  ],
+  "admin_fika:parametros": [
+   200,
+   "3f56382f44475a15"
+  ],
+  "admin_fika:extracto_oct": [
+   200,
+   "d70965005d2751ad"
+  ],
+  "admin_fika:marcas_pagar": [
+   200,
+   "3cdf01c9d1e0374f"
+  ],
+  "admin_flu:diario": [
+   200,
+   "221108ca8c904621"
+  ],
+  "admin_flu:libro_paginado": [
+   200,
+   "5ca48613efbef641"
+  ],
+  "admin_flu:resumen_dashboard": [
+   200,
+   "082f6f53599eddd7"
+  ],
+  "admin_flu:movimientos_banco": [
+   200,
+   "fd1f3c4e65ea8276"
+  ],
+  "admin_flu:cuentas_banco": [
+   200,
+   "62a9d3ff4b640cae"
+  ],
+  "admin_flu:pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "admin_flu:dashboard": [
+   200,
+   "ea2eaf7da575f73c"
+  ],
+  "admin_flu:periodos": [
+   200,
+   "e7b72642edd2f91d"
+  ],
+  "admin_flu:parametros": [
+   200,
+   "3f56382f44475a15"
+  ],
+  "admin_flu:extracto_oct": [
+   200,
+   "1ad3575bba602d7f"
+  ],
+  "admin_flu:marcas_pagar": [
+   200,
+   "3cdf01c9d1e0374f"
+  ]
+ },
+ "tiene_pestana": true,
+ "opciones_fika": {
+  "puede": true,
+  "roles": [
+   "sistema",
+   "administrador",
+   "gerente"
+  ],
+  "bancos_ofrecidos": [
+   [
+    "BCP",
+    "PEN",
+    "104101"
+   ],
+   [
+    "BCP",
+    "USD",
+    "104102"
+   ],
+   [
+    "Interbank",
+    "PEN",
+    "104107"
+   ]
+  ],
+  "contrapartidas": []
+ },
+ "opciones_ventas_puede": false,
+ "sin_lista_contrapartidas": [
+  400,
+  "NO_COUNTERPARTS",
+  "El contador aun no definio la lista de cuentas de contrapartida"
+ ],
+ "lista_por_ventas": [
+  403,
+  "MANUAL_JOURNAL_FORBIDDEN",
+  "No tienes permiso para cambiar la lista de contrapartidas"
+ ],
+ "lista_con_104": [
+  400,
+  "BANK_ACCOUNT_AS_COUNTERPART",
+  "La cuenta 104101 es de banco: para eso esta \"Entre mis cuentas de banco\""
+ ],
+ "lista_fika": [
+  200,
+  [
+   "103101"
+  ]
+ ],
+ "lista_flumisa": [
+  200,
+  [
+   "103101"
+  ]
+ ],
+ "fika_salidas": {
+  "01117932": [
+   201,
+   "000006",
+   "bancos",
+   [
+    [
+     "103101",
+     3000.0,
+     0.0,
+     798.08,
+     0,
+     "01117932"
+    ],
+    [
+     "104101",
+     0.0,
+     3000.0,
+     0,
+     798.08,
+     "01117932"
+    ]
+   ]
+  ],
+  "01104038": [
+   201,
+   "000007",
+   "bancos",
+   [
+    [
+     "103101",
+     975.0,
+     0.0,
+     259.38,
+     0,
+     "01104038"
+    ],
+    [
+     "104101",
+     0.0,
+     975.0,
+     0,
+     259.38,
+     "01104038"
+    ]
+   ]
+  ],
+  "01108170": [
+   201,
+   "000008",
+   "bancos",
+   [
+    [
+     "103101",
+     100.0,
+     0.0,
+     26.6,
+     0,
+     "01108170"
+    ],
+    [
+     "104101",
+     0.0,
+     100.0,
+     0,
+     26.6,
+     "01108170"
+    ]
+   ]
+  ]
+ },
+ "fika_banco_bcp": [
+  [
+   "2026-10-14",
+   "withdrawal",
+   "3000.00",
+   "01117932"
+  ],
+  [
+   "2026-10-14",
+   "withdrawal",
+   "975.00",
+   "01104038"
+  ],
+  [
+   "2026-10-14",
+   "withdrawal",
+   "100.00",
+   "01108170"
+  ]
+ ],
+ "flumisa_entradas": {
+  "02117932": [
+   201,
+   "000006",
+   [
+    [
+     "104101",
+     3000.0,
+     0.0,
+     798.08,
+     0,
+     "02117932"
+    ],
+    [
+     "103101",
+     0.0,
+     3000.0,
+     0,
+     798.08,
+     "02117932"
+    ]
+   ]
+  ],
+  "02104038": [
+   201,
+   "000007",
+   [
+    [
+     "104101",
+     975.0,
+     0.0,
+     259.38,
+     0,
+     "02104038"
+    ],
+    [
+     "103101",
+     0.0,
+     975.0,
+     0,
+     259.38,
+     "02104038"
+    ]
+   ]
+  ],
+  "02108170": [
+   201,
+   "000008",
+   [
+    [
+     "104101",
+     100.0,
+     0.0,
+     26.6,
+     0,
+     "02108170"
+    ],
+    [
+     "103101",
+     0.0,
+     100.0,
+     0,
+     26.6,
+     "02108170"
+    ]
+   ]
+  ]
+ },
+ "flumisa_banco_bcp": [
+  [
+   "2026-10-14",
+   "deposit",
+   "3000.00",
+   "02117932"
+  ],
+  [
+   "2026-10-14",
+   "deposit",
+   "975.00",
+   "02104038"
+  ],
+  [
+   "2026-10-14",
+   "deposit",
+   "100.00",
+   "02108170"
+  ]
+ ],
+ "propia": [
+  201,
+  "000009",
+  "01200001 / 33300001",
+  [
+   [
+    "104107",
+    500.0,
+    0.0,
+    133.01,
+    0,
+    "33300001"
+   ],
+   [
+    "104101",
+    0.0,
+    500.0,
+    0,
+    133.01,
+    "01200001"
+   ]
+  ]
+ ],
+ "propia_bancos": {
+  "bcp": [
+   [
+    "2026-10-14",
+    "withdrawal",
+    "500.00",
+    "01200001"
+   ]
+  ],
+  "interbank": [
+   [
+    "2026-10-14",
+    "deposit",
+    "500.00",
+    "33300001"
+   ]
+  ]
+ },
+ "doble_envio": [
+  200,
+  true,
+  true,
+  2
+ ],
+ "op_repetido": [
+  400,
+  "DUPLICATE_OPERATION",
+  "El N. de operacion 01117932 ya esta registrado en BCP PEN el 14/10/2026 (PEN 3000.00). No se registra dos veces."
+ ],
+ "op_repetido_destino": [
+  400,
+  "DUPLICATE_OPERATION",
+  "El N. de operacion 33300001 ya esta registrado en Interbank PEN el 14/10/2026 (PEN 500.00). No se registra dos veces."
+ ],
+ "julio_cerrado": [
+  400,
+  "PERIOD_CLOSED",
+  "El periodo 07/2026 esta cerrado: no se puede registrar el asiento. Periodos abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026. Reabrir un periodo lo decide el contador."
+ ],
+ "agosto_cerrado": [
+  400,
+  "PERIOD_CLOSED",
+  "El periodo 08/2026 esta cerrado: no se puede registrar el asiento. Periodos abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026. Reabrir un periodo lo decide el contador."
+ ],
+ "periodo_inexistente": [
+  400,
+  "PERIOD_NOT_FOUND",
+  "No existe el periodo 03/2025. Periodos abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026. Crear o reabrir periodos lo decide el contador."
+ ],
+ "dolares_sin_tc": [
+  400,
+  "RATE_NOT_FOUND",
+  "No hay tipo de cambio registrado para el 13/10/2026. Registralo en Tipo de cambio antes de crear el asiento."
+ ],
+ "dolares": [
+  201,
+  "USD",
+  3.761,
+  [
+   [
+    "104102",
+    376.1,
+    0.0,
+    100.0,
+    0,
+    "USD-15"
+   ],
+   [
+    "103101",
+    0.0,
+    376.1,
+    0,
+    100.0,
+    "USD-15"
+   ]
+  ],
+  [
+   [
+    "2026-10-15",
+    "deposit",
+    "100.00",
+    "USD-15"
+   ]
+  ]
+ ],
+ "monedas_distintas": [
+  400,
+  "CURRENCY_MISMATCH",
+  "Transferencia entre monedas distintas (PEN a USD): todavia no se registra aqui porque necesita el tipo de cambio del banco y la diferencia de cambio. Consultalo con el contador."
+ ],
+ "misma_cuenta": [
+  400,
+  "SAME_BANK_ACCOUNT",
+  "La cuenta de origen y la de destino deben ser distintas"
+ ],
+ "un_solo_numero": [
+  400,
+  "OPERATION_REQUIRED",
+  "Indica los dos N. de operacion: el de la salida (cuenta origen) y el de la entrada (cuenta destino)"
+ ],
+ "cuenta_comisiones": [
+  400,
+  "BANK_ACCOUNT_REQUIRED",
+  "Elige la cuenta de banco"
+ ],
+ "caja": [
+  400,
+  "BANK_ACCOUNT_REQUIRED",
+  "Elige la cuenta de banco de origen y la de destino"
+ ],
+ "contrapartida_fuera_de_lista": [
+  400,
+  "COUNTERPART_NOT_ALLOWED",
+  "Elige la cuenta de contrapartida de la lista"
+ ],
+ "sin_glosa": [
+  400,
+  "GLOSS_REQUIRED",
+  "La glosa es obligatoria"
+ ],
+ "sin_op": [
+  400,
+  "OPERATION_REQUIRED",
+  "El N. de operacion es obligatorio (sirve para la Conciliacion)"
+ ],
+ "monto_cero": [
+  400,
+  "INVALID_AMOUNT",
+  "Indica el monto (mayor a cero)"
+ ],
+ "sin_permiso": [
+  403,
+  "MANUAL_JOURNAL_FORBIDDEN",
+  "No tienes permiso para registrar movimientos de banco"
+ ],
+ "anular_sin_permiso": [
+  403,
+  "MANUAL_JOURNAL_FORBIDDEN",
+  "No tienes permiso para anular asientos manuales"
+ ],
+ "anular": [
+  200,
+  "voided",
+  "Asiento 000009 anulado con la reversa 000011"
+ ],
+ "anular_saldos": [
+  [
+   "104101",
+   "0.00"
+  ],
+  [
+   "104107",
+   "0.00"
+  ]
+ ],
+ "anular_bancos": [
+  [
+   "bk-fika-ibk-mn",
+   "deposit",
+   "500.00",
+   "33300001-ANUL"
+  ],
+  [
+   "bk-fika-bcp-mn",
+   "withdrawal",
+   "500.00",
+   "01200001-ANUL"
+  ],
+  [
+   "bk-fika-ibk-mn",
+   "withdrawal",
+   "500.00",
+   "33300001-ANUL"
+  ],
+  [
+   "bk-fika-bcp-mn",
+   "deposit",
+   "500.00",
+   "01200001-ANUL"
+  ]
+ ],
+ "re_registrar_tras_anular": [
+  201,
+  "000012"
+ ],
+ "diario_sigue_igual": [
+  201,
+  "diario",
+  "DIARIO-1",
+  [
+   [
+    "103103",
+    20.0,
+    0.0,
+    5.32,
+    0,
+    "DIARIO-1"
+   ],
+   [
+    "104101",
+    0.0,
+    20.0,
+    0,
+    5.32,
+    "DIARIO-1"
+   ]
+  ]
+ ],
+ "lista_origenes": [
+  [
+   "bancos",
+   "active"
+  ],
+  [
+   "bancos",
+   "voided"
+  ],
+  [
+   "diario",
+   "active"
+  ]
+ ],
+ "puente_103101_fika": [
+  [
+   "3698.90"
+  ]
+ ],
+ "numeros_octubre_fika": [
+  [
+   "000001"
+  ],
+  [
+   "000002"
+  ],
+  [
+   "000003"
+  ],
+  [
+   "000004"
+  ],
+  [
+   "000005"
+  ],
+  [
+   "000006"
+  ],
+  [
+   "000007"
+  ],
+  [
+   "000008"
+  ],
+  [
+   "000009"
+  ],
+  [
+   "000010"
+  ],
+  [
+   "000011"
+  ],
+  [
+   "000012"
+  ],
+  [
+   "000013"
+  ]
+ ],
+ "periodos": [
+  [
+   24,
+   2
+  ]
+ ],
+ "despues": {
+  "admin_fika:diario": [
+   200,
+   "daf82fa5fc4567bc"
+  ],
+  "admin_fika:libro_paginado": [
+   200,
+   "e6e31940776677bc"
+  ],
+  "admin_fika:resumen_dashboard": [
+   200,
+   "67a755407505551e"
+  ],
+  "admin_fika:movimientos_banco": [
+   200,
+   "091781fb87fe5a9a"
+  ],
+  "admin_fika:cuentas_banco": [
+   200,
+   "faf1054afbeb3ba3"
+  ],
+  "admin_fika:pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "admin_fika:dashboard": [
+   200,
+   "37b45dde080727e6"
+  ],
+  "admin_fika:periodos": [
+   200,
+   "d6e258e846d17cf9"
+  ],
+  "admin_fika:parametros": [
+   200,
+   "3e4410625213cef7"
+  ],
+  "admin_fika:extracto_oct": [
+   200,
+   "d70965005d2751ad"
+  ],
+  "admin_fika:marcas_pagar": [
+   200,
+   "3cdf01c9d1e0374f"
+  ],
+  "admin_flu:diario": [
+   200,
+   "22d023b175d3d774"
+  ],
+  "admin_flu:libro_paginado": [
+   200,
+   "dfe8a0a377b872fe"
+  ],
+  "admin_flu:resumen_dashboard": [
+   200,
+   "ab167456bb0f5977"
+  ],
+  "admin_flu:movimientos_banco": [
+   200,
+   "d9c6a90b7dc29030"
+  ],
+  "admin_flu:cuentas_banco": [
+   200,
+   "62a9d3ff4b640cae"
+  ],
+  "admin_flu:pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "admin_flu:dashboard": [
+   200,
+   "0d35fc20f4c71d0e"
+  ],
+  "admin_flu:periodos": [
+   200,
+   "e7b72642edd2f91d"
+  ],
+  "admin_flu:parametros": [
+   200,
+   "3e4410625213cef7"
+  ],
+  "admin_flu:extracto_oct": [
+   200,
+   "1ad3575bba602d7f"
+  ],
+  "admin_flu:marcas_pagar": [
+   200,
+   "3cdf01c9d1e0374f"
+  ]
+ }
+}
