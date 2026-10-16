@@ -1,0 +1,386 @@
+{
+ "errores_js": [],
+ "dialogos": [
+  "admin FIKA [confirm, cancelado] Diferencias con el extracto: - el N.° 01104038 no coincide con el extracto en monto Si registras así, la fila puede no quedar Registrada en la Conciliación. ¿Registrar de todos modos? (decisión del contador)",
+  "admin FIKA [confirm] Comprueba que no sea el pago de una factura (Cobranza). Si un cliente pagó una factura, regístralo en Cobranza. ¿Registrar esta entrada de dinero de todos modos?",
+  "admin FIKA [prompt] Motivo de la anulación del asiento 000009 (obligatorio). Se registrará un asiento de reversa con fecha de hoy y la fila del extracto volverá a Error:",
+  "admin FLUMISA [confirm] Comprueba que no sea el pago de una factura (Cobranza). Si un cliente pagó una factura, regístralo en Cobranza. ¿Registrar esta entrada de dinero de todos modos?",
+  "admin FLUMISA [confirm] Comprueba que no sea el pago de una factura (Cobranza). Si un cliente pagó una factura, regístralo en Cobranza. ¿Registrar esta entrada de dinero de todos modos?",
+  "admin FLUMISA [confirm] Comprueba que no sea el pago de una factura (Cobranza). Si un cliente pagó una factura, regístralo en Cobranza. ¿Registrar esta entrada de dinero de todos modos?"
+ ],
+ "existente": {
+  "libro": [
+   "M10-0005 | 000001 | 2026-10-14 | Compra F002-00001 - proveedor DISTRIBUIDORA SAC",
+   "M10-0004 | 000002 | 2026-10-11 | Cobro RC-2 de factura",
+   "M10-0003 | 000003 | 2026-10-08 | Pago a proveedor OP-3",
+   "M10-0002 | 000004 | 2026-10-05 | Ajuste de inventario AJ-4",
+   "M10-0001 | 000005 | 2026-10-02 | Planilla del mes",
+   "M09-0010 | 000006 | 2026-09-29 | Conciliacion bancaria - comision",
+   "M09-0009 | 000007 | 2026-09-26 | Asiento de reclasificacion 7",
+   "M09-0008 | 000008 | 2026-09-23 | Venta F001-000008 - CLIENTE PRUEBA SAC",
+   "M09-0007 | 000009 | 2026-09-20 | Compra F002-00009 - proveedor DISTRIBUIDORA SAC",
+   "M09-0006 | 000010 | 2026-09-17 | Cobro RC-10 de factura",
+   "M09-0005 | 000011 | 2026-09-14 | Pago a proveedor OP-11",
+   "M09-0004 | 000012 | 2026-09-11 | Ajuste de inventario AJ-12",
+   "M09-0003 | 000013 | 2026-09-08 | Planilla del mes",
+   "M09-0002 | 000014 | 2026-09-05 | Conciliacion bancaria - comision",
+   "M09-0001 | 000015 | 2026-09-02 | Asiento de reclasificacion 15",
+   "M08-0010 | 000016 | 2026-08-30 | Venta F001-000016 - CLIENTE PRUEBA SAC",
+   "M08-0009 | 000017 | 2026-08-27 | Compra F002-00017 - proveedor DISTRIBUIDORA SAC",
+   "M08-0008 | 000018 | 2026-08-24 | Cobro RC-18 de factura",
+   "M08-0007 | 000019 | 2026-08-21 | Pago a proveedor OP-19",
+   "M08-0006 | 000020 | 2026-08-18 | Ajuste de inventario AJ-20",
+   "M08-0005 | 000021 | 2026-08-15 | Planilla del mes",
+   "M08-0004 | 000022 | 2026-08-12 | Conciliacion bancaria - comision",
+   "M08-0003 | 000023 | 2026-08-09 | Asiento de reclasificacion 23",
+   "M08-0002 | 000024 | 2026-08-06 | Venta F001-000024 - CLIENTE PRUEBA SAC",
+   "M08-0001 | 000025 | 2026-08-03 | Compra F002-00025 - proveedor DISTRIBUIDORA SAC",
+   "M07-0011 | 000026 | 2026-07-31 | Cobro RC-26 de factura",
+   "M07-0010 | 000027 | 2026-07-28 | Pago a proveedor OP-27",
+   "M07-0009 | 000028 | 2026-07-25 | Ajuste de inventario AJ-28",
+   "M07-0008 | 000029 | 2026-07-22 | Planilla del mes",
+   "M07-0007 | 000030 | 2026-07-19 | Conciliacion bancaria - comision",
+   "M07-0006 | 000031 | 2026-07-16 | Asiento de reclasificacion 31",
+   "M07-0005 | 000032 | 2026-07-13 | Venta F001-000032 - CLIENTE PRUEBA SAC",
+   "M07-0004 | 000033 | 2026-07-10 | Compra F002-00033 - proveedor DISTRIBUIDORA SAC",
+   "M07-0003 | 000034 | 2026-07-07 | Cobro RC-34 de factura",
+   "M07-0002 | 000035 | 2026-07-04 | Pago a proveedor OP-35",
+   "M06-0001 | 000036 | 2026-07-01 | Ajuste de inventario AJ-36",
+   "M06-0010 | 000037 | 2026-06-28 | Planilla del mes",
+   "M06-0009 | 000038 | 2026-06-25 | Conciliacion bancaria - comision",
+   "M06-0008 | 000039 | 2026-06-22 | Asiento de reclasificacion 39",
+   "M06-0007 | 000040 | 2026-06-19 | Venta F001-000040 - CLIENTE PRUEBA SAC",
+   "M06-0006 | 000041 | 2026-06-16 | Compra F002-00041 - proveedor DISTRIBUIDORA SAC",
+   "M06-0005 | 000042 | 2026-06-13 | Cobro RC-42 de factura",
+   "M06-0004 | 000043 | 2026-06-10 | Pago a proveedor OP-43",
+   "M06-0003 | 000044 | 2026-06-07 | Ajuste de inventario AJ-44",
+   "M06-0002 | 000045 | 2026-06-04 | Planilla del mes",
+   "M05-0001 | 000046 | 2026-06-01 | Conciliacion bancaria - comision",
+   "M05-0010 | 000047 | 2026-05-29 | Asiento de reclasificacion 47",
+   "M05-0009 | 000048 | 2026-05-26 | Venta F001-000048 - CLIENTE PRUEBA SAC",
+   "M05-0008 | 000049 | 2026-05-23 | Compra F002-00049 - proveedor DISTRIBUIDORA SAC",
+   "M05-0007 | 000050 | 2026-05-20 | Cobro RC-50 de factura",
+   "M05-0006 | 000051 | 2026-05-17 | Pago a proveedor OP-51",
+   "M05-0005 | 000052 | 2026-05-14 | Ajuste de inventario AJ-52",
+   "M05-0004 | 000053 | 2026-05-11 | Planilla del mes",
+   "M05-0003 | 000054 | 2026-05-08 | Conciliacion bancaria - comision",
+   "M05-0002 | 000055 | 2026-05-05 | Asiento de reclasificacion 55",
+   "M05-0001 | 000056 | 2026-05-02 | Venta F001-000056 - CLIENTE PRUEBA SAC",
+   "M04-0004 | 000057 | 2026-04-29 | Compra F002-00057 - proveedor DISTRIBUIDORA SAC",
+   "M04-0003 | 000058 | 2026-04-26 | Cobro RC-58 de factura",
+   "M04-0002 | 000059 | 2026-04-23 | Pago a proveedor OP-59",
+   "M04-0001 | 000060 | 2026-04-20 | Ajuste de inventario AJ-60"
+  ],
+  "conciliacion_bcp": [
+   "01117932 S/ -3,000.00 Error",
+   "01104038 S/ -975.00 Error",
+   "01108170 S/ -100.00 Error",
+   "01200001 S/ -500.00 Error"
+  ],
+  "conciliacion_ibk": [
+   "33300001 S/ 500.00 Error"
+  ],
+  "cobranza": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Dashboard de Cobranza y Pagos | Vista general de cuentas por cobrar y por pagar | Cobranzas | Pagos | Todo el historico | Ultimos 30 dias | Ultimos 90 dias | Ultimo ano | TOTAL PENDIENTE | S/ 3,301.00 | TOTAL VENCIDO | S/ 3,301.00 | 7 facturas | COBRADO (HISTORICO) | S/ 0.00 | Top clientes con mayor deuda | CLIENTE PRUEBA SAC | S/ 3,301.00 | Antiguedad de la deuda (dias vencidos) | 0-15 dias | S/ 3,301.00 | 16-30 dias | S/ 0.00 | 31-60 dias | S/ 0.00 | +60 dias | S/ 0.00 | Resumen por cliente — clic para ver sus facturas | CLIENTE PRUEBA SAC — te falta cobrar 7 facturas (S/ 3,301.00)",
+  "pagos": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Dashboard de Cobranza y Pagos | Vista general de cuentas por cobrar y por pagar | Cobranzas | Pagos | Todo el historico | Ultimos 30 dias | Ultimos 90 dias | Ultimo ano | TOTAL PENDIENTE | S/ 0.00 | TOTAL VENCIDO | S/ 0.00 | 0 facturas | PAGADO (HISTORICO) | S/ 0.00 | Top proveedores con mayor deuda | Sin datos. | Antiguedad de la deuda (dias vencidos) | 0-15 dias | S/ 0.00 | 16-30 dias | S/ 0.00 | 31-60 dias | S/ 0.00 | +60 dias | S/ 0.00 | Resumen por proveedor — clic para ver sus facturas | Sin pendientes.",
+  "transacciones": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Cobranzas y Pagos | Registra cobros/pagos parciales directo desde cada factura (clic para mostrar/ocultar) | Cobranzas | Pagos |  Anticipos |  Detracciones |  Retenciones RxH |  Excel |  PDF | DESDE | HASTA |  Exportar Excel (rango de fechas) | EMISION | VENCIM. | PROVEEDOR | RUC | DOCUMENTO | VENDEDOR | Todos ▾ | \tORIGINAL\tPAGADO\tSALDO\t | ESTADO | Todos ▾ | \tACCION | No hay pagos pendientes. | + Historial de Retenciones (3%) | + Historial de Comisiones | + Otros movimientos (transferencias entre cuentas, gastos/ingresos directos)",
+  "estado_cuenta": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Estado de Cuenta Bancaria | CUENTA | BCP - FIKA SAC | BCP - FIKA SAC | Interbank - FIKA SAC | MES | Filtrar | SALDO INICIAL | S/ 0.00 | TOTAL INGRESOS | + S/ 0.00 | TOTAL EGRESOS | - S/ 0.00 | SALDO FINAL | S/ 0.00 | FECHA\tDESCRIPCIÓN\tCÓD. OPERACIÓN\tINGRESO\tEGRESO\tSALDO\tCONC. | Saldo inicial del mes\tS/ 0.00\t | No hay movimientos en este periodo. | TOTALES DEL MES\tS/ 0.00\tS/ 0.00\tS/ 0.00\t",
+  "cuentas": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Nueva cuenta bancaria | BANCO / ENTIDAD | BCP | BBVA | Interbank | Scotiabank | BanBif | Banco de la Nacion | Mibanco | Banco Pichincha | Citibank | HSBC | Efectivo / Caja | Otro | TIPO DE CUENTA | Cuenta Corriente | Cuenta de Ahorros | Tarjeta de Crédito Empresarial | Línea de Crédito | CTS | Caja Chica / Efectivo | MONEDA | PEN - Soles | USD - Dólares | NOMBRE / ALIAS DE LA CUENTA | NÚMERO DE CUENTA | CCI (CUENTA INTERBANCARIA) | SALDO INICIAL | FECHA DE SALDO INICIAL |  Configuración contable (opcional) | Saldo mínimo de alerta: | El ERP alertará si el saldo baja de este monto | Guardar cuenta | Limpiar | BANCO\tTIPO\tNRO. CUENTA\tMONEDA\tSALDO INICIAL | BCP\tFIKA SAC\tCorriente\t191-1111111-0-11\t-\tPEN\tS/ 0.00\tActiva | BCP\tFIKA SAC\tCorriente\t191-1111111-1-22\t-\tUSD\tS/ 0.00\tActiva | Interbank\tFIKA SAC\tCorriente\t200-3000111222\t-\tPEN\tS/ 0.00\tActiva",
+  "dashboard": "Dashboard Ejecutivo | 2026-10 · FIKA PRUEBA SAC | SALDO BANCARIO | S/ 0.00 | Total en cuentas | VENTAS DEL MES | S/ 2,711.00 | 6 comprobantes | COMPRAS DEL MES | S/ 0.00 | 0 comprobantes | POR COBRAR | S/ 2,947.00 | 6 docs vencidos | POR PAGAR | S/ 0.00 | 0 docs vencidos | FLUJO DEL MES | S/ 0.00 | Ingresos - Egresos |  Clientes con deuda vencida | 6 facturas · S/ 2,947.00 total | CLIENTE PRUEBA SAC | S/ 2,947.00 |  Proveedores por pagar | 0 facturas vencidas · S/ 0.00 total |  Sin deudas pendientes |  Saldos por cuenta | BCP | FIKA SAC | S/ 0.00 | BCP | FIKA SAC | S/ 0.00 | Interbank | FIKA SAC | S/ 0.00 | Cuenta Comisiones | FIKA SAC | S/ 0.00 | Cuenta Retenciones 3% | FIKA SAC | S/ 0.00 | Efectivo / Caja | FIKA SAC | S/ 0.00 |  Últimos movimientos bancarios | FECHA\tDESCRIPCIÓN\tIMPORTE | Sin movimientos | IGV VENTAS DEL MES | S/ 413.54 | IGV COMPRAS DEL MES | S/ 0.00 | IGV NETO A PAGAR | S/ 413.54 |  Antigüedad de Cuentas por Cobrar (CxC) | Facturas de venta pendientes de cobro agrupadas por vencimiento | CLIENTE\tPOR VENCER\t0-30 DÍAS\t31-60 DÍAS\t61-90 DÍAS\t+90 DÍAS\tTOTAL | CLIENTE PRUEBA SAC\t-\tS/ 2,947.00\t-\t-\t-\tS/ 2,947.00 | TOTAL\t-\tS/ 2,947.00\t-\t-\t-\tS/ 2,947.00 |  Antigüedad de Cuentas por Pagar (CxP) | Facturas de compra pendientes de pago agrupadas por vencimiento | PROVEEDOR\tPOR VENCER\t0-30 DÍAS\t31-60 DÍAS\t61-90 DÍAS\t+90 DÍAS\tTOTAL |  Sin cuentas por pagar pendientes"
+ },
+ "saldo_bancario_antes": "S/ 0.00",
+ "diario_soles_16_10": {
+  "aviso": "Solo para movimientos sin flujo automático. Ver cuándo usar cada uno",
+  "alto_aviso_px": 30,
+  "desplegable": "plegado",
+  "panel_103": false,
+  "tipo_cambio": "Fecha: 16/10/2026 · no hay cambio de moneda.",
+  "ayuda_op": true
+ },
+ "diario_desplegado": "abierto",
+ "diario_plegado_otra_vez": "plegado",
+ "diario_dolares_16_10": "Tipo de cambio venta: 3.7610 (del 15/10/2026, último publicado)",
+ "bancos_texto_inicial": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Movimiento entre cuentas |  Solo para movimientos sin flujo automático. Ver cuándo usar cada uno | 1 | ¿Qué quieres registrar? | 2 | Elige el movimiento del extracto | 3 | Completa lo que falta | 4 | Revisa y registra |  Paso 1. ¿Qué quieres registrar? |  Pasar plata entre mis cuentas de banco | Ejemplo: del BCP al Interbank. |  Entró o salió plata del banco | Ejemplos: un depósito equivocado, una devolución, una transferencia a otra empresa. |  Paso 2. Elige el movimiento del extracto | Primero elige qué quieres registrar. |  Paso 3. Completa lo que falta | Se completa después de elegir el movimiento. |  Paso 4. Revisa y registra | Aquí verás un resumen antes de registrar. |  Configuración (solo contador): cuentas para “Entró o salió plata” · 103101 | Aún no hay movimientos registrados des",
+ "paso_inicial": 1,
+ "paso_tras_elegir": 2,
+ "filas_error_bcp": [
+  "14/10/2026 12:50:35 -S/ 3,000.00 01117932 TRAN.CTAS.TERC.BM 191 2099725 0",
+  "14/10/2026 12:20:12 -S/ 975.00 01104038 TRAN.CTAS.TERC.BM 191 2099725 0",
+  "14/10/2026 12:29:43 -S/ 100.00 01108170 TRAN.CTAS.TERC.BM 191 2099725 0",
+  "14/10/2026 15:02:10 -S/ 500.00 01200001 TRAN.CTAS.PROPIAS A INTERBANK"
+ ],
+ "paridad": [
+  "01117932:error",
+  "01104038:error",
+  "01108170:error",
+  "01200001:error"
+ ],
+ "mano_monto_equivocado": " El N.° existe en el extracto (14/10/2026 12:20:12, -S/ 975.00) pero no coincide el monto (S/ 975.00 en el extracto): la Conciliación la marcaría como Registrada porque cruza solo por N.° y fecha, pero el saldo no cuadraría. Corrígelo o pide al contador que confirme.",
+ "mano_monto_paso4": {
+  "frase": "Sale S/ 970.00 del BCP MN el 14/10/2026 (op. 01104038) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "OK  Periodo contable abierto"
+  ],
+  "tc": "Sale S/ 970.00 del BCP MN el 14/10/2026 (op. 01104038) y se registra contra 103101 EN TRANSITO.\n Fecha: 14/10/2026 · no hay cambio de moneda.\n Ver el asiento contable (para el contador)\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto\n Diferencias con el extracto: el N.° 01104038 no coincide con el extracto en monto. Al registrar se pedirá confirmación.",
+  "boton": true,
+  "tooltip": "Todo listo para registrar",
+  "mism": " Diferencias con el extracto: el N.° 01104038 no coincide con el extracto en monto. Al registrar se pedirá confirmación."
+ },
+ "mano_monto_no_registrado": true,
+ "mano_fecha_equivocada": " El N.° existe en el extracto (14/10/2026 12:20:12, -S/ 975.00) pero la fecha del extracto es 14/10/2026 y escribiste 13/10/2026: la fila no quedará Registrada (el cruce exige el mismo N.° y la misma fecha). Corrígelo o pide al contador que confirme.",
+ "mano_sentido_equivocado": " El N.° existe en el extracto (14/10/2026 12:20:12, -S/ 975.00) pero no coincide el sentido (salida en el extracto): la Conciliación la marcaría como Registrada porque cruza solo por N.° y fecha, pero el saldo no cuadraría. Corrígelo o pide al contador que confirme.",
+ "mano_inexistente": " El N.° 99999999 no está en el extracto. Si lo registras así, la fila no quedará Registrada en la Conciliación: revisa el número.",
+ "mano_correcto": " Encontrado en el extracto: 14/10/2026 12:20:12, -S/ 975.00.",
+ "paso_tras_fila_01117932": 4,
+ "fila_elegida_solo_lectura": {
+  "inputs_editables": 0,
+  "tarjeta": " 14/10/2026 12:50:35 Salida -S/ 3,000.00 N.° op. 01117932 TRAN.CTAS.TERC.BM 191 2099725 0 Elegir otra"
+ },
+ "paso4_01117932": {
+  "frase": "Sale S/ 3,000.00 del BCP MN el 14/10/2026 (op. 01117932) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "OK  Periodo contable abierto"
+  ],
+  "tc": "Sale S/ 3,000.00 del BCP MN el 14/10/2026 (op. 01117932) y se registra contra 103101 EN TRANSITO.\n Fecha: 14/10/2026 · no hay cambio de moneda.\n Ver el asiento contable (para el contador)\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto",
+  "boton": true,
+  "tooltip": "Todo listo para registrar"
+ },
+ "asiento_desplegado": "CUENTA N.° OP. DEBE HABER 103101 EN TRANSITO 01117932 S/ 3000.00 104101 BANCO DE CREDITO MN BCP MN · soles · …0-11 01117932 S/ 3000.00",
+ "resultado_01117932": " Registrado. Asiento N.° 000006. |  la fila del extracto quedó Registrada (14/10/2026 12:50:35, N.° 01117932). | Registrar otro movimiento",
+ "doble_clic_un_solo_asiento": true,
+ "paso_tras_fila_01104038": 3,
+ "paso4_01104038": {
+  "frase": "Sale S/ 975.00 del BCP MN el 14/10/2026 (op. 01104038) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "OK  Periodo contable abierto"
+  ],
+  "tc": "Sale S/ 975.00 del BCP MN el 14/10/2026 (op. 01104038) y se registra contra 103101 EN TRANSITO.\n Fecha: 14/10/2026 · no hay cambio de moneda.\n Ver el asiento contable (para el contador)\nCUENTA\tN.° OP.\tDEBE\tHABER\n103101 EN TRANSITO\t01104038\tS/ 975.00\t\n104101 BANCO DE CREDITO MN\nBCP MN · soles · …0-11\n\t01104038\t\tS/ 975.00\nUna salida del banco va al Haber de su cuenta 104 y una entrada al Debe.\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto",
+  "boton": true,
+  "tooltip": "Todo listo para registrar"
+ },
+ "resultado_01104038": " Registrado. Asiento N.° 000007. |  la fila del extracto quedó Registrada (14/10/2026 12:20:12, N.° 01104038). | Registrar otro movimiento",
+ "paso_tras_fila_01108170": 3,
+ "paso4_01108170": {
+  "frase": "Sale S/ 100.00 del BCP MN el 14/10/2026 (op. 01108170) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "OK  Periodo contable abierto"
+  ],
+  "tc": "Sale S/ 100.00 del BCP MN el 14/10/2026 (op. 01108170) y se registra contra 103101 EN TRANSITO.\n Fecha: 14/10/2026 · no hay cambio de moneda.\n Ver el asiento contable (para el contador)\nCUENTA\tN.° OP.\tDEBE\tHABER\n103101 EN TRANSITO\t01108170\tS/ 100.00\t\n104101 BANCO DE CREDITO MN\nBCP MN · soles · …0-11\n\t01108170\t\tS/ 100.00\nUna salida del banco va al Haber de su cuenta 104 y una entrada al Debe.\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto",
+  "boton": true,
+  "tooltip": "Todo listo para registrar"
+ },
+ "resultado_01108170": " Registrado. Asiento N.° 000008. |  la fila del extracto quedó Registrada (14/10/2026 12:29:43, N.° 01108170). | Registrar otro movimiento",
+ "propia_filas_salida": [
+  "14/10/2026 15:02:10 -S/ 500.00 01200001 TRAN.CTAS.PROPIAS A INTERBANK"
+ ],
+ "propia_filas_entrada": [
+  "14/10/2026 15:02:40 +S/ 500.00 33300001 TRANSFERENCIA DESDE BCP FIKA"
+ ],
+ "propia_paso4": {
+  "frase": "Pasa S/ 500.00 del BCP MN (op. 01200001) al Interbank MN (op. 33300001) el 14/10/2026.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de origen y de destino",
+   "OK  Fecha, monto y los dos N.° de operación",
+   "OK  Descripción (glosa)",
+   "OK  Periodo contable abierto"
+  ],
+  "tc": "Pasa S/ 500.00 del BCP MN (op. 01200001) al Interbank MN (op. 33300001) el 14/10/2026.\n Fecha: 14/10/2026 · no hay cambio de moneda.\n Ver el asiento contable (para el contador)\nCUENTA\tN.° OP.\tDEBE\tHABER\n104107 INTERBANK MN\nInterbank MN · soles · …1222\n\t33300001\tS/ 500.00\t\n104101 BANCO DE CREDITO MN\nBCP MN · soles · …0-11\n\t01200001\t\tS/ 500.00\nUna salida del banco va al Haber de su cuenta 104 y una entrada al Debe.\n Qué quieres registrar\n Cuenta de origen y de destino\n Fecha, monto y los dos N.° de operación\n Descripción (glosa)\n Periodo contable abierto",
+  "boton": true,
+  "tooltip": "Todo listo para registrar"
+ },
+ "propia_resultado": " Registrado. Asiento N.° 000009. |  Salida: la fila del extracto quedó Registrada (14/10/2026 15:02:10, N.° 01200001). |  Entrada: la fila del extracto quedó Registrada (14/10/2026 15:02:40, N.° 33300001). | Registrar otro movimiento",
+ "propia_misma_cuenta": " El origen y el destino no pueden ser la misma cuenta.",
+ "propia_monedas_distintas": " Las cuentas son de monedas distintas (PEN a USD): todavía no se registra aquí porque necesita el tipo de cambio del banco y la diferencia de cambio. Consúltalo con el contador.",
+ "op_repetido_aviso": " Encontrado en el extracto: 14/10/2026 12:50:35, -S/ 3,000.00 — esa fila ya está Registrada: revisa que no sea un duplicado.",
+ "op_repetido": "No se registró: El N. de operacion 01117932 ya esta registrado en BCP PEN el 14/10/2026 (PEN 3000.00). No se registra dos veces.",
+ "sin_extracto": " Aún no hay extracto Excel cargado para BCP ME en octubre 2026; puedes registrar a mano, pero no se podrá conciliar hasta cargarlo. Ir a la Conciliación para subirlo",
+ "dolares_sabado": {
+  "frase": "Entra US$ 100.00 al BCP ME el 17/10/2026 (op. USD-17) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "OK  Periodo contable abierto",
+   "OK  Tipo de cambio (cuenta en dólares)"
+  ],
+  "tc": "Entra US$ 100.00 al BCP ME el 17/10/2026 (op. USD-17) y se registra contra 103101 EN TRANSITO.\n Tipo de cambio venta: 3.7610 (del 15/10/2026, último publicado) · US$ 100.00 = S/ 376.10\n Ver el asiento contable (para el contador)\nCUENTA\tN.° OP.\tDEBE\tHABER\n104102 BANCO DE CREDITO ME (3.758)\nBCP ME · dólares · …1-22\n\tUSD-17\tUS$ 100.00\t\n103101 EN TRANSITO\tUSD-17\t\tUS$ 100.00\nUna salida del banco va al Haber de su cuenta 104 y una entrada al Debe.\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto\n Tipo de cambio (cuenta en dólares)",
+  "boton": true,
+  "tooltip": "Todo listo para registrar"
+ },
+ "dolares_sabado_resultado": " Registrado. Asiento N.° 000010. |  aún no hay extracto cargado para BCP ME en octubre 2026; la fila quedará Registrada al cargarlo si el N.° y la fecha coinciden. | Registrar otro movimiento",
+ "dolares_sin_tc": {
+  "frase": "Entra US$ 50.00 al BCP ME el 20/06/2026 (op. USD-0620) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "OK  Periodo contable abierto",
+   "PEND  Tipo de cambio (cuenta en dólares) No hay tipo de cambio publicado hasta el 20/06/2026. Registralo en Tipo de cambio."
+  ],
+  "tc": "Entra US$ 50.00 al BCP ME el 20/06/2026 (op. USD-0620) y se registra contra 103101 EN TRANSITO.\n No hay tipo de cambio publicado hasta el 20/06/2026. Registralo en Tipo de cambio. (la cuenta es en dólares).\n Ver el asiento contable (para el contador)\nCUENTA\tN.° OP.\tDEBE\tHABER\n104102 BANCO DE CREDITO ME (3.758)\nBCP ME · dólares · …1-22\n\tUSD-0620\tUS$ 50.00\t\n103101 EN TRANSITO\tUSD-0620\t\tUS$ 50.00\nUna salida del banco va al Haber de su cuenta 104 y una entrada al Debe.\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto\n Tipo de cambio (cuenta en dólares)\nNo hay tipo de cambio publicado hasta el 20/06/2026. Registralo en Tipo de cambio.",
+  "boton": false,
+  "tooltip": "Falta: tipo de cambio (cuenta en dólares) (No hay tipo de cambio publicado hasta el 20/06/2026. Registralo en Tipo de cambio.)"
+ },
+ "soles_sin_tc": {
+  "frase": "Sale S/ 50.00 del BCP MN el 20/06/2026 (op. PEN-0620) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "OK  Periodo contable abierto"
+  ],
+  "tc": "Sale S/ 50.00 del BCP MN el 20/06/2026 (op. PEN-0620) y se registra contra 103101 EN TRANSITO.\n Fecha: 20/06/2026 · no hay cambio de moneda.\n Ver el asiento contable (para el contador)\nCUENTA\tN.° OP.\tDEBE\tHABER\n103101 EN TRANSITO\tPEN-0620\tS/ 50.00\t\n104101 BANCO DE CREDITO MN\nBCP MN · soles · …0-11\n\tPEN-0620\t\tS/ 50.00\nUna salida del banco va al Haber de su cuenta 104 y una entrada al Debe.\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto",
+  "boton": true,
+  "tooltip": "Todo listo para registrar"
+ },
+ "soles_sin_tc_resultado": " Registrado. Asiento N.° 000047. |  aún no hay extracto cargado para BCP MN en junio 2026; la fila quedará Registrada al cargarlo si el N.° y la fecha coinciden. | Registrar otro movimiento",
+ "periodo_cerrado_2026-07": {
+  "frase": "Sale S/ 10.00 del BCP MN el 15/07/2026 (op. CER-2026-07) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "PEND  Periodo contable abierto el periodo 07/2026 está cerrado (abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026); reabrirlo lo decide el contador"
+  ],
+  "tc": "Sale S/ 10.00 del BCP MN el 15/07/2026 (op. CER-2026-07) y se registra contra 103101 EN TRANSITO.\n Fecha: 15/07/2026 · no hay cambio de moneda.\n Ver el asiento contable (para el contador)\nCUENTA\tN.° OP.\tDEBE\tHABER\n103101 EN TRANSITO\tCER-2026-07\tS/ 10.00\t\n104101 BANCO DE CREDITO MN\nBCP MN · soles · …0-11\n\tCER-2026-07\t\tS/ 10.00\nUna salida del banco va al Haber de su cuenta 104 y una entrada al Debe.\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto\nel periodo 07/2026 está cerrado (abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026); reabrirlo lo decide el contador",
+  "boton": false,
+  "tooltip": "Falta: periodo contable abierto (el periodo 07/2026 está cerrado (abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026); reabrirlo lo decide el contador)"
+ },
+ "periodo_cerrado_2026-08": {
+  "frase": "Sale S/ 10.00 del BCP MN el 10/08/2026 (op. CER-2026-08) y se registra contra 103101 EN TRANSITO.",
+  "check": [
+   "OK  Qué quieres registrar",
+   "OK  Cuenta de banco",
+   "OK  Fecha, monto, sentido y N.° de operación",
+   "OK  Contra qué cuenta contable",
+   "OK  Descripción (glosa)",
+   "PEND  Periodo contable abierto el periodo 08/2026 está cerrado (abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026); reabrirlo lo decide el contador"
+  ],
+  "tc": "Sale S/ 10.00 del BCP MN el 10/08/2026 (op. CER-2026-08) y se registra contra 103101 EN TRANSITO.\n Fecha: 10/08/2026 · no hay cambio de moneda.\n Ver el asiento contable (para el contador)\nCUENTA\tN.° OP.\tDEBE\tHABER\n103101 EN TRANSITO\tCER-2026-08\tS/ 10.00\t\n104101 BANCO DE CREDITO MN\nBCP MN · soles · …0-11\n\tCER-2026-08\t\tS/ 10.00\nUna salida del banco va al Haber de su cuenta 104 y una entrada al Debe.\n Qué quieres registrar\n Cuenta de banco\n Fecha, monto, sentido y N.° de operación\n Contra qué cuenta contable\n Descripción (glosa)\n Periodo contable abierto\nel periodo 08/2026 está cerrado (abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026); reabrirlo lo decide el contador",
+  "boton": false,
+  "tooltip": "Falta: periodo contable abierto (el periodo 08/2026 está cerrado (abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026); reabrirlo lo decide el contador)"
+ },
+ "conciliacion_bcp_despues": [
+  "01117932 S/ -3,000.00 Registrado",
+  "01104038 S/ -975.00 Registrado",
+  "01108170 S/ -100.00 Registrado",
+  "01200001 S/ -500.00 Registrado"
+ ],
+ "conciliacion_ibk_despues": [
+  "33300001 S/ 500.00 Registrado"
+ ],
+ "apariciones": {
+  "33300001": {
+   "transacciones": 1,
+   "estado_cuenta": 0
+  },
+  "01117932": {
+   "transacciones": 1,
+   "estado_cuenta": 1
+  },
+  "01104038": {
+   "transacciones": 1,
+   "estado_cuenta": 1
+  },
+  "01108170": {
+   "transacciones": 1,
+   "estado_cuenta": 1
+  },
+  "01200001": {
+   "transacciones": 1,
+   "estado_cuenta": 1
+  }
+ },
+ "saldo_bancario_despues": "S/ -4,025.00",
+ "saldo_tx_sistema": {
+  "bk-fika-bcp-mn": -4625,
+  "bk-fika-bcp-me": 100,
+  "bk-fika-ibk-mn": 500
+ },
+ "lista_movimientos": [
+  "20/06/2026 Asiento 000047 S/ 50.00 BCP MN · soles · …0-11 Soles sin ningun TC publicado (prueba) · op. PEN-0620 BCP MN: sin extracto cargado Anular",
+  "17/10/2026 Asiento 000010 US$ 100.00 BCP ME · dólares · …1-22 Deposito en dolares de sabado (prueba) · op. USD-17 BCP ME: sin extracto cargado Anular",
+  "14/10/2026 Asiento 000009 S/ 500.00 Interbank MN · soles · …1222 → BCP MN · soles · …0-11 Traspaso del BCP al Interbank · op. 01200001 / 33300001 Interbank MN: Registrada BCP MN: Registrada Anular",
+  "14/10/2026 Asiento 000008 S/ 100.00 BCP MN · soles · …0-11 Transferencia a FLUMISA S/ 100 (pendiente de definir) · op. 01108170 BCP MN: Registrada Anular",
+  "14/10/2026 Asiento 000007 S/ 975.00 BCP MN · soles · …0-11 Transferencia a FLUMISA S/ 975 (pendiente de definir) · op. 01104038 BCP MN: Registrada Anular",
+  "14/10/2026 Asiento 000006 S/ 3,000.00 BCP MN · soles · …0-11 Devolucion a FLUMISA de dinero depositado por error · op. 01117932 BCP MN: Registrada Anular"
+ ],
+ "anulado": "Asiento 000009 anulado con la reversa 000011",
+ "conciliacion_bcp_tras_anular": [
+  "01117932 S/ -3,000.00 Registrado",
+  "01104038 S/ -975.00 Registrado",
+  "01108170 S/ -100.00 Registrado",
+  "01200001 S/ -500.00 Error"
+ ],
+ "conciliacion_ibk_tras_anular": [
+  "33300001 S/ 500.00 Error"
+ ],
+ "libro_nuevos": [
+  "M10-0011 | 000010 | 2026-10-17 | Deposito en dolares de sabado (prueba)",
+  "M10-0010 | 000011 | 2026-10-16 | Anulacion de asiento manual 000009 - Cuenta equivocada (prueba)",
+  "M10-0006 | 000009 | 2026-10-14 | Traspaso del BCP al Interbank",
+  "M10-0009 | 000008 | 2026-10-14 | Transferencia a FLUMISA S/ 100 (pendiente de definir)",
+  "M10-0007 | 000007 | 2026-10-14 | Transferencia a FLUMISA S/ 975 (pendiente de definir)",
+  "M10-0005 | 000006 | 2026-10-14 | Devolucion a FLUMISA de dinero depositado por error",
+  "M09-0008 | 000008 | 2026-09-23 | Venta F001-000008 - CLIENTE PRUEBA SAC",
+  "M08-0010 | 000016 | 2026-08-30 | Venta F001-000016 - CLIENTE PRUEBA SAC",
+  "M08-0002 | 000024 | 2026-08-06 | Venta F001-000024 - CLIENTE PRUEBA SAC",
+  "M07-0005 | 000032 | 2026-07-13 | Venta F001-000032 - CLIENTE PRUEBA SAC",
+  "M06-0008 | 000047 | 2026-06-20 | Soles sin ningun TC publicado (prueba)",
+  "M06-0007 | 000040 | 2026-06-19 | Venta F001-000040 - CLIENTE PRUEBA SAC",
+  "M05-0009 | 000048 | 2026-05-26 | Venta F001-000048 - CLIENTE PRUEBA SAC",
+  "M05-0001 | 000056 | 2026-05-02 | Venta F001-000056 - CLIENTE PRUEBA SAC"
+ ],
+ "flu_conciliacion_antes": [
+  "02117932 S/ 3,000.00 Error",
+  "02104038 S/ 975.00 Error",
+  "02108170 S/ 100.00 Error"
+ ],
+ "flu_registrar_como": {
+  "paso": 3,
+  "fila": " 14/10/2026 12:50:35 Entrada +S/ 3,000.00 N.° op. 02117932 DE FIKA SAC Elegir otra"
+ },
+ "flu_aviso_factura": " Comprueba que no sea el pago de una factura (Cobranza). Si un cliente pagó una factura, regístralo en Cobranza.\nDESCRIPCIÓN (GLOSA) *\n¿CONTRA QUÉ CUENTA CONTABLE SE REGISTRA?\nLa lista la define el contador. Si no sabes cuál corresponde, pregúntale antes de registrar.\nREFERENCIA (OPCIONAL)",
+ "flu_resultado_02117932": " Registrado. Asiento N.° 000006. |  la fila del extracto quedó Registrada (14/10/2026 12:50:35, N.° 02117932). | Registrar otro movimiento",
+ "flu_resultado_02104038": " Registrado. Asiento N.° 000007. |  la fila del extracto quedó Registrada (14/10/2026 12:20:12, N.° 02104038). | Registrar otro movimiento",
+ "flu_resultado_02108170": " Registrado. Asiento N.° 000008. |  la fila del extracto quedó Registrada (14/10/2026 12:29:43, N.° 02108170). | Registrar otro movimiento",
+ "flu_conciliacion_despues": [
+  "02117932 S/ 3,000.00 Registrado",
+  "02104038 S/ 975.00 Registrado",
+  "02108170 S/ 100.00 Registrado"
+ ],
+ "celular_scroll_horizontal": false,
+ "sin_permiso": {
+  "aviso": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistema, administrador, gerente).",
+  "pasos": 0,
+  "config": false
+ }
+}
