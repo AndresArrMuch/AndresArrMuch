@@ -1,0 +1,50 @@
+{
+ "tag": "rama_20000",
+ "usuario": "admin@t.pe",
+ "inicio_sesion": {
+  "ms_hasta_pantalla": 1137,
+  "ms_hasta_terminar_descargas": 1655,
+  "tareas_largas": 0,
+  "ms_bloqueado": 0,
+  "tarea_mas_larga_ms": 0,
+  "pausa_maxima_ms": 54,
+  "memoria_mb": 12,
+  "descargas_total_kb": 3446,
+  "mas_pesadas": [
+   "/api/customers/:id?page=1&per_page=20000 3256 KB en 645 ms",
+   "/api/chart-of-accounts/:id?page=1&per_page=2000 92 KB en 71 ms",
+   "/api/inventory/:id/transfers 27 KB en 719 ms",
+   "/api/inventory/:id/movements?page=1&per_page=20000 22 KB en 505 ms",
+   "/api/sales/:id?page=1&per_page=20000 12 KB en 210 ms",
+   "/api/sales/:id/workflow?page=1&per_page=20000 10 KB en 366 ms",
+   "/api/inventory/:id/stock-requests 8 KB en 710 ms",
+   "/api/inventory/:id/items?page=1&per_page=20000 5 KB en 402 ms"
+  ]
+ },
+ "dashboard_asientos": "ASIENTOS CONTABLES 20000 Cuadrado",
+ "libro_diario": {
+  "ms_hasta_ver_la_tabla": 278,
+  "tareas_largas": 1,
+  "ms_bloqueado": 58,
+  "tarea_mas_larga_ms": 58,
+  "pausa_maxima_ms": 46,
+  "memoria_mb": 13,
+  "filas_dibujadas": 150,
+  "contador": "Mostrando 1–50 de 917 asientos · Debe S/ 2,307,405.35 · Haber S/ 2,307,405.35",
+  "elementos_en_pagina": 3445,
+  "descargas": [
+   "/api/journal-entries/:id/book?period=2026-10&sort=fecha_desc&tz=300&page=1&per_page=50 96 KB en 202 ms",
+   "/api/changes/:id?since=2026-10-16T05%3A38%3A31.621340 1 KB en 48 ms"
+  ]
+ },
+ "filtro_glosa": {
+  "ms": 2210,
+  "tareas_largas": 1,
+  "ms_bloqueado": 141,
+  "tarea_mas_larga_ms": 141,
+  "pausa_maxima_ms": 140,
+  "filas": 150,
+  "contador": "Mostrando 1–50 de 115 asientos · Debe S/ 285,942.25 · Haber S/ 285,942.25"
+ },
+ "errores_js": []
+}

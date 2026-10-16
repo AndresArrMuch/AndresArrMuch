@@ -1,0 +1,43 @@
+{
+ "tag": "main_20000",
+ "usuario": "admin@t.pe",
+ "inicio_sesion": {
+  "ms_hasta_pantalla": 6539,
+  "ms_hasta_terminar_descargas": 7650,
+  "tareas_largas": 0,
+  "ms_bloqueado": 0,
+  "tarea_mas_larga_ms": 0,
+  "pausa_maxima_ms": 688,
+  "memoria_mb": 82,
+  "descargas_total_kb": 3447,
+  "mas_pesadas": [
+   "/api/customers/:id?page=1&per_page=20000 3256 KB en 426 ms",
+   "/api/chart-of-accounts/:id?page=1&per_page=2000 92 KB en 48 ms",
+   "/api/inventory/:id/transfers 27 KB en 1072 ms",
+   "/api/inventory/:id/movements?page=1&per_page=20000 22 KB en 524 ms",
+   "/api/sales/:id?page=1&per_page=20000 12 KB en 244 ms",
+   "/api/sales/:id/workflow?page=1&per_page=20000 10 KB en 249 ms",
+   "/api/inventory/:id/stock-requests 8 KB en 1039 ms",
+   "/api/inventory/:id/items?page=1&per_page=20000 5 KB en 254 ms"
+  ]
+ },
+ "dashboard_asientos": "ASIENTOS CONTABLES 20000 Cuadrado",
+ "libro_diario": {
+  "ms_hasta_ver_la_tabla": 72825,
+  "tareas_largas": 3,
+  "ms_bloqueado": 72711,
+  "tarea_mas_larga_ms": 39777,
+  "pausa_maxima_ms": 69875,
+  "memoria_mb": 41,
+  "filas_dibujadas": 60000,
+  "elementos_en_pagina": 980947,
+  "descargas": [
+   "/api/changes/:id?since=2026-10-16T05%3A31%3A35.658579 1 KB en 53 ms",
+   "/api/inventory/:id/stock-requests/pending-count 0 KB en 25 ms",
+   "/api/changes/:id?since=2026-10-16T05%3A32%3A47.349335 1 KB en 57 ms",
+   "/api/changes/:id?since=2026-10-16T05%3A32%3A50.294634 1 KB en 51 ms"
+  ]
+ },
+ "filtro_glosa": "omitido",
+ "errores_js": []
+}
