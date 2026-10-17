@@ -1,0 +1,223 @@
+################ 1) MODO DE PRUEBA (no escribe)
+  [OK] Consulta NUEVA a NubeFact: el documento no existe (codigo 24): HTTP 400, codigo 24, mensaje 'Documento no existe'
+== Lo que haria (no se escribe nada)
+  ENTRADA SSG2603FMANG75TM NITRILO VERDE X100 GUANTES DE 7.5 | TDA FIKA CAPON | cantidad 20.00 costo 10.00 | saldo 60.00 -> 80.00
+  ENTRADA YXRP0291C25NYTL GUANTE INDUSTRIAL FIKA CAL 25 BICOLOR | TDA FIKA CAPON | cantidad 24.00 costo 5.00 | saldo 32.00 -> 56.00
+  Venta: status emitted -> cancelled; sunat_status sigue vacio; notes += "Anulado solo en el sistema: nunca llego a SUNAT. Duplicado de F030-000120. Fecha: 17/10/2026 14:37 (Lima). Usuario: sistema.fika@t.pe."
+  Movimientos con fecha 2026-10-17 en el periodo 10/2026
+MODO DE PRUEBA: no se escribio nada. Para ejecutar de verdad agrega --aplicar.
+(codigo de salida 0)
+  antes: todo=c2a81604bc03a3056917ee78183d973a F030-000120+asiento=bfaccbeadd87a34491152ad1d92a8f41 
+  despues: todo=c2a81604bc03a3056917ee78183d973a F030-000120+asiento=bfaccbeadd87a34491152ad1d92a8f41 
+  BASE SIN CAMBIOS
+
+  Reportes ANTES:
+  Cobranza (lista de ventas sin anuladas, mismo filtro de la pantalla): ['F030-000120', 'F030-000119']
+  Cuentas por cobrar / estado de cuenta PONEDORAS (documento, pendiente): [('F030-000119', True), ('F030-000120', True)] | total pendiente 1080.0
+  Reporte de ventas del periodo 10/2026: F030-000119 aparece: False | F030-000120 aparece: True
+
+################ 2) --aplicar
+== Lo que se hara
+  ENTRADA SSG2603FMANG75TM NITRILO VERDE X100 GUANTES DE 7.5 | TDA FIKA CAPON | cantidad 20.00 costo 10.00 | saldo 60.00 -> 80.00
+  ENTRADA YXRP0291C25NYTL GUANTE INDUSTRIAL FIKA CAL 25 BICOLOR | TDA FIKA CAPON | cantidad 24.00 costo 5.00 | saldo 32.00 -> 56.00
+  Venta: status emitted -> cancelled; sunat_status sigue vacio; notes += "Anulado solo en el sistema: nunca llego a SUNAT. Duplicado de F030-000120. Fecha: 17/10/2026 14:37 (Lima). Usuario: sistema.fika@t.pe."
+  Movimientos con fecha 2026-10-17 en el periodo 10/2026
+APLICADO en una sola transaccion. Bitacora: audit_log y /root/anular_f030_000119.log. Movimientos: ['d6a8b359-cb17-4385-bc36-6292477a8ef1', '5e652238-dcc4-465d-8487-98c9b2afe1cc']
+F030-000120: intacta (misma huella antes y despues: ca609926cb2fa570a1124b9949f6616a)
+== Saldo final en kardex
+  SSG2603FMANG75TM en TDA FIKA CAPON: 60.00 -> 80.00 (cambio +20.00) OK
+  YXRP0291C25NYTL en TDA FIKA CAPON: 32.00 -> 56.00 (cambio +24.00) OK
+(codigo de salida 0)
+  hash F030-000120 + su asiento: antes F030-000120+asiento=bfaccbeadd87a34491152ad1d92a8f41 / despues F030-000120+asiento=bfaccbeadd87a34491152ad1d92a8f41
+  Kardex despues:
+    SSG2603FMANG75TM|2026-10-01|in|purchase|100.00|100.00|
+    SSG2603FMANG75TM|2026-10-16|out|sale|20.00|80.00|
+    SSG2603FMANG75TM|2026-10-16|out|sale|20.00|60.00|
+    SSG2603FMANG75TM|2026-10-17|in|sale_void|20.00|80.00|Anulado solo en el sistema: nunca llego 
+    YXRP0291C25NYTL|2026-10-01|in|purchase|80.00|80.00|
+    YXRP0291C25NYTL|2026-10-16|out|sale|24.00|56.00|
+    YXRP0291C25NYTL|2026-10-16|out|sale|24.00|32.00|
+    YXRP0291C25NYTL|2026-10-17|in|sale_void|24.00|56.00|Anulado solo en el sistema: nunca llego 
+  Venta:
+    F030-000119|cancelled|(vacio)|(vacio)|(vacio)|pending|Anulado solo en el sistema: nunca llego a SUNAT. Duplicado de F030-000120. Fecha: 17/10/2026 14:37 (Lima). Usuario: sistema.fika@t.pe.
+    F030-000120|emitted|aceptada|(vacio)|http://x/F030-000120.pdf|posted|
+  Bitacora audit_log:
+    UPDATE|sale|b20e1049-9875-4dce-aacc-a37cf275d4ce|anular_f030_000119_solo_sistema|anular_solo_sistema|sistema.fika@t.pe|emitted|cancelled
+  Asientos con F030-000119 en la glosa: 0
+
+  Reportes DESPUES:
+  Cobranza (lista de ventas sin anuladas, mismo filtro de la pantalla): ['F030-000120']
+  Cuentas por cobrar / estado de cuenta PONEDORAS (documento, pendiente): [('F030-000119', False), ('F030-000120', True)] | total pendiente 540.0
+  Reporte de ventas del periodo 10/2026: F030-000119 aparece: False | F030-000120 aparece: True
+
+################ 3) SEGUNDA EJECUCION (prueba y --aplicar)
+F030-000119 YA esta anulada solo en el sistema. No se hace nada.
+(codigo de salida 0)
+F030-000119 YA esta anulada solo en el sistema. No se hace nada.
+(codigo de salida 0)
+  llamadas a NubeFact: 0
+  BASE SIN CAMBIOS
+
+################ 4) DESHACER (prueba, --aplicar, segunda vez)
+== Lo que haria (no se escribe nada)
+  SALIDA (deshacer) SSG2603FMANG75TM NITRILO VERDE X100 GUANTES DE 7.5 | TDA FIKA CAPON | cantidad 20.00 costo 10.00 | saldo 80.00 -> 60.00
+  SALIDA (deshacer) YXRP0291C25NYTL GUANTE INDUSTRIAL FIKA CAL 25 BICOLOR | TDA FIKA CAPON | cantidad 24.00 costo 5.00 | saldo 56.00 -> 32.00
+  Venta: status cancelled -> emitted; se quita la leyenda de notes; sunat_status sigue vacio
+  Movimientos con fecha 2026-10-17 en el periodo 10/2026
+MODO DE PRUEBA: no se escribio nada. Para ejecutar de verdad agrega --aplicar.
+(codigo de salida 0)
+  (prueba) BASE SIN CAMBIOS
+APLICADO en una sola transaccion. Bitacora: audit_log y /root/anular_f030_000119.log. Movimientos: ['2a9d7038-3349-4eab-81cd-dd64ec15a56f', '786276d5-480d-474a-b6b6-ce0ef82f0825']
+F030-000120: intacta (misma huella antes y despues: ca609926cb2fa570a1124b9949f6616a)
+== Saldo final en kardex
+  SSG2603FMANG75TM en TDA FIKA CAPON: 80.00 -> 60.00 (cambio -20.00) OK
+  YXRP0291C25NYTL en TDA FIKA CAPON: 56.00 -> 32.00 (cambio -24.00) OK
+(codigo de salida 0)
+  Kardex despues de deshacer:
+    SSG2603FMANG75TM|2026-10-01|in|purchase|100.00|100.00|
+    SSG2603FMANG75TM|2026-10-16|out|sale|20.00|80.00|
+    SSG2603FMANG75TM|2026-10-16|out|sale|20.00|60.00|
+    SSG2603FMANG75TM|2026-10-17|in|sale_void|20.00|80.00|Anulado solo en el sistema: nunca llego 
+    SSG2603FMANG75TM|2026-10-17|out|sale_void_undo|20.00|60.00|Deshace la anulacion solo en el sistema 
+    YXRP0291C25NYTL|2026-10-01|in|purchase|80.00|80.00|
+    YXRP0291C25NYTL|2026-10-16|out|sale|24.00|56.00|
+    YXRP0291C25NYTL|2026-10-16|out|sale|24.00|32.00|
+    YXRP0291C25NYTL|2026-10-17|in|sale_void|24.00|56.00|Anulado solo en el sistema: nunca llego 
+    YXRP0291C25NYTL|2026-10-17|out|sale_void_undo|24.00|32.00|Deshace la anulacion solo en el sistema 
+    venta: emitted sunat_status=(vacio) notes=(vacio)
+La anulacion solo en el sistema de F030-000119 YA fue deshecha. No se hace nada.
+(codigo de salida 0)
+  BASE SIN CAMBIOS en la segunda vez
+  hash F030-000120 + su asiento al final: F030-000120+asiento=bfaccbeadd87a34491152ad1d92a8f41
+  Archivo de registro:
+    {"utc": "2026-10-17 19:37:22.120625", "old": {"status": "emitted", "notes": null, "sunat_status": null}, "status": "cancelled", "notes": "Anulado solo en el sistema: nunca llego a SUNAT. Duplicado de F030-000120. Fecha: 
+    {"utc": "2026-10-17 19:37:32.192049", "old": {"status": "cancelled", "notes": "Anulado solo en el sistema: nunca llego a SUNAT. Duplicado de F030-000120. Fecha: 17/10/2026 14:37 (Lima). Usuario: sistema.fika@t.pe.", "sun
+
+################ ABORTO: NubeFact responde que el documento EXISTE
+  [FALLA] Consulta NUEVA a NubeFact: el documento no existe (codigo 24): HTTP 200, codigo -, mensaje ''
+ABORTADO: fallaron: Consulta NUEVA a NubeFact: el documento no existe (codigo 24). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 1
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: NubeFact sin conexion (error de red)
+  [FALLA] Consulta NUEVA a NubeFact: el documento no existe (codigo 24): HTTP 0, codigo -, mensaje 'HTTPConnectionPool(host=\'127.0.0.1\', port=8939): Max retries exceeded with url: /api (Caused by NewConnectionError("HTTPConnection(host=\'127.0.0.1\', port=8939):'
+ABORTADO: fallaron: Consulta NUEVA a NubeFact: el documento no existe (codigo 24). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: NubeFact sin token (autenticacion/configuracion)
+  [FALLA] Consulta NUEVA a NubeFact: el documento no existe (codigo 24): HTTP 0, codigo -, mensaje 'Provider token not configured: NUBECONT_TOKEN'
+ABORTADO: fallaron: Consulta NUEVA a NubeFact: el documento no existe (codigo 24). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Tiene guia (sales_workflow vinculado)
+  [FALLA] Sin guia ni cotizacion vinculada (sales_workflow): 1 vinculados
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Sin guia ni cotizacion vinculada (sales_workflow). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Tiene cobro (amount_paid)
+  [FALLA] Sin cobros (amount_paid cero y sin lineas de cobro): amount_paid 100.00, lineas de cobro 0
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Sin cobros (amount_paid cero y sin lineas de cobro). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Tiene linea de cobro (amount_paid en cero)
+  [FALLA] Sin cobros (amount_paid cero y sin lineas de cobro): amount_paid 0.00, lineas de cobro 1
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Sin cobros (amount_paid cero y sin lineas de cobro). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Tiene nota de credito
+  [FALLA] Sin nota de credito ni de debito: 1 notas
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Sin nota de credito ni de debito. No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Tiene asiento de venta
+  [FALLA] Sin asiento (ninguna glosa con el numero) y accounting_status pending: 1 asientos ['000119'], accounting_status pending
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Sin asiento (ninguna glosa con el numero) y accounting_status pending. No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Periodo de hoy cerrado
+  [FALLA] Periodo de hoy (2026-10-17, hora de Lima) existe y esta abierto: 10/2026 closed
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Periodo de hoy (2026-10-17, hora de Lima) existe y esta abierto. No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Cantidad distinta en una salida (21 en vez de 20)
+  [FALLA] Salidas de stock: exactamente las dos esperadas en TDA FIKA CAPON (20 y 24): YXRP0291C25NYTL x 24.00, SSG2603FMANG75TM x 21.00
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Salidas de stock: exactamente las dos esperadas en TDA FIKA CAPON (20 y 24). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Ya existe una entrada de reversa
+  [FALLA] Todavia no existen entradas de reversa que referencien la venta: sale_void x 1
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Todavia no existen entradas de reversa que referencien la venta. No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Ya enviada (sunat_status lleno)
+  [FALLA] sunat_status, sunat_ticket y pdf_path vacios: sunat_status='aceptada', ticket=None, pdf_path=None
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: sunat_status, sunat_ticket y pdf_path vacios. No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: F030-000120 no aceptada
+  [FALLA] F030-000120 existe, aceptada, mismo cliente (no se toca): sunat_status None, status emitted, total 540.00
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: F030-000120 existe, aceptada, mismo cliente (no se toca). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Usuario sin permiso (Vendedor)
+  [FALLA] Usuario que firma (Sistema, Administrador o Gerente): ventas.tda.filomena@gmail.com tiene rol Vendedor-FIKA: solo Sistema, Administrador o Gerente
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Usuario que firma (Sistema, Administrador o Gerente). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Sin --usuario y dos usuarios de rol Sistema
+  [FALLA] Usuario que firma (Sistema, Administrador o Gerente): se esperaba 1 usuario de rol Sistema en FIKA, hay 2: sistema.fika@t.pe (Sistema-FIKA), sistemas@t.pe (Sistemas). Indica uno con --usuario <correo>
+  [--] NubeFact: no se consulta porque fallaron verificaciones anteriores
+ABORTADO: fallaron: Usuario que firma (Sistema, Administrador o Gerente). No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: Movimiento con fecha posterior en el kardex (todo o nada: falla DESPUES de escribir y revierte)
+ABORTADO: kardex de SSG2603FMANG75TM: el ultimo movimiento no es el nuevo (hay movimientos con fecha posterior o intermedios); no se aplica nada. No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 1
+  BASE SIN CAMBIOS (hash identico antes y despues)
+
+################ ABORTO: otra operacion con NubeFact en curso sobre el documento (candado de la funcion 1)
+ABORTADO: hay una operacion en curso con NubeFact para este documento. No se escribio nada.
+(codigo de salida 1)
+  llamadas a NubeFact simulada: 0
+  BASE SIN CAMBIOS (hash identico antes y despues)
