@@ -1,0 +1,30 @@
+{
+ "errores_js": [],
+ "venta": "F001-000003",
+ "servidor_10_simultaneas_electronic/void": {
+  "502 NUBECONT_LOW_ERROR": 10
+ },
+ "llamadas_a_nubefact_electronic/void": 10,
+ "servidor_10_simultaneas_electronic/status": {
+  "502 NUBECONT_STATUS_ERROR": 10
+ },
+ "llamadas_a_nubefact_electronic/status": 10,
+ "boton_anular_visible": true,
+ "boton_tras_clics": {
+  "texto": "Anular factura",
+  "desactivado": false
+ },
+ "llamadas_a_nubefact_10_clics": 10,
+ "mensajes_mostrados": [
+  "err: No se pudo comunicar la baja a SUNAT: El documento no existe o no fue enviado a NubeFacT",
+  "err: No se pudo comunicar la baja a SUNAT: El documento no existe o no fue enviado a NubeFacT",
+  "err: No se pudo comunicar la baja a SUNAT: El documento no existe o no fue enviado a NubeFacT",
+  "err: No se pudo comunicar la baja a SUNAT: El documento no existe o no fue enviado a NubeFacT",
+  "err: No se pudo comunicar la baja a SUNAT: El documento no existe o no fue enviado a NubeFacT",
+  "err: No se pudo comunicar la baja a SUNAT: El documento no existe o no fue enviado a NubeFacT"
+ ],
+ "boton_despues": {
+  "texto": "Anular factura",
+  "desactivado": false
+ }
+}
