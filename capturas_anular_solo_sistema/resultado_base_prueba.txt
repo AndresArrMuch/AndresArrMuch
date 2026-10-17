@@ -1,0 +1,20 @@
+BEGIN
+== 1) F030-000119 y F030-000120
+ empresa | document_number | emission_date | status | sunat_status | tiene_pdf | accounting_status | is_active | periodo_del_documento | entra_txt_sunat_14_1 | entra_ple_tributario | entra_reporte_pantalla | asientos_con_el_numero | movimientos_stock 
+---------+-----------------+---------------+--------+--------------+-----------+-------------------+-----------+-----------------------+----------------------+----------------------+------------------------+------------------------+-------------------
+(0 rows)
+
+== 2) Octubre 2026: electronicos que entran al TXT/PLE sin estar aceptados por SUNAT, o anulados
+     empresa     | document_number | emission_date |  status   |    sunat_status     | tiene_pdf | total  
+-----------------+-----------------+---------------+-----------+---------------------+-----------+--------
+ FIKA PRUEBA SAC | F001-000002     | 2026-10-05    | cancelled | anulada             | t         | 590.00
+ FIKA PRUEBA SAC | F001-000003     | 2026-10-06    | emitted   | (vacio: no enviado) | f         | 354.00
+(2 rows)
+
+== 3) Resumen octubre 2026 por empresa
+     empresa     | en_ple | en_txt_14_1 | no_enviados | anulados | otros_estados_sunat 
+-----------------+--------+-------------+-------------+----------+---------------------
+ FIKA PRUEBA SAC |      9 |           8 |           1 |        1 |                   1
+(1 row)
+
+ROLLBACK
