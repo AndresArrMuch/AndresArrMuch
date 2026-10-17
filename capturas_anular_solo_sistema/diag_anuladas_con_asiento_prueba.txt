@@ -1,0 +1,36 @@
+BEGIN
+== 1) Detalle por documento y asiento
+     empresa     |  documento  | tipo |  emision   |  status   | sunat_status | periodo_venta | estado_periodo_venta | asiento | estado_asiento | fecha_asiento | periodo_asiento | estado_periodo_asiento | cta_12  | cta_40 | cta_70  | otras | asientos_vivos_del_documento |         notas_credito          |            asiento_de_la_nota             
+-----------------+-------------+------+------------+-----------+--------------+---------------+----------------------+---------+----------------+---------------+-----------------+------------------------+---------+--------+---------+-------+------------------------------+--------------------------------+-------------------------------------------
+ FIKA PRUEBA SAC | F001-000005 | 01   | 2026-10-02 | cancelled | anulada      | 2026-09       | closed               | 900004  | approved       | 2026-09-15    | 2026-09         | closed                 | 1180.00 | 180.00 | 1000.00 |     0 |                            1 |                                | 
+ FIKA PRUEBA SAC | F001-000002 | 01   | 2026-10-05 | cancelled | anulada      | 2026-10       | open                 | 900006  | approved       | 2026-10-05    | 2026-10         | open                   |  590.00 |  90.00 |  500.00 |     0 |                            2 | FC01-000002 (emitted/aceptada) | FC01-000002: 900005 approved cta12=590.00
+ FIKA PRUEBA SAC | F001-000002 | 01   | 2026-10-05 | cancelled | anulada      | 2026-10       | open                 | 900001  | approved       | 2026-10-05    | 2026-10         | open                   |  590.00 |  90.00 |  500.00 |     0 |                            2 | FC01-000002 (emitted/aceptada) | FC01-000002: 900005 approved cta12=590.00
+(3 rows)
+
+== 2) Resumen por empresa, mes del asiento y estado del periodo
+     empresa     | mes_asiento | estado_periodo | documentos | asientos | ingreso_70 | igv_40 | cxc_12  
+-----------------+-------------+----------------+------------+----------+------------+--------+---------
+ FIKA PRUEBA SAC | 2026-09     | closed         |          1 |        1 |    1000.00 | 180.00 | 1180.00
+ FIKA PRUEBA SAC | 2026-10     | open           |          1 |        2 |    1000.00 | 180.00 | 1180.00
+ FIKA PRUEBA SAC |             |                |          2 |        3 |    2000.00 | 360.00 | 2360.00
+ TOTAL           |             |                |          2 |        3 |    2000.00 | 360.00 | 2360.00
+(4 rows)
+
+== 3) Total por empresa y estado del periodo (abierto / cerrado)
+     empresa     | estado_periodo | documentos | ingreso_70 | igv_40 | cxc_12_con_igv 
+-----------------+----------------+------------+------------+--------+----------------
+ FIKA PRUEBA SAC | closed         |          1 |    1000.00 | 180.00 |        1180.00
+ FIKA PRUEBA SAC | open           |          1 |    1000.00 | 180.00 |        1180.00
+ FIKA PRUEBA SAC | (todos)        |          2 |    2000.00 | 360.00 |        2360.00
+ TOTAL           | closed         |          1 |    1000.00 | 180.00 |        1180.00
+ TOTAL           | open           |          1 |    1000.00 | 180.00 |        1180.00
+ TOTAL           | (todos)        |          2 |    2000.00 | 360.00 |        2360.00
+(6 rows)
+
+== 4) Documentos con mas de un asiento de venta vivo (posible doble contabilizacion)
+     empresa     | document_number | asientos_vivos |    asientos    
+-----------------+-----------------+----------------+----------------
+ FIKA PRUEBA SAC | F001-000002     |              2 | 900006, 900001
+(1 row)
+
+ROLLBACK
