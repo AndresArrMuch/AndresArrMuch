@@ -1,0 +1,8 @@
+{"F030-000120": {"existe": true, "aceptada": true, "desc": "La Factura numero F030-000120, ha sido aceptada"},
+ "F001-000001": {"existe": true, "aceptada": false, "desc": "La Factura numero F001-000001, ha sido RECHAZADA"},
+ "B001-000001": {"existe": true, "aceptada": false, "desc": "en proceso"},
+ "F001-000004": {"existe": false},
+ "F001-000005": {"existe": true, "aceptada": true, "anulado": true, "desc": "aceptada"},
+ "F001-000006": {"existe": true, "sin_campo": true, "desc": "ok"},
+ "FC01-000001": {"existe": true, "http500": true},
+ "FD01-000001": {"existe": true, "aceptada": true, "desc": "La Nota de Debito ha sido aceptada con observaciones"}}

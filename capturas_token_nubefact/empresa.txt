@@ -1,0 +1,12 @@
+== main
+  GET empresa, claves nubecont: {'nubecont_api_token': '<valor>', 'nubecont_api_url': '<valor>'}
+  1) Editar la empresa sin tocar el token: 200 | token y URL conservados: True
+  2) Enviar token vacio y URL null: 200 | token conservado: False | URL conservada: False
+  3) Escribir un token nuevo: 200 | guardado: True | la respuesta muestra el nuevo: True
+  4) Consultar estado con el nuevo: 502 | respuesta con el token nuevo: False
+== rama
+  GET empresa, claves nubecont: {'nubecont_clave_configurada': True, 'nubecont_ruta_configurada': True}
+  1) Editar la empresa sin tocar el token: 200 | token y URL conservados: True
+  2) Enviar token vacio y URL null: 200 | token conservado: True | URL conservada: True
+  3) Escribir un token nuevo: 200 | guardado: True | la respuesta muestra el nuevo: False
+  4) Consultar estado con el nuevo: 200 | respuesta con el token nuevo: False
