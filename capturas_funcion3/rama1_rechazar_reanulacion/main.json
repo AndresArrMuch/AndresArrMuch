@@ -1,0 +1,46 @@
+{
+ "F001-000002 /electronic/void": {
+  "http": 200,
+  "codigo": null,
+  "mensaje": "Electronic void requested",
+  "llamadas_nubefact": 1,
+  "movimientos_stock_nuevos": 0,
+  "estado": [
+   "cancelled",
+   "anulada"
+  ]
+ },
+ "F001-000002 /void": {
+  "http": 400,
+  "codigo": "ALREADY_CANCELLED",
+  "mensaje": null,
+  "llamadas_nubefact": 0,
+  "movimientos_stock_nuevos": 0,
+  "estado": [
+   "cancelled",
+   "anulada"
+  ]
+ },
+ "F030-000119 /electronic/void": {
+  "http": 200,
+  "codigo": null,
+  "mensaje": "Electronic void requested",
+  "llamadas_nubefact": 1,
+  "movimientos_stock_nuevos": 2,
+  "estado": [
+   "cancelled",
+   "anulada"
+  ]
+ },
+ "F030-000119 /void": {
+  "http": 400,
+  "codigo": "ALREADY_CANCELLED",
+  "mensaje": null,
+  "llamadas_nubefact": 0,
+  "movimientos_stock_nuevos": 0,
+  "estado": [
+   "cancelled",
+   "anulada"
+  ]
+ }
+}
