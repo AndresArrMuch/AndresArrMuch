@@ -1,0 +1,77 @@
+BEGIN
+== 1) Resumen de ingresos manuales por empresa, almacen y dia
+     empresa     |      almacen      |  dia_lima  | movimientos | productos | unidades | valor_costo | con_costo_0_o_0_01 | sin_comentario |         usuarios         
+-----------------+-------------------+------------+-------------+-----------+----------+-------------+--------------------+----------------+--------------------------
+ FIKA PRUEBA SAC | ALMFIKA           | 2026-10-02 |           3 |         3 |    78.00 |      780.00 |                  0 |              3 | (sin usuario registrado)
+ FIKA PRUEBA SAC | ALMFIKA           |            |           3 |         3 |    78.00 |      780.00 |                  0 |              3 | (sin usuario registrado)
+ FIKA PRUEBA SAC | TDA FIKA CAPON    | 2026-10-02 |           3 |         3 |     7.00 |       70.00 |                  0 |              3 | (sin usuario registrado)
+ FIKA PRUEBA SAC | TDA FIKA CAPON    | 2026-10-19 |           2 |         1 |   765.00 |        7.65 |                  2 |              1 | (sin usuario registrado)
+ FIKA PRUEBA SAC | TDA FIKA CAPON    |            |           5 |         4 |   772.00 |       77.65 |                  2 |              4 | (sin usuario registrado)
+ FIKA PRUEBA SAC | TDA FIKA MALVINAS | 2026-10-02 |           2 |         2 |     4.00 |       40.00 |                  0 |              2 | (sin usuario registrado)
+ FIKA PRUEBA SAC | TDA FIKA MALVINAS |            |           2 |         2 |     4.00 |       40.00 |                  0 |              2 | (sin usuario registrado)
+ FIKA PRUEBA SAC |                   |            |          10 |         5 |   854.00 |      897.65 |                  2 |              9 | (sin usuario registrado)
+                 |                   |            |          10 |         5 |   854.00 |      897.65 |                  2 |              9 | (sin usuario registrado)
+(9 rows)
+
+== 2) Detalle de ingresos manuales (ultimos 30 dias)
+     empresa     | registrado_lima  | fecha_mov  |      almacen      | tipo |      codigo      |                 producto                 | detalle  | cantidad | costo_unit | costo_total |  comentario   |    usuario    | costo_rel
+-----------------+------------------+------------+-------------------+------+------------------+------------------------------------------+----------+----------+------------+-------------+---------------+---------------+----------
+ FIKA PRUEBA SAC | 2026-10-02 23:59 | 2026-10-01 | ALMFIKA           | in   | P0001            | TERMOMETRO DIGITAL                       |          |    50.00 |      10.00 |      500.00 |               | (sin usuario) | f        
+ FIKA PRUEBA SAC | 2026-10-02 23:59 | 2026-10-01 | TDA FIKA MALVINAS | in   | P0001            | TERMOMETRO DIGITAL                       |          |     3.00 |      10.00 |       30.00 |               | (sin usuario) | f        
+ FIKA PRUEBA SAC | 2026-10-02 23:59 | 2026-10-01 | ALMFIKA           | in   | P0002            | TENSIOMETRO BRAZO                        |          |    20.00 |      10.00 |      200.00 |               | (sin usuario) | f        
+ FIKA PRUEBA SAC | 2026-10-02 23:59 | 2026-10-01 | TDA FIKA CAPON    | in   | P0002            | TENSIOMETRO BRAZO                        |          |     2.00 |      10.00 |       20.00 |               | (sin usuario) | f        
+ FIKA PRUEBA SAC | 2026-10-02 23:59 | 2026-10-01 | ALMFIKA           | in   | P0003            | OXIMETRO DEDO                            |          |     8.00 |      10.00 |       80.00 |               | (sin usuario) | f        
+ FIKA PRUEBA SAC | 2026-10-02 23:59 | 2026-10-01 | TDA FIKA MALVINAS | in   | P0003            | OXIMETRO DEDO                            |          |     1.00 |      10.00 |       10.00 |               | (sin usuario) | f        
+ FIKA PRUEBA SAC | 2026-10-02 23:59 | 2026-10-01 | TDA FIKA CAPON    | in   | P0003            | OXIMETRO DEDO                            |          |     1.00 |      10.00 |       10.00 |               | (sin usuario) | f        
+ FIKA PRUEBA SAC | 2026-10-02 23:59 | 2026-10-01 | TDA FIKA CAPON    | in   | P0004            | NEBULIZADOR                              |          |     4.00 |      10.00 |       40.00 |               | (sin usuario) | f        
+ FIKA PRUEBA SAC | 2026-10-19 13:29 | 2026-10-01 | TDA FIKA CAPON    | in   | BSTL260708NG65TL | NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS | L, VERDE |   455.00 |       0.01 |        4.55 | para facturar | (sin usuario) | t        
+ FIKA PRUEBA SAC | 2026-10-19 14:29 | 2026-10-01 | TDA FIKA CAPON    | in   | BSTL260708NG65TL | NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS | L, VERDE |   310.00 |       0.01 |        3.10 |               | (sin usuario) | t        
+(10 rows)
+
+== 3) Productos creados en los ultimos 30 dias (con su primer ingreso y stock actual)
+      empresa       |   creado_lima    |      codigo      |                 producto                 | detalle  | unidad | costo | precio | digemid |  creado_por   | primer_movimiento_lima | tipo_primer_movimiento | stock_total 
+--------------------+------------------+------------------+------------------------------------------+----------+--------+-------+--------+---------+---------------+------------------------+------------------------+-------------
+ FIKA PRUEBA SAC    | 2026-10-02 23:59 | SSG2603FMANG75TM | NITRILO VERDE X100 GUANTES DE 7.5        |          | NIU    | 10.00 |  50.00 | f       | (sin usuario) | 2026-10-01 05:00       | purchase               |       60.00
+ FIKA PRUEBA SAC    | 2026-10-02 23:59 | P0001            | TERMOMETRO DIGITAL                       |          | NIU    | 10.00 |  50.00 | f       | (sin usuario) | 2026-10-02 23:59       | manual                 |       36.00
+ FIKA PRUEBA SAC    | 2026-10-02 23:59 | YXRP0291C25NYTL  | GUANTE INDUSTRIAL FIKA CAL 25 BICOLOR    |          | NIU    |  5.00 |  50.00 | f       | (sin usuario) | 2026-10-01 05:00       | purchase               |       32.00
+ FIKA PRUEBA SAC    | 2026-10-02 23:59 | P0002            | TENSIOMETRO BRAZO                        |          | BX     | 10.00 |  50.00 | f       | (sin usuario) | 2026-10-02 23:59       | manual                 |       22.00
+ FIKA PRUEBA SAC    | 2026-10-02 23:59 | P0003            | OXIMETRO DEDO                            |          | PAR    | 10.00 |  50.00 | t       | (sin usuario) | 2026-10-02 23:59       | manual                 |       10.00
+ FIKA PRUEBA SAC    | 2026-10-02 23:59 | P0004            | NEBULIZADOR                              |          | PAR    | 10.00 |  50.00 | f       | (sin usuario) | 2026-10-02 23:59       | manual                 |        4.00
+ FIKA PRUEBA SAC    | 2026-10-05 14:18 | TG1              | GUANTES DE NITRILO X100                  |          | NIU    |  0.00 |  10.00 |         | (sin usuario) |                        | manual                 |           0
+ FIKA PRUEBA SAC    | 2026-10-05 14:18 | TG6              | TERMOMETRO X1                            |          | NIU    |  0.00 |  10.00 |         | (sin usuario) |                        | manual                 |           0
+ FIKA PRUEBA SAC    | 2026-10-05 14:18 | TG4              | GASA X 50 UND                            |          | NIU    |  0.00 |  10.00 |         | (sin usuario) |                        | manual                 |           0
+ FIKA PRUEBA SAC    | 2026-10-05 14:18 | TG5              | CAJAMARCA TEST                           |          | NIU    |  0.00 |  10.00 |         | (sin usuario) |                        | manual                 |           0
+ FIKA PRUEBA SAC    | 2026-10-05 14:18 | TG3              | JERINGA 10ML                             |          | NIU    |  0.00 |  10.00 |         | (sin usuario) |                        | manual                 |           0
+ FIKA PRUEBA SAC    | 2026-10-05 14:18 | TG2              | CAJA DE MASCARILLAS                      |          | NIU    |  0.00 |  10.00 |         | (sin usuario) |                        | manual                 |           0
+ FIKA PRUEBA SAC    | 2026-10-19 12:29 | GDDIGBX00001     | JERINGA DIGEMID PRUEBA CAJA              |          | BX     | 20.00 |  50.00 | t       | (sin usuario) | 2026-10-04 12:39       | purchase               |   100000.00
+ FIKA PRUEBA SAC    | 2026-10-19 12:29 | GDBX00000001     | NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS |          | BX     |  5.00 |  10.00 | f       | (sin usuario) | 2026-10-04 12:39       | purchase               |   100000.00
+ FIKA PRUEBA SAC    | 2026-10-19 12:29 | BSTL260708NG65TL | NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS | L, VERDE | NIU    |  0.01 |   0.00 | f       | (sin usuario) | 2026-10-04 12:39       | purchase               |   100000.00
+ FIKA PRUEBA SAC    | 2026-10-19 12:29 | GDDIGNIU0001     | MASCARILLA DIGEMID PRUEBA NIU            |          | NIU    |  1.00 |   5.00 | t       | (sin usuario) | 2026-10-04 12:39       | purchase               |   100000.00
+ FLUMISA PRUEBA SAC | 2026-10-02 23:59 | P0001            | TERMOMETRO DIGITAL                       |          | NIU    | 10.00 |  50.00 | f       | (sin usuario) | 2026-10-02 23:59       | transfer               |      150.00
+ FLUMISA PRUEBA SAC | 2026-10-02 23:59 | P0002            | TENSIOMETRO BRAZO                        |          | BX     | 10.00 |  50.00 | f       | (sin usuario) |                        | manual                 |           0
+(18 rows)
+
+== 4) Productos creados por dia (cuantos codigos crea almacen cada dia)
+      empresa       |  dia_lima  | productos_creados | descripciones_distintas 
+--------------------+------------+-------------------+-------------------------
+ FIKA PRUEBA SAC    | 2026-10-02 |                 6 |                       6
+ FIKA PRUEBA SAC    | 2026-10-05 |                 6 |                       6
+ FIKA PRUEBA SAC    | 2026-10-19 |                 4 |                       3
+ FIKA PRUEBA SAC    |            |                16 |                      15
+ FLUMISA PRUEBA SAC | 2026-10-02 |                 2 |                       2
+ FLUMISA PRUEBA SAC |            |                 2 |                       2
+                    |            |                18 |                      15
+(7 rows)
+
+== 5) Misma descripcion con varios codigos y stock en mas de uno (riesgo de vender el codigo equivocado)
+     empresa     |                 producto                 | codigos | codigos_con_stock |                   codigos_y_stock                    
+-----------------+------------------------------------------+---------+-------------------+------------------------------------------------------
+ FIKA PRUEBA SAC | NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS |       2 |                 2 | BSTL260708NG65TL(100000.00), GDBX00000001(100000.00)
+(1 row)
+
+== 6) Cargas masivas de los ultimos 30 dias (si guardan usuario)
+ empresa | cuando_lima | tipo | archivo | filas | ok | fallidas | usuario 
+---------+-------------+------+---------+-------+----+----------+---------
+(0 rows)
+
+ROLLBACK
