@@ -1,0 +1,475 @@
+[
+ {
+  "caso": "1 Traer cotizacion: linea BX sobre producto NIU (como COT-000202), serie TTT1",
+  "http": 201,
+  "codigo": null,
+  "mensaje": "Direct guide created and sent to NubeCont",
+  "guias": [
+   "TTT1-000020"
+  ],
+  "payload_enviado": [
+   {
+    "serie": "TTT1",
+    "numero": 20,
+    "items": [
+     {
+      "codigo": "BSTL260708NG65TL",
+      "descripcion": "GUANTE NITRILO BSTL 26 L VERDE",
+      "cantidad": "3800.0",
+      "unidad_de_medida": "BX",
+      "COD_UND_MEDIDA_ITEM": "BX",
+      "PESO_ITEM": 3800.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT1-000020",
+   "delivered",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "2 Traer cotizacion: linea NIU sobre producto NIU, serie TTT1",
+  "http": 201,
+  "codigo": null,
+  "mensaje": "Direct guide created and sent to NubeCont",
+  "guias": [
+   "TTT1-000020"
+  ],
+  "payload_enviado": [
+   {
+    "serie": "TTT1",
+    "numero": 20,
+    "items": [
+     {
+      "codigo": "BSTL260708NG65TL",
+      "descripcion": "GUANTE NITRILO BSTL 26 L VERDE",
+      "cantidad": "3800.0",
+      "unidad_de_medida": "NIU",
+      "COD_UND_MEDIDA_ITEM": "NIU",
+      "PESO_ITEM": 3800.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT1-000020",
+   "delivered",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "3 Traer cotizacion: linea BX sobre producto BX, serie TTT1",
+  "http": 201,
+  "codigo": null,
+  "mensaje": "Direct guide created and sent to NubeCont",
+  "guias": [
+   "TTT1-000020"
+  ],
+  "payload_enviado": [
+   {
+    "serie": "TTT1",
+    "numero": 20,
+    "items": [
+     {
+      "codigo": "GDBX00000001",
+      "descripcion": "PRODUCTO PRUEBA EN CAJA",
+      "cantidad": "3800.0",
+      "unidad_de_medida": "BX",
+      "COD_UND_MEDIDA_ITEM": "BX",
+      "PESO_ITEM": 3800.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT1-000020",
+   "delivered",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "4 Traer cotizacion: linea BX sobre producto BX, serie TTT4 (producto no DIGEMID)",
+  "http": 400,
+  "codigo": "TTT4_ONLY_DIGEMID",
+  "mensaje": "La serie TTT4 es solo para productos DIGEMID y esta guia lleva productos que no lo son (PRODUCTO PRUEBA EN CAJA). Emitelos con la serie de guias de venta (por ejemplo TTT1). No se uso ningun numero de guia.",
+  "guias": [],
+  "payload_enviado": [],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "5 DIGEMID: linea BX sobre producto DIGEMID BX (TTT4)",
+  "http": 201,
+  "codigo": null,
+  "mensaje": "Direct guide created and sent to NubeCont",
+  "guias": [
+   "TTT4-000001"
+  ],
+  "payload_enviado": [
+   {
+    "serie": "TTT4",
+    "numero": 1,
+    "items": [
+     {
+      "codigo": "GDDIGBX00001",
+      "descripcion": "JERINGA DIGEMID PRUEBA CAJA",
+      "cantidad": "10.0",
+      "unidad_de_medida": "BX",
+      "COD_UND_MEDIDA_ITEM": "BX",
+      "PESO_ITEM": 10.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT4-000001",
+   "delivered",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "6 DIGEMID: linea BX sobre producto DIGEMID NIU (como COT-000162-DIGEMID, TTT4)",
+  "http": 201,
+  "codigo": null,
+  "mensaje": "Direct guide created and sent to NubeCont",
+  "guias": [
+   "TTT4-000001"
+  ],
+  "payload_enviado": [
+   {
+    "serie": "TTT4",
+    "numero": 1,
+    "items": [
+     {
+      "codigo": "GDDIGNIU0001",
+      "descripcion": "MASCARILLA DIGEMID PRUEBA NIU",
+      "cantidad": "10.0",
+      "unidad_de_medida": "BX",
+      "COD_UND_MEDIDA_ITEM": "BX",
+      "PESO_ITEM": 10.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT4-000001",
+   "delivered",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "7 Traer cotizacion con linea NIU guardada, pero la pantalla manda BX y cantidad 1 (lo que se ve no es lo que se envia)",
+  "http": 201,
+  "codigo": null,
+  "mensaje": "Direct guide created and sent to NubeCont",
+  "guias": [
+   "TTT1-000020"
+  ],
+  "payload_enviado": [
+   {
+    "serie": "TTT1",
+    "numero": 20,
+    "items": [
+     {
+      "codigo": "BSTL260708NG65TL",
+      "descripcion": "GUANTE NITRILO BSTL 26 L VERDE",
+      "cantidad": "3800.0",
+      "unidad_de_medida": "NIU",
+      "COD_UND_MEDIDA_ITEM": "NIU",
+      "PESO_ITEM": 3800.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT1-000020",
+   "delivered",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "8 Guia directa sin cotizacion: producto NIU con unidad BX en la linea",
+  "http": 201,
+  "codigo": null,
+  "mensaje": "Direct guide created and sent to NubeCont",
+  "guias": [
+   "TTT1-000020"
+  ],
+  "payload_enviado": [
+   {
+    "serie": "TTT1",
+    "numero": 20,
+    "items": [
+     {
+      "codigo": "BSTL260708NG65TL",
+      "descripcion": "x",
+      "cantidad": "3800.0",
+      "unidad_de_medida": "BX",
+      "COD_UND_MEDIDA_ITEM": "BX",
+      "PESO_ITEM": 3800.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered",
+   "TTT1-000020",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "9 issue-guide (emitir guia desde la cotizacion aceptada): linea BX sobre producto NIU",
+  "http": 200,
+  "codigo": null,
+  "mensaje": "Delivery guide issued and sent to NubeCont",
+  "guias": [
+   "TTT1-000020"
+  ],
+  "payload_enviado": [
+   {
+    "serie": "TTT1",
+    "numero": 20,
+    "items": [
+     {
+      "codigo": "BSTL260708NG65TL",
+      "descripcion": "GUANTE NITRILO BSTL 26 L VERDE",
+      "cantidad": "3800.0",
+      "unidad_de_medida": "BX",
+      "COD_UND_MEDIDA_ITEM": "BX",
+      "PESO_ITEM": 3800.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT1-000020",
+   "delivered",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ },
+ {
+  "caso": "10 Como el caso 1, con el PROVEEDOR rechazando: \"Despatch advice lines catalog unidad de medida incorrecto\"",
+  "http": 502,
+  "codigo": "NUBECONT_GUIDE_SEND_ERROR",
+  "mensaje": "Despatch advice lines catalog unidad de medida incorrecto",
+  "guias": [],
+  "payload_enviado": [
+   {
+    "serie": "TTT1",
+    "numero": 20,
+    "items": [
+     {
+      "codigo": "BSTL260708NG65TL",
+      "descripcion": "GUANTE NITRILO BSTL 26 L VERDE",
+      "cantidad": "3800.0",
+      "unidad_de_medida": "BX",
+      "COD_UND_MEDIDA_ITEM": "BX",
+      "PESO_ITEM": 3800.0
+     }
+    ]
+   }
+  ],
+  "estado_cotizaciones": [
+   "TTT1-000011",
+   "delivered",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "-",
+   "accepted",
+   "TTT1-000014",
+   "delivered",
+   "TTT1-000015",
+   "delivered",
+   "TTT1-000016",
+   "delivered",
+   "TTT1-000018",
+   "delivered",
+   "TTT1-000019",
+   "delivered"
+  ]
+ }
+]

@@ -1,0 +1,40 @@
+
+### 1 Traer cotizacion: linea BX sobre producto NIU (como COT-000202), serie TTT1
+  respuesta: HTTP 201  Direct guide created and sent to NubeCont
+  enviado a NubeFact: TTT1-20  items=[{'codigo': 'BSTL260708NG65TL', 'descripcion': 'GUANTE NITRILO BSTL 26 L VERDE', 'cantidad': '3800.0', 'unidad_de_medida': 'BX', 'COD_UND_MEDIDA_ITEM': 'BX', 'PESO_ITEM': 3800.0}]
+
+### 2 Traer cotizacion: linea NIU sobre producto NIU, serie TTT1
+  respuesta: HTTP 201  Direct guide created and sent to NubeCont
+  enviado a NubeFact: TTT1-20  items=[{'codigo': 'BSTL260708NG65TL', 'descripcion': 'GUANTE NITRILO BSTL 26 L VERDE', 'cantidad': '3800.0', 'unidad_de_medida': 'NIU', 'COD_UND_MEDIDA_ITEM': 'NIU', 'PESO_ITEM': 3800.0}]
+
+### 3 Traer cotizacion: linea BX sobre producto BX, serie TTT1
+  respuesta: HTTP 201  Direct guide created and sent to NubeCont
+  enviado a NubeFact: TTT1-20  items=[{'codigo': 'GDBX00000001', 'descripcion': 'PRODUCTO PRUEBA EN CAJA', 'cantidad': '3800.0', 'unidad_de_medida': 'BX', 'COD_UND_MEDIDA_ITEM': 'BX', 'PESO_ITEM': 3800.0}]
+
+### 4 Traer cotizacion: linea BX sobre producto BX, serie TTT4 (producto no DIGEMID)
+  respuesta: HTTP 400 TTT4_ONLY_DIGEMID La serie TTT4 es solo para productos DIGEMID y esta guia lleva productos que no lo son (PRODUCTO PRUEBA EN CAJA). Emitelos con la serie de guias de venta (por e
+  enviado a NubeFact: NADA (no se llamo al proveedor)
+
+### 5 DIGEMID: linea BX sobre producto DIGEMID BX (TTT4)
+  respuesta: HTTP 201  Direct guide created and sent to NubeCont
+  enviado a NubeFact: TTT4-1  items=[{'codigo': 'GDDIGBX00001', 'descripcion': 'JERINGA DIGEMID PRUEBA CAJA', 'cantidad': '10.0', 'unidad_de_medida': 'BX', 'COD_UND_MEDIDA_ITEM': 'BX', 'PESO_ITEM': 10.0}]
+
+### 6 DIGEMID: linea BX sobre producto DIGEMID NIU (como COT-000162-DIGEMID, TTT4)
+  respuesta: HTTP 201  Direct guide created and sent to NubeCont
+  enviado a NubeFact: TTT4-1  items=[{'codigo': 'GDDIGNIU0001', 'descripcion': 'MASCARILLA DIGEMID PRUEBA NIU', 'cantidad': '10.0', 'unidad_de_medida': 'BX', 'COD_UND_MEDIDA_ITEM': 'BX', 'PESO_ITEM': 10.0}]
+
+### 7 Traer cotizacion con linea NIU guardada, pero la pantalla manda BX y cantidad 1 (lo que se ve no es lo que se envia)
+  respuesta: HTTP 201  Direct guide created and sent to NubeCont
+  enviado a NubeFact: TTT1-20  items=[{'codigo': 'BSTL260708NG65TL', 'descripcion': 'GUANTE NITRILO BSTL 26 L VERDE', 'cantidad': '3800.0', 'unidad_de_medida': 'NIU', 'COD_UND_MEDIDA_ITEM': 'NIU', 'PESO_ITEM': 3800.0}]
+
+### 8 Guia directa sin cotizacion: producto NIU con unidad BX en la linea
+  respuesta: HTTP 201  Direct guide created and sent to NubeCont
+  enviado a NubeFact: TTT1-20  items=[{'codigo': 'BSTL260708NG65TL', 'descripcion': 'x', 'cantidad': '3800.0', 'unidad_de_medida': 'BX', 'COD_UND_MEDIDA_ITEM': 'BX', 'PESO_ITEM': 3800.0}]
+
+### 9 issue-guide (emitir guia desde la cotizacion aceptada): linea BX sobre producto NIU
+  respuesta: HTTP 200  Delivery guide issued and sent to NubeCont
+  enviado a NubeFact: TTT1-20  items=[{'codigo': 'BSTL260708NG65TL', 'descripcion': 'GUANTE NITRILO BSTL 26 L VERDE', 'cantidad': '3800.0', 'unidad_de_medida': 'BX', 'COD_UND_MEDIDA_ITEM': 'BX', 'PESO_ITEM': 3800.0}]
+
+### 10 Como el caso 1, con el PROVEEDOR rechazando: "Despatch advice lines catalog unidad de medida incorrecto"
+  respuesta: HTTP 502 NUBECONT_GUIDE_SEND_ERROR Despatch advice lines catalog unidad de medida incorrecto
+  enviado a NubeFact: TTT1-20  items=[{'codigo': 'BSTL260708NG65TL', 'descripcion': 'GUANTE NITRILO BSTL 26 L VERDE', 'cantidad': '3800.0', 'unidad_de_medida': 'BX', 'COD_UND_MEDIDA_ITEM': 'BX', 'PESO_ITEM': 3800.0}]
