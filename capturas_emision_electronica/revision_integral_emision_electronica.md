@@ -318,3 +318,69 @@ Ajustes por lo encontrado:
 9. **E001 y EB01 (FLUMISA, 24/09):** ¿son comprobantes emitidos en el portal de SUNAT (SOL) y cargados al sistema solo para registro? Si es así, no deben enviarse a NubeFact.
 10. **Para el contador:** los documentos que nunca llegaron a SUNAT (pruebas y repetidos), ¿se descartan solo en el sistema o hay que enviarlos y darlos de baja para no dejar huecos en la correlatividad?
 11. **Para el contador:** en el Excel del PLE, ¿opción (a), (b) o (c) para los documentos sin respuesta?
+
+---
+
+# Rediseño pedido (22/10/2026): registrar solo lo que llegó a NubeFact
+
+Pedido: que no haya problemas con NubeFact, que todo quede correcto con los PDF guardados, y que **no se registre una venta si no llegó a NubeFact**.
+
+## Idea
+Hoy el sistema hace "guardar → enviar". Se cambia a **"preparar → enviar → guardar"**, en **una sola llamada al servidor**: `POST /api/sales/<empresa>/emit`. La pantalla ya no guarda la venta por un lado y la envía por otro.
+
+1. **Validar** lo mismo que hoy: cliente, serie, líneas, stock, periodo, NC y referido. Si algo falla, no se guarda nada.
+2. **Tomar el número** con un candado por empresa y serie. Dos ventas de la misma serie no pueden tomar el mismo número ni cruzarse.
+3. **Armar la venta, sin guardarla todavía:** la venta, sus líneas y el stock quedan dentro de una transacción abierta.
+4. **Anotar el intento** en la tabla de intentos (conexión aparte): número, empresa, total y cliente, `en_curso`.
+5. **Enviar a NubeFact.** Según la respuesta:
+
+| Respuesta de NubeFact | Qué queda en el sistema |
+|---|---|
+| Lo recibió (ticket o enlace) | **Se guarda** la venta con su ticket, el stock y el asiento contable. Se descargan PDF, XML y CDR. |
+| Lo rechazó con un motivo claro | **No se guarda nada.** El número queda libre y la pantalla muestra el motivo de NubeFact para corregir y volver a emitir. |
+| No se pudo llamar (sin red, NubeFact caído, token) | **No se guarda nada.** El número queda libre. Mensaje: "NubeFact no responde; no se registró la venta, inténtelo de nuevo". |
+| Se cortó sin respuesta (tiempo agotado) | Se **consulta** a NubeFact en el acto. Si dice "no existe", no se guarda nada. Si existe, se guarda como recibido. |
+| Se cortó y la consulta tampoco responde | **Único caso que se guarda sin confirmar**, porque NubeFact pudo haberlo recibido y no puede quedar un comprobante en SUNAT que el sistema no tiene. Queda "Por verificar" en la lista, con el motivo, y el botón "Consultar" lo resuelve. Debería ser muy raro. |
+
+6. **PDF, XML y CDR:** se descargan apenas se guarda la venta, en la misma operación. Si NubeFact todavía no los tiene listos (pasa con boletas, que SUNAT acepta después por resumen diario), la venta queda guardada como **recibida por NubeFact** y la lista "Aceptadas sin PDF/CDR" los vuelve a pedir. Nunca queda una venta sin poder bajar su PDF.
+
+## Lo que esto resuelve
+- **F020-000214 y B030-000016:** no habrían quedado registradas sin enviar. La tienda habría visto el motivo y vuelto a emitir con el mismo número.
+- **F010-000007/8/9:** no habrían existido. Como la primera no se guardó, emitir de nuevo usa el mismo número, en lugar de crear otra factura colgada.
+- **No más "No se pudo crear venta" cuando sí se creó:** si la pantalla dice que no, es que no hay nada guardado.
+- **Las NC** siguen el mismo camino: solo existen si NubeFact las recibió. Una NC sobre una factura anulada se rechaza antes.
+
+## Riesgos y cómo se cubren
+- **El proceso muere (reinicio) justo después de que NubeFact lo recibió:** la transacción se deshace, así que NubeFact tiene el documento y el sistema no.
+  - **Cobertura:** la fila `en_curso` de la tabla de intentos queda grabada porque usa una conexión aparte. Al arrancar el servicio, y en la lista, esos intentos se consultan en NubeFact. Si existe, se muestra "Recibido en NubeFact pero no registrado" con los datos del intento para volver a emitirlo con ese mismo número.
+  - **Además:** si NubeFact responde "ya existe" para un número, el sistema **no** copia ese comprobante dentro de otra venta distinta (hoy lo hace, sale_routes 3730). Solo lo recupera si coinciden cliente y total; si no, avisa.
+- **Mientras se espera a NubeFact (hasta unos 40 s), otra venta de la misma serie espera su turno.** Cada tienda tiene su serie, así que el efecto es mínimo. Ventas de series distintas no se esperan entre sí.
+- **El stock no se descuenta si NubeFact rechaza** (la transacción se deshace). Si en ese momento otra venta descuenta el mismo producto, el candado y el control de stock existentes siguen aplicando.
+- **Correlativos:** un número rechazado por NubeFact no se registró allá, así que reutilizarlo es correcto y no deja huecos.
+
+## Qué cambia en la pantalla
+- **"Emitir"** hace una sola llamada. Mensajes posibles:
+  - "Factura F020-000215 emitida y recibida por NubeFact" (con PDF);
+  - "NO se emitió: <motivo de NubeFact>. No se registró nada";
+  - "Por verificar", en el caso raro.
+- **Se quitan los pasos separados de la pantalla:** guardar, validar, enviar y contabilizar.
+- **Se mantiene el bloqueo de doble clic** (botón "Procesando…" y candado en el servidor).
+
+## Qué se mantiene del diseño anterior
+- La tabla de intentos (B1) y la lista para Sistema, Gerente y Administrador. Ahora solo muestra:
+  - los "Por verificar";
+  - los "Recibido en NubeFact pero no registrado";
+  - las aceptadas sin PDF o CDR;
+  - los **27 documentos viejos**, que se resuelven uno por uno con "Consultar", "Enviar" o "Descartar".
+- B3 (leer bien el estado de SUNAT), B4 (token) y B5 (clave de sesiones).
+- **Nada de lo ya emitido se modifica al instalar.**
+
+## Alcance
+| Flujo | Cambia a "solo si llegó a NubeFact" |
+|---|---|
+| Venta y venta de tienda (`createQuickSale`) | Sí |
+| Emitir desde cotización (`wf-emit`) | Sí |
+| Nota de crédito y nota de débito | Sí |
+| Venta dividida por DIGEMID | Sí: cada parte se emite por separado; si la segunda falla, la primera queda emitida y se avisa claramente |
+| Guías | Segunda etapa (tienen su propia recuperación) |
+| Baja | Sin cambio en esta etapa |
