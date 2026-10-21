@@ -92,10 +92,10 @@ Si NubeFact responde un error (por ejemplo "Documento no existe", código 24), d
 | requests hacia NubeFact | 20 s para conectar y 20 s para leer (`NUBECONT_TIMEOUT`, 20 si no está definido) | nubecont_service 34–37, 226 |
 | Descarga de PDF/XML/CDR | 30 s cada una, **dentro** de la petición de envío y antes del commit | electronic_storage 42 |
 | gunicorn | `-w 2 --threads 8`, timeout 120 (según tu dato; no está en el repositorio) | script 2, sección 1 |
-| nginx | No está en el repositorio. Si no se definió, `proxy_read_timeout` vale **60 s** | script 2, sección 1 |
+| nginx | `proxy_read_timeout 120` (confirmado por ti el 22/10) | script 2, sección 1 |
 
 ¿Puede cortarse una emisión lenta sin dejar error? **Sí, de dos maneras:**
-1. **nginx corta a los 60 s** mientras el envío y la descarga siguen. El navegador recibe un 504 en HTML, `api()` no puede leerlo (`payload = {}`) y muestra "Error en solicitud". Pero el servidor **sigue y hace commit**: el documento queda aceptado aunque la pantalla dijo error, y la persona puede repetir la venta. La sección a3) del SQL busca estos pares.
+1. **nginx corta a los 120 s** (el envío más lento posible dura unos 130 s) mientras el envío y la descarga siguen. Con 120 s es poco frecuente, pero posible si NubeFact y las descargas van lentas a la vez. El navegador recibe un 504 en HTML, `api()` no puede leerlo (`payload = {}`) y muestra "Error en solicitud". Pero el servidor **sigue y hace commit**: el documento queda aceptado aunque la pantalla dijo error, y la persona puede repetir la venta. La sección a3) del SQL busca estos pares.
 2. **Reinicio del servicio** a mitad de la llamada. Si muere antes de que NubeFact reciba el documento, queda "no existe" (como F020-000214). Si muere después, queda aceptada allá y vacía aquí.
 
 **Sobre el timeout de 120 s de gunicorn:** con hilos (`gthread`), el aviso de vida lo da el hilo principal, así que una petición larga **no** dispara "WORKER TIMEOUT". El riesgo real está en nginx y en los reinicios.
@@ -200,7 +200,7 @@ Se mantiene lo aprobado: la tabla `electronic_send_attempt`, el estado calculado
 Ajustes por lo encontrado:
 1. **Registrar también lo que hoy no llega al servidor.** Desde la pantalla, si el envío falla en el navegador (red, pestaña o 504 sin cuerpo), `POST /electronic/attempt-failed` guarda el motivo visto ("Error en solicitud", "Tu sesión expiró", HTTP 504). Si esa llamada también falla, el documento igual aparece como "Pendiente de envío", porque el estado se calcula.
 2. **Fila `en_curso` antes de llamar a NubeFact,** con una conexión aparte. Si el proceso muere (reinicio), queda "Sin respuesta (verificar)".
-3. **Descargas fuera del camino crítico:** hacer commit del ticket y del estado **antes** de descargar PDF/XML/CDR. Las descargas pasan a un segundo paso que se puede reintentar. Así el envío baja de 130 s a unos 40 s como máximo, por debajo de nginx.
+3. **Descargas fuera del camino crítico:** hacer commit del ticket y del estado **antes** de descargar PDF/XML/CDR. Las descargas pasan a un segundo paso que se puede reintentar. Así el envío baja de 130 s a unos 40 s como máximo, bien por debajo de los 120 s de nginx.
 4. **Corrección de correlativo:** queda detrás de `nubefact_corregir_correlativo`, apagado, y consulta antes de reenviar.
 5. **Baja:** registrar el intento y no marcar `anulada` hasta confirmar el ticket. Diseño aparte: ¿lo incluyo?
 6. **Mensaje correcto en la pantalla:** "La venta QUEDÓ REGISTRADA como X pero NO se envió: <motivo>", con "Reintentar envío" (ya aprobado). Nunca más "No se pudo crear venta" cuando la venta sí se creó.
@@ -230,4 +230,91 @@ Ajustes por lo encontrado:
 4. **B2:** además de Sistema, Gerente y Administrador, ¿quién más puede pulsar "Enviar a SUNAT" y "Consultar estado"?
 5. **Baja (B1.5):** ¿incluyo en esta tanda no marcar `anulada` hasta que SUNAT confirme?
 6. **Orden:** propongo B5 → instalar la rama del token y rotar (B4) → B3 junto con B1 (una sola rama, porque comparten la tabla) → B2. ¿De acuerdo?
-7. **¿El timeout de nginx está en 60 s?** Si el script 2 lo confirma, ¿lo subimos a 150 s mientras se programa B1.3?
+7. ~~¿El timeout de nginx está en 60 s?~~ Respondida: está en 120 s. No hace falta cambiarlo; B1.3 basta.
+
+
+---
+
+# Adenda (22/10/2026): resultados del diagnóstico en producción
+
+## Lo que mostró el script (según tu resumen)
+- **27 documentos sin respuesta.** La mayoría no son reales:
+  - 11 pruebas de FIKA, con totales de 0.00 a 1.06;
+  - 8 de una carga masiva de FLUMISA del 24/09, en series E001 y EB01.
+- **Reales:**
+  - **facturas repetidas en FIKA:** F010-000007, F010-000008 y F010-000009, de 4,250.00 cada una;
+  - **5 notas de crédito.** Una de ellas, FC10-000001, modifica una factura **anulada**.
+- **nginx** está en `proxy_read_timeout 120`. Ya corregí A3. El caso de 130 s sigue siendo posible pero raro, y B1.3 lo elimina.
+
+## Lectura de los hallazgos
+- **F010-000007/8/9:** es el patrón de A1, punto 5. La pantalla dijo "No se pudo crear venta" (aunque la venta se creó) y la persona volvió a emitir. Cada vez quedó otra factura con correlativo nuevo y sin enviar.
+- **FC10-000001:** una NC sobre una factura anulada **no se puede enviar nunca**. El servidor exige que el documento referido esté `aceptada` (sale_routes 3684–3693), y una factura anulada en SUNAT no admite NC. Hoy nada impide **crearla**: `create_credit_note` no revisa si el referido está anulado.
+- **Series E001 y EB01:** en SUNAT, las series que empiezan con **E** son las de comprobantes emitidos en el **portal de SUNAT (SEE-SOL)**, no por un proveedor como NubeFact. Si esa carga masiva registró documentos emitidos en SOL, **no deben enviarse a NubeFact**: se duplicarían en SUNAT. Hay que confirmarlo (pregunta 9).
+
+## Cambios en B1 (intentos de envío)
+
+### B1.8 — El reintento no deja ventas repetidas sin respuesta
+1. **Al crear una venta (servidor):**
+   - **Qué revisa:** si ya existe, en la misma empresa, una venta electrónica con el mismo cliente, el mismo tipo de documento, el mismo total y la misma fecha de emisión, creada en las últimas 24 h, **sin respuesta de SUNAT** y no anulada.
+   - **Si existe:** responde 409 `POSIBLE_VENTA_REPETIDA` con el número de esa venta y **no crea** la nueva.
+   - **Pantalla:** "Ya existe F010-000007 por 4,250.00 para este cliente, registrada a las 10:42 y SIN enviar a SUNAT". Ofrece dos botones:
+     - **"Enviar F010-000007"** (recomendado): usa el reintento seguro y no crea nada nuevo;
+     - **"Crear otra venta igual"**: pide marcar la casilla "Confirmo que es una venta distinta", reenvía con `confirmar_repetida: true` y queda anotado en la tabla de intentos y en la auditoría.
+   - Este es el aviso con casilla y sin bloqueo duro que ya aprobaste en (a), pero ahora **lo valida el servidor**, no solo la pantalla.
+2. **Al reintentar un documento:** si existe un "gemelo" (mismos datos que arriba) que ya está **aceptado**, el reintento no envía. Responde 409 `GEMELO_ACEPTADO`: "F010-000009, igual a este, ya está aceptada en SUNAT. Si esta venta es distinta, un Gerente o Administrador debe confirmarlo". Así el reintento nunca convierte una venta repetida en dos facturas aceptadas.
+3. **En la lista de pendientes:**
+   - los documentos con gemelo se agrupan: "F010-000007, -000008 y -000009: posibles repetidas";
+   - el botón "Enviar" se habilita en **uno solo** del grupo;
+   - los otros quedan para **descartar** (B1.10).
+
+### B1.9 — NC sobre un documento anulado
+- **Al crear la NC:** `create_credit_note` rechaza con 400 `REFERENCED_DOCUMENT_CANCELLED` si el documento referido tiene `status='cancelled'` o `sunat_status='anulada'`. Es el mismo criterio de `_already_voided_error` (`5b48984`).
+- **En la lista:** las NC existentes en esa situación (FC10-000001) aparecen como **"No enviable: modifica un documento anulado"**, sin el botón "Enviar", solo con "Descartar".
+
+### B1.10 — Descartar documentos que no se van a enviar
+- **Para qué:** las 11 pruebas, los repetidos y FC10-000001 deben salir de la lista sin enviarse.
+- **Cómo:** acción **"Descartar (no se envía a SUNAT)"**, solo para Sistema, Gerente y Administrador, con un motivo obligatorio. Pone `status='cancelled'` en el sistema y deja `sunat_status` vacío, porque nunca llegó a SUNAT. Revierte el stock como una anulación local y queda en la tabla de intentos (`outcome='descartado'`) y en la auditoría.
+- **Límites:**
+  - solo sobre documentos **sin ticket** que NubeFact confirme como "no existe" (se consulta antes);
+  - nunca sobre documentos aceptados;
+  - **no hace baja en SUNAT**, porque no hay nada que dar de baja.
+- **Pregunta para el contador:** ¿basta con descartarlos en el sistema, o SUNAT/NubeFact exigen el correlativo enviado y luego dado de baja (pregunta 10)?
+
+### B1.11 — Series emitidas fuera de NubeFact (E001, EB01)
+- **Regla:** una serie que empiece con **E** se considera emitida fuera de NubeFact.
+  - No aparece en la lista de pendientes; va en un apartado "Emitidos en SUNAT (SOL)".
+  - El servidor rechaza su envío a NubeFact: 400 `SERIE_EMITIDA_FUERA_DE_NUBEFACT`.
+  - El botón "Enviar" no se dibuja.
+- **Pendiente:** confirmar con el contador. Si se confirma, conviene marcar esos 8 documentos con `is_electronic=false` o un indicador "emitido en SOL", para que tampoco cuenten como "sin respuesta". Eso modifica datos, así que va aparte y con tu OK.
+
+## Cambio en el Excel "Exportar Detallado PLE"
+
+### B6 — NC sin respuesta de SUNAT: no restan, o restan marcadas
+- **Hoy (`02d1d29`):** toda NC no anulada sale en negativo, haya respondido SUNAT o no. Una NC que nunca llegó a SUNAT (como FC10-000001) **resta sin aviso**.
+- **Propuesta:**
+  - **NC con `sunat_status` vacío o distinto de aceptada:**
+    - importes en **0** (con el formato, se ven "-"), así que **no restan**;
+    - **AJ** queda en 1;
+    - **BF** dice "NC sin respuesta de SUNAT: no resta hasta que SUNAT la acepte".
+  - **NC sobre un documento anulado:** igual, en 0, con la observación "NC sobre documento anulado (no enviable)".
+  - **NC aceptada:** sin cambio, en negativo.
+- **Solo el Excel,** como pediste. Los TXT no cambian.
+- **Pregunta (11):** ¿las **facturas y boletas** sin respuesta deben quedar igual? Hoy suman su importe completo, marcadas "Sin estado SUNAT", y B030-000016 se incluye marcada por tu decisión. Si las NC sin respuesta no restan pero las facturas sin respuesta sí suman, el libro queda asimétrico. Opciones:
+  - **(a)** solo las NC en 0, como pediste;
+  - **(b)** todo documento sin respuesta en 0 y marcado;
+  - **(c)** todo documento sin respuesta con su importe y marcado, como hoy, sin restar las NC.
+  - Recomiendo **(b)**, para que el total del Excel refleje solo lo que SUNAT tiene. La decisión es del contador.
+- **Prueba prevista:** en la base de prueba, una NC aceptada (resta), una NC sin respuesta (0 y marcada) y una NC sobre un documento anulado (0 y marcada), comparando el total contra `710e86b`.
+
+## Orden propuesto (actualizado)
+1. **B5:** clave de sesiones.
+2. **Instalar la rama del token y rotar los tokens (B4).**
+3. **B6:** Excel del PLE. Es chico, se puede hacer en paralelo y no depende del resto.
+4. **B3 + B1 en una sola rama,** con 8 a 11 incluidos.
+5. **B2:** botones en Facturación.
+
+## Preguntas nuevas
+8. **F010-000007/8/9:** ¿cuál de las tres es la venta real (o eran tres ventas distintas)? La lista dejará enviar solo una.
+9. **E001 y EB01 (FLUMISA, 24/09):** ¿son comprobantes emitidos en el portal de SUNAT (SOL) y cargados al sistema solo para registro? Si es así, no deben enviarse a NubeFact.
+10. **Para el contador:** los documentos que nunca llegaron a SUNAT (pruebas y repetidos), ¿se descartan solo en el sistema o hay que enviarlos y darlos de baja para no dejar huecos en la correlatividad?
+11. **Para el contador:** en el Excel del PLE, ¿opción (a), (b) o (c) para los documentos sin respuesta?
