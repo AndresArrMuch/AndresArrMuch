@@ -1,0 +1,30 @@
+{
+ "errores_js": [],
+ "apagado_visible": {
+  "i-tallas-box": false,
+  "inv-import-details": false,
+  "m-add-line": false,
+  "m-doc-row": false
+ },
+ "apagado_movimiento_simple": "Movimiento registrado: 1 linea",
+ "encendido_tesoreria_visible": {
+  "i-tallas-box": false,
+  "inv-import-details": false,
+  "m-add-line": false,
+  "m-doc-row": false
+ },
+ "encendido_almacen_visible": {
+  "i-tallas-box": true,
+  "inv-import-details": true,
+  "m-add-line": true,
+  "m-doc-row": true
+ },
+ "tallas": "3 items creados: BSTL260708NG65TS, BSTL260708NG65TM, BSTL260708NG65TL. Registra su ingreso abajo.",
+ "sin_documento": "No se pudo registrar movimiento: Elige el documento de origen",
+ "costo_relleno": "No se pudo registrar movimiento: El costo de la linea 2 debe ser mayor a 0 y distinto de 0.01",
+ "para_facturar": "No se pudo registrar movimiento: El numero de documento no puede ser un texto como \"para facturar\" o \"correccion\": indica el documento de origen",
+ "movimiento_ok": "Movimiento registrado: 3 lineas",
+ "excel_resumen": "23 filas · 10 marcadas para crear · 5 ya existen · 2 repetidas en el Excel · 6 de otra empresa",
+ "excel_crear": "10 items creados desde el Excel. Registra su ingreso abajo.",
+ "excel_movimiento_lineas": 10
+}
