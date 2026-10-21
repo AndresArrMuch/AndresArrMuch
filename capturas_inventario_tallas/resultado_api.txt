@@ -1,0 +1,32 @@
+### 1) Mismas entradas, salida y ajuste: main (una linea por vez) vs rama (varias lineas en un movimiento)
+  main respuestas: [201, 201, 201, 201, 201] | rama respuestas: 201 201 201
+  kardex identico (tipo, cantidad, costo, total, saldo, saldo valorizado): True
+    ['af-i1', 'in', 100.0, 2.5, 250.0, 100.0, 250.0]
+    ['af-i2', 'in', 40.0, 1.2, 48.0, 40.0, 48.0]
+    ['af-i1', 'in', 10.0, 3.0, 30.0, 110.0, 280.0]
+    ['af-i1', 'out', 5.0, 2.5, 12.5, 105.0, 267.5]
+    ['af-i2', 'adjustment', 3.0, 1.2, 3.6, 37.0, 44.4]
+  costo del item identico: True {'YXRP0291C25NYTL': 1.2, 'SSG2603FMANG75TM': 2.5}
+  usuario guardado: main [False, False, False, False, False] | rama [True, True, True, True, True]
+
+### 2) Tres tallas en un paso: 201 3 items creados
+    ['BSTL260708NG65TL', 'L, VERDE', 'NIU', 8.5, 'GENERAL', True]
+    ['BSTL260708NG65TM', 'M, VERDE', 'NIU', 8.5, 'GENERAL', True]
+    ['BSTL260708NG65TS', 'S, VERDE', 'NIU', 8.5, 'GENERAL', True]
+### 3_codigo_ya_existe: 400 INVALID_ITEMS | No se creo ningun item: fila 2 BSTL260708NG65TL: El codigo ya existe: BSTL260708NG65TL - NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS
+### 4_sufijo_repetido: 400 INVALID_ITEMS | No se creo ningun item: fila 2 zz1ts: Codigo repetido en la lista (fila 1)
+### 5_barra_repetida: 400 INVALID_ITEMS | No se creo ningun item: fila 1 ZZ2TS: El codigo de barras 1211 ya existe
+### 3 a 5) no se creo ningun item: True
+
+### 6) Ingreso de las 3 tallas en un movimiento: 201 3 lineas registradas
+    ['in', 100.0, 8.5, 850.0, 100.0, 850.0, True]
+    ['in', 200.0, 8.5, 1700.0, 200.0, 1700.0, True]
+    ['in', 300.0, 8.5, 2550.0, 300.0, 2550.0, True]
+### 7) Mismo item dos veces en el movimiento: 201 | ultimas dos lineas (saldo acumulado): [['in', 10.0, 9.0, 90.0, 110.0, 940.0], ['in', 5.0, 10.0, 50.0, 115.0, 990.0]]
+### 8_salida_sin_stock: 400 INVALID_LINES | No se registro ninguna linea: fila 2 BSTL260708NG65TL: Stock insuficiente en ALMFIKA: hay 300.00, se pide 9999
+### 9_cantidad_cero: 400 INVALID_LINES | No se registro ninguna linea: fila 2 BSTL260708NG65TL: La cantidad debe ser mayor a 0 y el costo no negativo
+### 10_31_lineas: 400 TOO_MANY_LINES | Maximo 30 lineas por movimiento
+### 11_tienda_movimiento: 403 KARDEX_READ_ONLY | El kardex de tienda es de solo lectura: los items y movimientos los registra el almacen
+### 11_tienda_items: 403 KARDEX_READ_ONLY | El kardex de tienda es de solo lectura: los items y movimientos los registra el almacen
+### 8 a 11) no se registro ningun movimiento: True
+### 12) Doble clic (dos envios simultaneos de 20 lineas): [201, 409] | lineas creadas: 20
