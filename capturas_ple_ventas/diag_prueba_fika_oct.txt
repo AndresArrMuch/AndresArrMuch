@@ -1,0 +1,38 @@
+BEGIN
+== 1) Documentos del Excel PLE de hoy, con el importe de hoy y el propuesto
+     empresa     | document_number | tipo | emission_date |  status   | sunat_status | currency | ref_tipo |   ref_num   | total_hoy | total_propuesto |              observacion               
+-----------------+-----------------+------+---------------+-----------+--------------+----------+----------+-------------+-----------+-----------------+----------------------------------------
+ FIKA PRUEBA SAC | F001-000001     | 01   | 2026-10-01    | emitted   | aceptada     | PEN      |          |             |   1180.00 |         1180.00 | 
+ FIKA PRUEBA SAC | B001-000001     | 03   | 2026-10-02    | emitted   | aceptada     | PEN      |          |             |    118.00 |          118.00 | 
+ FIKA PRUEBA SAC | F001-000005     | 01   | 2026-10-02    | emitted   | aceptada     | PEN      |          |             |    472.00 |          472.00 | 
+ FIKA PRUEBA SAC | FC01-000001     | 07   | 2026-10-03    | emitted   | aceptada     | PEN      |          | F001-000001 |    236.00 |         -236.00 | NOTA DE CREDITO: en negativo
+ FIKA PRUEBA SAC | FD01-000001     | 08   | 2026-10-04    | emitted   | aceptada     | PEN      |          | F001-000001 |     59.00 |           59.00 | 
+ FIKA PRUEBA SAC | F001-000002     | 01   | 2026-10-05    | cancelled | anulada      | PEN      |          |             |    590.00 |            0.00 | ANULADO: importe 0 y estado de anulado
+ FIKA PRUEBA SAC | F001-000003     | 01   | 2026-10-06    | emitted   | (vacio)      | PEN      |          |             |    354.00 |          354.00 | SIN ESTADO SUNAT: revisar
+ FIKA PRUEBA SAC | F001-000004     | 01   | 2026-10-07    | emitted   | aceptada     | USD      |          |             |    100.00 |          100.00 | 
+ FIKA PRUEBA SAC | F001-000006     | 01   | 2026-10-08    | emitted   | aceptada     | PEN      |          |             |   1018.00 |         1018.00 | 
+ FIKA PRUEBA SAC | F030-000119     | 01   | 2026-10-16    | emitted   | (vacio)      | PEN      |          |             |    540.00 |          540.00 | SIN ESTADO SUNAT: revisar
+ FIKA PRUEBA SAC | F030-000120     | 01   | 2026-10-16    | emitted   | aceptada     | PEN      |          |             |    540.00 |          540.00 | 
+(11 rows)
+
+== 2) Totales del Excel: hoy vs propuesto (base, IGV, total), por moneda
+ moneda | documentos | base_hoy | igv_hoy | total_hoy | base_propuesta | igv_propuesto | total_propuesto | diferencia | notas_credito | anulados | sin_estado_sunat 
+--------+------------+----------+---------+-----------+----------------+---------------+-----------------+------------+---------------+----------+------------------
+ PEN    |         10 |  4327.97 |  779.03 |   5107.00 |        3427.97 |        617.03 |         4045.00 |    1062.00 |             1 |        1 |                2
+ USD    |          1 |    84.75 |   15.25 |    100.00 |          84.75 |         15.25 |          100.00 |       0.00 |             0 |        0 |                0
+        |         11 |  4412.72 |  794.28 |   5207.00 |        3512.72 |        632.28 |         4145.00 |    1062.00 |             1 |        1 |                2
+(3 rows)
+
+== 3) Mes de emision distinto del periodo contable (el Excel usa la emision; los TXT usan el periodo)
+ document_number | tipo | emission_date | periodo_contable | total  
+-----------------+------+---------------+------------------+--------
+ F001-000005     | 01   | 2026-10-02    | 2026-09          | 472.00
+(1 row)
+
+== 4) Notas de credito por mes y estado contable (desde cuando quedan sin asiento)
+     empresa     |   mes   | accounting_status | notas | total  | con_asiento_por_glosa |  primera   |   ultima   
+-----------------+---------+-------------------+-------+--------+-----------------------+------------+------------
+ FIKA PRUEBA SAC | 2026-10 |                   |     1 | 236.00 |                     0 | 2026-10-03 | 2026-10-03
+(1 row)
+
+ROLLBACK
