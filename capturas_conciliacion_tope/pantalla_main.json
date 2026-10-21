@@ -1,0 +1,10 @@
+{
+ "errores_js": [],
+ "multi_info": null,
+ "multi_guardar_deshabilitado": false,
+ "multi_info_ajustado": null,
+ "multi_guardar_deshabilitado_ajustado": false,
+ "conc_antes": "B001-000001, F030-000119, F001-000003, F001-000005",
+ "quitar": "Pago/Cobro actualizado correctamente",
+ "conc_despues": "B001-000001, F030-000119, F001-000003, F001-000005"
+}

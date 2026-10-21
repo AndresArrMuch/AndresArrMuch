@@ -1,0 +1,10 @@
+{
+ "errores_js": [],
+ "multi_info": "Deposito en el extracto del 18/10/2026: S/ 600.00 · disponible: S/ 600.00\nLas facturas suman S/ 1,077.00 y pasan el deposito. Quite facturas o ajuste los montos.",
+ "multi_guardar_deshabilitado": true,
+ "multi_info_ajustado": "Deposito en el extracto del 18/10/2026: S/ 600.00 · disponible: S/ 600.00",
+ "multi_guardar_deshabilitado_ajustado": false,
+ "conc_antes": "B001-000001, F001-000003, F001-000005",
+ "quitar": "Pago/Cobro actualizado correctamente",
+ "conc_despues": "B001-000001, F001-000003"
+}
