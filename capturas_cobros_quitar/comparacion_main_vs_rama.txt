@@ -1,0 +1,27 @@
+## 0_cobro_3_facturas
+  MAIN: {'cobro_estado': 'applied', 'cobro_total': 944.0, 'facturas_del_cobro': [['B001-000001', 118.0], ['F001-000003', 354.0], ['F001-000005', 472.0]], 'cobrado_por_factura': {'F001-000003': 354.0, 'F001-000005': 472.0, 'B001-000001': 118.0}, 'banco': [944.0], 'asiento_debe': [944.0]}
+  RAMA: {'cobro_estado': 'applied', 'cobro_total': 944.0, 'facturas_del_cobro': [['B001-000001', 118.0], ['F001-000003', 354.0], ['F001-000005', 472.0]], 'cobrado_por_factura': {'F001-000003': 354.0, 'F001-000005': 472.0, 'B001-000001': 118.0}, 'banco': [944.0], 'asiento_debe': [944.0]}
+## 1_editar_desde_F001-000003_a_300
+  MAIN: 200  Pago/Cobro actualizado correctamente
+  RAMA: 200  Pago/Cobro actualizado correctamente
+## 1b_estado
+  MAIN: {'cobro_estado': 'applied', 'cobro_total': 300.0, 'facturas_del_cobro': [['F001-000003', 300.0]], 'cobrado_por_factura': {'F001-000003': 300.0, 'F001-000005': 0.0, 'B001-000001': 0.0}, 'banco': [300.0], 'asiento_debe': [300.0]}
+  RAMA: {'cobro_estado': 'applied', 'cobro_total': 890.0, 'facturas_del_cobro': [['B001-000001', 118.0], ['F001-000003', 300.0], ['F001-000005', 472.0]], 'cobrado_por_factura': {'F001-000003': 300.0, 'F001-000005': 472.0, 'B001-000001': 118.0}, 'banco': [890.0], 'asiento_debe': [890.0]}
+## 2_quitar_F001-000005
+  MAIN: 400 NOT_SUPPORTED Solo se puede quitar un documento de un pago a proveedor por banco
+  RAMA: 200  Pago/Cobro actualizado correctamente
+## 2b_estado
+  MAIN: {'cobro_estado': 'applied', 'cobro_total': 300.0, 'facturas_del_cobro': [['F001-000003', 300.0]], 'cobrado_por_factura': {'F001-000003': 300.0, 'F001-000005': 0.0, 'B001-000001': 0.0}, 'banco': [300.0], 'asiento_debe': [300.0]}
+  RAMA: {'cobro_estado': 'applied', 'cobro_total': 418.0, 'facturas_del_cobro': [['B001-000001', 118.0], ['F001-000003', 300.0]], 'cobrado_por_factura': {'F001-000003': 300.0, 'F001-000005': 0.0, 'B001-000001': 118.0}, 'banco': [418.0], 'asiento_debe': [418.0]}
+## 3_quitar_B001-000001
+  MAIN: 400 NOT_SUPPORTED Solo se puede quitar un documento de un pago a proveedor por banco
+  RAMA: 200  Pago/Cobro actualizado correctamente
+## 3b_estado
+  MAIN: {'cobro_estado': 'applied', 'cobro_total': 300.0, 'facturas_del_cobro': [['F001-000003', 300.0]], 'cobrado_por_factura': {'F001-000003': 300.0, 'F001-000005': 0.0, 'B001-000001': 0.0}, 'banco': [300.0], 'asiento_debe': [300.0]}
+  RAMA: {'cobro_estado': 'applied', 'cobro_total': 300.0, 'facturas_del_cobro': [['F001-000003', 300.0]], 'cobrado_por_factura': {'F001-000003': 300.0, 'F001-000005': 0.0, 'B001-000001': 0.0}, 'banco': [300.0], 'asiento_debe': [300.0]}
+## 4_quitar_la_ultima_F001-000003
+  MAIN: 400 NOT_SUPPORTED Solo se puede quitar un documento de un pago a proveedor por banco
+  RAMA: 200  Pago anulado correctamente
+## 4b_estado
+  MAIN: {'cobro_estado': 'applied', 'cobro_total': 300.0, 'facturas_del_cobro': [['F001-000003', 300.0]], 'cobrado_por_factura': {'F001-000003': 300.0, 'F001-000005': 0.0, 'B001-000001': 0.0}, 'banco': [300.0], 'asiento_debe': [300.0]}
+  RAMA: {'cobro_estado': 'voided', 'cobro_total': 300.0, 'facturas_del_cobro': [['F001-000003', 300.0]], 'cobrado_por_factura': {'F001-000003': 0.0, 'F001-000005': 0.0, 'B001-000001': 0.0}, 'banco': [], 'asiento_debe': []}
