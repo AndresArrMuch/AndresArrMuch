@@ -1,0 +1,127 @@
+
+=== 1) Venta normal, NubeFact acepta
+  envio
+    MAIN: 200  Document sent to NubeFact [TOKEN] [RUTA SECRETA]
+    RAMA: 200  Document sent to NubeFact
+  estado
+    MAIN: {'doc': 'F020-000001', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'posted'}
+    RAMA: {'doc': 'F020-000001', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'posted'}
+  llamadas a NubeFact
+    MAIN: ['registrado_ok']
+    RAMA: ['registrado_ok']
+
+=== 2) NubeFact caido (sin red) al emitir
+  envio
+    MAIN: 502 NUBECONT_SEND_ERROR HTTPConnectionPool(host='127.0.0.1', port=8949): Max retries exceeded with url: /api/ruta-secreta-xyz (Caused [TOKEN] [RUTA SECRETA]
+    RAMA: 502 NUBECONT_SEND_ERROR HTTPConnectionPool(host='127.0.0.1', port=8949): Max retries exceeded with url: *** (Caused by NewConnectionEr
+  queda registrado
+    MAIN: {'doc': 'F020-000002', 'sunat_status': '', 'ticket': False, 'pdf': False, 'cdr': False, 'contable': 'pending'}
+    RAMA: {'doc': 'F020-000002', 'sunat_status': '', 'ticket': False, 'pdf': False, 'cdr': False, 'contable': 'pending'}
+  motivo guardado
+    MAIN: no existe la tabla (main)
+    RAMA: [['send', 'pantalla', 'sin_respuesta', 0, "HTTPConnectionPool(host='127.0.0.1', port=8949): Max retries exceeded with url: "]]
+  boton Enviar a SUNAT
+    MAIN: (no existe el boton)
+    RAMA: 200  Document sent to NubeFact
+  estado final
+    MAIN: {'doc': 'F020-000002', 'sunat_status': '', 'ticket': False, 'pdf': False, 'cdr': False, 'contable': 'pending'}
+    RAMA: {'doc': 'F020-000002', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'posted'}
+
+=== 3) Tiempo agotado, pero NubeFact SI lo recibio
+  envio
+    MAIN: 502 NUBECONT_SEND_ERROR HTTPConnectionPool(host='127.0.0.1', port=8941): Read timed out. (read timeout=2) [TOKEN] [RUTA SECRETA]
+    RAMA: 200  Document sent to NubeFact
+  estado
+    MAIN: {'doc': 'F020-000003', 'sunat_status': '', 'ticket': False, 'pdf': False, 'cdr': False, 'contable': 'pending'}
+    RAMA: {'doc': 'F020-000003', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'pending'}
+  llamadas a NubeFact
+    MAIN: ['generar_comprobante:registrado_y_timeout']
+    RAMA: ['generar_comprobante:registrado_y_timeout', 'consultar_comprobante:existe']
+
+=== 4) NubeFact rechaza por datos
+  envio
+    MAIN: 502 NUBECONT_SEND_ERROR El RUC del cliente no es valido [TOKEN] [RUTA SECRETA]
+    RAMA: 502 NUBECONT_SEND_ERROR El RUC del cliente no es valido
+  motivo guardado
+    MAIN: no existe la tabla (main)
+    RAMA: [['send', 'pantalla', 'rechazado_proveedor', 400, 'El RUC del cliente no es valido']]
+
+=== 5) NubeFact lo recibe, SUNAT aun no acepta (aceptada_por_sunat=false)
+  estado tras enviar
+    MAIN: {'doc': 'F020-000005', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': False, 'contable': 'pending'}
+    RAMA: {'doc': 'F020-000005', 'sunat_status': '', 'ticket': True, 'pdf': True, 'cdr': False, 'contable': 'pending'}
+  tras Consultar (SUNAT ya acepto)
+    MAIN: -
+    RAMA: {'doc': 'F020-000005', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'pending'}
+
+=== 6) Venta repetida (la primera no llego a NubeFact)
+  crear otra igual
+    MAIN: 201  Sale created
+    RAMA: 409 POSIBLE_VENTA_REPETIDA Ya existe F020-000006 por 4250.00 para este cliente, registrada y SIN enviar a SUNAT. No se creo otra venta.
+  crear con confirmacion
+    MAIN: 201  Sale created
+    RAMA: 201  Sale created
+  enviar la segunda (vendedor)
+    MAIN: -
+    RAMA: 409 GEMELO_ACEPTADO F020-000006, igual a este documento, ya esta aceptada en SUNAT. Si es una venta distinta, un Gerente o Adminis
+  enviar la segunda (gerente confirma)
+    MAIN: -
+    RAMA: 200  Document sent to NubeFact
+
+=== 7) Consultar un documento que nunca llego (como B030-000016)
+  consulta
+    MAIN: 502 NUBECONT_STATUS_ERROR Documento no existe [TOKEN] [RUTA SECRETA]
+    RAMA: 502 NUBECONT_DOCUMENT_NOT_FOUND NubeFact no tiene este comprobante: no llego a enviarse. Use "Enviar a SUNAT". (Documento no existe)
+  sunat_status despues
+    MAIN: ''
+    RAMA: ''
+
+=== 8) Nota de credito sobre una factura anulada
+  crear NC
+    MAIN: 201  Credit note created
+    RAMA: 400 REFERENCED_DOCUMENT_CANCELLED El comprobante F001-000002 esta anulado: no se le puede emitir nota de credito.
+
+=== 9) Lista de pendientes (solo rama)
+  vendedor: 403 FORBIDDEN Solo Sistema, Gerente o Administrador. | gerente: 200
+    ['F020-000008', 'no_enviado', 'Documento no existe', 0, None]
+    ['F020-000004', 'no_enviado', 'El RUC del cliente no es valido', 1, None]
+    ['F030-000119', 'no_enviado', '', 0, None]
+    ['F001-000003', 'no_enviado', '', 0, None]
+
+=== 10) Tabla de intentos: {"filas": 15, "tiene_token": false, "tiene_ruta": false}
+
+=== 11) Reintento automatico (solo rama)
+  -- simulado
+     F020-000004   enviar            omitido: ultimo intento rechazado_proveedor (NUBECONT_SEND_ERROR)
+     FC20-000001   enviar            se reintentaria
+     F020-000009   enviar            se reintentaria
+     F020-000013   consultar estado  se consultaria
+     F030-000120   archivos          se pedirian PDF/XML/CDR
+     F020-000001   archivos          se pedirian PDF/XML/CDR
+  -- con_otro_proceso
+     -             ciclo             otro proceso ya esta reintentando
+  -- real
+     F020-000004   enviar            omitido: ultimo intento rechazado_proveedor (NUBECONT_SEND_ERROR)
+     FC20-000001   enviar            200  Document sent to NubeFact
+     F020-000009   enviar            200  Document sent to NubeFact
+     F020-000013   consultar estado  estado: aceptada
+     F030-000120   archivos          NubeFact no devolvio los archivos
+     F020-000001   archivos          pdf True, xml True, cdr True
+     F020-000013   archivos          pdf True, xml True, cdr True
+  -- segunda_pasada
+     F020-000004   enviar            omitido: ultimo intento rechazado_proveedor (NUBECONT_SEND_ERROR)
+     F030-000120   archivos          NubeFact no devolvio los archivos
+  -- tercera_y_cuarta
+     F020-000004   enviar            omitido: ultimo intento rechazado_proveedor (NUBECONT_SEND_ERROR)
+     F030-000120   archivos          NubeFact no devolvio los archivos
+     F020-000004   enviar            omitido: ultimo intento rechazado_proveedor (NUBECONT_SEND_ERROR)
+     F030-000120   archivos          omitido: ya se pidieron 3 veces (use Descargar PDF en la fila)
+  -- estado final de cada documento
+     a1_24h        {'doc': 'F020-000009', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'posted'} intentos: pantalla:sin_respuesta, automatico:no_existe, automatico:aceptado
+     a2_2dias      {'doc': 'F020-000010', 'sunat_status': '', 'ticket': False, 'pdf': False, 'cdr': False, 'contable': 'pending'} intentos: pantalla:sin_respuesta
+     a3_serieE     {'doc': 'E001-000011', 'sunat_status': '', 'ticket': False, 'pdf': False, 'cdr': False, 'contable': 'pending'} intentos: 
+     a4_pendiente  {'doc': 'F020-000013', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'pending'} intentos: pantalla:recibido, automatico:aceptado, automatico:recibido
+     a5_recien     {'doc': 'F020-000012', 'sunat_status': '', 'ticket': False, 'pdf': False, 'cdr': False, 'contable': 'pending'} intentos: 
+     nc            {'doc': 'FC20-000001', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'pending'} intentos: pantalla:sin_respuesta, automatico:no_existe, automatico:aceptado
+     s1_sin_pdf    {'doc': 'F020-000001', 'sunat_status': 'aceptada', 'ticket': True, 'pdf': True, 'cdr': True, 'contable': 'posted'} intentos: pantalla:aceptado, automatico:recibido
+     s4_rechazo    {'doc': 'F020-000004', 'sunat_status': '', 'ticket': False, 'pdf': False, 'cdr': False, 'contable': 'pending'} intentos: pantalla:rechazado_proveedor
