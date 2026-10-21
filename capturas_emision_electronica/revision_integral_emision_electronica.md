@@ -65,7 +65,7 @@ Si NubeFact responde un error (por ejemplo "Documento no existe", código 24), d
 
 ### Reinicio del servicio
 - `systemctl restart`, por ejemplo al instalar: gunicorn espera `graceful_timeout` (30 s por defecto) y corta lo que siga en curso.
-- **El 21/10 hubo varias instalaciones con reinicio:** commits a las 15:53, 16:21, 16:26, 17:59, 18:09, 16:23 y 18:17 UTC, es decir de 10:53 a 13:17 hora de Lima.
+- **El 21/10 hubo instalaciones con reinicio.** Los commits instalados ese día van de las 15:53 a las 18:17 UTC (10:53 a 13:17 hora de Lima). El último, `710e86b`, es de las 18:17 UTC. La hora exacta de cada reinicio la da el script 2.
 - Si F020-000214 se emitió cerca de uno de esos reinicios, esa es la causa más probable. La sección e) del SQL da la hora exacta de registro; el script 2 da los reinicios.
 
 ---
