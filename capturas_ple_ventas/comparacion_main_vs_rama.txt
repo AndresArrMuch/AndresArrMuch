@@ -1,0 +1,100 @@
+===== MAIN =====
+Excel: PLE_ventas_202610.xlsx rango A1:BE23 autofiltro A6:BE23 encabezado BF: None
+Documento        P base    R IGV  AA total AJ  AD fecha   AE  AF    AG  BF observacion
+F001-000001        1000      180      1180 1                            
+B001-000001         100       18       118 1                            
+F001-000005         400       72       472 1                            
+FC01-000001         200       36       236 1                            
+FD01-000001          50        9        59 1                            
+F001-000002         500       90       590 1                            
+F001-000003         300       54       354 1                            
+F001-000004       84.75    15.25       100 1                            
+F001-000006      862.71   155.29      1018 1                            
+F030-000120      457.63    82.37       540 1                            
+F030-000119      457.63    82.37       540 1                            
+B030-000016       11.86     2.14        14 1                            
+BC40-000001          50        9        59 1                            
+FC50-000001          10      1.8      11.8 1                            
+TOTAL Excel  P=4484.58 R=807.22 AA=5291.80
+TXT export-sunat (periodo contable 2026-10, 13 lineas, campos por linea: [57])
+  F001-000001   base   1000.00 igv   180.00 total   1180.00 estado 1
+  B001-000001   base    100.00 igv    18.00 total    118.00 estado 1
+  FC01-000001   base    200.00 igv    36.00 total    236.00 estado 1
+  FD01-000001   base     50.00 igv     9.00 total     59.00 estado 1
+  F001-000002   base    500.00 igv    90.00 total    590.00 estado 1
+  F001-000003   base    300.00 igv    54.00 total    354.00 estado 1
+  F001-000004   base     84.75 igv    15.25 total    100.00 estado 1
+  F001-000006   base    862.71 igv   155.29 total   1018.00 estado 1
+  F030-000119   base    457.63 igv    82.37 total    540.00 estado 1
+  F030-000120   base    457.63 igv    82.37 total    540.00 estado 1
+  B030-000016   base     11.86 igv     2.14 total     14.00 estado 1
+  BC40-000001   base     50.00 igv     9.00 total     59.00 estado 1
+  FC50-000001   base     10.00 igv     1.80 total     11.80 estado 1
+TOTAL TXT export-sunat base=4084.58 igv=735.22 total=4819.80
+TXT Tributario (14 lineas, campos por linea: [12])
+  F001-000001   base   1000.00 igv   180.00 total   1180.00 estado 'aceptada'
+  F001-000007   base    169.49 igv    30.51 total    200.00 estado 'aceptada'
+  B001-000001   base    100.00 igv    18.00 total    118.00 estado 'aceptada'
+  FC01-000001   base    200.00 igv    36.00 total    236.00 estado 'aceptada'
+  FD01-000001   base     50.00 igv     9.00 total     59.00 estado 'aceptada'
+  F001-000002   base    500.00 igv    90.00 total    590.00 estado 'anulada'
+  F001-000003   base    300.00 igv    54.00 total    354.00 estado ''
+  F001-000004   base     84.75 igv    15.25 total    100.00 estado 'aceptada'
+  F001-000006   base    862.71 igv   155.29 total   1018.00 estado 'aceptada'
+  F030-000119   base    457.63 igv    82.37 total    540.00 estado ''
+  F030-000120   base    457.63 igv    82.37 total    540.00 estado 'aceptada'
+  B030-000016   base     11.86 igv     2.14 total     14.00 estado ''
+  BC40-000001   base     50.00 igv     9.00 total     59.00 estado 'aceptada'
+  FC50-000001   base     10.00 igv     1.80 total     11.80 estado 'aceptada'
+TOTAL TXT Tributario base=4254.07 igv=765.73 total=5019.80
+
+===== RAMA =====
+Excel: PLE_ventas_202610.xlsx rango A1:BF23 autofiltro A6:BF23 encabezado BF: Observación
+Documento        P base    R IGV  AA total AJ  AD fecha   AE  AF    AG  BF observacion
+F001-000001        1000      180      1180 1                            
+B001-000001         100       18       118 1                            
+F001-000005         400       72       472 1                            
+FC01-000001        -200      -36      -236 1   2026-10-01 01  F001  1   Nota de crédito: importes en negativo
+FD01-000001          50        9        59 1   2026-10-01 01  F001  1   
+F001-000002           0        0         0 2                            Anulado: importes en cero
+F001-000003         300       54       354 1                            Sin estado SUNAT (no enviado o sin respuesta)
+F001-000004       84.75    15.25       100 1                            Sin tipo de cambio del día: se puso 1
+F001-000006      862.71   155.29      1018 1                            
+F030-000120      457.63    82.37       540 1                            
+F030-000119      457.63    82.37       540 1                            Sin estado SUNAT (no enviado o sin respuesta)
+B030-000016       11.86     2.14        14 1                            Sin estado SUNAT (no enviado o sin respuesta)
+BC40-000001         -50       -9       -59 1   2026-10-02 03  B001  1   Nota de crédito: importes en negativo
+FC50-000001         -10     -1.8     -11.8 1              01  F999  1   Nota de crédito: importes en negativo; Documento modificado no encontrado en el sistema
+TOTAL Excel  P=3464.58 R=623.62 AA=4088.20
+TXT export-sunat (periodo contable 2026-10, 13 lineas, campos por linea: [57])
+  F001-000001   base   1000.00 igv   180.00 total   1180.00 estado 1
+  B001-000001   base    100.00 igv    18.00 total    118.00 estado 1
+  FC01-000001   base   -200.00 igv   -36.00 total   -236.00 estado 1
+  FD01-000001   base     50.00 igv     9.00 total     59.00 estado 1
+  F001-000002   base      0.00 igv     0.00 total      0.00 estado 1
+  F001-000003   base    300.00 igv    54.00 total    354.00 estado 1
+  F001-000004   base     84.75 igv    15.25 total    100.00 estado 1
+  F001-000006   base    862.71 igv   155.29 total   1018.00 estado 1
+  F030-000119   base    457.63 igv    82.37 total    540.00 estado 1
+  F030-000120   base    457.63 igv    82.37 total    540.00 estado 1
+  B030-000016   base     11.86 igv     2.14 total     14.00 estado 1
+  BC40-000001   base    -50.00 igv    -9.00 total    -59.00 estado 1
+  FC50-000001   base    -10.00 igv    -1.80 total    -11.80 estado 1
+TOTAL TXT export-sunat base=3064.58 igv=551.62 total=3616.20
+TXT Tributario (14 lineas, campos por linea: [12])
+  F001-000001   base   1000.00 igv   180.00 total   1180.00 estado 'aceptada'
+  F001-000007   base    169.49 igv    30.51 total    200.00 estado 'aceptada'
+  B001-000001   base    100.00 igv    18.00 total    118.00 estado 'aceptada'
+  FC01-000001   base   -200.00 igv   -36.00 total   -236.00 estado 'aceptada'
+  FD01-000001   base     50.00 igv     9.00 total     59.00 estado 'aceptada'
+  F001-000002   base      0.00 igv     0.00 total      0.00 estado 'anulada'
+  F001-000003   base    300.00 igv    54.00 total    354.00 estado ''
+  F001-000004   base     84.75 igv    15.25 total    100.00 estado 'aceptada'
+  F001-000006   base    862.71 igv   155.29 total   1018.00 estado 'aceptada'
+  F030-000119   base    457.63 igv    82.37 total    540.00 estado ''
+  F030-000120   base    457.63 igv    82.37 total    540.00 estado 'aceptada'
+  B030-000016   base     11.86 igv     2.14 total     14.00 estado ''
+  BC40-000001   base    -50.00 igv    -9.00 total    -59.00 estado 'aceptada'
+  FC50-000001   base    -10.00 igv    -1.80 total    -11.80 estado 'aceptada'
+TOTAL TXT Tributario base=3234.07 igv=582.13 total=3816.20
+
