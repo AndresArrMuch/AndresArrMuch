@@ -1,0 +1,14 @@
+{
+ "errores_js": [],
+ "dialogos": [
+  "CORRECCION DE UN REGISTRO EQUIVOCADO\n\nSe quitara F001-000005 de la operacion 888001 (3 documentos).\n- Este documento vuelve a quedar pendiente.\n- El asiento y el ingreso de banco se rehacen con las 2 facturas restantes.\n- Conciliacion mostrara solo las facturas que quedan en este deposito.\n\nUsalo solo si este documento se registro por error en esta operacion. Continuar?"
+ ],
+ "detalle_antes": " Pago 1: 16/10/2026 — S/ 472.00 (transfer / 888001) — BCP - 191-1111111-0-11 EditarQuitar de la operacionEliminar",
+ "boton_quitar": 1,
+ "aviso": "Factura quitada del cobro (correccion). El cobro de las demas facturas se conserva.",
+ "filas": [
+  " 06/10/2026 06/10/2026 CLIENTE PRUEBA SAC 20100047218 F001-000003 AC0001 S/ 354.00 S/ 354.00 S/ 0.00 Cobrado + Cobro",
+  " 02/10/2026 02/10/2026 CLIENTE PRUEBA SAC 20100047218 F001-000005 AC0001 S/ 472.00 S/ 0.00 S/ 472.00 Vencido + Cobro",
+  " 02/10/2026 02/10/2026 CLIENTE PRUEBA SAC 20100047218 B001-000001 AC0001 S/ 118.00 S/ 118.00 S/ 0.00 Cobrado + Cobro"
+ ]
+}
