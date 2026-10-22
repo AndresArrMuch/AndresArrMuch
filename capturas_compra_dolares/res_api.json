@@ -1,0 +1,120 @@
+{
+ "opciones_fx": {
+  "ganancia": {
+   "account_code": "776101",
+   "account_name": "GANANCIA POR DFERENCIA DE CAMBIO",
+   "id": "36bedb4d-0c7c-412f-8b4d-f025b76b0011"
+  },
+  "perdida": {
+   "account_code": "676101",
+   "account_name": "PERDIDA POR DIFERENCIA DE CAMBIO",
+   "id": "0d4d9ad2-9bf3-4271-95e6-9873527ba735"
+  }
+ },
+ "compra": [
+  201,
+  "Asiento manual 000121 registrado",
+  [
+   [
+    "104102",
+    70060.95,
+    0.0,
+    20319.3,
+    0,
+    "08078079"
+   ],
+   [
+    "104101",
+    0.0,
+    70000.0,
+    0,
+    20301.62,
+    "01054514"
+   ],
+   [
+    "776101",
+    0.0,
+    60.95,
+    0,
+    17.68,
+    "01054514 / 08078079"
+   ]
+  ]
+ ],
+ "compra_bancos": [
+  [
+   "PEN",
+   "withdrawal",
+   "70000.00",
+   "01054514"
+  ],
+  [
+   "USD",
+   "deposit",
+   "20319.30",
+   "08078079"
+  ]
+ ],
+ "mismo_envio": [
+  200,
+  "Ya registrado (mismo envio)"
+ ],
+ "repetido": [
+  400,
+  "El N. de operacion 08078079 ya esta registrado en BCP USD el 12/10/2026 (USD 20319.30). No se registra dos veces."
+ ],
+ "venta": [
+  201,
+  "Asiento manual 000122 registrado",
+  [
+   [
+    "104107",
+    3460.0,
+    0.0,
+    1003.48,
+    0,
+    "V-IN"
+   ],
+   [
+    "104102",
+    0.0,
+    3448.0,
+    0,
+    1000.0,
+    "V-OUT"
+   ],
+   [
+    "776101",
+    0.0,
+    12.0,
+    0,
+    3.48,
+    "V-OUT / V-IN"
+   ]
+  ]
+ ],
+ "monto_equivocado": [
+  400,
+  "El tipo de cambio de la operacion (34.4500) esta muy lejos del tipo de cambio del dia (3.4480): revisa que la salida y la entrada sean de la misma operacion."
+ ],
+ "sin_monto_entrada": [
+  400,
+  "Indica el monto que entro a la cuenta de destino (en su moneda)"
+ ],
+ "sin_tc": [
+  400,
+  "El último tipo de cambio registrado es del 01/07/2026, hace 81 días; registra uno más reciente en Tipo de cambio (se acepta hasta 7 días). (compra/venta de dólares)"
+ ],
+ "cuadre_diario": [
+  [
+   "000121",
+   "0.00",
+   "0.00"
+  ],
+  [
+   "000122",
+   "0.00",
+   "0.00"
+  ]
+ ]
+}
