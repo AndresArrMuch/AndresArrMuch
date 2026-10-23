@@ -1,0 +1,268 @@
+### 0. ANTES
+621 junio: {'base_imponible': '305.93', 'igv': '55.07', 'no_gravado': '0', 'total': '361.00'}
+  E001-2258 tipo 01 total 125.00 pagado 0.00 saldo 125.00 ps unpaid electr False sunat aceptada envio fuera_de_nubefact ref None periodo 6
+  E001-2259 tipo 01 total 236.00 pagado 0.00 saldo 236.00 ps unpaid electr False sunat aceptada envio fuera_de_nubefact ref None periodo 6
+movimientos credit_note: 0
+asientos con E001-208: 0
+audit: []
+
+### 1. Vista previa
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+
+== Estado actual ==
+  Factura: E001-2258 tipo 01  emision 2026-06-08  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  GUANTE DE NITRILO AZUL TALLA M  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+
+== Se insertaria ==
+  sale: E001-208  tipo 07  serie E001  correlativo 208
+    emision 2026-06-10  vencimiento 2026-06-10  registro 2026-10-23  periodo 06/2026 (general open, ventas open)
+    cliente_id d1acc6c2-7fc1-4b64-a25c-f5194f5aaf2f (el de la factura)  moneda PEN  TC 1.0000
+    base 105.93  IGV 19.07  total 125.00
+    referencia 01 E001-2258
+    is_electronic false  sunat_status aceptada  status emitted  accounting_status pending (sin asiento)
+    notas: Motivo: cliente cambio de RUC. Emitida en SUNAT (SOL), registrada por script el 2026-10-23.
+  sale_line: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097
+    p.u. 10.5930  base 105.93  IGV 19.07 (18.00%)  total 125.00  item af-i1  sin movimiento de stock
+
+== Se actualizaria ==
+  factura E001-2258: amount_paid 0.00 -> 125.00  saldo 125.00 -> 0.00  payment_status unpaid -> paid
+  audit_log: INSERT sale (la NC) y UPDATE sale (la factura)
+
+== Efecto en reportes ==
+  Registro de ventas / 621 / PLE del periodo 06/2026 (general open, ventas open): base -105.93, IGV -19.07, total -125.00
+
+Solo vista previa. Para aplicar, repite el comando agregando --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+### 2. Junio cerrado para ventas
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+
+== Estado actual ==
+  Factura: E001-2258 tipo 01  emision 2026-06-08  periodo 06/2026 (general open, ventas closed)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  GUANTE DE NITRILO AZUL TALLA M  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+
+== Se insertaria ==
+  sale: E001-208  tipo 07  serie E001  correlativo 208
+    emision 2026-06-10  vencimiento 2026-06-10  registro 2026-10-23  periodo 06/2026 (general open, ventas closed)
+    cliente_id d1acc6c2-7fc1-4b64-a25c-f5194f5aaf2f (el de la factura)  moneda PEN  TC 1.0000
+    base 105.93  IGV 19.07  total 125.00
+    referencia 01 E001-2258
+    is_electronic false  sunat_status aceptada  status emitted  accounting_status pending (sin asiento)
+    notas: Motivo: cliente cambio de RUC. Emitida en SUNAT (SOL), registrada por script el 2026-10-23.
+  sale_line: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097
+    p.u. 10.5930  base 105.93  IGV 19.07 (18.00%)  total 125.00  item af-i1  sin movimiento de stock
+
+== Se actualizaria ==
+  factura E001-2258: amount_paid 0.00 -> 125.00  saldo 125.00 -> 0.00  payment_status unpaid -> paid
+  audit_log: INSERT sale (la NC) y UPDATE sale (la factura)
+
+== Efecto en reportes ==
+  Registro de ventas / 621 / PLE del periodo 06/2026 (general open, ventas closed): base -105.93, IGV -19.07, total -125.00
+  NO SE PUEDE: el periodo 06/2026 (general open, ventas closed) esta cerrado para ventas: reabrir ventas de ese mes en Periodos, o repetir con --aceptar-periodo-cerrado (decision del contador)
+(codigo de salida: 1)
+
+### 3. Junio cerrado + --aceptar-periodo-cerrado (solo vista previa)
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097 --aceptar-periodo-cerrado
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+
+== Estado actual ==
+  Factura: E001-2258 tipo 01  emision 2026-06-08  periodo 06/2026 (general open, ventas closed)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  GUANTE DE NITRILO AZUL TALLA M  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+
+== Se insertaria ==
+  sale: E001-208  tipo 07  serie E001  correlativo 208
+    emision 2026-06-10  vencimiento 2026-06-10  registro 2026-10-23  periodo 06/2026 (general open, ventas closed)
+    cliente_id d1acc6c2-7fc1-4b64-a25c-f5194f5aaf2f (el de la factura)  moneda PEN  TC 1.0000
+    base 105.93  IGV 19.07  total 125.00
+    referencia 01 E001-2258
+    is_electronic false  sunat_status aceptada  status emitted  accounting_status pending (sin asiento)
+    notas: Motivo: cliente cambio de RUC. Emitida en SUNAT (SOL), registrada por script el 2026-10-23.
+  sale_line: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097
+    p.u. 10.5930  base 105.93  IGV 19.07 (18.00%)  total 125.00  item af-i1  sin movimiento de stock
+
+== Se actualizaria ==
+  factura E001-2258: amount_paid 0.00 -> 125.00  saldo 125.00 -> 0.00  payment_status unpaid -> paid
+  audit_log: INSERT sale (la NC) y UPDATE sale (la factura)
+
+== Efecto en reportes ==
+  Registro de ventas / 621 / PLE del periodo 06/2026 (general open, ventas closed): base -105.93, IGV -19.07, total -125.00
+  AVISO: el periodo 06/2026 (general open, ventas closed) esta cerrado para ventas (se registra igual: --aceptar-periodo-cerrado)
+
+Solo vista previa. Para aplicar, repite el comando agregando --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+### 4. Aplicar sin usuario
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097 --aplicar
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+Indica --usuario <correo> para aplicar
+(codigo de salida: 1)
+
+### 5. Aplicar
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097 --aplicar --usuario sistema.flumisa@t.pe
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+
+== Estado actual ==
+  Factura: E001-2258 tipo 01  emision 2026-06-08  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  GUANTE DE NITRILO AZUL TALLA M  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+
+== Se insertaria ==
+  sale: E001-208  tipo 07  serie E001  correlativo 208
+    emision 2026-06-10  vencimiento 2026-06-10  registro 2026-10-23  periodo 06/2026 (general open, ventas open)
+    cliente_id d1acc6c2-7fc1-4b64-a25c-f5194f5aaf2f (el de la factura)  moneda PEN  TC 1.0000
+    base 105.93  IGV 19.07  total 125.00
+    referencia 01 E001-2258
+    is_electronic false  sunat_status aceptada  status emitted  accounting_status pending (sin asiento)
+    notas: Motivo: cliente cambio de RUC. Emitida en SUNAT (SOL), registrada por script el 2026-10-23.
+  sale_line: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097
+    p.u. 10.5930  base 105.93  IGV 19.07 (18.00%)  total 125.00  item af-i1  sin movimiento de stock
+
+== Se actualizaria ==
+  factura E001-2258: amount_paid 0.00 -> 125.00  saldo 125.00 -> 0.00  payment_status unpaid -> paid
+  audit_log: INSERT sale (la NC) y UPDATE sale (la factura)
+
+== Efecto en reportes ==
+  Registro de ventas / 621 / PLE del periodo 06/2026 (general open, ventas open): base -105.93, IGV -19.07, total -125.00
+
+APLICADO: NC E001-208 registrada (id 5f082f62-deab-4920-afd7-3d5fd478b8f1).
+  NC: E001-208 tipo 07  emision 2026-06-10  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+  Factura: E001-2258 tipo 01  emision 2026-06-08  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 125.00  saldo 0.00  payment_status paid
+    linea: 10.00 BX  GUANTE DE NITRILO AZUL TALLA M  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+(codigo de salida: 0)
+
+### 6. DESPUES
+621 junio: {'base_imponible': '200.00', 'igv': '36.00', 'no_gravado': '0', 'total': '236.00'}
+  E001-208 tipo 07 total 125.00 pagado 0.00 saldo 125.00 ps unpaid electr False sunat aceptada envio fuera_de_nubefact ref E001-2258 periodo 6
+  E001-2258 tipo 01 total 125.00 pagado 125.00 saldo 0.00 ps paid electr False sunat aceptada envio fuera_de_nubefact ref None periodo 6
+  E001-2259 tipo 01 total 236.00 pagado 0.00 saldo 236.00 ps unpaid electr False sunat aceptada envio fuera_de_nubefact ref None periodo 6
+movimientos credit_note: 0
+asientos con E001-208: 0
+audit: [('INSERT', 'sale', 'scripts/registrar_nc_sol.py'), ('UPDATE', 'sale', 'scripts/registrar_nc_sol.py')]
+
+### 7. Repetir (debe negarse)
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+
+== Estado actual ==
+  Factura: E001-2258 tipo 01  emision 2026-06-08  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 125.00  saldo 0.00  payment_status paid
+    linea: 10.00 BX  GUANTE DE NITRILO AZUL TALLA M  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+
+== Se insertaria ==
+  sale: E001-208  tipo 07  serie E001  correlativo 208
+    emision 2026-06-10  vencimiento 2026-06-10  registro 2026-10-23  periodo 06/2026 (general open, ventas open)
+    cliente_id d1acc6c2-7fc1-4b64-a25c-f5194f5aaf2f (el de la factura)  moneda PEN  TC 1.0000
+    base 105.93  IGV 19.07  total 125.00
+    referencia 01 E001-2258
+    is_electronic false  sunat_status aceptada  status emitted  accounting_status pending (sin asiento)
+    notas: Motivo: cliente cambio de RUC. Emitida en SUNAT (SOL), registrada por script el 2026-10-23.
+  sale_line: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097
+    p.u. 10.5930  base 105.93  IGV 19.07 (18.00%)  total 125.00  item af-i1  sin movimiento de stock
+
+== Se actualizaria ==
+  factura E001-2258: amount_paid 125.00 -> 250.00  saldo 0.00 -> -125.00  payment_status paid -> paid
+  audit_log: INSERT sale (la NC) y UPDATE sale (la factura)
+
+== Efecto en reportes ==
+  Registro de ventas / 621 / PLE del periodo 06/2026 (general open, ventas open): base -105.93, IGV -19.07, total -125.00
+  AVISO: la factura ya tiene NC: E001-208 (125.00)
+  NO SE PUEDE: ya existe E001-208 (tipo 07) en el sistema
+  NO SE PUEDE: la NC (125.00) es mayor que el saldo de la factura (0.00)
+(codigo de salida: 1)
+
+### 8. Deshacer: vista previa y aplicar
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097 --deshacer
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+  NC a quitar: E001-208 tipo 07  emision 2026-06-10  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+  factura E001-2258: amount_paid 125.00 -> 0  payment_status -> unpaid
+
+Solo vista previa. Para quitarla: --deshacer --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097 --deshacer --aplicar --usuario sistema.flumisa@t.pe
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+  NC a quitar: E001-208 tipo 07  emision 2026-06-10  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+  factura E001-2258: amount_paid 125.00 -> 0  payment_status -> unpaid
+
+DESHECHO: NC quitada y saldo de la factura devuelto.
+(codigo de salida: 0)
+
+621 junio: {'base_imponible': '305.93', 'igv': '55.07', 'no_gravado': '0', 'total': '361.00'}
+  E001-2258 tipo 01 total 125.00 pagado 0.00 saldo 125.00 ps unpaid electr False sunat aceptada envio fuera_de_nubefact ref None periodo 6
+  E001-2259 tipo 01 total 236.00 pagado 0.00 saldo 236.00 ps unpaid electr False sunat aceptada envio fuera_de_nubefact ref None periodo 6
+movimientos credit_note: 0
+asientos con E001-208: 0
+audit: [('INSERT', 'sale', 'scripts/registrar_nc_sol.py'), ('UPDATE', 'sale', 'scripts/registrar_nc_sol.py'), ('DELETE', 'sale', 'scripts/registrar_nc_sol.py --deshacer'), ('UPDATE', 'sale', 'scripts/registrar_nc_sol.py --deshacer')]
+
+### 9. Aplicar de nuevo
+$ python scripts/registrar_nc_sol.py --empresa ff8936f6-245c-4ff4-bffa-78b8fc3f8c78 --factura E001-2258 --nc E001-208 --fecha 2026-06-10 --base 105.93 --igv 19.07 --total 125.00 --cantidad 10 --motivo cliente cambio de RUC --lote IN25029097 --aplicar --usuario sistema.flumisa@t.pe
+Empresa: FLUMISA PRUEBA SAC (20600000002)
+
+== Estado actual ==
+  Factura: E001-2258 tipo 01  emision 2026-06-08  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  GUANTE DE NITRILO AZUL TALLA M  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+
+== Se insertaria ==
+  sale: E001-208  tipo 07  serie E001  correlativo 208
+    emision 2026-06-10  vencimiento 2026-06-10  registro 2026-10-23  periodo 06/2026 (general open, ventas open)
+    cliente_id d1acc6c2-7fc1-4b64-a25c-f5194f5aaf2f (el de la factura)  moneda PEN  TC 1.0000
+    base 105.93  IGV 19.07  total 125.00
+    referencia 01 E001-2258
+    is_electronic false  sunat_status aceptada  status emitted  accounting_status pending (sin asiento)
+    notas: Motivo: cliente cambio de RUC. Emitida en SUNAT (SOL), registrada por script el 2026-10-23.
+  sale_line: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097
+    p.u. 10.5930  base 105.93  IGV 19.07 (18.00%)  total 125.00  item af-i1  sin movimiento de stock
+
+== Se actualizaria ==
+  factura E001-2258: amount_paid 0.00 -> 125.00  saldo 125.00 -> 0.00  payment_status unpaid -> paid
+  audit_log: INSERT sale (la NC) y UPDATE sale (la factura)
+
+== Efecto en reportes ==
+  Registro de ventas / 621 / PLE del periodo 06/2026 (general open, ventas open): base -105.93, IGV -19.07, total -125.00
+
+APLICADO: NC E001-208 registrada (id dbf2b2bc-5b8a-4e70-b8c2-ffa04a71d732).
+  NC: E001-208 tipo 07  emision 2026-06-10  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 0.00  saldo 125.00  payment_status unpaid
+    linea: 10.00 BX  NC: GUANTE DE NITRILO AZUL TALLA M - Lote IN25029097  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+  Factura: E001-2258 tipo 01  emision 2026-06-08  periodo 06/2026 (general open, ventas open)
+    cliente 20603526962 PINTURAS DEL PERU S.A.
+    base 105.93  IGV 19.07  total 125.00 PEN  estado emitted  sunat aceptada  electronico False
+    cobrado/descontado 125.00  saldo 0.00  payment_status paid
+    linea: 10.00 BX  GUANTE DE NITRILO AZUL TALLA M  p.u. 10.5930  base 105.93  IGV 19.07  total 125.00  item af-i1
+(codigo de salida: 0)
+

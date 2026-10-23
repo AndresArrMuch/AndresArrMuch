@@ -1,0 +1,15 @@
+{
+ "errores_js": [],
+ "E001-2258": {
+  "fila": " 08/06/2026 08/06/2026 PINTURAS DEL PERU S.A. 20603526962 E001-2258 - S/ 125.00 S/ 125.00 incluye NC S/ 125.00 S/ 0.00 Cerrada con NC + Cobro",
+  "detalle": "Nota de creditoE001-208 del 10/06/2026 — S/ 125.00 (rebaja el saldo de la factura; no es un cobro) Sin cobros registrados."
+ },
+ "E001-2259": {
+  "fila": " 08/06/2026 08/06/2026 EMPRESA CLIENTE 0001 SAC 20100000037 E001-2259 - S/ 236.00 S/ 0.00 S/ 236.00 Vencido + Cobro",
+  "detalle": "Sin pagos registrados aun."
+ },
+ "pendientes_vista": [
+  " 08/06/2026 08/06/2026 EMPRESA CLIENTE 0001 SAC 20100000037 E001-2259 - S/ 236.00 S/ 0.00 S/ 236.00 Vencido + Cobro",
+  " 08/06/2026 08/06/2026 PINTURAS DEL PERU S.A. 20603526962 E001-2258 - S/ 125.00 S/ 125.00 incluye NC S/ 125.00 S/ 0.00 Cerrada con NC + Cobro"
+ ]
+}
