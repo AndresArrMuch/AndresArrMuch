@@ -1,0 +1,10 @@
+{
+ "errores_js": [],
+ "boton_cambio": 1,
+ "texto_panel": "Registrar cambio de moneda · compra de dólares × SALE DE BCP MN · SOLES · …0-11 21/10/2026 10:02:11 · -S/ 343,800.00 · N.° 03001748 · VEN U$ 3.4380 500296 ENTRA A BCP ME · dólares · …1-22 Sin extracto de BCP ME en octubre 2026. MONTO QUE ENTRA (US$) N.° OPERACIÓN (ENTRADA) DESCRIPCIÓN falta el monto Cancelar Registrar",
+ "tc": "TC de la operación 3.4380 · TC venta 3.4410 (21/10/2026) → ganancia S/ 300.00",
+ "aviso": "Cambio de moneda registrado (asiento 000121) | Cambio de moneda registrado (asiento 000121)",
+ "fila_conciliacion": [
+  "2026-10-21 VEN U$ 3.4380 500296 S/ -343,800.00 03001748 Registrado - - 10:02:11 "
+ ]
+}
