@@ -1,0 +1,51 @@
+{
+ "errores_js": [],
+ "boton_cambio": 1,
+ "panel_texto": "Registrar cambio de moneda × FECHA DESCRIPCIÓN N° OPERACIÓN (SALIDA) N° OPERACIÓN (ENTRADA) MONTO QUE SALE MONTO QUE ENTRA CUENTA DE DONDE SALE (HABER) CUENTA A DONDE ENTRA (DEBE) Cancelar Registrar",
+ "campos_al_abrir": {
+  "cambio-fecha": "2026-10-21",
+  "cambio-desc": "VEN U$ 3.4380 500296",
+  "cambio-op-salida": "03001748",
+  "cambio-op-entrada": "",
+  "cambio-monto-salida": "343800",
+  "cambio-monto-entrada": "",
+  "cambio-cuenta-salida-texto": "104101 - BANCO DE CREDITO MN",
+  "cambio-cuenta-entrada-texto": "104102 - BANCO DE CREDITO ME (3.758)"
+ },
+ "error_en_ventana": "No se registró: El TC de la operacion (34.3800) no coincide con el del dia (3.4410).",
+ "campos_al_registrar": {
+  "cambio-fecha": "2026-10-21",
+  "cambio-desc": "VEN U$ 3.4380 500296",
+  "cambio-op-salida": "03001748",
+  "cambio-op-entrada": "04001749",
+  "cambio-monto-salida": "343800",
+  "cambio-monto-entrada": "100000",
+  "cambio-cuenta-salida-texto": "104101 - BANCO DE CREDITO MN",
+  "cambio-cuenta-entrada-texto": "104102 - BANCO DE CREDITO ME (3.758)"
+ },
+ "panel_cerrado": true,
+ "aviso": "Cambio de moneda registrado (asiento 000121) | Cambio de moneda registrado (asiento 000121)",
+ "fila_conciliacion": [
+  "2026-10-21 VEN U$ 3.4380 500296 S/ -343,800.00 03001748 Registrado - - 10:02:11 "
+ ],
+ "asiento_bd": [
+  [
+   344100,
+   0,
+   100000,
+   0
+  ],
+  [
+   0,
+   343800,
+   0,
+   99912.82
+  ],
+  [
+   0,
+   300,
+   0,
+   87.18
+  ]
+ ]
+}
