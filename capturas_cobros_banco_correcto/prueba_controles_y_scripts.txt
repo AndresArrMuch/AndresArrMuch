@@ -1,0 +1,77 @@
+### 1. Con main: los 3 errores se registran sin aviso
+[main] extracto BCP MN: 200
+[main] cobro op 00005060 2026-10-08 en bk-fika-bcp-me: (201, None, 'Cobro registrado correctamente')
+[main] cobro op 000869132 2026-10-08 en bk-fika-bcp-mn: (201, None, 'Cobro registrado correctamente')
+[main] cobro op 05916188 2026-10-14 en bk-fika-bcp-mn: (201, None, 'Cobro registrado correctamente')
+
+### 2. Con la rama: los 3 se rechazan y dicen que corregir
+[rama] extracto BCP MN: 200
+[rama] cobro op 00005060 2026-10-08 en bk-fika-bcp-me: (400, 'DEPOSIT_IN_OTHER_BANK', 'El N. de operacion 00005060 esta en el extracto de BCP PEN (08/10/2026, 540.00), no en BCP USD: elige esa cuenta')
+[rama] cobro op 000869132 2026-10-08 en bk-fika-bcp-mn: (400, 'OPERATION_NUMBER_FORMAT', 'En el extracto el N. de operacion es 00869132 (escribiste 000869132): corrigelo')
+[rama] cobro op 05916188 2026-10-14 en bk-fika-bcp-mn: (400, 'DEPOSIT_DATE_MISMATCH', 'En el extracto ese deposito es del 04/10/2026: usa esa fecha')
+### 3. Con la rama: bien escritos se registran
+[rama] cobro op 00005060 2026-10-08 en bk-fika-bcp-mn: (201, None, 'Cobro registrado correctamente')
+[rama] cobro op 00869132 2026-10-08 en bk-fika-bcp-mn: (201, None, 'Cobro registrado correctamente')
+[rama] cobro op 05916188 2026-10-04 en bk-fika-bcp-mn: (201, None, 'Cobro registrado correctamente')
+[rama] cobro op SINEXTRACTO1 2026-10-04 en bk-fika-bcp-mn: (201, None, 'Cobro registrado correctamente')
+
+### 4. Cambiar banco del cobro 00005060: vista previa (sin --banco, lo toma del extracto)
+$ python scripts/cambiar_banco_cobro.py --empresa 20000000009 --op 00005060
+Empresa: FIKA PRUEBA SAC (20000000009)
+
+Cobro 2026-10-08  op 00005060  F030-000119 (PEN 540.00)
+  cuenta actual: BCP USD (191-1111111-1-22)
+  en los extractos cargados:
+    BCP PEN (191-1111111-0-11): 2026-10-08  N. 00005060  540
+  cuenta nueva:  BCP PEN (191-1111111-0-11)
+
+  asiento 000121 (periodo 10/2026), antes:
+        104102   Debe       540.00  Haber         0.00   US$ D 151.26 / H 0.00
+        121201   Debe         0.00  Haber       540.00
+  ahora:
+        104101   Debe       540.00  Haber         0.00
+        121201   Debe         0.00  Haber       540.00
+  movimiento de banco: 151.26 en BCP USD (191-1111111-1-22) -> 540.00 en BCP PEN (191-1111111-0-11)
+
+Solo vista previa. Para aplicar: repite con --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+### 5. Aplicar
+APLICADO: el cobro 00005060 quedo en BCP PEN (191-1111111-0-11).
+(codigo de salida: 0)
+
+### 6. Otra vez: ya esta en BCP MN
+El cobro ya esta en BCP PEN (191-1111111-0-11): no hay nada que cambiar
+(codigo de salida: 1)
+
+### 7. Quitar asientos de cobros anulados: vista previa
+$ python scripts/quitar_asientos_cobros_anulados.py --empresa 20000000009
+Empresa: FIKA PRUEBA SAC (20000000009)
+
+== Asientos de cobros/pagos anulados que se quitarian (1) ==
+  2026-10-14  asiento 000123 (periodo 10/2026)  cobro anulado                banco        50.00  Cobro F030-000120 - Ref: 05916188
+      104101 D 50.00 H 0.00, 121101 D 0.00 H 50.00
+
+== Efecto en bancos (cuenta, mes: lo que deja de sumar) ==
+  104101 2026-10: 50.00
+
+== En periodo cerrado, no se tocan (0) ==
+
+Movimientos de banco de esos cobros anulados que tambien quedaron: 1
+  2026-10-14  N. 05916188  50.00
+
+Solo vista previa. Para aplicar: repite con --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+### 8. Aplicar
+APLICADO: 1 asientos y 1 movimientos de cobros anulados quitados.
+(codigo de salida: 0)
+
+### 9. Despues: cobros, asientos y movimientos
+    op     | status  |  banco  | asientos |     debe      | movs 
+-----------+---------+---------+----------+---------------+------
+ 00005060  | applied | BCP PEN |        1 | 104101 540.00 |    1
+ 000869132 | applied | BCP PEN |        1 | 104101 100.00 |    1
+ 05916188  | voided  | BCP PEN |        0 |               |    0
+(3 rows)
+
