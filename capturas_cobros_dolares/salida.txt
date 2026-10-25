@@ -1,0 +1,131 @@
+### A. Con main (antes del arreglo)
+[main] asiento venta F001-000004 (US$ 100, TC 3.75): HTTP 200
+[main] cobro USD-1 (bk-fika-bcp-me, 100, 2026-10-15 ): HTTP 201 
+[main] cobro COM-1 (bk-fika-bcp-mn, 540, 2026-10-15 Comision: 21.10): HTTP 201 
+[main] cobro SEP-1 (bk-fika-bcp-mn, 100, 2026-09-05 ): HTTP 201 
+[main] --- asientos ---
+[main]  000121 periodo 10  Venta F001-000004 - CLIENTE PRUEBA SAC
+[main]     121201   D    100.00 H      0.00
+[main]     401101   D      0.00 H     15.25
+[main]     701101   D      0.00 H     84.75
+[main]  000122 periodo 10  Cobro F001-000004 - Ref: USD-1
+[main]     104102   D    100.00 H      0.00
+[main]     121201   D      0.00 H    100.00
+[main]  000123 periodo 10  Cobro F030-000119 - Ref: COM-1
+[main]     104101   D    540.00 H      0.00
+[main]     639101   D     21.10 H      0.00
+[main]     121201   D      0.00 H    561.10
+[main]  000124 periodo 10  Cobro F030-000120 - Ref: SEP-1
+[main]     104101   D    100.00 H      0.00
+[main]     121201   D      0.00 H    100.00
+[main]  movimiento banco COM-1: 540.00 en bk-fika-bcp-mn
+[main]  movimiento banco SEP-1: 100.00 en bk-fika-bcp-mn
+[main]  movimiento banco USD-1: 100.00 en bk-fika-bcp-me
+[main]  saldo CxC de F001-000004 en 121201: 0.00
+
+### B. Con la rama (cobros nuevos)
+[rama] asiento venta F001-000004 (US$ 100, TC 3.75): HTTP 200
+[rama] cobro USD-1 (bk-fika-bcp-me, 100, 2026-10-15 ): HTTP 201 
+[rama] cobro COM-1 (bk-fika-bcp-mn, 540, 2026-10-15 Comision: 21.10): HTTP 201 
+[rama] cobro SEP-1 (bk-fika-bcp-mn, 100, 2026-09-05 ): HTTP 201 
+[rama] --- asientos ---
+[rama]  000121 periodo 10  Venta F001-000004 - CLIENTE PRUEBA SAC
+[rama]     121202   D    375.00 H      0.00  US$ D 100.00 H 0.00
+[rama]     401101   D      0.00 H     57.19  US$ D 0.00 H 15.25
+[rama]     701101   D      0.00 H    317.81  US$ D 0.00 H 84.75
+[rama]  000122 periodo 10  Cobro F001-000004 - Ref: USD-1
+[rama]     104102   D    376.10 H      0.00  US$ D 100.00 H 0.00
+[rama]     121202   D      0.00 H    375.00  US$ D 0.00 H 100.00
+[rama]     776101   D      0.00 H      1.10
+[rama]  000123 periodo 10  Cobro F030-000119 - Ref: COM-1
+[rama]     104101   D    518.90 H      0.00
+[rama]     639101   D     21.10 H      0.00
+[rama]     121201   D      0.00 H    540.00
+[rama]  000016 periodo 09  Cobro F030-000120 - Ref: SEP-1
+[rama]     104101   D    100.00 H      0.00
+[rama]     121101   D      0.00 H    100.00
+[rama]  movimiento banco COM-1: 518.90 en bk-fika-bcp-mn
+[rama]  movimiento banco SEP-1: 100.00 en bk-fika-bcp-mn
+[rama]  movimiento banco USD-1: 100.00 en bk-fika-bcp-me
+[rama]  saldo CxC de F001-000004 en 121202: 0.00
+
+### C. Script sobre lo registrado con main: vista previa
+$ python scripts/rehacer_asientos_cobros.py --empresa 20000000009
+Empresa: FIKA PRUEBA SAC (20000000009)
+
+== 1. Asientos de ventas en dolares ==
+  F001-000004  2026-10-07  US$ 100.00  TC 3.7500  asiento 000121
+      antes:
+        121201   Debe       100.00  Haber         0.00
+        401101   Debe         0.00  Haber        15.25
+        701101   Debe         0.00  Haber        84.75
+      ahora:
+        121202   Debe       375.00  Haber         0.00   US$ D 100.00 / H 0.00
+        401101   Debe         0.00  Haber        57.19   US$ D 0.00 / H 15.25
+        701101   Debe         0.00  Haber       317.81   US$ D 0.00 / H 84.75
+
+== 2. Asientos de cobros ==
+  2026-09-05  op SEP-1  F030-000120  banco BCP PEN
+      asiento 000124 -> 000016 (periodo 09/2026, el de su fecha)
+      antes:
+        104101   Debe       100.00  Haber         0.00
+        121201   Debe         0.00  Haber       100.00
+      ahora:
+        104101   Debe       100.00  Haber         0.00
+        121101   Debe         0.00  Haber       100.00
+  2026-10-15  op USD-1  F001-000004  banco BCP USD
+      antes:
+        104102   Debe       100.00  Haber         0.00
+        121201   Debe         0.00  Haber       100.00
+      ahora:
+        104102   Debe       376.10  Haber         0.00   US$ D 100.00 / H 0.00
+        121202   Debe         0.00  Haber       375.00   US$ D 0.00 / H 100.00
+        776101   Debe         0.00  Haber         1.10
+  2026-10-15  op COM-1  F030-000119  banco BCP PEN
+      antes:
+        104101   Debe       540.00  Haber         0.00
+        639101   Debe        21.10  Haber         0.00
+        121201   Debe         0.00  Haber       561.10
+      ahora:
+        104101   Debe       518.90  Haber         0.00
+        639101   Debe        21.10  Haber         0.00
+        121201   Debe         0.00  Haber       540.00
+      movimiento de banco: 540.00 -> 518.90
+
+== Para revisar a mano (0) ==
+
+Solo vista previa (4 asientos cambiarian). Para aplicar: repite con --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+### D. Aplicar
+APLICADO: 4 asientos rehechos.
+(codigo de salida: 0)
+
+### E. Otra vez (no debe quedar nada)
+
+== Para revisar a mano (0) ==
+
+Solo vista previa (0 asientos cambiarian). Para aplicar: repite con --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+### F. Asientos despues del script
+[despues] --- asientos ---
+[despues]  000121 periodo 10  Venta F001-000004 - CLIENTE PRUEBA SAC
+[despues]     121202   D    375.00 H      0.00  US$ D 100.00 H 0.00
+[despues]     401101   D      0.00 H     57.19  US$ D 0.00 H 15.25
+[despues]     701101   D      0.00 H    317.81  US$ D 0.00 H 84.75
+[despues]  000122 periodo 10  Cobro F001-000004 - Ref: USD-1
+[despues]     104102   D    376.10 H      0.00  US$ D 100.00 H 0.00
+[despues]     121202   D      0.00 H    375.00  US$ D 0.00 H 100.00
+[despues]     776101   D      0.00 H      1.10
+[despues]  000123 periodo 10  Cobro F030-000119 - Ref: COM-1
+[despues]     104101   D    518.90 H      0.00
+[despues]     639101   D     21.10 H      0.00
+[despues]     121201   D      0.00 H    540.00
+[despues]  000016 periodo 09  Cobro F030-000120 - Ref: SEP-1
+[despues]     104101   D    100.00 H      0.00
+[despues]     121101   D      0.00 H    100.00
+[despues]  movimiento banco COM-1: 518.90 en bk-fika-bcp-mn
+[despues]  movimiento banco SEP-1: 100.00 en bk-fika-bcp-mn
+[despues]  movimiento banco USD-1: 100.00 en bk-fika-bcp-me
+[despues]  saldo CxC de F001-000004 en 121202: 0.00

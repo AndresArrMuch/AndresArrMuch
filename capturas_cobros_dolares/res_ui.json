@@ -1,0 +1,33 @@
+{
+ "errores_js": [],
+ "ventana": "Registrar cobro × CLIENTE PRUEBA SAC — F001-000004 Saldo pendiente: US$ 100.00 Aplica comisión Fecha * Monto * Tipo de cambio del cobro (venta) * Monto en US$. TC de la factura: 3.7500; la diferencia se registra como diferencia de cambio. Cuenta bancaria * -- Selecciona -- BCP - 191-1111111-0-11 BCP - 191-1111111-1-22 Interbank - 200-3000111222 Cuenta Comisiones - COMISIONES Cuenta Retenciones 3% - RETENCIONES Efectivo / Caja - CAJA Medio de pago Transferencia bancaria Deposito en ventanilla Cheque Efectivo Yape / Plin Tarjeta Otro N. operacion / voucher Descripcion / Glosa Registrar transacci",
+ "tc_campo": "3.7610",
+ "tc_tras_fecha": "3.7610",
+ "aviso": "Cobro registrado | Cobro registrado",
+ "asiento": {
+  "glosa": "Cobro F001-000004 - Ref: UI-USD-1",
+  "lineas": [
+   [
+    "b999d550-ad36-4f02-845d-2f5ccbd382d4",
+    376.1,
+    0,
+    100,
+    0
+   ],
+   [
+    "077cc5ef-5f63-445e-a9b5-c6b8ec295ba6",
+    0,
+    375,
+    0,
+    100
+   ],
+   [
+    "36bedb4d-0c7c-412f-8b4d-f025b76b0011",
+    0,
+    1.1,
+    0,
+    0
+   ]
+  ]
+ }
+}
