@@ -1,0 +1,65 @@
+### 1. Cobros con main (antes del arreglo)
+[main] cobro bk-fika-ibk-mn   op IBK-1: HTTP 201 -> Debe [('104101', 'BANCO DE CREDITO MN', 200.0)]
+[main] cobro bk-fika-bcp-mn   op BCP-1: HTTP 201 -> Debe [('104101', 'BANCO DE CREDITO MN', 100.0)]
+[main] cobro bk-fika-bcp-me   op ME-1: HTTP 201 -> Debe [('104101', 'BANCO DE CREDITO MN', 50.0)]
+
+### 2. Cobros con la rama (despues del arreglo)
+[rama] cobro bk-fika-ibk-mn   op IBK-2: HTTP 201 -> Debe [('104107', 'INTERBANK MN', 100.0)]
+[rama] cobro bk-fika-bcp-mn   op BCP-2: HTTP 201 -> Debe [('104101', 'BANCO DE CREDITO MN', 100.0)]
+
+### 3. Script: vista previa
+$ python scripts/corregir_cuenta_banco_cobros.py --empresa 20000000009 --desde 2026-10-01 --hasta 2026-10-31
+Empresa: FIKA PRUEBA SAC (20000000009)
+
+== Se cambiaria la cuenta de la linea de banco (1 lineas) ==
+  2026-10-15  asiento 000121  cobro  op IBK-1              200.00  banco Interbank PEN  104101 -> 104107  Cobro F030-000119 - Ref: IBK-1
+
+== Resumen (de -> a, mes, tipo: importe) ==
+  104101 -> 104107  2026-10  cobro: 200.00
+
+== Para revisar a mano, no se cambian (1 lineas) ==
+  2026-10-15  asiento 000123  cobro  op ME-1                50.00  banco BCP USD  104101 -> 104102  Cobro F030-000120 - Ref: ME-1  [cuenta en dolares y el asiento no tiene el importe en US$]
+
+Solo vista previa. Para aplicar: repite con --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+### 4. Script: aplicar
+$ python scripts/corregir_cuenta_banco_cobros.py --empresa 20000000009 --desde 2026-10-01 --hasta 2026-10-31 --aplicar --usuario admin@t.pe
+Empresa: FIKA PRUEBA SAC (20000000009)
+
+== Se cambiaria la cuenta de la linea de banco (1 lineas) ==
+  2026-10-15  asiento 000121  cobro  op IBK-1              200.00  banco Interbank PEN  104101 -> 104107  Cobro F030-000119 - Ref: IBK-1
+
+== Resumen (de -> a, mes, tipo: importe) ==
+  104101 -> 104107  2026-10  cobro: 200.00
+
+== Para revisar a mano, no se cambian (1 lineas) ==
+  2026-10-15  asiento 000123  cobro  op ME-1                50.00  banco BCP USD  104101 -> 104102  Cobro F030-000120 - Ref: ME-1  [cuenta en dolares y el asiento no tiene el importe en US$]
+
+APLICADO: 1 lineas pasadas a la cuenta 104 de su banco.
+(codigo de salida: 0)
+
+### 5. Script: otra vez (ya no hay nada que mover)
+$ python scripts/corregir_cuenta_banco_cobros.py --empresa 20000000009 --desde 2026-10-01 --hasta 2026-10-31
+Empresa: FIKA PRUEBA SAC (20000000009)
+
+== Se cambiaria la cuenta de la linea de banco (0 lineas) ==
+
+== Resumen (de -> a, mes, tipo: importe) ==
+
+== Para revisar a mano, no se cambian (1 lineas) ==
+  2026-10-15  asiento 000123  cobro  op ME-1                50.00  banco BCP USD  104101 -> 104102  Cobro F030-000120 - Ref: ME-1  [cuenta en dolares y el asiento no tiene el importe en US$]
+
+Solo vista previa. Para aplicar: repite con --aplicar --usuario <correo>
+(codigo de salida: 0)
+
+### 6. Cuentas despues
+  op   | account_code | debit_amount 
+-------+--------------+--------------
+ BCP-1 | 104101       |       100.00
+ BCP-2 | 104101       |       100.00
+ IBK-1 | 104107       |       200.00
+ IBK-2 | 104107       |       100.00
+ ME-1  | 104101       |        50.00
+(5 rows)
+
