@@ -1,0 +1,2 @@
+{"srv":"main","caso":"A1 guia directa con P0003 (DIGEMID): panel","panel_visible":false,"partida_elegida":"(vacia)","opciones":[],"error_rojo":false,"lineas_en_formulario":["P0003"]}
+{"srv":"main","caso":"A2 emitir sin elegir la partida DIGEMID","envios":[{"http":201,"serie":"TTT1","partida_digemid":"","lineas":1,"guias":["TTT1-000020"]}],"aviso":"","panel_visible":false,"partida_elegida":"(vacia)","opciones":[],"error_rojo":false,"lineas_en_formulario":[null]}

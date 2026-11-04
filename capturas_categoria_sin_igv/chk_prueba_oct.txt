@@ -1,0 +1,23 @@
+BEGIN
+SELECT 10
+SELECT 10
+          cifra           | categoria | resumen_periodo | diferencia | resultado 
+--------------------------+-----------+-----------------+------------+-----------
+ Documentos               |         7 |               6 |          1 | 
+ Sin IGV (base imponible) |   2282.21 |         1897.46 |     384.75 | DIFIEREN
+ IGV                      |    410.79 |          341.54 |      69.25 | DIFIEREN
+ Con IGV                  |   2693.00 |         2239.00 |     454.00 | DIFIEREN
+(4 rows)
+
+     doc     | tipo |  emision   | periodo | status  |  sunat   | moneda | en_categoria_con_igv | en_periodo_con_igv | dif_sin_igv | dif_con_igv |                por_que                 
+-------------+------+------------+---------+---------+----------+--------+----------------------+--------------------+-------------+-------------+----------------------------------------
+ F001-000005 | 01   | 2026-10-02 |  202609 | emitted | aceptada | PEN    |               472.00 |               0.00 |      400.00 |      472.00 | periodo contable de otro mes
+ F001-000006 | 01   | 2026-10-08 |  202610 | emitted | aceptada | PEN    |              1000.00 |            1018.00 |      -15.25 |      -18.00 | suma de lineas distinta de la cabecera
+(2 rows)
+
+ docs | antes_sin_igv | antes_con_igv | ahora_sin_igv | ahora_con_igv | notas_credito | notas_credito_con_igv | docs_en_dolares_sin_convertir 
+------+---------------+---------------+---------------+---------------+---------------+-----------------------+-------------------------------
+    6 |       2297.46 |       2711.00 |       1897.46 |       2239.00 |             1 |                236.00 |                             1
+(1 row)
+
+ROLLBACK

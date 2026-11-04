@@ -1,0 +1,20 @@
+{
+ "errores": [],
+ "diario 2026-10-22 usd": "Tipo de cambio venta: 3.7610 (del 15/10/2026, último publicado)",
+ "diario 2026-10-23 usd": "El último tipo de cambio registrado es del 15/10/2026, hace 8 días; registra uno más reciente en Tipo de cambio (se acepta hasta 7 días).",
+ "diario 2026-10-23 pen": "Fecha: 23/10/2026 · no hay cambio de moneda.",
+ "bancos bk-fika-bcp-me 2026-10-22": {
+  "tc": " Tipo de cambio venta: 3.7610 (del 15/10/2026, último publicado) · US$ 100.00 = S/ 376.10",
+  "tc_check": " Tipo de cambio (cuenta en dólares)",
+  "boton": true
+ },
+ "bancos bk-fika-bcp-me 2026-10-23": {
+  "tc": " El último tipo de cambio registrado es del 15/10/2026, hace 8 días; registra uno más reciente en Tipo de cambio (se acepta hasta 7 días). (la cuenta es en dólares).",
+  "tc_check": " Tipo de cambio (cuenta en dólares)\nEl último tipo de cambio registrado es del 15/10/2026, hace 8 días; registra uno más reciente en Tipo de cambio (se acepta hasta 7 días).",
+  "boton": false
+ },
+ "bancos bk-fika-bcp-mn 2026-10-23": {
+  "tc": " Fecha: 23/10/2026 · no hay cambio de moneda.",
+  "boton": true
+ }
+}

@@ -1,0 +1,35 @@
+
+=== vendedor.fika: respuestas 118 | MAIN con token 22, con ruta 22 | RAMA con token 0, con ruta 0 | registro RAMA: token 0, ruta 0 (MAIN: token 0, ruta 30)
+  rutas con http/codigo/mensaje/estado distintos (token reemplazado por ***): 0
+  MAIN, respuestas con el token (Vendedor): GET /api/companies/<id>; GET /api/companies; GET /api/sales/<id>/af-s120/electronic/status; GET /api/sales/<id>/<id>/electronic/status; POST /api/sales/<id>/<id>/electronic/send; POST /api/sales/<id>/FN/electronic/send; POST /api/sales/<id>/af-s120/electronic/generate-xml; POST /api/sales/<id>/af-s120/electronic/void; POST /api/sales/<id>/FU/void; POST /api/sales/<id>/<id>/electronic/void; GET /api/sales/<id>/workflow/<id>/electronic/guide-status; GET /api/sales/<id>/workflow/<id>/electronic/guide-status; POST /api/sales/<id>/workflow/<id>/electronic/send-guide; POST /api/sales/<id>/workflow/<id>/issue-guide; POST /api/sales/<id>/workflow/<id>/void-guide; GET /api/inventory/<id>/transfers/<id>/guide-document; GET /api/inventory/<id>/transfers/<id>/guide-document; GET /api/companies; GET /api/companies/<id>; GET /api/inventory/<id>/transfers/<id>/guide-document; GET /api/sales/<id>/af-s120/electronic/status; GET /api/sales/<id>/workflow/<id>/electronic/guide-status
+
+=== central: respuestas 118 | MAIN con token 22, con ruta 22 | RAMA con token 0, con ruta 0 | registro RAMA: token 0, ruta 0 (MAIN: token 0, ruta 30)
+  rutas con http/codigo/mensaje/estado distintos (token reemplazado por ***): 0
+
+=== sistema.fika: respuestas 118 | MAIN con token 22, con ruta 22 | RAMA con token 0, con ruta 0 | registro RAMA: token 0, ruta 0 (MAIN: token 0, ruta 30)
+  rutas con http/codigo/mensaje/estado distintos (token reemplazado por ***): 0
+  Rutas que llaman a NubeFact (rama):
+    GET  /api/companies/<id>                                                         200                                  Company retrieved 
+    GET  /api/companies                                                              200                                  Companies retrieved 
+    GET  /api/sales/<id>/af-s120/electronic/status                                   200                                  Electronic status retrieved ['emitted', 'aceptada', 'F030-000120']
+    GET  /api/sales/<id>/<id>/electronic/status                                      502 NUBECONT_STATUS_ERROR            Documento no existe (token usado: ***) 
+    POST /api/sales/<id>/<id>/electronic/send                                        502 NUBECONT_SEND_ERROR              Error simulado del proveedor; token recibido *** 
+    POST /api/sales/<id>/FN/electronic/send                                          200                                  Document sent to NubeFact ['emitted', 'aceptada', 'F001-000003']
+    GET  /api/sales/<id>/af-s120/electronic/download                                 400 NOT_SENT                         Document not yet sent to SUNAT 
+    POST /api/sales/<id>/af-s120/electronic/generate-xml                             200                                  Invoice artifacts requested to NubeFact 
+    POST /api/sales/<id>/af-s120/electronic/void                                     200                                  Electronic void requested ['cancelled', 'anulada', 'F030-000120']
+    POST /api/sales/<id>/FU/void                                                     200                                  Electronic void requested ['cancelled', 'anulada', 'F001-000004']
+    POST /api/sales/<id>/<id>/electronic/void                                        502 NUBECONT_LOW_ERROR               El documento no existe o no fue enviado a NubeFacT (token ***) 
+    GET  /api/sales/<id>/workflow/<id>/electronic/guide-status                       200                                  Guide status retrieved 
+    GET  /api/sales/<id>/workflow/<id>/electronic/guide-debug                        200                                  Guide payload preview generated 
+    GET  /api/sales/<id>/workflow/<id>/electronic/guide-status                       200                                  Guide status retrieved 
+    GET  /api/sales/<id>/workflow/<id>/electronic/guide-debug                        200                                  Guide payload preview generated 
+    POST /api/sales/<id>/workflow/<id>/electronic/send-guide                         200                                  Guide sent to NubeFact 
+    POST /api/sales/<id>/workflow/<id>/issue-guide                                   200                                  Delivery guide already issued 
+    POST /api/sales/<id>/workflow/direct-guide                                       400 MISSING_CUSTOMER                 customer_id is required 
+    POST /api/sales/<id>/workflow/<id>/void-guide                                    200                                  Electronic guide void requested 
+    GET  /api/inventory/<id>/transfers/<id>/guide-document                           200                                  Transfer guide document retrieved 
+    GET  /api/inventory/<id>/transfers/<id>/guide-document                           200                                  Transfer guide document retrieved 
+    POST /api/inventory/<id>/transfers/<id>/dispatch                                 400 INVALID_STATUS                   Debe estar aprobada 
+    POST /api/inventory/<id>/company-transfer                                        403 FORBIDDEN                        Solo administradores pueden realizar transferencias entre empresas 
+    POST /api/guide-reports/<id>/guide-places                                        200                                  Datos de las guias en NubeCont 

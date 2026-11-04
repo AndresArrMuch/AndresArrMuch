@@ -1,0 +1,64 @@
+{
+ "errores_js": [],
+ "filas_al_entrar_gerente": [
+  [
+   "F001-000003",
+   "No enviado a SUNAT | No llego a NubeFact. Pulse Enviar a SUNAT (se reintenta solo durante 24 h).",
+   "boton Enviar"
+  ],
+  [
+   "F030-000119",
+   "No enviado a SUNAT | No llego a NubeFact. Pulse Enviar a SUNAT (se reintenta solo durante 24 h).",
+   "boton Enviar"
+  ],
+  [
+   "F030-000120",
+   "(sin etiqueta)",
+   "-"
+  ]
+ ],
+ "venta_sin_red_mensaje": "El comprobante F020-000001 QUEDO REGISTRADO pero NO llego a SUNAT/NubeFact: HTTPConnectionPool(host='127.0.0.1', port=8949): Max retries exceeded with url: *** (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8949): Failed to establish a new connection: [Errno 111] Connection refused\")).\nNo lo vuelva a emitir. Pulse Reintentar ahora (el sistema tambien lo reintenta solo durante",
+ "venta_sin_red_numero": [
+  [
+   "F020-000001",
+   "",
+   false
+  ]
+ ],
+ "dialogos": [
+  "Ya existe F020-000001 por 4250.00 para este cliente, registrada y SIN enviar a SUNAT. No se creo otra venta.\n\nAceptar = ENVIAR F020-000001 a SUNAT ahora (no se crea otra venta).\nCancelar = ver otras o",
+  "F030-000120, igual a este documento, ya esta aceptada en SUNAT. Si es una venta distinta, un Gerente o Administrador debe confirmar el envio.\n\nAceptar = es una venta DISTINTA, enviarla igual.  Cancela"
+ ],
+ "repetida_dialogos": [
+  "Ya existe F020-000001 por 4250.00 para este cliente, registrada y SIN enviar a SUNAT. No se creo otra venta.\n\nAceptar = ENVIAR F020-000001 a SUNAT ahora (no se crea otra venta).\nCancelar = ver otras o",
+  "F030-000120, igual a este documento, ya esta aceptada en SUNAT. Si es una venta distinta, un Gerente o Administrador debe confirmar el envio.\n\nAceptar = es una venta DISTINTA, enviarla igual.  Cancela"
+ ],
+ "repetida_mensaje": "F020-000001: enviado y ACEPTADO por SUNAT. PDF, XML y CDR guardados.",
+ "repetida_ventas_F020": [
+  [
+   "F020-000001",
+   "aceptada",
+   true,
+   "posted"
+  ]
+ ],
+ "boton_existe": 1,
+ "boton_mensaje": "F030-000119: enviado y ACEPTADO por SUNAT. PDF, XML y CDR guardados.",
+ "filas_despues": [
+  [
+   "F001-000003",
+   "No enviado a SUNAT | No llego a NubeFact. Pulse Enviar a SUNAT (se reintenta solo durante 24 h).",
+   "boton Enviar"
+  ],
+  [
+   "F030-000119",
+   "(sin etiqueta)",
+   "-"
+  ]
+ ],
+ "vendedor_ve_boton_pendientes": false,
+ "gerente_contador": "1",
+ "lista": [
+  "F001-000003 06/10/2026 CLIENTE PRUEBA SAC S/ 354.00 No enviado - 0 Enviar a SUNAT"
+ ]
+}

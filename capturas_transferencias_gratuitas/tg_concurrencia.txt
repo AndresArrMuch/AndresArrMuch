@@ -1,0 +1,5 @@
+stock P0003 en ALMFIKA: 8.0
+doble clic simultaneo (mismo envio, 2 cant.): [(200, 'TGR01-000002', True, None), (201, 'TGR01-000002', None, None)]
+stock P0003 tras doble clic: 6.0
+dos envios distintos de 4 c/u con stock 6: [(400, None, None, 'INSUFFICIENT_STOCK'), (201, 'TGR01-000003', None, None)]
+stock P0003 final (nunca negativo): 2.0

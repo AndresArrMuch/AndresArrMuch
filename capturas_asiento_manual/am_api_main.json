@@ -1,0 +1,135 @@
+{
+ "tiene_asiento_manual": false,
+ "antes": {
+  "admin_fika:diario": [
+   200,
+   "aa9e7dcb6440e951"
+  ],
+  "admin_fika:movimientos_banco": [
+   200,
+   "fd1f3c4e65ea8276"
+  ],
+  "admin_fika:cuentas_banco": [
+   200,
+   "7e21f39d5b790bda"
+  ],
+  "admin_fika:pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "admin_fika:dashboard": [
+   200,
+   "0dfcc68a864031c5"
+  ],
+  "admin_fika:periodos": [
+   200,
+   "d6e258e846d17cf9"
+  ],
+  "admin_fika:extracto_oct": [
+   200,
+   "7430ab9fbf8d7da6"
+  ],
+  "admin_fika:marcas_pagar": [
+   200,
+   "3cdf01c9d1e0374f"
+  ],
+  "admin_flu:diario": [
+   200,
+   "221108ca8c904621"
+  ],
+  "admin_flu:movimientos_banco": [
+   200,
+   "fd1f3c4e65ea8276"
+  ],
+  "admin_flu:cuentas_banco": [
+   200,
+   "62a9d3ff4b640cae"
+  ],
+  "admin_flu:pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "admin_flu:dashboard": [
+   200,
+   "ea2eaf7da575f73c"
+  ],
+  "admin_flu:periodos": [
+   200,
+   "e7b72642edd2f91d"
+  ],
+  "admin_flu:extracto_oct": [
+   200,
+   "1ad3575bba602d7f"
+  ],
+  "admin_flu:marcas_pagar": [
+   200,
+   "3cdf01c9d1e0374f"
+  ]
+ },
+ "despues": {
+  "admin_fika:diario": [
+   200,
+   "aa9e7dcb6440e951"
+  ],
+  "admin_fika:movimientos_banco": [
+   200,
+   "fd1f3c4e65ea8276"
+  ],
+  "admin_fika:cuentas_banco": [
+   200,
+   "7e21f39d5b790bda"
+  ],
+  "admin_fika:pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "admin_fika:dashboard": [
+   200,
+   "0dfcc68a864031c5"
+  ],
+  "admin_fika:periodos": [
+   200,
+   "d6e258e846d17cf9"
+  ],
+  "admin_fika:extracto_oct": [
+   200,
+   "7430ab9fbf8d7da6"
+  ],
+  "admin_fika:marcas_pagar": [
+   200,
+   "3cdf01c9d1e0374f"
+  ],
+  "admin_flu:diario": [
+   200,
+   "221108ca8c904621"
+  ],
+  "admin_flu:movimientos_banco": [
+   200,
+   "fd1f3c4e65ea8276"
+  ],
+  "admin_flu:cuentas_banco": [
+   200,
+   "62a9d3ff4b640cae"
+  ],
+  "admin_flu:pagos_historial": [
+   200,
+   "bd7330b773260f7a"
+  ],
+  "admin_flu:dashboard": [
+   200,
+   "ea2eaf7da575f73c"
+  ],
+  "admin_flu:periodos": [
+   200,
+   "e7b72642edd2f91d"
+  ],
+  "admin_flu:extracto_oct": [
+   200,
+   "1ad3575bba602d7f"
+  ],
+  "admin_flu:marcas_pagar": [
+   200,
+   "3cdf01c9d1e0374f"
+  ]
+ }
+}

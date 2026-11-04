@@ -1,0 +1,61 @@
+{
+ "errores_js": [],
+ "extractos": [
+  "Extracto guardado correctamente",
+  "Extracto guardado correctamente"
+ ],
+ "aviso_paso2": " Compra de dólares (PEN a USD): elige la salida y la entrada tal como están en el extracto. Los dólares se registran al tipo de cambio venta de la fecha y lo que se pagó de más o de menos va a diferencia de cambio (676 pérdida / 776 ganancia).",
+ "error_antiguo": false,
+ "frase": "Compra de dólares: salen S/ 70,000.00 del BCP MN (op. 01054514) y entran US$ 20,319.30 al BCP ME (op. 08078079) el 12/10/2026.",
+ "tc": " Tipo de cambio de la operación: 3.4450 · tipo de cambio venta: 3.4570 (del 12/10/2026)\nUS$ 20,319.30 × 3.4570 = S/ 70,243.82 · se pagaron S/ 70,000.00 → ganancia por diferencia de cambio S/ 243.82",
+ "asiento": [
+  "CUENTA N.° OP. DEBE S/ HABER S/ DEBE US$ HABER US$",
+  "104102 BANCO DE CREDITO ME (3.758) BCP ME · dólares · …1-22 08078079 S/ 70,243.82 US$ 20,319.30",
+  "104101 BANCO DE CREDITO MN BCP MN · soles · …0-11 01054514 S/ 70,000.00 US$ 20,248.77",
+  "776101 GANANCIA POR DFERENCIA DE CAMBIO Ganancia por diferencia de cambio - S/ 243.82 US$ 70.53",
+  "Totales S/ 70,243.82 S/ 70,243.82 US$ 20,319.30 US$ 20,319.30"
+ ],
+ "pendientes": [],
+ "boton_activo": true,
+ "resultado": {
+  "asiento": "000121",
+  "conc": [
+   {
+    "ok": true,
+    "texto": "Salida: la fila del extracto quedó Registrada (12/10/2026 10:46:35, N.° 01054514)."
+   },
+   {
+    "ok": true,
+    "texto": "Entrada: la fila del extracto quedó Registrada (12/10/2026 11:15:55, N.° 08078079)."
+   }
+  ],
+  "msg": null
+ },
+ "asiento_bd": {
+  "numero": "000121",
+  "glosa": "Compra de dólares Dollar House",
+  "lineas": [
+   [
+    "b999d550-ad36-4f02-845d-2f5ccbd382d4",
+    70243.82,
+    0,
+    20319.3,
+    0
+   ],
+   [
+    "b3c94bd9-98ed-499a-ad3e-8a247d9f4eaa",
+    0,
+    70000,
+    0,
+    20248.77
+   ],
+   [
+    "36bedb4d-0c7c-412f-8b4d-f025b76b0011",
+    0,
+    243.82,
+    0,
+    70.53
+   ]
+  ]
+ }
+}

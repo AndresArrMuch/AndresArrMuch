@@ -1,0 +1,50 @@
+== sale-guides setiembre 200
+  F001-1 [('TTT1-000001', '2026-09-08', 'Facturada')]
+  F001-2 [('TTT1-000002', '2026-09-08', 'Facturada'), ('TTT4-000001', '2026-09-08', 'Facturada')]
+  F001-3 (sin guia) en la respuesta: False
+== DIGEMID por defecto (solo productos DIGEMID, con anuladas, sin traslados) 200
+   2026-09-08 TTT1-000001 Guia de venta | F001-000001 | CLINICA UNO SAC | D001 5.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-08 TTT1-000004 Guia directa | - | BOTICA DOS EIRL | D002 1.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: DM7788E lote: - venc: - | De baja (interna)
+   2026-09-08 TTT4-000001 Parte DIGEMID | F001-000002 | CLINICA UNO SAC | D001 2.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-08 TTT4-000003 Parte DIGEMID | - | BOTICA DOS EIRL | D002 1.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Anulada (SUNAT)
+   2026-09-09 TTT4-000002 Parte DIGEMID | - | BOTICA DOS EIRL | D002 4.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Emitida
+== sin anuladas 200
+   2026-09-08 TTT1-000001 Guia de venta | F001-000001 | CLINICA UNO SAC | D001 5.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-08 TTT4-000001 Parte DIGEMID | F001-000002 | CLINICA UNO SAC | D001 2.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-09 TTT4-000002 Parte DIGEMID | - | BOTICA DOS EIRL | D002 4.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Emitida
+== serie TTT4 200
+   2026-09-08 TTT4-000001 Parte DIGEMID | F001-000002 | CLINICA UNO SAC | D001 2.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-08 TTT4-000003 Parte DIGEMID | - | BOTICA DOS EIRL | D002 1.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Anulada (SUNAT)
+   2026-09-09 TTT4-000002 Parte DIGEMID | - | BOTICA DOS EIRL | D002 4.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Emitida
+== con traslados 200
+   2026-09-07 TTT5-000001 Traslado entre almacenes | - | - | D002 10.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | RS: DM7788E lote: - venc: - | Emitida
+   2026-09-08 TTT1-000001 Guia de venta | F001-000001 | CLINICA UNO SAC | D001 5.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-08 TTT4-000001 Parte DIGEMID | F001-000002 | CLINICA UNO SAC | D001 2.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-09 TTT4-000002 Parte DIGEMID | - | BOTICA DOS EIRL | D002 4.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Emitida
+== producto D002 (texto) 200
+   2026-09-08 TTT1-000004 Guia directa | - | BOTICA DOS EIRL | D002 1.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: DM7788E lote: - venc: - | De baja (interna)
+   2026-09-08 TTT4-000003 Parte DIGEMID | - | BOTICA DOS EIRL | D002 1.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Anulada (SUNAT)
+   2026-09-09 TTT4-000002 Parte DIGEMID | - | BOTICA DOS EIRL | D002 4.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Emitida
+== cliente BOTICA 200
+   2026-09-08 TTT1-000004 Guia directa | - | BOTICA DOS EIRL | D002 1.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: DM7788E lote: - venc: - | De baja (interna)
+   2026-09-08 TTT4-000003 Parte DIGEMID | - | BOTICA DOS EIRL | D002 1.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Anulada (SUNAT)
+   2026-09-09 TTT4-000002 Parte DIGEMID | - | BOTICA DOS EIRL | D002 4.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Emitida
+== estado facturada 200
+   2026-09-08 TTT1-000001 Guia de venta | F001-000001 | CLINICA UNO SAC | D001 5.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-08 TTT4-000001 Parte DIGEMID | F001-000002 | CLINICA UNO SAC | D001 2.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+== todos los productos (no solo DIGEMID) 200
+   2026-09-08 TTT1-000001 Guia de venta | F001-000001 | CLINICA UNO SAC | D001 5.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-08 TTT1-000002 Guia de venta | F001-000002 | CLINICA UNO SAC | N001 1.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: - lote: - venc: - | Facturada
+   2026-09-08 TTT1-000003 Guia de venta | - | CLINICA UNO SAC | N001 3.0 NIU | salida: ALMACEN PRINCIPAL - Av. Almacen 500, Ate | destino: - | RS: - lote: - venc: - | Emitida
+   2026-09-08 TTT4-000001 Parte DIGEMID | F001-000002 | CLINICA UNO SAC | D001 2.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM-12345-E lote: A123 venc: 12/2027 | Facturada
+   2026-09-09 TTT4-000002 Parte DIGEMID | - | BOTICA DOS EIRL | D002 4.0 NIU | salida: ALMACEN DIGEMID - Calle Sanitaria 20, Lima | destino: - | RS: DM7788E lote: - venc: - | Emitida
+== guide-places (G1, G4, T1, uno ajeno) 200
+   {'aceptada_por_sunat': True, 'guia': 'TTT5-000001', 'llegada': 'Jr. Llegada Real 77, San Isidro', 'llegada_ubigeo': '150131', 'ok': True, 'partida': 'Calle Sanitaria 20, Lima', 'partida_ubigeo': '150103', 'pdf': 'https://nube/pdf/TTT5-000001.pdf'}
+   {'aceptada_por_sunat': True, 'guia': 'TTT4-000002', 'llegada': 'Jr. Llegada Real 77, San Isidro', 'llegada_ubigeo': '150131', 'ok': True, 'partida': 'Calle Sanitaria 20, Lima', 'partida_ubigeo': '150103', 'pdf': 'https://nube/pdf/TTT4-000002.pdf'}
+   {'aceptada_por_sunat': True, 'guia': 'TTT1-000001', 'llegada': 'Jr. Llegada Real 77, San Isidro', 'llegada_ubigeo': '150131', 'ok': True, 'partida': 'Calle Sanitaria 20, Lima', 'partida_ubigeo': '150103', 'pdf': 'https://nube/pdf/TTT1-000001.pdf'}
+   {'error': 'Guia no encontrada', 'ok': False}
+== guide-places otra vez (cache, sin llamar a NubeCont) 200
+   llamadas a NubeCont: ['TTT1-000001', 'TTT4-000002', 'TTT5-000001']
+== guide-places 11 guias (tope) 400
+== otra empresa (sin acceso) 403
+== sin sesion 401

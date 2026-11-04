@@ -1,0 +1,51 @@
+### 1) --solo-contar
+Documentos con sunat_status aceptada/aceptada_con_observacion emitidos desde 2026-10-03: 8
+  FIKA PRUEBA SAC: 8
+Tiempo estimado: ~0.1 min (0.5 s de pausa + ~0.6 s por consulta; con NubeFact lenta, hasta ~0.3 min)
+No se consulto NubeFact. No se escribio nada.
+  llamadas a NubeFact: 0
+
+### 2) modo de prueba contra NubeFact simulada
+Documentos con sunat_status aceptada/aceptada_con_observacion emitidos desde 2026-10-03: 8
+  FIKA PRUEBA SAC: 8
+Tiempo estimado: ~0.1 min (0.5 s de pausa + ~0.6 s por consulta; con NubeFact lenta, hasta ~0.3 min)
+  [1/8] FIKA PRUEBA SAC      B001-000001    NO_ACEPTADA_O_EN_PROCESO: en proceso    
+  [2/8] FIKA PRUEBA SAC      F001-000001    RECHAZADA: La Factura numero F001-000001, ha sido RECHAZADA    
+  [3/8] FIKA PRUEBA SAC      F001-000005    ANULADA_EN_NUBEFACT: aceptada    
+  [4/8] FIKA PRUEBA SAC      F001-000006    SIN_CAMPO_ACEPTADA: ok    
+  [6/8] FIKA PRUEBA SAC      FC01-000001    ERROR_CONSULTA: HTTP 500    Error interno del proveedor
+  [8/8] FIKA PRUEBA SAC      F001-000003    NO_EXISTE:    Documento no existe (token usado: ***) 
+
+== Resumen
+  FIKA PRUEBA SAC                ANULADA_EN_NUBEFACT              1
+  FIKA PRUEBA SAC                CONFIRMADA                       2
+  FIKA PRUEBA SAC                ERROR_CONSULTA                   1
+  FIKA PRUEBA SAC                NO_ACEPTADA_O_EN_PROCESO         1
+  FIKA PRUEBA SAC                NO_EXISTE                        1
+  FIKA PRUEBA SAC                RECHAZADA                        1
+  FIKA PRUEBA SAC                SIN_CAMPO_ACEPTADA               1
+
+Consultados: 8 | CONFIRMADOS: 2 | NO figuran como aceptados: 5 | no se pudo consultar: 1 | 4 s
+Detalle: /root/diag_estado_aceptada_20261017_2005.csv. No se escribio nada en la base.
+
+real	0m5.596s
+user	0m1.726s
+sys	0m0.145s
+  llamadas a NubeFact simulada: 8
+  BASE SIN CAMBIOS (hash aa53920e6580090266c0539afb967c54 antes y despues)
+  CSV:
+    empresa,documento,tipo,emision,total,status,sunat_status_sistema,resultado_nubefact,mensaje_sunat
+    FIKA PRUEBA SAC,B001-000001,03,2026-10-14,118.00,emitted,aceptada,NO_ACEPTADA_O_EN_PROCESO,en proceso    
+    FIKA PRUEBA SAC,F001-000001,01,2026-10-14,1180.00,emitted,aceptada,RECHAZADA,"La Factura numero F001-000001, ha sido RECHAZADA    "
+    FIKA PRUEBA SAC,F001-000005,01,2026-10-14,472.00,emitted,aceptada,ANULADA_EN_NUBEFACT,aceptada    
+    FIKA PRUEBA SAC,F001-000006,01,2026-10-14,1018.00,emitted,aceptada,SIN_CAMPO_ACEPTADA,ok    
+    FIKA PRUEBA SAC,F030-000120,01,2026-10-14,540.00,emitted,aceptada,CONFIRMADA,"La Factura numero F030-000120, ha sido aceptada    "
+    FIKA PRUEBA SAC,FC01-000001,07,2026-10-14,236.00,emitted,aceptada,ERROR_CONSULTA,HTTP 500    Error interno del proveedor
+    FIKA PRUEBA SAC,FD01-000001,08,2026-10-14,59.00,emitted,aceptada,CONFIRMADA,La Nota de Debito ha sido aceptada con observaciones    
+    FIKA PRUEBA SAC,F001-000003,01,2026-10-16,354.00,emitted,aceptada,NO_EXISTE,   Documento no existe (token usado: ***) 
+  ¿el CSV o la salida contienen el token simulado?: 0
+
+### 3) --empresa FLUMISA (sin documentos)
+Documentos con sunat_status aceptada/aceptada_con_observacion emitidos desde 2026-10-03: 0
+Tiempo estimado: ~0.0 min (0.5 s de pausa + ~0.6 s por consulta; con NubeFact lenta, hasta ~0.0 min)
+No se consulto NubeFact. No se escribio nada.

@@ -1,0 +1,4 @@
+antes_vol_a_los_3s.xlsx | filas 130 | con partida 0 | con llegada 0 | con PDF 0
+antes_vol_final.xlsx | filas 130 | con partida 109 | con llegada 109 | con PDF 120
+despues_vol_final.xlsx | filas 130 | con partida 109 | con llegada 109 | con PDF 120
+despues_vol_tras_reintento.xlsx | filas 130 | con partida 118 | con llegada 118 | con PDF 130

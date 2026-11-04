@@ -1,0 +1,51 @@
+{
+ "errores_js": [],
+ "lista_extranjero": [
+  "+ Añadir proveedor: \"BLUE SAIL (HONG KONG) TRADING LIMITED\""
+ ],
+ "ventana": {
+  "abierta": true,
+  "tipo": "extranjero",
+  "nombre": "BLUE SAIL (HONG KONG) TRADING LIMITED",
+  "ruc": ""
+ },
+ "tras_guardar": {
+  "aviso": "Proveedor BLUE SAIL (HONG KONG) TRADING LIMITED añadido y elegido en la compra | Proveedor BLUE SAIL (HONG KONG) TRADING LIMITED añadido y elegido en la compra",
+  "campo": "HK-91440300 - BLUE SAIL (HONG KONG) TRADING LIMITED",
+  "oculto": true
+ },
+ "compra_extranjero": "Compra extranjero creada correctamente | Compra extranjero creada correctamente",
+ "lista_alquiler": [
+  "+ Añadir proveedor: \"20557450565\""
+ ],
+ "ventana_alquiler": {
+  "tipo": "nacional",
+  "ruc": "20557450565",
+  "nombre": ""
+ },
+ "alquiler_tras_guardar": {
+  "aviso": "Proveedor FLUMISA E.I.R.L. añadido y elegido en la compra | Proveedor FLUMISA E.I.R.L. añadido y elegido en la compra",
+  "campo": "20557450565 - FLUMISA E.I.R.L."
+ },
+ "duplicado": {
+  "aviso": "El proveedor con 20557450565 ya estaba registrado (FLUMISA E.I.R.L.): se eligio ese | El proveedor con 20557450565 ya estaba registrado (FLUMISA E.I.R.L.): se eligio ese",
+  "campo": "20557450565 - FLUMISA E.I.R.L."
+ },
+ "local_guardar": {
+  "aviso": "El proveedor con 20557450565 ya estaba registrado (FLUMISA E.I.R.L.): se eligio ese | El proveedor con 20557450565 ya estaba registrado (FLUMISA E.I.R.L.): se eligio ese | No se pudo crear compra: El proveedor \"PROVEEDOR NUEVO SAC\" no esta registrado: completa sus datos en la ventana \"Añadir proveed",
+  "ventana_abierta": true,
+  "nombre": "PROVEEDOR NUEVO SAC"
+ },
+ "proveedores": [
+  [
+   "HK-91440300",
+   "BLUE SAIL (HONG KONG) TRADING LIMITED",
+   "foreign"
+  ],
+  [
+   "20557450565",
+   "FLUMISA E.I.R.L.",
+   "principal"
+  ]
+ ]
+}

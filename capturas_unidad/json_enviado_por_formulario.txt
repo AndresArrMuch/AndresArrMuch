@@ -1,0 +1,39 @@
+MAIN (7b07f56)
+{"caso":"c1_bx","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":1,"unit":"NIU"}],"source_workflow_id":null,"http":201,"ventas":["F010-000001"]}
+{"caso":"c1_bx","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c2_par","lineas_enviadas":[{"desc":"OXIMETRO DEDO","cant":1,"unit":"NIU"}],"source_workflow_id":null,"http":201,"ventas":["F040-000001"]}
+{"caso":"c2_par","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c3_niu","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":1,"unit":"NIU"}],"source_workflow_id":null,"http":201,"ventas":["F010-000002"]}
+{"caso":"c3_niu","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c4_mano","lineas_enviadas":[{"desc":"Servicio de instalacion","cant":1,"unit":"NIU"}],"source_workflow_id":null,"http":400,"ventas":["undefined-undefined"]}
+{"caso":"c4_mano","aviso":"No se pudo crear venta: Serie inválida para Factura. Usa una de: F010, F020, F030, F040, F050"}
+{"caso":"c5_guia_bx","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":2,"unit":"NIU"}],"source_workflow_id":"si","http":201,"ventas":["F010-000003"]}
+{"caso":"c5_guia_bx","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c6_guia_par","lineas_enviadas":[{"desc":"OXIMETRO DEDO","cant":3,"unit":"NIU"}],"source_workflow_id":"si","http":201,"ventas":["F040-000002"]}
+{"caso":"c6_guia_par","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c7_digemid","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":1,"unit":"NIU"},{"desc":"OXIMETRO DEDO","cant":1,"unit":"NIU"}],"source_workflow_id":null,"http":201,"ventas":["F010-000004","F040-000003"]}
+{"caso":"c7_digemid","aviso":"Ventas registradas (separadas por DIGEMID), enviadas a SUNAT y contabilizadas"}
+{"caso":"c4_mano","lineas_enviadas":[{"desc":"Servicio de instalacion","cant":1,"unit":"NIU"}],"source_workflow_id":null,"serie":"F010","http":201,"ventas":["F010-000005"]}
+{"caso":"c4_mano","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c8_reemitir","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":2,"unit":"NIU"}],"source_workflow_id":"si","serie":"F010","http":201,"ventas":["F010-000006"]}
+{"caso":"c8_reemitir","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+
+RAMA claude/unidad-factura
+{"caso":"c1_bx","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":1,"unit":"BX"}],"source_workflow_id":null,"http":201,"ventas":["F010-000001"]}
+{"caso":"c1_bx","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c2_par","lineas_enviadas":[{"desc":"OXIMETRO DEDO","cant":1,"unit":"PAR"}],"source_workflow_id":null,"http":201,"ventas":["F040-000001"]}
+{"caso":"c2_par","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c3_niu","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":1,"unit":"NIU"}],"source_workflow_id":null,"http":201,"ventas":["F010-000002"]}
+{"caso":"c3_niu","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c4_mano","lineas_enviadas":[{"desc":"Servicio de instalacion","cant":1,"unit":"NIU"}],"source_workflow_id":null,"http":400,"ventas":["undefined-undefined"]}
+{"caso":"c4_mano","aviso":"No se pudo crear venta: Serie inválida para Factura. Usa una de: F010, F020, F030, F040, F050"}
+{"caso":"c5_guia_bx","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":2,"unit":"BX"}],"source_workflow_id":"si","http":201,"ventas":["F010-000003"]}
+{"caso":"c5_guia_bx","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c6_guia_par","lineas_enviadas":[{"desc":"OXIMETRO DEDO","cant":3,"unit":"PAR"}],"source_workflow_id":"si","http":201,"ventas":["F040-000002"]}
+{"caso":"c6_guia_par","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c7_digemid","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":1,"unit":"BX"},{"desc":"OXIMETRO DEDO","cant":1,"unit":"PAR"}],"source_workflow_id":null,"http":201,"ventas":["F010-000004","F040-000003"]}
+{"caso":"c7_digemid","aviso":"Ventas registradas (separadas por DIGEMID), enviadas a SUNAT y contabilizadas"}
+{"caso":"c4_mano","lineas_enviadas":[{"desc":"Servicio de instalacion","cant":1,"unit":"NIU"}],"source_workflow_id":null,"serie":"F010","http":201,"ventas":["F010-000005"]}
+{"caso":"c4_mano","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}
+{"caso":"c8_reemitir","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":2,"unit":"BX"}],"source_workflow_id":"si","serie":"F010","http":201,"ventas":["F010-000006"]}
+{"caso":"c8_reemitir","aviso":"Venta registrada, enviada a SUNAT y contabilizada"}

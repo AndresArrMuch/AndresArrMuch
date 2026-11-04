@@ -1,0 +1,391 @@
+{
+ "roles": {
+  "Administrador-FIKA": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": true,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "201",
+   "diario_anular": "200",
+   "pantalla_bancos_puede": true,
+   "bancos_registrar": "201",
+   "bancos_contrapartidas": "200"
+  },
+  "Administrador-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": true,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "201",
+   "diario_anular": "200",
+   "pantalla_bancos_puede": true,
+   "bancos_registrar": "201",
+   "bancos_contrapartidas": "200"
+  },
+  "AlmacenGuias-FIKA": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "AlmacenGuias-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Almacenero-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Gerente-FIKA": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": true,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "201",
+   "diario_anular": "200",
+   "pantalla_bancos_puede": true,
+   "bancos_registrar": "201",
+   "bancos_contrapartidas": "200"
+  },
+  "Gerente-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": true,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "201",
+   "diario_anular": "200",
+   "pantalla_bancos_puede": true,
+   "bancos_registrar": "201",
+   "bancos_contrapartidas": "200"
+  },
+  "Sistema-FIKA": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Sistema-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "TiendaCapon-FIKA": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "TiendaCapon-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "TiendaMalvinas-FIKA": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "TiendaMalvinas-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Vendedor-FIKA": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Vendedor-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Tesoreria": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Encargado-FIKA": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Encargado-FLUMISA": {
+   "empresa": "FLUMISA",
+   "pantalla_diario_puede": false,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "diario_anular": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "pantalla_bancos_puede": false,
+   "bancos_registrar": "403 MANUAL_JOURNAL_FORBIDDEN",
+   "bancos_contrapartidas": "403 MANUAL_JOURNAL_FORBIDDEN"
+  },
+  "Sistemas": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": true,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "201",
+   "diario_anular": "200",
+   "pantalla_bancos_puede": true,
+   "bancos_registrar": "201",
+   "bancos_contrapartidas": "200"
+  },
+  "Gerente": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": true,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "201",
+   "diario_anular": "200",
+   "pantalla_bancos_puede": true,
+   "bancos_registrar": "201",
+   "bancos_contrapartidas": "200"
+  },
+  "Administrador": {
+   "empresa": "FIKA",
+   "pantalla_diario_puede": true,
+   "allowed_roles": [
+    "sistemas",
+    "administrador",
+    "gerente",
+    "contador",
+    "contabilidad"
+   ],
+   "diario_registrar": "201",
+   "diario_anular": "200",
+   "pantalla_bancos_puede": true,
+   "bancos_registrar": "201",
+   "bancos_contrapartidas": "200"
+  }
+ },
+ "tiene_pestana_bancos": true,
+ "sin_104": {
+  "Cuenta Comisiones": [
+   201,
+   null,
+   "Asiento manual 000033 registrado"
+  ],
+  "Cuenta Retenciones 3%": [
+   201,
+   null,
+   "Asiento manual 000034 registrado"
+  ],
+  "Efectivo / Caja": [
+   400,
+   "BANK_ACCOUNT_MISMATCH",
+   "Linea 2: la cuenta bancaria Efectivo / Caja PEN va con la cuenta contable 101101, no con 104101"
+  ]
+ },
+ "bcp_sigue_igual": "201",
+ "opciones_bancos_asiento_manual": [
+  [
+   "BCP",
+   "PEN",
+   "104101"
+  ],
+  [
+   "BCP",
+   "USD",
+   "104102"
+  ],
+  [
+   "Interbank",
+   "PEN",
+   "104107"
+  ],
+  [
+   "Cuenta Comisiones",
+   "PEN",
+   "104101"
+  ],
+  [
+   "Cuenta Retenciones 3%",
+   "PEN",
+   "104101"
+  ],
+  [
+   "Efectivo / Caja",
+   "PEN",
+   "101101"
+  ]
+ ]
+}

@@ -1,0 +1,52 @@
+Pager usage is off.
+BEGIN
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+== Cuenta del extracto usada para comparar
+    bank_id     | cuenta  
+----------------+---------
+ bk-fika-bcp-mn | BCP PEN
+
+== Totales
+                   concepto                    | lineas | importe  
+-----------------------------------------------+--------+----------
+ Debe de la cuenta en el Libro Diario          |     14 | 13637.75
+ Ingresos del extracto de esa cuenta en el mes |      3 |     1800
+
+== Libro Diario por grupo (lo que no es 0 explica la diferencia)
+                      grupo                      | lineas | importe  
+-------------------------------------------------+--------+----------
+ 0 OK: en el extracto, mismo mes y monto         |      1 |  1000.00
+ 1 Reversa o anulacion (no es ingreso del banco) |      1 |    50.00
+ 2 N. de operacion repetido en la cuenta         |      2 |   400.00
+ 3 En el extracto pero con otro monto            |      1 |   600.00
+ 4 El N. esta en el extracto de OTRA cuenta      |      1 |   700.00
+ 5 En el extracto pero en otro mes               |      1 |    90.00
+ 6 Sin N. de operacion                           |      6 | 10677.75
+ 7 No esta en ningun extracto                    |      1 |   120.00
+
+== Ingresos del extracto que NO estan en el Libro Diario (restan a la diferencia)
+   fecha    | op  | monto |      descr      
+------------+-----+-------+-----------------
+ 2026-09-09 | 999 |   300 | DEP SIN ASIENTO
+
+== Detalle de las lineas que no cuadran (grupos 1 a 7)
+                      grupo                      |   fecha    | asiento |   tipo    | op  |  debe   | veces_op |                      glosa                      |         en_extracto          
+-------------------------------------------------+------------+---------+-----------+-----+---------+----------+-------------------------------------------------+------------------------------
+ 1 Reversa o anulacion (no es ingreso del banco) | 2026-09-12 | DG6     | operation | 555 |   50.00 |        1 | Anulacion de pago                               | 
+ 2 N. de operacion repetido en la cuenta         | 2026-09-08 | DG5     | operation | 444 |  200.00 |        2 | Cobro D otra vez                                | 
+ 2 N. de operacion repetido en la cuenta         | 2026-09-08 | DG4     | operation | 444 |  200.00 |        2 | Cobro D                                         | 
+ 3 En el extracto pero con otro monto            | 2026-09-05 | DG2     | operation | 222 |  600.00 |        1 | Cobro B                                         | BCP PEN 2026-09-05 500
+ 4 El N. esta en el extracto de OTRA cuenta      | 2026-09-07 | DG3     | operation | 333 |  700.00 |        1 | Cobro en IBK                                    | Interbank PEN 2026-09-07 700
+ 5 En el extracto pero en otro mes               | 2026-09-30 | DG8     | operation | 666 |   90.00 |        1 | Cobro con fecha de septiembre                   | BCP PEN 2026-10-01 90
+ 6 Sin N. de operacion                           | 2026-09-02 | 000015  | operation |     | 3795.55 |        0 | Asiento de reclasificacion 15                   | 
+ 6 Sin N. de operacion                           | 2026-09-08 | 000013  | operation |     | 2957.55 |        0 | Planilla del mes                                | 
+ 6 Sin N. de operacion                           | 2026-09-13 | DG7     | operation |     |   80.00 |        0 | Deposito sin numero                             | 
+ 6 Sin N. de operacion                           | 2026-09-14 | 000011  | operation |     | 2119.55 |        0 | Pago a proveedor OP-11                          | 
+ 6 Sin N. de operacion                           | 2026-09-20 | 000009  | purchase  |     | 1281.55 |        0 | Compra F002-00009 - proveedor DISTRIBUIDORA SAC | 
+ 6 Sin N. de operacion                           | 2026-09-26 | 000007  | operation |     |  443.55 |        0 | Asiento de reclasificacion 7                    | 
+ 7 No esta en ningun extracto                    | 2026-09-20 | DG9     | operation | 888 |  120.00 |        1 | Cobro sin extracto                              | 
+
+ROLLBACK

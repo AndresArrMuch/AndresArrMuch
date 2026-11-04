@@ -1,0 +1,13 @@
+* TC | cotizacion mezclada ya facturada (F001-000001) sin guia
+    HTTP 201  | guias=['TTT1-000020'] | registradas=['TTT1-000020 [P0001/NIU,P0003/PAR] factura']
+    contadores TTT1=19 -> TTT1=20
+    nubecont: TTT1-000020(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR'], ['P0001', 'NIU']]
+* GF | la misma factura F001-000001 desde "-> Guia"
+    HTTP 400 SALE_ALREADY_HAS_GUIDE | guias=[] | registradas=['TTT1-000020 [P0001/NIU,P0003/PAR] factura']
+    contadores TTT1=20 -> TTT1=20
+    nubecont: (ninguna llamada)
+    mensaje: La factura/boleta F001-000001 ya tiene la guia TTT1-000020
+* TC | cotizacion 100% DIGEMID ya facturada (F001-000002) sin guia
+    HTTP 201  | guias=['TTT1-000021'] | registradas=['TTT1-000021 [P0003/PAR] factura']
+    contadores TTT1=20 -> TTT1=21
+    nubecont: TTT1-000021(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]

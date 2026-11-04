@@ -1,0 +1,20 @@
+BEGIN
+== 1) Detalle
+     empresa     | document_number | document_type | emission_date |  status   | sunat_status | asiento | fecha_asiento | entry_status |                 glosa                  | ingreso |  igv  | cuenta_por_cobrar 
+-----------------+-----------------+---------------+---------------+-----------+--------------+---------+---------------+--------------+----------------------------------------+---------+-------+-------------------
+ FIKA PRUEBA SAC | F001-000002     | 01            | 2026-10-05    | cancelled | anulada      | 900001  | 2026-10-05    | approved     | Venta F001-000002 - CLIENTE PRUEBA SAC |  500.00 | 90.00 |            590.00
+(1 row)
+
+== 2) Resumen por empresa
+     empresa     | asientos_sin_reversa | total_ingreso | total_igv 
+-----------------+----------------------+---------------+-----------
+ FIKA PRUEBA SAC |                    1 |        500.00 |     90.00
+(1 row)
+
+== 3) Ventas anuladas por empresa (para comparar)
+     empresa     | ventas_anuladas 
+-----------------+-----------------
+ FIKA PRUEBA SAC |               2
+(1 row)
+
+ROLLBACK

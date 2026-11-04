@@ -1,0 +1,220 @@
+{
+ "errores_js": [],
+ "dialogos": [
+  "admin FIKA [prompt] Motivo de la anulación del asiento 000010 (obligatorio). Se registrará un asiento de reversa con fecha de hoy:",
+  "admin FLUMISA [confirm] Comprueba que no sea el pago de una factura (Cobranza). Si un cliente pagó una factura, regístralo en Cobranza. ¿Registrar esta entrada de dinero de todos modos?"
+ ],
+ "existente": {
+  "pestanas_bancos": [
+   "Dashboard",
+   "Cuentas",
+   "Transacciones",
+   "Conciliación",
+   "Estado de Cuenta",
+   "Movimiento entre cuentas"
+  ],
+  "libro": [
+   "M10-0005 | 000001 | 2026-10-14 | Compra F002-00001 - proveedor DISTRIBUIDORA SAC",
+   "M10-0004 | 000002 | 2026-10-11 | Cobro RC-2 de factura",
+   "M10-0003 | 000003 | 2026-10-08 | Pago a proveedor OP-3",
+   "M10-0002 | 000004 | 2026-10-05 | Ajuste de inventario AJ-4",
+   "M10-0001 | 000005 | 2026-10-02 | Planilla del mes",
+   "M09-0010 | 000006 | 2026-09-29 | Conciliacion bancaria - comision",
+   "M09-0009 | 000007 | 2026-09-26 | Asiento de reclasificacion 7",
+   "M09-0008 | 000008 | 2026-09-23 | Venta F001-000008 - CLIENTE PRUEBA SAC",
+   "M09-0007 | 000009 | 2026-09-20 | Compra F002-00009 - proveedor DISTRIBUIDORA SAC",
+   "M09-0006 | 000010 | 2026-09-17 | Cobro RC-10 de factura",
+   "M09-0005 | 000011 | 2026-09-14 | Pago a proveedor OP-11",
+   "M09-0004 | 000012 | 2026-09-11 | Ajuste de inventario AJ-12",
+   "M09-0003 | 000013 | 2026-09-08 | Planilla del mes",
+   "M09-0002 | 000014 | 2026-09-05 | Conciliacion bancaria - comision",
+   "M09-0001 | 000015 | 2026-09-02 | Asiento de reclasificacion 15",
+   "M08-0010 | 000016 | 2026-08-30 | Venta F001-000016 - CLIENTE PRUEBA SAC",
+   "M08-0009 | 000017 | 2026-08-27 | Compra F002-00017 - proveedor DISTRIBUIDORA SAC",
+   "M08-0008 | 000018 | 2026-08-24 | Cobro RC-18 de factura",
+   "M08-0007 | 000019 | 2026-08-21 | Pago a proveedor OP-19",
+   "M08-0006 | 000020 | 2026-08-18 | Ajuste de inventario AJ-20",
+   "M08-0005 | 000021 | 2026-08-15 | Planilla del mes",
+   "M08-0004 | 000022 | 2026-08-12 | Conciliacion bancaria - comision",
+   "M08-0003 | 000023 | 2026-08-09 | Asiento de reclasificacion 23",
+   "M08-0002 | 000024 | 2026-08-06 | Venta F001-000024 - CLIENTE PRUEBA SAC",
+   "M08-0001 | 000025 | 2026-08-03 | Compra F002-00025 - proveedor DISTRIBUIDORA SAC",
+   "M07-0011 | 000026 | 2026-07-31 | Cobro RC-26 de factura",
+   "M07-0010 | 000027 | 2026-07-28 | Pago a proveedor OP-27",
+   "M07-0009 | 000028 | 2026-07-25 | Ajuste de inventario AJ-28",
+   "M07-0008 | 000029 | 2026-07-22 | Planilla del mes",
+   "M07-0007 | 000030 | 2026-07-19 | Conciliacion bancaria - comision",
+   "M07-0006 | 000031 | 2026-07-16 | Asiento de reclasificacion 31",
+   "M07-0005 | 000032 | 2026-07-13 | Venta F001-000032 - CLIENTE PRUEBA SAC",
+   "M07-0004 | 000033 | 2026-07-10 | Compra F002-00033 - proveedor DISTRIBUIDORA SAC",
+   "M07-0003 | 000034 | 2026-07-07 | Cobro RC-34 de factura",
+   "M07-0002 | 000035 | 2026-07-04 | Pago a proveedor OP-35",
+   "M06-0001 | 000036 | 2026-07-01 | Ajuste de inventario AJ-36",
+   "M06-0010 | 000037 | 2026-06-28 | Planilla del mes",
+   "M06-0009 | 000038 | 2026-06-25 | Conciliacion bancaria - comision",
+   "M06-0008 | 000039 | 2026-06-22 | Asiento de reclasificacion 39",
+   "M06-0007 | 000040 | 2026-06-19 | Venta F001-000040 - CLIENTE PRUEBA SAC",
+   "M06-0006 | 000041 | 2026-06-16 | Compra F002-00041 - proveedor DISTRIBUIDORA SAC",
+   "M06-0005 | 000042 | 2026-06-13 | Cobro RC-42 de factura",
+   "M06-0004 | 000043 | 2026-06-10 | Pago a proveedor OP-43",
+   "M06-0003 | 000044 | 2026-06-07 | Ajuste de inventario AJ-44",
+   "M06-0002 | 000045 | 2026-06-04 | Planilla del mes",
+   "M05-0001 | 000046 | 2026-06-01 | Conciliacion bancaria - comision",
+   "M05-0010 | 000047 | 2026-05-29 | Asiento de reclasificacion 47",
+   "M05-0009 | 000048 | 2026-05-26 | Venta F001-000048 - CLIENTE PRUEBA SAC",
+   "M05-0008 | 000049 | 2026-05-23 | Compra F002-00049 - proveedor DISTRIBUIDORA SAC",
+   "M05-0007 | 000050 | 2026-05-20 | Cobro RC-50 de factura",
+   "M05-0006 | 000051 | 2026-05-17 | Pago a proveedor OP-51",
+   "M05-0005 | 000052 | 2026-05-14 | Ajuste de inventario AJ-52",
+   "M05-0004 | 000053 | 2026-05-11 | Planilla del mes",
+   "M05-0003 | 000054 | 2026-05-08 | Conciliacion bancaria - comision",
+   "M05-0002 | 000055 | 2026-05-05 | Asiento de reclasificacion 55",
+   "M05-0001 | 000056 | 2026-05-02 | Venta F001-000056 - CLIENTE PRUEBA SAC",
+   "M04-0004 | 000057 | 2026-04-29 | Compra F002-00057 - proveedor DISTRIBUIDORA SAC",
+   "M04-0003 | 000058 | 2026-04-26 | Cobro RC-58 de factura",
+   "M04-0002 | 000059 | 2026-04-23 | Pago a proveedor OP-59",
+   "M04-0001 | 000060 | 2026-04-20 | Ajuste de inventario AJ-60"
+  ],
+  "conciliacion_bcp": [
+   "01117932 S/ -3,000.00 Error",
+   "01104038 S/ -975.00 Error",
+   "01108170 S/ -100.00 Error",
+   "01200001 S/ -500.00 Error"
+  ],
+  "conciliacion_interbank": [
+   "33300001 S/ 500.00 Error"
+  ],
+  "cobranza": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Dashboard de Cobranza y Pagos | Vista general de cuentas por cobrar y por pagar | Cobranzas | Pagos | Todo el historico | Ultimos 30 dias | Ultimos 90 dias | Ultimo ano | TOTAL PENDIENTE | S/ 3,301.00 | TOTAL VENCIDO | S/ 3,301.00 | 7 facturas | COBRADO (HISTORICO) | S/ 0.00 | Top clientes con mayor deuda | CLIENTE PRUEBA SAC | S/ 3,301.00 | Antiguedad de la deuda (dias vencidos) | 0-15 dias | S/ 3,301.00 | 16-30 dias | S/ 0.00 | 31-60 dias | S/ 0.00 | +60 dias | S/ 0.00 | Resumen por cliente — clic para ver sus facturas | CLIENTE PRUEBA SAC — te falta cobrar 7 facturas (S/ 3,301.00)",
+  "pagos": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Dashboard de Cobranza y Pagos | Vista general de cuentas por cobrar y por pagar | Cobranzas | Pagos | Todo el historico | Ultimos 30 dias | Ultimos 90 dias | Ultimo ano | TOTAL PENDIENTE | S/ 0.00 | TOTAL VENCIDO | S/ 0.00 | 0 facturas | PAGADO (HISTORICO) | S/ 0.00 | Top proveedores con mayor deuda | Sin datos. | Antiguedad de la deuda (dias vencidos) | 0-15 dias | S/ 0.00 | 16-30 dias | S/ 0.00 | 31-60 dias | S/ 0.00 | +60 dias | S/ 0.00 | Resumen por proveedor — clic para ver sus facturas | Sin pendientes.",
+  "transacciones": "Dashboard | Cuentas | Transacciones | Conciliación | Estado de Cuenta | Movimiento entre cuentas | Cobranzas y Pagos | Registra cobros/pagos parciales directo desde cada factura (clic para mostrar/ocultar) | Cobranzas | Pagos |  Anticipos |  Detracciones |  Retenciones RxH |  Excel |  PDF | DESDE | HASTA |  Exportar Excel (rango de fechas) | EMISION | VENCIM. | PROVEEDOR | RUC | DOCUMENTO | VENDEDOR | Todos ▾ | \tORIGINAL\tPAGADO\tSALDO\t | ESTADO | Todos ▾ | \tACCION | No hay pagos pendientes. | + Historial de Retenciones (3%) | + Historial de Comisiones | + Otros movimientos (transferencias entre cuentas, gastos/ingresos directos)",
+  "dashboard": "Dashboard Ejecutivo | 2026-10 · FIKA PRUEBA SAC | SALDO BANCARIO | S/ 0.00 | Total en cuentas | VENTAS DEL MES | S/ 2,711.00 | 6 comprobantes | COMPRAS DEL MES | S/ 0.00 | 0 comprobantes | POR COBRAR | S/ 2,947.00 | 6 docs vencidos | POR PAGAR | S/ 0.00 | 0 docs vencidos | FLUJO DEL MES | S/ 0.00 | Ingresos - Egresos |  Clientes con deuda vencida | 6 facturas · S/ 2,947.00 total | CLIENTE PRUEBA SAC | S/ 2,947.00 |  Proveedores por pagar | 0 facturas vencidas · S/ 0.00 total |  Sin deudas pendientes |  Saldos por cuenta | BCP | FIKA SAC | S/ 0.00 | BCP | FIKA SAC | S/ 0.00 | Interbank | FIKA SAC | S/ 0.00 | Cuenta Comisiones | FIKA SAC | S/ 0.00 | Cuenta Retenciones 3% | FIKA SAC | S/ 0.00 | Efectivo / Caja | FIKA SAC | S/ 0.00 |  Últimos movimientos bancarios | FECHA\tDESCRIPCIÓN\tIMPORTE | Sin movimientos | IGV VENTAS DEL MES | S/ 413.54 | IGV COMPRAS DEL MES | S/ 0.00 | IGV NETO A PAGAR | S/ 413.54 |  Antigüedad de Cuentas por Cobrar (CxC) | Facturas de venta pendientes de cobro agrupadas por vencimiento | CLIENTE\tPOR VENCER\t0-30 DÍAS\t31-60 DÍAS\t61-90 DÍAS\t+90 DÍAS\tTOTAL | CLIENTE PRUEBA SAC\t-\tS/ 2,947.00\t-\t-\t-\tS/ 2,947.00 | TOTAL\t-\tS/ 2,947.00\t-\t-\t-\tS/ 2,947.00 |  Antigüedad de Cuentas por Pagar (CxP) | Facturas de compra pendientes de pago agrupadas por vencimiento | PROVEEDOR\tPOR VENCER\t0-30 DÍAS\t31-60 DÍAS\t61-90 DÍAS\t+90 DÍAS\tTOTAL |  Sin cuentas por pagar pendientes"
+ },
+ "botones_conciliacion_antes": [
+  "01117932 Registrar como…",
+  "01104038 Registrar como…",
+  "01108170 Registrar como…",
+  "01200001 Registrar como…"
+ ],
+ "fecha_asiento_manual": {
+  "hoy_lima": "2026-10-16",
+  "al_entrar": "2026-10-16",
+  "registro": "Asiento manual 000006 registrado.",
+  "tras_registrar": "2026-10-16",
+  "al_volver": "2026-10-16"
+ },
+ "pestanas_bancos_rama": [
+  "Dashboard",
+  "Cuentas",
+  "Transacciones",
+  "Conciliación",
+  "Estado de Cuenta",
+  "Movimiento entre cuentas"
+ ],
+ "bancos_ofrecidos": [
+  "— Cuenta de banco —",
+  "BCP PEN 191-1111111-0-11 · 104101",
+  "BCP USD 191-1111111-1-22 · 104102",
+  "Interbank PEN 200-3000111222 · 104107"
+ ],
+ "pestana_inicial": {
+  "fecha": "2026-10-16",
+  "falta": "Falta: monto, cuenta de banco, N.° de operación, lista de contrapartidas (la define el contador), glosa",
+  "aviso": "Prioriza siempre la forma automática. Cobro de una factura: Cobranza. Pago a un proveedor: Pagos. Si es una comisión, ITF o cargo del banco, usa el botón Pagar de la Conciliación. Aquí van los depósitos, transferencias y movimientos que no tienen otro flujo."
+ },
+ "lista_guardada": [
+  "Lista de contrapartidas guardada",
+  [
+   "103101"
+  ]
+ ],
+ "precargado_01117932": {
+  "tipo": "counterpart",
+  "fecha": "2026-10-14",
+  "monto": "3000.00",
+  "sentido": "out",
+  "banco": "BCP PEN 191-1111111-0-11 · 104101",
+  "op": "01117932"
+ },
+ "vista_previa_01117932": "Equivalente al TC venta 3.759: S/ 3000.00 = US$ 798.08 ASIENTO QUE SE REGISTRARÁ CUENTA N.° OP. DEBE HABER 103101 - EN TRANSITO 01117932 S/ 3000.00 US$ 798.08 104101 - BANCO DE CREDITO MN BCP PEN 191-1111111-0-11 01117932 S/ 3000.00 US$ 798.08 Regla: una salida del banco va al Haber de su cuenta 104 y una entrada al Debe. Registrar movimiento",
+ "registrado_01117932": "Movimiento registrado: asiento 000007 (N.° de operación 01117932).",
+ "registrado_01104038": "Movimiento registrado: asiento 000008 (N.° de operación 01104038).",
+ "registrado_01108170": "Movimiento registrado: asiento 000009 (N.° de operación 01108170).",
+ "vista_previa_propia": "Equivalente al TC venta 3.759: S/ 500.00 = US$ 133.01 ASIENTO QUE SE REGISTRARÁ CUENTA N.° OP. DEBE HABER 104107 - INTERBANK MN Interbank PEN 200-3000111222 33300001 S/ 500.00 US$ 133.01 104101 - BANCO DE CREDITO MN BCP PEN 191-1111111-0-11 01200001 S/ 500.00 US$ 133.01 Regla: una salida del banco va al Haber de su cuenta 104 y una entrada al Debe. Registrar movimiento",
+ "registrado_propia": "Movimiento registrado: asiento 000010 (N.° de operación 01200001 / 33300001).",
+ "monedas_distintas": {
+  "guardar": false,
+  "periodo": "10/2026 · Abierto",
+  "tc": "No hay tipo de cambio registrado para el 16/10/2026. Registralo en Tipo de cambio antes de crear el asiento.",
+  "falta": "",
+  "error": "Transferencia entre monedas distintas (PEN a USD): todavía no se registra aquí porque necesita el tipo de cambio del banco y la diferencia de cambio. Consúltalo con el contador.",
+  "msg": "Movimiento registrado: asiento 000010 (N.° de operación 01200001 / 33300001)."
+ },
+ "julio_cerrado": {
+  "guardar": false,
+  "periodo": "07/2026 · Cerrado Abiertos: 11/2025, 12/2025, 01/2026, 02/2026, 03/2026, 04/2026, 05/2026, 06/2026, 09/2026, 10/2026. Reabrir lo decide el contador.",
+  "tc": "No hay tipo de cambio registrado para el 15/07/2026. Registralo en Tipo de cambio antes de crear el asiento.",
+  "falta": "Falta: cuenta de banco, N.° de operación, cuenta de contrapartida"
+ },
+ "dolares_sin_tc": {
+  "guardar": false,
+  "periodo": "10/2026 · Abierto",
+  "tc": "No hay tipo de cambio registrado para el 13/10/2026. Registralo en Tipo de cambio antes de crear el asiento.",
+  "falta": "Falta: N.° de operación, cuenta de contrapartida"
+ },
+ "op_repetido": "No se registró: El N. de operacion 01117932 ya esta registrado en BCP PEN el 14/10/2026 (PEN 3000.00). No se registra dos veces.",
+ "conciliacion_bcp_despues": [
+  "01117932 S/ -3,000.00 Registrado",
+  "01104038 S/ -975.00 Registrado",
+  "01108170 S/ -100.00 Registrado",
+  "01200001 S/ -500.00 Registrado"
+ ],
+ "conciliacion_interbank_despues": [
+  "33300001 S/ 500.00 Registrado"
+ ],
+ "lista_antes_de_anular": [
+  "000010 01200001 / 33300001 active",
+  "000009 01108170 active",
+  "000008 01104038 active",
+  "000007 01117932 active"
+ ],
+ "anulado": [
+  "Asiento 000010 anulado con la reversa 000011",
+  [
+   "000010 01200001 / 33300001 voided reversa 000011",
+   "000009 01108170 active",
+   "000008 01104038 active",
+   "000007 01117932 active"
+  ]
+ ],
+ "conciliacion_bcp_tras_anular": [
+  "01117932 S/ -3,000.00 Registrado",
+  "01104038 S/ -975.00 Registrado",
+  "01108170 S/ -100.00 Registrado",
+  "01200001 S/ -500.00 Error"
+ ],
+ "conciliacion_interbank_tras_anular": [
+  "33300001 S/ 500.00 Error"
+ ],
+ "libro_nuevos": [
+  "M10-0011 | 000011 | 2026-10-16 | Anulacion de asiento manual 000010 - Cuenta equivocada (prueba)",
+  "M10-0007 | 000010 | 2026-10-14 | Traspaso de BCP a Interbank",
+  "M10-0010 | 000009 | 2026-10-14 | Transferencia a FLUMISA S/ 100 (pendiente de definir)",
+  "M10-0006 | 000008 | 2026-10-14 | Transferencia a FLUMISA S/ 975 (pendiente de definir)",
+  "M10-0008 | 000007 | 2026-10-14 | Devolucion a FLUMISA de dinero depositado por error",
+  "M10-0005 | 000006 | 2026-10-14 | Asiento del diario con fecha 14/10 (prueba de fecha por defecto)"
+ ],
+ "sin_permiso": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+ "conciliacion_flumisa_antes": [
+  "02117932 S/ 3,000.00 Error",
+  "02104038 S/ 975.00 Error",
+  "02108170 S/ 100.00 Error"
+ ],
+ "flumisa_aviso_entrada": " Comprueba que no sea el pago de una factura (Cobranza). Si un cliente pagó una factura, regístralo en Cobranza.",
+ "flumisa_registrado": "Movimiento registrado: asiento 000006 (N.° de operación 02117932).",
+ "conciliacion_flumisa_despues": [
+  "02117932 S/ 3,000.00 Registrado",
+  "02104038 S/ 975.00 Error",
+  "02108170 S/ 100.00 Error"
+ ],
+ "cuenta_ret_comis_caja_ofrecidas": []
+}

@@ -1,0 +1,33 @@
+{
+ "errores_js": [],
+ "boton_cambio": 1,
+ "pantalla": {
+  "vista": "banks/movimiento",
+  "tipo": "own_transfer",
+  "salida": "03001748"
+ },
+ "aviso_paso2": " Compra de dólares (PEN → USD)",
+ "tc": " Tipo de cambio de la operación: 3.4380 · tipo de cambio venta: 3.4410 (del 21/10/2026)\nUS$ 100,000.00 × 3.4410 = S/ 344,100.00 · se pagaron S/ 343,800.00 → ganancia por diferencia de cambio S/ 300.00",
+ "asiento": [
+  "CUENTA N.° OP. DEBE S/ HABER S/ DEBE US$ HABER US$",
+  "104102 BANCO DE CREDITO ME (3.758) BCP ME · dólares · …1-22 04001749 S/ 344,100.00 US$ 100,000.00",
+  "104101 BANCO DE CREDITO MN BCP MN · soles · …0-11 03001748 S/ 343,800.00 US$ 99,912.82",
+  "776101 GANANCIA POR DFERENCIA DE CAMBIO Ganancia por diferencia de cambio - S/ 300.00 US$ 87.18",
+  "Totales S/ 344,100.00 S/ 344,100.00 US$ 100,000.00 US$ 100,000.00"
+ ],
+ "pendientes": [],
+ "resultado": {
+  "asiento": "000121",
+  "conc": [
+   {
+    "ok": true,
+    "texto": "Salida: conciliada (N.° 03001748)."
+   },
+   {
+    "ok": true,
+    "texto": "Entrada: conciliada (N.° 04001749)."
+   }
+  ],
+  "msg": null
+ }
+}

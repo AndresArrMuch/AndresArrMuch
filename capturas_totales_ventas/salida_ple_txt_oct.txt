@@ -1,0 +1,31 @@
+BEGIN
+SELECT 9
+                      caso                       |     doc     | tipo |  emision   | moneda |    hoy_bi_igv_total     | hoy_tc | hoy_doc_modificado | hoy_estado |    formato_bi_igv_total    | formato_total_en_soles_ple141 | formato_tc_3_decimales |    formato_doc_modificado     | formato_estado |                                   nota_excel                                    |       donde       
+-------------------------------------------------+-------------+------+------------+--------+-------------------------+--------+--------------------+------------+----------------------------+-------------------------------+------------------------+-------------------------------+----------------+---------------------------------------------------------------------------------+-------------------
+ 1 nota de credito                               | FC01-000001 | 07   | 2026-10-03 | PEN    | 200.00 / 36.00 / 236.00 | 1      | (vacio)            | 1          | -200.00 / -36.00 / -236.00 |                               |                        | 01/10/2026 | 01 | F001-000001 | 1              |                                                                                 | en ambos
+ 2 nota de debito                                | FD01-000001 | 08   | 2026-10-04 | PEN    | 50.00 / 9.00 / 59.00    | 1      | (vacio)            | 1          | 50.00 / 9.00 / 59.00       |                               |                        | 01/10/2026 | 01 | F001-000001 | 1              |                                                                                 | en ambos
+ 3 anulada                                       | F001-000002 | 01   | 2026-10-05 | PEN    | 500.00 / 90.00 / 590.00 | 1      | (vacio)            | 1          | 0.00 / 0.00 / 0.00         |                               |                        |                               | 2              |                                                                                 | en ambos
+ 4 en dolares                                    | F001-000004 | 01   | 2026-10-07 | USD    | 84.75 / 15.25 / 100.00  | 3.75   | (vacio)            | 1          | 84.75 / 15.25 / 100.00     | 375.00                        | 3.750                  |                               | 1              | Excel PLE usa TC 1 (no hay TC del dia en la tabla) en vez del de la venta 3.750 | en ambos
+ 5 TXT y Excel no coinciden (periodo vs emision) | F001-000005 | 01   | 2026-10-02 | PEN    | 400.00 / 72.00 / 472.00 | 1      | (vacio)            | 1          | 400.00 / 72.00 / 472.00    |                               |                        |                               | 1              |                                                                                 | solo en Excel PLE
+(5 rows)
+
+                             calculo                             | docs |  base   |  igv   |  total  
+-----------------------------------------------------------------+------+---------+--------+---------
+ TXT SUNAT hoy (todo en positivo, anuladas con importe)          |    8 | 3097.46 | 557.54 | 3655.00
+ Formato: NC en negativo, anuladas en 0, moneda original         |    8 | 2197.46 | 395.54 | 2593.00
+ Formato PLE 14.1 en soles (USD x TC de la venta)                |    8 | 2430.52 | 437.48 | 2868.00
+ Excel PLE hoy (emision del mes, electronicos, todo en positivo) |    9 | 3497.46 | 629.54 | 4127.00
+(4 rows)
+
+                                  que                                  | docs | importe 
+-----------------------------------------------------------------------+------+---------
+ Notas de credito en el TXT (van en positivo y sin doc modificado)     |    1 |  236.00
+ Notas de credito cuya factura de origen no esta en el sistema         |    0 |        
+ Anuladas en el TXT (van con importe completo y estado 1)              |    1 |  590.00
+ En dolares en el TXT (importe en USD, TC con 2 decimales)             |    1 |  100.00
+ En dolares en el Excel PLE sin TC del dia en la tabla (sale TC 1)     |    1 |  100.00
+ Solo en TXT (periodo del mes, emitidos en otro mes o no electronicos) |    0 |        
+ Solo en Excel PLE (emitidos en el mes con periodo de otro mes)        |    1 |  472.00
+(7 rows)
+
+ROLLBACK

@@ -1,0 +1,77 @@
+BEGIN
+== a) Ventas electronicas activas, no anuladas y SIN respuesta de SUNAT, por empresa y mes
+     empresa     |   mes   | documentos | con_total_mayor_0 | suma_total | facturas | boletas | nc | nd 
+-----------------+---------+------------+-------------------+------------+----------+---------+----+----
+ FIKA PRUEBA SAC | 2026-10 |          3 |                 3 |     908.00 |        2 |       1 |  0 |  0
+ FIKA PRUEBA SAC |         |          3 |                 3 |     908.00 |        2 |       1 |  0 |  0
+                 |         |          3 |                 3 |     908.00 |        2 |       1 |  0 |  0
+(3 rows)
+
+== a2) Detalle de esos documentos (con hora de registro en Lima, vendedor y si tienen asiento)
+     empresa     |  documento  | tipo |  emision   |   registrado_lima   | total  | mon | status  | contable | vendedor | tiene_ticket | dias |               sale_id                
+-----------------+-------------+------+------------+---------------------+--------+-----+---------+----------+----------+--------------+------+--------------------------------------
+ FIKA PRUEBA SAC | F001-000003 | 01   | 2026-10-06 | 2026-10-06 17:08:04 | 354.00 | PEN | emitted |          | AC0001   | f            |   15 | FN
+ FIKA PRUEBA SAC | F030-000119 | 01   | 2026-10-16 | 2026-10-16 16:31:23 | 540.00 | PEN | emitted | pending  | AC0001   | f            |    5 | b20e1049-9875-4dce-aacc-a37cf275d4ce
+ FIKA PRUEBA SAC | B030-000016 | 03   | 2026-10-17 | 2026-10-06 17:08:04 |  14.00 | PEN | emitted |          | AC0001   | f            |    4 | 50f331f9-3812-42d7-98c6-12f1aa5a4ef9
+(3 rows)
+
+== a3) Posibles ventas repetidas: mismo cliente y total, mismo dia, una SIN respuesta y otra registrada despues (hasta 2 h)
+     empresa     | sin_respuesta | registrada_despues | estado_de_la_segunda | total  |  hora_1  |  hora_2  
+-----------------+---------------+--------------------+----------------------+--------+----------+----------
+ FIKA PRUEBA SAC | F030-000119   | F030-000120        | aceptada             | 540.00 | 16:31:23 | 16:31:42
+(1 row)
+
+== b) Aceptadas sin XML o sin CDR guardado (y sin ticket)
+     empresa     |   mes   | aceptadas | sin_xml | sin_cdr | sin_pdf | sin_ticket 
+-----------------+---------+-----------+---------+---------+---------+------------
+ FIKA PRUEBA SAC | 2026-10 |        11 |      11 |      11 |       0 |         11
+ FIKA PRUEBA SAC |         |        11 |      11 |      11 |       0 |         11
+                 |         |        11 |      11 |      11 |       0 |         11
+(3 rows)
+
+== b2) Detalle de aceptadas SIN ticket (no hay prueba de que hayan llegado a NubeFact)
+     empresa     |  documento  |  emision   |  total  | xml | cdr | pdf 
+-----------------+-------------+------------+---------+-----+-----+-----
+ FIKA PRUEBA SAC | F001-000007 | 2026-10-01 |  200.00 | f   | f   | t
+ FIKA PRUEBA SAC | F001-000001 | 2026-10-01 | 1180.00 | f   | f   | t
+ FIKA PRUEBA SAC | F001-000005 | 2026-10-02 |  472.00 | f   | f   | t
+ FIKA PRUEBA SAC | B001-000001 | 2026-10-02 |  118.00 | f   | f   | t
+ FIKA PRUEBA SAC | FC01-000001 | 2026-10-03 |  236.00 | f   | f   | t
+ FIKA PRUEBA SAC | FD01-000001 | 2026-10-04 |   59.00 | f   | f   | t
+ FIKA PRUEBA SAC | F001-000004 | 2026-10-07 |  100.00 | f   | f   | t
+ FIKA PRUEBA SAC | F001-000006 | 2026-10-08 | 1018.00 | f   | f   | t
+ FIKA PRUEBA SAC | F030-000120 | 2026-10-16 |  540.00 | f   | f   | t
+ FIKA PRUEBA SAC | BC40-000001 | 2026-10-18 |   59.00 | f   | f   | t
+ FIKA PRUEBA SAC | FC50-000001 | 2026-10-19 |   11.80 | f   | f   | t
+(11 rows)
+
+== b3) Valores de sunat_status en uso (en_proceso / enviado / otros pueden venir del mapeo por subcadenas)
+     empresa     | sunat_status |  status   | documentos 
+-----------------+--------------+-----------+------------
+ FIKA PRUEBA SAC | aceptada     | emitted   |         11
+ FIKA PRUEBA SAC | (vacio)      | emitted   |          3
+ FIKA PRUEBA SAC | anulada      | cancelled |          1
+(3 rows)
+
+== c) Notas de credito y debito sin respuesta de SUNAT (y su asiento)
+ empresa | documento | tipo | emision | registrado_lima | total | modifica | estado_del_modificado | status | contable | sale_id 
+---------+-----------+------+---------+-----------------+-------+----------+-----------------------+--------+----------+---------
+(0 rows)
+
+== d) Huecos de numeracion por serie (correlativos que faltan entre el primero y el ultimo registrados)
+ empresa | serie | falta_desde | falta_hasta | cantidad 
+---------+-------+-------------+-------------+----------
+(0 rows)
+
+== d2) Correlativos repetidos dentro de una serie (no deberia haber ninguno)
+ empresa | series | correlative | veces 
+---------+--------+-------------+-------
+(0 rows)
+
+== e) Los dos casos reportados (sale_id y hora para buscar en el registro de nginx)
+     empresa     | document_number |               sale_id                | emission_date |   registrado_lima   |   registrado_utc    | ultima_modificacion_lima | status  | sunat_status | ticket | total 
+-----------------+-----------------+--------------------------------------+---------------+---------------------+---------------------+--------------------------+---------+--------------+--------+-------
+ FIKA PRUEBA SAC | B030-000016     | 50f331f9-3812-42d7-98c6-12f1aa5a4ef9 | 2026-10-17    | 2026-10-06 17:08:04 | 2026-10-06 22:08:04 | 2026-10-06 17:08:04      | emitted |              | f      | 14.00
+(1 row)
+
+ROLLBACK

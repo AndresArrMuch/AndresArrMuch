@@ -1,0 +1,18 @@
+{
+ "errores_js": [],
+ "vista_previa_tallas": "Se crearan 3 items: BSTL260708NG65TS (S, VERDE), BSTL260708NG65TM (M, VERDE), BSTL260708NG65TL (L, VERDE)",
+ "aviso_creacion": "3 items creados: BSTL260708NG65TS, BSTL260708NG65TM, BSTL260708NG65TL. Registra su ingreso abajo.",
+ "lineas_precargadas": [
+  "BSTL260708NG65TS — NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS (S, VERDE) | costo 8.5",
+  "BSTL260708NG65TM — NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS (M, VERDE) | costo 8.5",
+  "BSTL260708NG65TL — NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS (L, VERDE) | costo 8.5"
+ ],
+ "movimiento_abierto": true,
+ "opcion_elegida": "P0001 — TERMOMETRO DIGITAL",
+ "total_lineas": "4 lineas · 605 unidades",
+ "aviso_movimiento": "Movimiento registrado: 4 lineas",
+ "kardex": [],
+ "vista_previa_repetidos": "Se crearan 3 items: BSTL260708NG65TS (S), BSTL260708NG65TM (M), BSTL260708NG65TL (L)\nYa existen: BSTL260708NG65TS, BSTL260708NG65TM, BSTL260708NG65TL",
+ "aviso_repetidos": "No se pudo crear item: No se creo ningun item: fila 1 BSTL260708NG65TS: El codigo ya existe: BSTL260708NG65TS - NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS; fila 2 BSTL260708NG65TM: El codigo ya existe: BSTL260708NG65TM - NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS; fila 3 BSTL260708NG65TL: El codigo ya existe: BSTL260708NG65TL - NITRILO VERDE X100 GUANTES DE 6.5 GRAMOS",
+ "aviso_item_suelto": "Item creado"
+}

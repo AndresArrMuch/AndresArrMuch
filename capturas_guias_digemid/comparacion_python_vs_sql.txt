@@ -1,0 +1,14 @@
+IGUAL | GUANTE NITRILO M R.S. DM-12345-E LOTE A123 F.V. 12/2027 -> {'registro_sanitario': 'DM-12345-E', 'lote': 'A123', 'vencimiento': '12/2027'} 
+IGUAL | MASCARILLA KN95 REG. SAN. DM7788E -> {'registro_sanitario': 'DM7788E'} 
+IGUAL | GUANTE DE NITRILO AZUL X 100 UNID 3.5 GRAMOS F.F 01-2026 F.V 01-2029 L -> {'registro_sanitario': 'DM-10293-E', 'lote': 'IN25029097', 'vencimiento': '01-2029', 'fabricacion': '01-2026'} 
+IGUAL | MASCARILLA QUIRURGICA 3 PLIEGUES X 50 UNID LTE. MQ2408 F.F. 08-2024 F. -> {'lote': 'MQ2408', 'vencimiento': '08-2027', 'fabricacion': '08-2024'} 
+IGUAL | JERINGA DESCARTABLE 5ML C/AGUJA 21G X 100 UNID LTE. 2405117 F.V. 05/20 -> {'lote': '2405117', 'vencimiento': '05/2029'} 
+IGUAL | ALCOHOL ETILICO 70 GRADOS 1 LT -> {} 
+IGUAL | GASA ESTERIL 10X10 CM X 100 SOBRES LOTE SIN NUMERO F.V. VER EMPAQUE -> {} 
+IGUAL | PARACETAMOL VENC. 2027-05-30 RS: EE-01234 -> {'registro_sanitario': 'EE-01234', 'vencimiento': '2027-05-30'} 
+IGUAL | BOLSA LTE. SIN NUMERO -> {} 
+IGUAL | X LTE.IN25 FV:03/2028 FF:01/2026 -> {'lote': 'IN25', 'vencimiento': '03/2028', 'fabricacion': '01/2026'} 
+IGUAL | Y Lote: ab-12 vto 2029-01 -> {'lote': 'ab-12', 'vencimiento': '2029-01'} 
+IGUAL | COLTE.99 SALVE F.V.12-2030 -> {'vencimiento': '12-2030'} 
+IGUAL | R.S. N° DM-000-E -> {'registro_sanitario': 'DM-000-E'} 
+textos: 13 diferencias: 0

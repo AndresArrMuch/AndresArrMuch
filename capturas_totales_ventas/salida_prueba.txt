@@ -1,0 +1,119 @@
+BEGIN
+SELECT 1
+SELECT 9
+ALTER TABLE
+UPDATE 9
+CREATE TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ n |                      reporte                       | docs | con_igv | sin_igv | dif_con_igv_vs_netas |                                                                      definicion                                                                      
+---+----------------------------------------------------+------+---------+---------+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------
+ 0 | VENTAS NETAS (referencia)                          |    8 | 3340.00 | 2830.52 |                 0.00 | emision; F+B+ND-NC; sin anuladas; USD x TC; con y sin IGV
+ 1 | Reporte por categoria y producto (Excel)           |    8 | 2693.00 | 2282.21 |              -647.00 | emision; suma LINEAS; NC en negativo; anuladas en 0; excluye electronicas no enviadas; USD sin convertir; "Total" con IGV, "Sin IGV" solo para Wendy
+ 2 | Reportes de ventas por periodo (pantalla)          |    6 | 2711.00 | 2297.46 |              -629.00 | PERIODO contable; NC SUMADAS en positivo; sin anuladas; solo enviadas; USD sin convertir
+ 3 | Lineas SUNAT del mismo reporte (y TXT SUNAT)       |    8 | 3655.00 | 3097.46 |               315.00 | PERIODO contable; TODOS los documentos (anuladas y no enviadas incluidas); NC en positivo
+ 4 | Excel de ventas (Exportar Excel)                   |    9 | 3065.00 | 2597.46 |              -275.00 | emision; cabecera; NC en negativo; anuladas en 0; incluye no enviadas; USD sin convertir
+ 5 | Panel: tarjeta "Ventas del mes" (inicio y resumen) |    8 | 3537.00 | 2997.46 |               197.00 | emision; NC SUMADAS en positivo; sin anuladas; incluye no enviadas; USD sin convertir
+ 6 | Vendedores: "Ventas del mes"                       |    8 | 3281.00 |         |               -59.00 | emision; solo con vendedor; NC en negativo; anuladas en 0; USD x TC
+ 7 | Comisiones por vendedor (rango = el mismo)         |   10 | 5748.00 |         |              2408.00 | emision; TODAS las ventas (anuladas y NC en positivo) + TODAS las cotizaciones del rango; USD sin convertir
+ 8 | Grafico de 6 meses (inicio)                        |    9 | 4127.00 | 3497.46 |               787.00 | emision; TODO sumado (anuladas y NC en positivo); USD sin convertir
+ 9 | PLE en Excel (Exportar Detallado PLE)              |    9 | 4127.00 | 3497.46 |               787.00 | emision; todos los electronicos (anuladas con importe); NC en positivo; USD en dolares con TC aparte
+(10 rows)
+
+                               concepto                                | docs |  total  | sin_igv 
+-----------------------------------------------------------------------+------+---------+---------
+ Notas de credito (resta en neto, suma en reportes 2, 3, 5, 7, 8, 9)   |    1 |  236.00 |  200.00
+ Notas de debito                                                       |    1 |   59.00 |   50.00
+ Anuladas (status cancelled o SUNAT anulada)                           |    1 |  590.00 |  500.00
+ Electronicas NO enviadas (sin PDF ni estado SUNAT), no anuladas       |    1 |  354.00 |  300.00
+ En dolares: importe en USD                                            |    1 |  100.00 |   84.75
+ En dolares: diferencia al convertir (USD x TC - USD)                  |    1 |  275.00 |  233.06
+ Emitidas en el mes pero con PERIODO contable de otro mes              |    1 |  472.00 |  400.00
+ Con PERIODO del mes pero emitidas en otro mes                         |    0 |         |        
+ Suma de lineas distinta del total de cabecera (dif lineas - cabecera) |    1 |  -18.00 |  -15.25
+ No electronicas (is_electronic = false)                               |    0 |         |        
+ Status cancelled sin SUNAT anulada, o al reves                        |    0 |         |        
+ Sin vendedor asignado                                                 |    1 |   59.00 |   50.00
+ Cotizaciones del mes de vendedores activos (solo las suma Comisiones) |    2 | 1680.00 | 1423.73
+(13 rows)
+
+     doc     | tipo |  emision   | periodo |  status   |  sunat   | enviada | currency |   tc   |  total  | subtotal | lineas_total |    nc_de    |      motivo      
+-------------+------+------------+---------+-----------+----------+---------+----------+--------+---------+----------+--------------+-------------+------------------
+ F001-000005 | 01   | 2026-10-02 |  202609 | emitted   | aceptada | t       | PEN      | 1.0000 |  472.00 |   400.00 |       472.00 |             | otro periodo
+ FC01-000001 | 07   | 2026-10-03 |  202610 | emitted   | aceptada | t       | PEN      | 1.0000 |  236.00 |   200.00 |       236.00 | F001-000001 | nota de credito
+ FD01-000001 | 08   | 2026-10-04 |  202610 | emitted   | aceptada | t       | PEN      | 1.0000 |   59.00 |    50.00 |        59.00 | F001-000001 | nota de debito
+ F001-000002 | 01   | 2026-10-05 |  202610 | cancelled | anulada  | t       | PEN      | 1.0000 |  590.00 |   500.00 |       590.00 |             | anulada
+ F001-000003 | 01   | 2026-10-06 |  202610 | emitted   |          | f       | PEN      | 1.0000 |  354.00 |   300.00 |       354.00 |             | no enviada
+ F001-000004 | 01   | 2026-10-07 |  202610 | emitted   | aceptada | t       | USD      | 3.7500 |  100.00 |    84.75 |       100.00 |             | USD
+ F001-000006 | 01   | 2026-10-08 |  202610 | emitted   | aceptada | t       | PEN      | 1.0000 | 1018.00 |   862.71 |      1000.00 |             | lineas<>cabecera
+(7 rows)
+
+SELECT 864
+SELECT 864
+SELECT 3
+ objetivo | monto_total | diferencia | docs |  fecha   |    nc    |   anuladas   |   no_enviadas   |      monto       |        usd        |     vendedor      | resultado 
+----------+-------------+------------+------+----------+----------+--------------+-----------------+------------------+-------------------+-------------------+-----------
+     2693 |     2693.00 |       0.00 |    7 | emision  | NC resta | sin anuladas | sin no enviadas | lineas con IGV   | USD sin convertir | todas             | EXACTA
+     2693 |     2693.00 |       0.00 |    6 | periodo  | NC suma  | sin anuladas | sin no enviadas | lineas con IGV   | USD sin convertir | todas             | EXACTA
+     2693 |     2693.00 |       0.00 |    7 | registro | NC resta | sin anuladas | sin no enviadas | lineas con IGV   | USD sin convertir | todas             | EXACTA
+     2693 |     2691.00 |      -2.00 |    4 | periodo  | NC omite | sin anuladas | sin no enviadas | cabecera con IGV | USD x TC          | solo con vendedor | cercana
+     2693 |     2697.46 |       4.46 |    8 | periodo  | NC resta | con anuladas | con no enviadas | cabecera sin IGV | USD sin convertir | todas             | cercana
+     2693 |     2697.46 |       4.46 |    7 | registro | NC suma  | sin anuladas | sin no enviadas | cabecera sin IGV | USD sin convertir | todas             | cercana
+     2693 |     2697.46 |       4.46 |    7 | emision  | NC suma  | sin anuladas | sin no enviadas | cabecera sin IGV | USD sin convertir | todas             | cercana
+     2693 |     2682.21 |     -10.79 |    7 | registro | NC suma  | sin anuladas | sin no enviadas | lineas sin IGV   | USD sin convertir | todas             | cercana
+     2693 |     2682.21 |     -10.79 |    7 | emision  | NC suma  | sin anuladas | sin no enviadas | lineas sin IGV   | USD sin convertir | todas             | cercana
+     2693 |     2682.21 |     -10.79 |    8 | periodo  | NC resta | con anuladas | con no enviadas | lineas sin IGV   | USD sin convertir | todas             | cercana
+     2693 |     2680.52 |     -12.48 |    5 | registro | NC omite | sin anuladas | sin no enviadas | cabecera sin IGV | USD x TC          | solo con vendedor | cercana
+     2693 |     2680.52 |     -12.48 |    5 | emision  | NC omite | sin anuladas | sin no enviadas | cabecera sin IGV | USD x TC          | solo con vendedor | cercana
+     2711 |     2711.00 |       0.00 |    7 | registro | NC resta | sin anuladas | sin no enviadas | cabecera con IGV | USD sin convertir | todas             | EXACTA
+     2711 |     2711.00 |       0.00 |    7 | emision  | NC resta | sin anuladas | sin no enviadas | cabecera con IGV | USD sin convertir | todas             | EXACTA
+     2711 |     2711.00 |       0.00 |    6 | periodo  | NC suma  | sin anuladas | sin no enviadas | cabecera con IGV | USD sin convertir | todas             | EXACTA
+     2711 |     2715.27 |       4.27 |    6 | emision  | NC omite | sin anuladas | sin no enviadas | lineas sin IGV   | USD x TC          | todas             | cercana
+     2711 |     2715.27 |       4.27 |    6 | registro | NC omite | sin anuladas | sin no enviadas | lineas sin IGV   | USD x TC          | todas             | cercana
+     2711 |     2697.46 |     -13.54 |    8 | periodo  | NC resta | con anuladas | con no enviadas | cabecera sin IGV | USD sin convertir | todas             | cercana
+     2711 |     2697.46 |     -13.54 |    7 | registro | NC suma  | sin anuladas | sin no enviadas | cabecera sin IGV | USD sin convertir | todas             | cercana
+     2711 |     2697.46 |     -13.54 |    7 | emision  | NC suma  | sin anuladas | sin no enviadas | cabecera sin IGV | USD sin convertir | todas             | cercana
+     2711 |     2693.00 |     -18.00 |    7 | emision  | NC resta | sin anuladas | sin no enviadas | lineas con IGV   | USD sin convertir | todas             | cercana
+     2711 |     2693.00 |     -18.00 |    7 | registro | NC resta | sin anuladas | sin no enviadas | lineas con IGV   | USD sin convertir | todas             | cercana
+     2711 |     2693.00 |     -18.00 |    6 | periodo  | NC suma  | sin anuladas | sin no enviadas | lineas con IGV   | USD sin convertir | todas             | cercana
+     2711 |     2730.52 |      19.52 |    6 | registro | NC omite | sin anuladas | sin no enviadas | cabecera sin IGV | USD x TC          | todas             | cercana
+     3537 |     3537.00 |       0.00 |    8 | registro | NC suma  | sin anuladas | con no enviadas | cabecera con IGV | USD sin convertir | todas             | EXACTA
+     3537 |     3537.00 |       0.00 |    7 | registro | NC omite | con anuladas | sin no enviadas | cabecera con IGV | USD sin convertir | todas             | EXACTA
+     3537 |     3537.00 |       0.00 |    7 | emision  | NC omite | con anuladas | sin no enviadas | cabecera con IGV | USD sin convertir | todas             | EXACTA
+     3537 |     3537.00 |       0.00 |    8 | emision  | NC suma  | sin anuladas | con no enviadas | cabecera con IGV | USD sin convertir | todas             | EXACTA
+     3537 |     3530.52 |      -6.48 |    8 | emision  | NC omite | con anuladas | con no enviadas | cabecera sin IGV | USD x TC          | todas             | cercana
+     3537 |     3530.52 |      -6.48 |    8 | registro | NC omite | con anuladas | con no enviadas | cabecera sin IGV | USD x TC          | todas             | cercana
+     3537 |     3519.00 |     -18.00 |    8 | emision  | NC suma  | sin anuladas | con no enviadas | lineas con IGV   | USD sin convertir | todas             | cercana
+     3537 |     3519.00 |     -18.00 |    8 | registro | NC suma  | sin anuladas | con no enviadas | lineas con IGV   | USD sin convertir | todas             | cercana
+     3537 |     3519.00 |     -18.00 |    7 | emision  | NC omite | con anuladas | sin no enviadas | lineas con IGV   | USD sin convertir | todas             | cercana
+     3537 |     3519.00 |     -18.00 |    7 | registro | NC omite | con anuladas | sin no enviadas | lineas con IGV   | USD sin convertir | todas             | cercana
+     3537 |     3517.00 |     -20.00 |    6 | registro | NC omite | sin anuladas | con no enviadas | cabecera con IGV | USD x TC          | solo con vendedor | cercana
+     3537 |     3517.00 |     -20.00 |    7 | emision  | NC resta | con anuladas | sin no enviadas | cabecera con IGV | USD x TC          | solo con vendedor | cercana
+(36 rows)
+
+ hasta_el_dia | documentos |  total  | subtotal | lineas_sunat 
+--------------+------------+---------+----------+--------------
+ 2026-10-01   |          0 |    0.00 |     0.00 |            0
+ 2026-10-02   |          0 |    0.00 |     0.00 |            0
+ 2026-10-03   |          0 |    0.00 |     0.00 |            0
+ 2026-10-04   |          0 |    0.00 |     0.00 |            0
+ 2026-10-05   |          0 |    0.00 |     0.00 |            0
+ 2026-10-06   |          6 | 2711.00 |  2297.46 |            8
+(6 rows)
+
+     doc     | tipo |  emision   | periodo |  status   |  sunat   | enviada | is_electronic | total  |           por_que            
+-------------+------+------------+---------+-----------+----------+---------+---------------+--------+------------------------------
+ F001-000005 | 01   | 2026-10-02 |  202609 | emitted   | aceptada | t       | t             | 472.00 | periodo contable de otro mes
+ F001-000002 | 01   | 2026-10-05 |  202610 | cancelled | anulada  | t       | t             | 590.00 | anulada
+ F001-000003 | 01   | 2026-10-06 |  202610 | emitted   |          | f       | t             | 354.00 | no enviada a SUNAT
+(3 rows)
+
+ROLLBACK

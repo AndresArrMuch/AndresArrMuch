@@ -1,0 +1,16 @@
+== TXT export-sunat: 13 lineas antes, 13 despues; campos por linea [57] -> [57]
+  campos que no son importe, identicos: True
+  importes iguales tomando "-" como 0: True
+  ningun "0.00" queda en importes: True
+  total antes 3616.20 | despues 3616.20
+    F001-000001 -|1000.00|-|180.00|-|-|-|-|-|-|-|-|1180.00
+    FC01-000001 -|-200.00|-|-36.00|-|-|-|-|-|-|-|-|-236.00
+    F001-000002 -|-|-|-|-|-|-|-|-|-|-|-|-
+== TXT Tributario: 14 lineas antes, 14 despues; campos por linea [12] -> [12]
+  campos que no son importe, identicos: True
+  importes iguales tomando "-" como 0: True
+  ningun "0.00" queda en importes: True
+  total antes 3816.20 | despues 3816.20
+    F001-000001 1000.00|180.00|1180.00
+    FC01-000001 -200.00|-36.00|-236.00
+    F001-000002 -|-|-

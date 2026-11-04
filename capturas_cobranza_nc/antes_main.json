@@ -1,0 +1,11 @@
+{
+ "errores_js": [],
+ "F030-000120": {
+  "fila": " 16/10/2026 01/10/2026 PONEDORAS S.A.C. 20516083647 F030-000120 AC0001 S/ 540.00 S/ 540.00 S/ 0.00 Cobrado + Cobro",
+  "detalle": "Sin pagos registrados aun."
+ },
+ "F001-000006": {
+  "fila": " 08/10/2026 08/10/2026 CLIENTE PRUEBA SAC 20100047218 F001-000006 AC0001 S/ 1,018.00 S/ 1,000.00 S/ 18.00 Vencido + Cobro",
+  "detalle": "Sin pagos registrados aun."
+ }
+}

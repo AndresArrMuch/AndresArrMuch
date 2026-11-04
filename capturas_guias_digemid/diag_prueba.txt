@@ -1,0 +1,121 @@
+############ ESCENARIO 406
+
+==============================================================================
+Guia TTT4-000002 / empresa que contenga "FIKA"
+==============================================================================
+gunicorn del servicio: (sin PID: no se puede leer)
+En el sistema: FIKA PRUEBA | COT-000004 | estado delivered | traslado 2026-09-09 | cliente 20222222222 BOTICA DOS EIRL | factura vinculada: no
+
+==============================================================================
+(a) consultar_guia en NubeCont (get_guide_document, el mismo que usa el reporte)
+==============================================================================
+tiempo: 0.0 s | ok: True | status_code: 200 | tipo de data: dict
+
+==============================================================================
+(b) Campos devueltos (solo nombres de claves, tipo y largo)
+==============================================================================
+respuesta completa (nivel superior): ['ok', 'status_code', 'data', 'url']
+aceptada_por_sunat: bool = True
+enlace_del_pdf: str url largo=37
+token_interno: <oculto>
+sunat_description: str texto largo=2
+enlace: str url largo=33
+enlace_del_xml: str url largo=51
+
+claves que el reporte usa para el XML: xml_zip_base64 = no | enlace_del_xml = SI
+claves con "xml" o "cdr" en cualquier nivel: [('enlace_del_xml', 'url')]
+enlace PDF que leeria el reporte (_pdf_url): SI | claves con "pdf": ['enlace_del_pdf']
+
+==============================================================================
+(c) Obtencion del XML
+==============================================================================
+
+enlace enlace_del_xml: host=127.0.0.1:5631 ruta=.../guia/abc.xml (con query string, oculta)
+  descarga como el reporte (requests sin cabeceras): HTTP 406 | text/html | 27 bytes | 0.0 s | es XML: False
+  descarga con cabeceras de navegador: HTTP 200 | application/xml | 697 bytes | 0.0 s | es XML: True
+
+lo que obtiene el codigo del reporte (_xml_text): XML de 27 caracteres | es XML: False
+
+==============================================================================
+(d) Primeros 400 caracteres del XML (enlace_del_xml (solo con cabeceras de navegador))
+==============================================================================
+<?xml version="1.0" encoding="UTF-8"?><DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:x:cac" xmlns:cbc="urn:x:cbc"><cbc:UBLVersionID>2.1</cbc:UBLVersionID><cbc:ID>TTT4-000002</cbc:ID><cac:Shipment><cac:Delivery><cac:DeliveryAddress><cbc:ID schemeAgencyName="PE:INEI">150120</cbc:ID><cac:AddressLine><cbc:Line>AV. CLIENTE 2 MAGDALENA</cbc:Line></ca
+
+==============================================================================
+(e) Punto de partida y de llegada en el XML
+==============================================================================
+documento raiz: DespatchAdvice
+etiquetas de direccion/envio presentes: ['cac:Delivery', 'cac:DeliveryAddress', 'cac:Despatch', 'cac:DespatchAddress', 'cac:Shipment']
+  <cac:DeliveryAddress>: ubigeo/ID=150120 | direccion=AV. CLIENTE 2 MAGDALENA
+  <cac:DespatchAddress>: ubigeo/ID=150132 | direccion=URB. CANTO GRANDE AV. SANTA ROSA 550
+
+lo que lee el reporte (guide_places_from_xml):
+  partida = URB. CANTO GRANDE AV. SANTA ROSA 550 | ubigeo 150132   <- busca <cac:DespatchAddress> o <cac:OriginAddress>
+  llegada = AV. CLIENTE 2 MAGDALENA | ubigeo 150120   <- busca <cac:DeliveryAddress>
+
+==============================================================================
+(f) Lo que devuelve la ruta del reporte guide-places para esta guia
+==============================================================================
+tiempo: 0.0 s (el reporte pide 10 guias por llamada: unas 0 s por tanda)
+{'aceptada_por_sunat': True, 'guia': 'TTT4-000002', 'llegada': '', 'llegada_ubigeo': '', 'ok': True, 'partida': '', 'partida_ubigeo': '', 'pdf': 'SI'}
+
+Fin. No se modifico nada.
+############ ESCENARIO sinprefijo
+
+==============================================================================
+Guia TTT4-000002 / empresa que contenga "FIKA"
+==============================================================================
+gunicorn del servicio: (sin PID: no se puede leer)
+En el sistema: FIKA PRUEBA | COT-000004 | estado delivered | traslado 2026-09-09 | cliente 20222222222 BOTICA DOS EIRL | factura vinculada: no
+
+==============================================================================
+(a) consultar_guia en NubeCont (get_guide_document, el mismo que usa el reporte)
+==============================================================================
+tiempo: 0.0 s | ok: True | status_code: 200 | tipo de data: dict
+
+==============================================================================
+(b) Campos devueltos (solo nombres de claves, tipo y largo)
+==============================================================================
+respuesta completa (nivel superior): ['ok', 'status_code', 'data', 'url']
+aceptada_por_sunat: bool = True
+enlace_del_pdf: str url largo=37
+token_interno: <oculto>
+sunat_description: str texto largo=2
+enlace: str url largo=33
+xml_zip_base64: str base64? largo=932
+
+claves que el reporte usa para el XML: xml_zip_base64 = SI | enlace_del_xml = no
+claves con "xml" o "cdr" en cualquier nivel: [('xml_zip_base64', 'texto largo=932')]
+enlace PDF que leeria el reporte (_pdf_url): SI | claves con "pdf": ['enlace_del_pdf']
+
+==============================================================================
+(c) Obtencion del XML
+==============================================================================
+xml_zip_base64: zip con ['20000000001-09-TTT4-2.xml']
+
+lo que obtiene el codigo del reporte (_xml_text): XML de 550 caracteres | es XML: True
+
+==============================================================================
+(d) Primeros 400 caracteres del XML (xml_zip_base64)
+==============================================================================
+<?xml version="1.0" encoding="UTF-8"?><DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" ><UBLVersionID>2.1</UBLVersionID><ID>TTT4-000002</ID><Shipment><Delivery><DeliveryAddress><ID schemeAgencyName="PE:INEI">150120</ID><AddressLine><Line>AV. CLIENTE 2 MAGDALENA</Line></AddressLine></DeliveryAddress><Despatch><DespatchAddress><ID schemeAgencyName="PE:INEI">15013
+
+==============================================================================
+(e) Punto de partida y de llegada en el XML
+==============================================================================
+documento raiz: DespatchAdvice
+etiquetas de direccion/envio presentes: ['Delivery', 'DeliveryAddress', 'Despatch', 'DespatchAddress', 'Shipment']
+  <DeliveryAddress>: ubigeo/ID=150120 | direccion=AV. CLIENTE 2 MAGDALENA
+  <DespatchAddress>: ubigeo/ID=150132 | direccion=URB. CANTO GRANDE AV. SANTA ROSA 550
+
+lo que lee el reporte (guide_places_from_xml):
+  partida = (vacio) | ubigeo -   <- busca <cac:DespatchAddress> o <cac:OriginAddress>
+  llegada = (vacio) | ubigeo -   <- busca <cac:DeliveryAddress>
+
+==============================================================================
+(f) Lo que devuelve la ruta del reporte guide-places para esta guia
+==============================================================================
+tiempo: 0.0 s (el reporte pide 10 guias por llamada: unas 0 s por tanda)
+{'aceptada_por_sunat': True, 'guia': 'TTT4-000002', 'llegada': '', 'llegada_ubigeo': '', 'ok': True, 'partida': '', 'partida_ubigeo': '', 'pdf': 'SI'}
+
+Fin. No se modifico nada.

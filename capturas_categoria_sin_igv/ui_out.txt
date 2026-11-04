@@ -1,0 +1,20 @@
+== main_gerente: usuario gerente@cea-erp.local / rol Administrador
+   ventas en cache: 9
+   resumen: Resumen del período seleccionado Documentos 6 Ticket promedio S/ 451.83 Subtotal S/ 2,297.46 IGV S/ 413.54 Total S/ 2,711.00 Líneas SUNAT 8 | user ok: true
+   aviso: Reporte de categoria y producto exportado
+   errores JS: []
+== main_wendy: usuario ventas5@fikaperu.com / rol Vendedor-Wendy
+   ventas en cache: 9
+   resumen: Resumen del período seleccionado Documentos 6 Ticket promedio S/ 451.83 Subtotal S/ 2,297.46 IGV S/ 413.54 Total S/ 2,711.00 Líneas SUNAT 8 | user ok: true
+   aviso: Reporte de categoria y producto exportado
+   errores JS: []
+== rama_gerente: usuario gerente@cea-erp.local / rol Administrador
+   ventas en cache: 9
+   resumen: Resumen del período seleccionado Documentos 6 Ticket promedio S/ 373.17 Sin IGV (base imponible) S/ 1,897.46 IGV S/ 341.54 Con IGV S/ 2,239.00 Líneas SUNAT 8 Ventas netas del período contable: facturas, boletas y notas de débito (S/ 2,475.00 con IGV) menos notas de crédito (S/ -236.00). Sin anuladas ni comprobantes sin enviar a SUNAT. Importes en dólares sin convertir. Mismo criterio que el reporte por categoría y producto. | user ok: true
+   aviso: Reporte de categoria y producto exportado. Sin IGV (base imponible): S/ 2,282.21 · IGV: S/ 410.79 · Con IGV: S/ 2,693.00 (neto de notas de credito)
+   errores JS: []
+== rama_wendy: usuario ventas5@fikaperu.com / rol Vendedor-Wendy
+   ventas en cache: 9
+   resumen: Resumen del período seleccionado Documentos 6 Ticket promedio S/ 373.17 Sin IGV (base imponible) S/ 1,897.46 IGV S/ 341.54 Con IGV S/ 2,239.00 Líneas SUNAT 8 Ventas netas del período contable: facturas, boletas y notas de débito (S/ 2,475.00 con IGV) menos notas de crédito (S/ -236.00). Sin anuladas ni comprobantes sin enviar a SUNAT. Importes en dólares sin convertir. Mismo criterio que el reporte por categoría y producto. | user ok: true
+   aviso: Reporte de categoria y producto exportado. Sin IGV (base imponible): S/ 2,282.21 · IGV: S/ 410.79 · Con IGV: S/ 2,693.00 (neto de notas de credito)
+   errores JS: []

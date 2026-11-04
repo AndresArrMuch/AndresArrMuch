@@ -1,0 +1,25 @@
+{
+ "errores_js": [],
+ "boton_cambio": 1,
+ "panel_abierto": true,
+ "vista": "banks/conciliacion",
+ "filas_ofrecidas": [
+  "21/10/2026 10:02:12 · +US$ 100,000.00 · N.° 04001749 · COM U$ 3.4380 500296"
+ ],
+ "tc": "TC de la operación 3.4380 · TC venta 3.4410 (21/10/2026) → ganancia S/ 300.00",
+ "asiento": [
+  "CUENTA N.° OP. DEBE S/ HABER S/ DEBE US$ HABER US$",
+  "104102 BANCO DE CREDITO ME (3.758) 04001749 S/ 344,100.00 US$ 100,000.00",
+  "104101 BANCO DE CREDITO MN 03001748 S/ 343,800.00 US$ 99,912.82",
+  "776101 GANANCIA POR DFERENCIA DE CAMBIO - S/ 300.00 US$ 87.18"
+ ],
+ "boton_activo": true,
+ "panel_cerrado": true,
+ "aviso": "Cambio de moneda registrado (asiento 000121) | Cambio de moneda registrado (asiento 000121)",
+ "fila_conciliacion": [
+  "2026-10-21 VEN U$ 3.4380 500296 S/ -343,800.00 03001748 Registrado - - 10:02:11 "
+ ],
+ "fila_me": [
+  "2026-10-21 COM U$ 3.4380 500296 US$ 100,000.00 04001749 Registrado - - 10:02:12 "
+ ]
+}

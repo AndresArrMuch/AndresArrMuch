@@ -1,0 +1,15 @@
+{
+ "errores_js": [],
+ "F030-000120": {
+  "fila": " 16/10/2026 01/10/2026 PONEDORAS S.A.C. 20516083647 F030-000120 AC0001 S/ 540.00 S/ 540.00 incluye NC S/ 540.00 S/ 0.00 Cerrada con NC + Cobro",
+  "detalle": "Nota de creditoFC30-000001 del 21/10/2026 — S/ 540.00 (rebaja el saldo de la factura; no es un cobro) sin respuesta de SUNAT Sin cobros registrados."
+ },
+ "F001-000006": {
+  "fila": " 08/10/2026 08/10/2026 CLIENTE PRUEBA SAC 20100047218 F001-000006 AC0001 S/ 1,018.00 S/ 1,000.00 incluye NC S/ 1,000.00 S/ 18.00 Vencido + Cobro",
+  "detalle": "Nota de creditoFC01-000002 del 21/10/2026 — S/ 1,000.00 (rebaja el saldo de la factura; no es un cobro) sin respuesta de SUNAT Sin cobros registrados."
+ },
+ "F001-000001": {
+  "fila": " 01/10/2026 01/10/2026 CLIENTE PRUEBA SAC 20100047218 F001-000001 AC0001 S/ 1,180.00 S/ 0.00 NC S/ 236.00 no descontada del saldo S/ 1,180.00 Vencido + Cobro",
+  "detalle": "Nota de creditoFC01-000001 del 03/10/2026 — S/ 236.00 (el saldo de la factura NO la descuenta: revisar) Sin cobros registrados."
+ }
+}

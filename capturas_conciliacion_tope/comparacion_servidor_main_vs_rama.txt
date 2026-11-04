@@ -1,0 +1,42 @@
+## 0_subir_extracto
+  MAIN: 200
+  RAMA: 200
+## 1_cobro_dentro_del_deposito_672
+  MAIN: 201  Cobro registrado correctamente
+  RAMA: 201  Cobro registrado correctamente
+## 2_cobro_que_pasa_lo_disponible_540
+  MAIN: 201  Cobro registrado correctamente
+  RAMA: 400 MONTO_SUPERA_DEPOSITO El deposito N. operacion 777001 del 16/10/2026 es de S/ 900.00; ya hay S/ 672.00 aplicados a otras facturas. Con estas facturas serian S/ 1,212.00. Quite facturas o ajuste los montos: queda disponible S/ 228.00.
+## 2b_F030-000119_cobrado_despues_del_rechazo
+  MAIN: 540.0
+  RAMA: 0.0
+## 3_cobro_que_cabe_118
+  MAIN: 201  Cobro registrado correctamente
+  RAMA: 201  Cobro registrado correctamente
+## 4_consulta_tope
+  MAIN: 405 MethodNotAllowed The method is not allowed for the requested URL. | data=None
+  RAMA: 200  OK | data={'deposito': 900.0, 'disponible': 110.0, 'encontrado': True, 'fecha': '2026-10-16', 'ya_aplicado': 790.0}
+## 5_editar_cobro_1_a_826_supera
+  MAIN: 200  Pago/Cobro actualizado correctamente
+  RAMA: 400 MONTO_SUPERA_DEPOSITO El deposito N. operacion 777001 del 16/10/2026 es de S/ 900.00; ya hay S/ 118.00 aplicados a otras facturas. Con estas facturas serian S/ 944.00. Quite facturas o ajuste los montos: queda disponible S/ 782.00.
+## 5b_F001-000003_cobrado_tras_edicion
+  MAIN: 354.0
+  RAMA: 200.0
+## 6_editar_cobro_1_a_782_cabe
+  MAIN: 200  Pago/Cobro actualizado correctamente
+  RAMA: 200  Pago/Cobro actualizado correctamente
+## 7_comision_deposito_100_mas_comision_5
+  MAIN: 400 NO_VALID_PAYMENTS No hay cobros válidos para aplicar
+  RAMA: 201  Cobro registrado correctamente
+## 8_operacion_que_no_esta_en_el_extracto
+  MAIN: 201  Cobro registrado correctamente
+  RAMA: 201  Cobro registrado correctamente
+## 9_cobro_factura_nueva
+  MAIN: 201
+  RAMA: 201
+## 9b_eliminar_factura_con_cobro
+  MAIN: 200  Sale deleted
+  RAMA: 400 SALE_HAS_PAYMENTS La factura F050-000001 tiene cobros registrados (N. operacion 555555). Primero quitela del cobro en Cobranza ("Quitar de la operacion") o elimine el cobro.
+## 9c_factura_sigue_existiendo
+  MAIN: False
+  RAMA: True

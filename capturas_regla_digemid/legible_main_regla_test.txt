@@ -1,0 +1,179 @@
+* IG issue-guide | solo DIGEMID
+    HTTP 200  | guias=['TTT1-000020'] | registradas=['TTT1-000020 [P0003/PAR]']
+    contadores TTT1=19 -> TTT1=20
+    nubecont: TTT1-000020(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* IG issue-guide | mezclada
+    HTTP 200  | guias=['TTT1-000021', 'TTT4-000001'] | registradas=['TTT1-000021 [P0001/NIU]', 'TTT4-000001 [P0003/PAR]']
+    contadores TTT1=20 -> TTT1=21 TTT4=1
+    nubecont: TTT1-000021(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]; TTT4-000001(ok) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]
+* IG issue-guide | sin DIGEMID
+    HTTP 200  | guias=['TTT1-000022'] | registradas=['TTT1-000022 [P0001/NIU,P0002/BX]']
+    contadores TTT1=21 TTT4=1 -> TTT1=22 TTT4=1
+    nubecont: TTT1-000022(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU'], ['P0002', 'BX']]
+* IG issue-guide | pantalla vieja: TTT1 con producto DIGEMID, sin partida DIGEMID
+    HTTP 200  | guias=['TTT1-000023', 'TTT4-000002'] | registradas=['TTT1-000023 [P0001/NIU]', 'TTT4-000002 [P0003/PAR]']
+    contadores TTT1=22 TTT4=1 -> TTT1=23 TTT4=2
+    nubecont: TTT1-000023(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]; TTT4-000002(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* IG issue-guide | TTT4 con producto NO DIGEMID
+    HTTP 200  | guias=['TTT4-000003'] | registradas=['TTT4-000003 [P0001/NIU]']
+    contadores TTT1=23 TTT4=2 -> TTT1=23 TTT4=3
+    nubecont: TTT4-000003(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]
+* TC direct-guide Traer cotizacion | solo DIGEMID
+    HTTP 201  | guias=['TTT1-000024'] | registradas=['TTT1-000024 [P0003/PAR]']
+    contadores TTT1=23 TTT4=3 -> TTT1=24 TTT4=3
+    nubecont: TTT1-000024(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* TC direct-guide Traer cotizacion | mezclada
+    HTTP 201  | guias=['TTT1-000025', 'TTT4-000004'] | registradas=['TTT1-000025 [P0001/NIU]', 'TTT4-000004 [P0003/PAR]']
+    contadores TTT1=24 TTT4=3 -> TTT1=25 TTT4=4
+    nubecont: TTT1-000025(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]; TTT4-000004(ok) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]
+* TC direct-guide Traer cotizacion | sin DIGEMID
+    HTTP 201  | guias=['TTT1-000026'] | registradas=['TTT1-000026 [P0001/NIU,P0002/BX]']
+    contadores TTT1=25 TTT4=4 -> TTT1=26 TTT4=4
+    nubecont: TTT1-000026(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU'], ['P0002', 'BX']]
+* TC direct-guide Traer cotizacion | pantalla vieja: TTT1 con producto DIGEMID, sin partida DIGEMID
+    HTTP 201  | guias=['TTT1-000027', 'TTT4-000005'] | registradas=['TTT1-000027 [P0001/NIU]', 'TTT4-000005 [P0003/PAR]']
+    contadores TTT1=26 TTT4=4 -> TTT1=27 TTT4=5
+    nubecont: TTT1-000027(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]; TTT4-000005(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* TC direct-guide Traer cotizacion | TTT4 con producto NO DIGEMID
+    HTTP 201  | guias=['TTT4-000006'] | registradas=['TTT4-000006 [P0001/NIU]']
+    contadores TTT1=27 TTT4=5 -> TTT1=27 TTT4=6
+    nubecont: TTT4-000006(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]
+* GD guia directa sin cotizacion | solo DIGEMID
+    HTTP 201  | guias=['TTT1-000028'] | registradas=[]
+    contadores TTT1=27 TTT4=6 -> TTT1=28 TTT4=6
+    nubecont: TTT1-000028(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* GD guia directa sin cotizacion | mezclada
+    HTTP 201  | guias=['TTT1-000029'] | registradas=[]
+    contadores TTT1=28 TTT4=6 -> TTT1=29 TTT4=6
+    nubecont: TTT1-000029(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR'], ['P0001', 'NIU']]
+* GD guia directa sin cotizacion | sin DIGEMID
+    HTTP 201  | guias=['TTT1-000030'] | registradas=[]
+    contadores TTT1=29 TTT4=6 -> TTT1=30 TTT4=6
+    nubecont: TTT1-000030(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU'], ['P0002', 'BX']]
+* GD guia directa sin cotizacion | pantalla vieja: TTT1 con producto DIGEMID, sin partida DIGEMID
+    HTTP 201  | guias=['TTT1-000031'] | registradas=[]
+    contadores TTT1=30 TTT4=6 -> TTT1=31 TTT4=6
+    nubecont: TTT1-000031(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* GD guia directa sin cotizacion | TTT4 con producto NO DIGEMID
+    HTTP 201  | guias=['TTT4-000007'] | registradas=[]
+    contadores TTT1=31 TTT4=6 -> TTT1=31 TTT4=7
+    nubecont: TTT4-000007(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]
+* GF guia desde factura | solo DIGEMID
+    HTTP 201  | guias=['TTT1-000032'] | registradas=['TTT1-000032 [P0003/PAR] factura']
+    contadores TTT1=31 TTT4=7 -> TTT1=32 TTT4=7
+    nubecont: TTT1-000032(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* GF guia desde factura | mezclada
+    HTTP 201  | guias=['TTT1-000033'] | registradas=['TTT1-000033 [P0001/NIU,P0003/PAR] factura']
+    contadores TTT1=32 TTT4=7 -> TTT1=33 TTT4=7
+    nubecont: TTT1-000033(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR'], ['P0001', 'NIU']]
+* GF guia desde factura | sin DIGEMID
+    HTTP 201  | guias=['TTT1-000034'] | registradas=['TTT1-000034 [P0001/NIU,P0002/BX] factura']
+    contadores TTT1=33 TTT4=7 -> TTT1=34 TTT4=7
+    nubecont: TTT1-000034(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU'], ['P0002', 'BX']]
+* GF guia desde factura | pantalla vieja: TTT1 con producto DIGEMID, sin partida DIGEMID
+    HTTP 201  | guias=['TTT1-000035'] | registradas=['TTT1-000035 [P0003/PAR] factura']
+    contadores TTT1=34 TTT4=7 -> TTT1=35 TTT4=7
+    nubecont: TTT1-000035(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* GF guia desde factura | TTT4 con producto NO DIGEMID
+    HTTP 201  | guias=['TTT4-000008'] | registradas=['TTT4-000008 [P0001/NIU] factura']
+    contadores TTT1=35 TTT4=7 -> TTT1=35 TTT4=8
+    nubecont: TTT4-000008(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]
+* GD | TTT4 con producto NO DIGEMID, interruptor desactivado (=0)
+    HTTP 201  | guias=['TTT4-000009'] | registradas=[]
+    contadores TTT1=35 TTT4=8 -> TTT1=35 TTT4=9
+    nubecont: TTT4-000009(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]
+* IG | mezclada: falla la segunda guia (TTT4)
+    HTTP 502 PARTIAL_GUIDE_SPLIT_FAILURE | guias=[] | registradas=['TTT1-000036 [P0001/NIU]']
+    contadores TTT1=35 TTT4=9 -> TTT1=36 TTT4=9
+    nubecont: TTT1-000036(failttt4) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]; TTT4-000010(failttt4) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]
+    mensaje: Una de las guias (split DIGEMID) fallo: {'code': 'NUBECONT_GUIDE_SEND_ERROR', 'data': {'data': {'errors': 'Simulado: NubeCont rechazo la guia'}, 'ok': False, 'status_code': 400}, 'message': 'Simulado: NubeCont rechazo la guia'}
+* IG | reintento: solo la parte TTT4 pendiente
+    HTTP 200  | guias=['TTT4-000010'] | registradas=['TTT1-000036 [P0001/NIU]', 'TTT4-000010 [P0003/PAR]']
+    contadores TTT1=36 TTT4=9 -> TTT1=36 TTT4=10
+    nubecont: TTT4-000010(ok) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]
+* TC | mezclada: falla la segunda guia (TTT4)
+    HTTP 502 PARTIAL_GUIDE_SPLIT_FAILURE | guias=[] | registradas=['TTT1-000037 [P0001/NIU]']
+    contadores TTT1=36 TTT4=10 -> TTT1=37 TTT4=10
+    nubecont: TTT1-000037(failttt4) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]; TTT4-000011(failttt4) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]
+    mensaje: Una de las guias (split DIGEMID) fallo: {'code': 'NUBECONT_GUIDE_SEND_ERROR', 'data': {'data': {'errors': 'Simulado: NubeCont rechazo la guia'}, 'ok': False, 'status_code': 400}, 'message': 'Simulado: NubeCont rechazo la guia'}
+* TC | reintento: solo la parte TTT4 pendiente
+    HTTP 201  | guias=['TTT4-000011'] | registradas=['TTT1-000037 [P0001/NIU]', 'TTT4-000011 [P0003/PAR]']
+    contadores TTT1=37 TTT4=10 -> TTT1=37 TTT4=11
+    nubecont: TTT4-000011(ok) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]
+* GD | mezclada: falla la segunda guia (la no DIGEMID)
+    HTTP 502 NUBECONT_GUIDE_SEND_ERROR | guias=[] | registradas=[]
+    contadores TTT1=37 TTT4=11 -> TTT1=37 TTT4=11
+    nubecont: TTT1-000038(failnot4) partida=AV PRUEBA 123 items=[['P0003', 'PR'], ['P0001', 'NIU']]
+    mensaje: Simulado: NubeCont rechazo la guia
+* GD | reintento con los productos que quedaron en el formulario (solo P0001)
+    HTTP 201  | guias=['TTT1-000038'] | registradas=[]
+    contadores TTT1=37 TTT4=11 -> TTT1=38 TTT4=11
+    nubecont: TTT1-000038(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]
+* GF | mezclada F001-000006: falla la segunda guia
+    HTTP 502 NUBECONT_GUIDE_SEND_ERROR | guias=[] | registradas=[]
+    contadores TTT1=38 TTT4=11 -> TTT1=38 TTT4=11
+    nubecont: TTT1-000039(failnot4) partida=AV PRUEBA 123 items=[['P0003', 'PR'], ['P0001', 'NIU']]
+    mensaje: Simulado: NubeCont rechazo la guia
+* GF | reintento F001-000006 con lo pendiente (solo P0001)
+    HTTP 201  | guias=['TTT1-000039'] | registradas=['TTT1-000039 [P0001/NIU] factura']
+    contadores TTT1=38 TTT4=11 -> TTT1=39 TTT4=11
+    nubecont: TTT1-000039(ok) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]
+* GF | tercer intento F001-000006 con todo otra vez (no debe duplicar)
+    HTTP 400 SALE_ALREADY_HAS_GUIDE | guias=[] | registradas=['TTT1-000039 [P0001/NIU] factura']
+    contadores TTT1=39 TTT4=11 -> TTT1=39 TTT4=11
+    nubecont: (ninguna llamada)
+    mensaje: La factura/boleta F001-000006 ya tiene la guia TTT1-000039
+* IG solo DIGEMID | NubeCont rechaza
+    HTTP 502 NUBECONT_GUIDE_SEND_ERROR | guias=[] | registradas=[]
+    contadores TTT1=39 TTT4=11 -> TTT1=39 TTT4=11
+    nubecont: TTT1-000040(fail) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+    mensaje: Simulado: NubeCont rechazo la guia
+* IG solo DIGEMID | reintento tras rechazo
+    HTTP 200  | guias=['TTT1-000040'] | registradas=['TTT1-000040 [P0003/PAR]']
+    contadores TTT1=39 TTT4=11 -> TTT1=40 TTT4=11
+    nubecont: TTT1-000040(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* GD solo DIGEMID | NubeCont rechaza
+    HTTP 502 NUBECONT_GUIDE_SEND_ERROR | guias=[] | registradas=[]
+    contadores TTT1=40 TTT4=11 -> TTT1=40 TTT4=11
+    nubecont: TTT1-000041(fail) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+    mensaje: Simulado: NubeCont rechazo la guia
+* IG solo DIGEMID | NubeCont dice ya existe (TTT4-000012 ocupado)
+    HTTP 200  | guias=['TTT1-000041'] | registradas=['TTT1-000041 [P0003/PAR]']
+    contadores TTT1=40 TTT4=11 -> TTT1=41 TTT4=11
+    nubecont: TTT1-000041(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR']]
+* TC mezclada | tiempo de espera pero NubeCont SI creo las guias
+    HTTP 201  | guias=['TTT1-000042', 'TTT4-000013'] | registradas=['TTT1-000042 [P0001/NIU]', 'TTT4-000013 [P0003/PAR]']
+    contadores TTT1=41 TTT4=11 -> TTT1=42 TTT4=13
+    nubecont: TTT1-000042(timeout) partida=AV PRUEBA 123 items=[['P0001', 'NIU']]; TTT4-000012(timeout) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]; TTT4-000013(timeout) partida=JR. HUALLAGA 767 Int 111 items=[['P0003', 'PR']]
+* IG | dos usuarios a la vez, misma cotizacion mezclada
+    respuestas=[(200, None, ['TTT1-000043', 'TTT4-000014']), (200, None, ['TTT1-000043', 'TTT4-000014'])] nubecont=['TTT1-000043', 'TTT4-000014'] registradas=['TTT1-000043 [P0001/NIU]', 'TTT4-000014 [P0003/PAR]']
+* TC | dos usuarios a la vez, misma cotizacion mezclada
+    respuestas=[(201, None, ['TTT1-000044', 'TTT4-000015']), (201, None, ['TTT1-000044', 'TTT4-000015'])] nubecont=['TTT1-000044', 'TTT4-000015'] registradas=['TTT1-000044 [P0001/NIU]', 'TTT4-000015 [P0003/PAR]']
+* GD | stock insuficiente de P0003 (pide 999)
+    HTTP 400 INSUFFICIENT_STOCK_FOR_GUIDE | guias=[] | registradas=[]
+    contadores TTT1=44 TTT4=15 -> TTT1=44 TTT4=15
+    nubecont: (ninguna llamada)
+    mensaje: Line 1: stock insuficiente para "OXIMETRO DEDO" en ALMFIKA. Disponible: 8.00, requerido: 999
+* GF | factura F001-000007 mezclada: dos guias vinculadas
+    HTTP 201  | guias=['TTT1-000045'] | registradas=['TTT1-000045 [P0002/BX,P0003/PAR] factura']
+    contadores TTT1=44 TTT4=15 -> TTT1=45 TTT4=15
+    nubecont: TTT1-000045(ok) partida=AV PRUEBA 123 items=[['P0003', 'PR'], ['P0002', 'BX']]
+* reporte sale-guides: guias de F001-000007
+    {'http': 200, 'guias': ['TTT1-000045']}
+* reporte Guias para DIGEMID: filas de F001-000007
+    {'http': 200, 'filas': [['TTT1-000045', 'P0003', 'F001-000007', 'Facturada']]}
+* IG | serie TTT5 (reservada a traslados)
+    HTTP 400 GUIDE_SERIES_RESERVED_FOR_TRANSFERS | guias=[] | registradas=[]
+    contadores TTT1=45 TTT4=15 -> TTT1=45 TTT4=15
+    nubecont: (ninguna llamada)
+    mensaje: La serie TTT5 esta reservada para las guias de traslado entre almacenes de esta empresa. Usa la serie de guias de venta (ejemplo: TTT1).
+* GD | serie TTT5 (reservada a traslados)
+    HTTP 400 GUIDE_SERIES_RESERVED_FOR_TRANSFERS | guias=[] | registradas=[]
+    contadores TTT1=45 TTT4=15 -> TTT1=45 TTT4=15
+    nubecont: (ninguna llamada)
+    mensaje: La serie TTT5 esta reservada para las guias de traslado entre almacenes de esta empresa. Usa la serie de guias de venta (ejemplo: TTT1).
+* GD | serie TTT5 con producto DIGEMID
+    HTTP 400 GUIDE_SERIES_RESERVED_FOR_TRANSFERS | guias=[] | registradas=[]
+    contadores TTT1=45 TTT4=15 -> TTT1=45 TTT4=15
+    nubecont: (ninguna llamada)
+    mensaje: La serie TTT5 esta reservada para las guias de traslado entre almacenes de esta empresa. Usa la serie de guias de venta (ejemplo: TTT1).

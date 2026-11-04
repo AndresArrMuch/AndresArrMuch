@@ -1,0 +1,24 @@
+BEGIN
+SELECT 3
+   empresa   |   mes   | facturas_con_digemid | con_guia | sin_guia | sin_guia_pero_la_nota_menciona_una 
+-------------+---------+----------------------+----------+----------+------------------------------------
+ FIKA PRUEBA | 2026-09 |                    3 |        2 |        1 |                                  1
+(1 row)
+
+   empresa   |   fecha    |   factura   |     ruc     |     cliente     | total  | currency | productos_digemid | guia_en_la_nota |  guias_candidatas   
+-------------+------------+-------------+-------------+-----------------+--------+----------+-------------------+-----------------+---------------------
+ FIKA PRUEBA | 2026-09-10 | F001-000003 | 20222222222 | BOTICA DOS EIRL | 118.00 | PEN      | MASCARILLA KN95   | TTT4-000009     | TTT4-000002 (09/09)
+(1 row)
+
+   empresa   |   mes   | facturas_con_lineas_sin_producto 
+-------------+---------+----------------------------------
+ FIKA PRUEBA | 2026-09 |                                1
+(1 row)
+
+ item_code |                       description                       | secondary_description | brand | model 
+-----------+---------------------------------------------------------+-----------------------+-------+-------
+ D001      | GUANTE NITRILO M R.S. DM-12345-E LOTE A123 F.V. 12/2027 |                       |       | 
+ D002      | MASCARILLA KN95                                         | REG. SAN. DM7788E     |       | 
+(2 rows)
+
+ROLLBACK

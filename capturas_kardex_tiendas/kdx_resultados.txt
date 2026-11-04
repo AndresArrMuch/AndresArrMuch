@@ -1,0 +1,110 @@
+Kardex de tiendas: lo que devuelve el servidor a cada usuario. MAIN 0ab7cc4 -> RAMA claude/kardex-tiendas 461421f
+
+nilton
+   movimientos: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True) -> rama ['ALMFIKA', 'TDAFIKAMALVINAS'] (costos=False)
+   stock consolidado: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['ALMFIKA', 'TDAFIKAMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKAMALVINAS']
+   respuesta de movimientos identica a main: False
+
+saul_yorko
+   movimientos: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True) -> rama ['ALMFIKA', 'TDAFIKACAPON'] (costos=False)
+   stock consolidado: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['ALMFIKA', 'TDAFIKACAPON']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON']
+   respuesta de movimientos identica a main: False
+
+francisco_fika
+   movimientos: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True) -> rama ['ALMFIKA', 'TDAFIKAMALVINAS'] (costos=False)
+   stock consolidado: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['ALMFIKA', 'TDAFIKAMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKAMALVINAS']
+   respuesta de movimientos identica a main: False
+
+francisco_flumisa
+   movimientos: main ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] (costos=True) -> rama ['ALMFLU', 'TDAFLUMALVINAS'] (costos=False)
+   stock consolidado: main ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] -> rama ['ALMFLU', 'TDAFLUMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFLU', 'TDAFLUMALVINAS']
+   respuesta de movimientos identica a main: False
+
+admin_fika
+   movimientos: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True) -> rama ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True)
+   stock consolidado: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS']
+   respuesta de movimientos identica a main: True
+
+admin_flumisa
+   movimientos: main ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] (costos=True) -> rama ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] (costos=True)
+   stock consolidado: main ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] -> rama ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS']
+   respuesta de movimientos identica a main: True
+
+almacenero_fika
+   movimientos: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True) -> rama ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True)
+   stock consolidado: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS']
+   respuesta de movimientos identica a main: True
+
+almacenero_flumisa
+   movimientos: main ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] (costos=True) -> rama ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] (costos=True)
+   stock consolidado: main ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] -> rama ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS']
+   respuesta de movimientos identica a main: True
+
+ventas_sin_tienda
+   movimientos: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True) -> rama ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True)
+   stock consolidado: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS']
+   respuesta de movimientos identica a main: True
+
+tdacapon
+   movimientos: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True) -> rama ['ALMFIKA', 'TDAFIKACAPON'] (costos=False)
+   stock consolidado: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['ALMFIKA', 'TDAFIKACAPON']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON']
+   respuesta de movimientos identica a main: False
+
+tdamalvinas
+   movimientos: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] (costos=True) -> rama ['ALMFIKA', 'TDAFIKAMALVINAS'] (costos=False)
+   stock consolidado: main ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['ALMFIKA', 'TDAFIKAMALVINAS']
+   Exportar Reporte Detallado (hojas): main ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS'] -> rama ['CONSOLIDADO GLOBAL', 'ALMFIKA', 'TDAFIKAMALVINAS']
+   respuesta de movimientos identica a main: False
+
+Llamadas directas (codigo HTTP): main -> rama
+   nilton_movimientos_capon: 200 -> 403
+   nilton_movimientos_malvinas_propio: 200 -> 200
+   nilton_movimientos_almfika: 200 -> 200
+   saul_movimientos_malvinas: 200 -> 403
+   nilton_items_stock_capon: 200 -> 403
+   nilton_item_stock_capon: 200 -> 403
+   nilton_item_stock_desglose: [200, ['ALMFIKA', 'TDAFIKACAPON', 'TDAFIKAMALVINAS']] -> [200, ['ALMFIKA', 'TDAFIKAMALVINAS']]
+   francisco_flumisa_movimientos_tdaflucapon: 200 -> 403
+   francisco_sesion_fika_pide_flumisa: [200, ['ALMFLU', 'TDAFLUCAPON', 'TDAFLUMALVINAS']] -> [200, ['ALMFLU', 'TDAFLUMALVINAS']]
+   nilton_crear_movimiento: 400 -> 403
+   almacenero_crear_movimiento_incompleto: 400 -> 400
+
+Otros modulos de los tres encargados (main vs rama)
+   nilton:requerimientos: IGUAL
+   nilton:transferencias: IGUAL
+   nilton:ventas: IGUAL
+   nilton:cotizaciones: IGUAL
+   nilton:items_sin_almacen: IGUAL
+   nilton:almacenes: IGUAL
+   nilton:pendientes_requerimientos: IGUAL
+   saul_yorko:requerimientos: IGUAL
+   saul_yorko:transferencias: IGUAL
+   saul_yorko:ventas: IGUAL
+   saul_yorko:cotizaciones: IGUAL
+   saul_yorko:items_sin_almacen: IGUAL
+   saul_yorko:almacenes: IGUAL
+   saul_yorko:pendientes_requerimientos: IGUAL
+   francisco_fika:requerimientos: IGUAL
+   francisco_fika:transferencias: IGUAL
+   francisco_fika:ventas: IGUAL
+   francisco_fika:cotizaciones: IGUAL
+   francisco_fika:items_sin_almacen: IGUAL
+   francisco_fika:almacenes: IGUAL
+   francisco_fika:pendientes_requerimientos: IGUAL
+   francisco_flumisa:requerimientos: IGUAL
+   francisco_flumisa:transferencias: IGUAL
+   francisco_flumisa:ventas: IGUAL
+   francisco_flumisa:cotizaciones: IGUAL
+   francisco_flumisa:items_sin_almacen: IGUAL
+   francisco_flumisa:almacenes: IGUAL
+   francisco_flumisa:pendientes_requerimientos: IGUAL

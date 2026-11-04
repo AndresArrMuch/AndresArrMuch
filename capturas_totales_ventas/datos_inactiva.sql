@@ -1,0 +1,3 @@
+-- Agregado a la base de prueba ventas_test: copia inactiva de F001-000001 (200.00) para probar is_active
+insert into sale select (jsonb_populate_record(null::sale, to_jsonb(s) || jsonb_build_object('id','s-inact','document_number','F001-000007','correlative','000007','is_active',false,'total',200,'subtotal',169.49,'igv',30.51))).* from sale s where document_number='F001-000001';
+insert into sale_line select (jsonb_populate_record(null::sale_line, to_jsonb(l) || jsonb_build_object('id','l-inact','sale_id','s-inact','total',200,'subtotal',169.49))).* from sale_line l join sale s on s.id=l.sale_id where s.document_number='F001-000001' limit 1;

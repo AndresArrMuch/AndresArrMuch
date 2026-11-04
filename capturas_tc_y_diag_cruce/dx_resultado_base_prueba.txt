@@ -1,0 +1,24 @@
+BEGIN
+== 1) Filas del extracto que hoy salen Registradas sin coincidir en monto, sentido o cuenta
+      empresa       |     cuenta_extracto      | periodo |   fecha    |   hora   | n_operacion |           descripcion           | monto_extracto | sentido_extracto | movimiento_sistema_cuenta_tipo_monto | cobranza_pago |                         motivo                          
+--------------------+--------------------------+---------+------------+----------+-------------+---------------------------------+----------------+------------------+--------------------------------------+---------------+---------------------------------------------------------
+ FIKA PRUEBA SAC    | BCP PEN 191-1111111-0-11 | 2026-10 | 2026-10-14 | 12:20:12 | 01104038    | TRAN.CTAS.TERC.BM 191 2099725 0 |        -975.00 | cargo            | BCP PEN deposit 975.00               |               | sentido contrario
+ FIKA PRUEBA SAC    | BCP PEN 191-1111111-0-11 | 2026-10 | 2026-10-14 | 12:29:43 | 01108170    | TRAN.CTAS.TERC.BM 191 2099725 0 |        -100.00 | cargo            | Interbank PEN withdrawal 100.00      |               | otra cuenta
+ FIKA PRUEBA SAC    | BCP PEN 191-1111111-0-11 | 2026-10 | 2026-10-14 | 12:50:35 | 01117932    | TRAN.CTAS.TERC.BM 191 2099725 0 |       -3000.00 | cargo            | BCP PEN withdrawal 2999.00           |               | monto distinto
+ FLUMISA PRUEBA SAC | BCP PEN 191 2099725 0    | 2026-10 | 2026-10-14 | 12:50:35 | 02117932    | DE FIKA SAC                     |        3000.00 | abono            |                                      | pago          | cruza con un pago de Cobranza/Pagos (sentido contrario)
+(4 rows)
+
+== 2) Resumen por empresa y cuenta
+      empresa       | cuenta  | filas_sospechosas | monto_distinto | sentido_contrario | otra_cuenta 
+--------------------+---------+-------------------+----------------+-------------------+-------------
+ FIKA PRUEBA SAC    | BCP PEN |                 3 |              1 |                 1 |           1
+ FLUMISA PRUEBA SAC | BCP PEN |                 1 |              0 |                 1 |           0
+(2 rows)
+
+== 3) Total
+ filas_sospechosas_total | filas_registradas_total | filas_extracto_total 
+-------------------------+-------------------------+----------------------
+                       4 |                       6 |                    8
+(1 row)
+
+ROLLBACK

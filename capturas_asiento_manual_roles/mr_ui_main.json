@@ -1,0 +1,215 @@
+{
+ "errores_js": [],
+ "roles": {
+  "Administrador-FIKA": {
+   "empresa": "FIKA",
+   "libro_diario": "formulario",
+   "bancos_movimiento": "formulario",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "Administrador-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "formulario",
+   "bancos_movimiento": "formulario",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "AlmacenGuias-FIKA": {
+   "empresa": "FIKA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "AlmacenGuias-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "Almacenero-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "Gerente-FIKA": {
+   "empresa": "FIKA",
+   "libro_diario": "formulario",
+   "bancos_movimiento": "formulario",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "Gerente-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "formulario",
+   "bancos_movimiento": "formulario",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "Sistema-FIKA": {
+   "empresa": "FIKA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "Sistema-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "TiendaCapon-FIKA": {
+   "empresa": "FIKA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "TiendaCapon-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "TiendaMalvinas-FIKA": {
+   "empresa": "FIKA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "TiendaMalvinas-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "Vendedor-FIKA": {
+   "empresa": "FIKA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "Vendedor-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "Tesoreria": {
+   "empresa": "FIKA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "Encargado-FIKA": {
+   "empresa": "FIKA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "Encargado-FLUMISA": {
+   "empresa": "FLUMISA",
+   "libro_diario": "Tu usuario no tiene permiso para registrar asientos manuales (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "bancos_movimiento": "Tu usuario no tiene permiso para registrar movimientos de banco (roles permitidos: sistemas, administrador, gerente, contador, contabilidad).",
+   "conciliacion_boton": "3 de 3 filas"
+  },
+  "Sistemas": {
+   "empresa": "FIKA",
+   "libro_diario": "formulario",
+   "bancos_movimiento": "formulario",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "Gerente": {
+   "empresa": "FIKA",
+   "libro_diario": "formulario",
+   "bancos_movimiento": "formulario",
+   "conciliacion_boton": "4 de 4 filas"
+  },
+  "Administrador": {
+   "empresa": "FIKA",
+   "libro_diario": "formulario",
+   "bancos_movimiento": "formulario",
+   "conciliacion_boton": "4 de 4 filas"
+  }
+ },
+ "existente": {
+  "libro": [
+   "M10-0005 | 000001 | 2026-10-14 | Compra F002-00001 - proveedor DISTRIBUIDORA SAC",
+   "M10-0004 | 000002 | 2026-10-11 | Cobro RC-2 de factura",
+   "M10-0003 | 000003 | 2026-10-08 | Pago a proveedor OP-3",
+   "M10-0002 | 000004 | 2026-10-05 | Ajuste de inventario AJ-4",
+   "M10-0001 | 000005 | 2026-10-02 | Planilla del mes",
+   "M09-0010 | 000006 | 2026-09-29 | Conciliacion bancaria - comision",
+   "M09-0009 | 000007 | 2026-09-26 | Asiento de reclasificacion 7",
+   "M09-0008 | 000008 | 2026-09-23 | Venta F001-000008 - CLIENTE PRUEBA SAC",
+   "M09-0007 | 000009 | 2026-09-20 | Compra F002-00009 - proveedor DISTRIBUIDORA SAC",
+   "M09-0006 | 000010 | 2026-09-17 | Cobro RC-10 de factura",
+   "M09-0005 | 000011 | 2026-09-14 | Pago a proveedor OP-11",
+   "M09-0004 | 000012 | 2026-09-11 | Ajuste de inventario AJ-12",
+   "M09-0003 | 000013 | 2026-09-08 | Planilla del mes",
+   "M09-0002 | 000014 | 2026-09-05 | Conciliacion bancaria - comision",
+   "M09-0001 | 000015 | 2026-09-02 | Asiento de reclasificacion 15",
+   "M08-0010 | 000016 | 2026-08-30 | Venta F001-000016 - CLIENTE PRUEBA SAC",
+   "M08-0009 | 000017 | 2026-08-27 | Compra F002-00017 - proveedor DISTRIBUIDORA SAC",
+   "M08-0008 | 000018 | 2026-08-24 | Cobro RC-18 de factura",
+   "M08-0007 | 000019 | 2026-08-21 | Pago a proveedor OP-19",
+   "M08-0006 | 000020 | 2026-08-18 | Ajuste de inventario AJ-20",
+   "M08-0005 | 000021 | 2026-08-15 | Planilla del mes",
+   "M08-0004 | 000022 | 2026-08-12 | Conciliacion bancaria - comision",
+   "M08-0003 | 000023 | 2026-08-09 | Asiento de reclasificacion 23",
+   "M08-0002 | 000024 | 2026-08-06 | Venta F001-000024 - CLIENTE PRUEBA SAC",
+   "M08-0001 | 000025 | 2026-08-03 | Compra F002-00025 - proveedor DISTRIBUIDORA SAC",
+   "M07-0011 | 000026 | 2026-07-31 | Cobro RC-26 de factura",
+   "M07-0010 | 000027 | 2026-07-28 | Pago a proveedor OP-27",
+   "M07-0009 | 000028 | 2026-07-25 | Ajuste de inventario AJ-28",
+   "M07-0008 | 000029 | 2026-07-22 | Planilla del mes",
+   "M07-0007 | 000030 | 2026-07-19 | Conciliacion bancaria - comision",
+   "M07-0006 | 000031 | 2026-07-16 | Asiento de reclasificacion 31",
+   "M07-0005 | 000032 | 2026-07-13 | Venta F001-000032 - CLIENTE PRUEBA SAC",
+   "M07-0004 | 000033 | 2026-07-10 | Compra F002-00033 - proveedor DISTRIBUIDORA SAC",
+   "M07-0003 | 000034 | 2026-07-07 | Cobro RC-34 de factura",
+   "M07-0002 | 000035 | 2026-07-04 | Pago a proveedor OP-35",
+   "M06-0001 | 000036 | 2026-07-01 | Ajuste de inventario AJ-36",
+   "M06-0010 | 000037 | 2026-06-28 | Planilla del mes",
+   "M06-0009 | 000038 | 2026-06-25 | Conciliacion bancaria - comision",
+   "M06-0008 | 000039 | 2026-06-22 | Asiento de reclasificacion 39",
+   "M06-0007 | 000040 | 2026-06-19 | Venta F001-000040 - CLIENTE PRUEBA SAC",
+   "M06-0006 | 000041 | 2026-06-16 | Compra F002-00041 - proveedor DISTRIBUIDORA SAC",
+   "M06-0005 | 000042 | 2026-06-13 | Cobro RC-42 de factura",
+   "M06-0004 | 000043 | 2026-06-10 | Pago a proveedor OP-43",
+   "M06-0003 | 000044 | 2026-06-07 | Ajuste de inventario AJ-44",
+   "M06-0002 | 000045 | 2026-06-04 | Planilla del mes",
+   "M05-0001 | 000046 | 2026-06-01 | Conciliacion bancaria - comision",
+   "M05-0010 | 000047 | 2026-05-29 | Asiento de reclasificacion 47",
+   "M05-0009 | 000048 | 2026-05-26 | Venta F001-000048 - CLIENTE PRUEBA SAC",
+   "M05-0008 | 000049 | 2026-05-23 | Compra F002-00049 - proveedor DISTRIBUIDORA SAC",
+   "M05-0007 | 000050 | 2026-05-20 | Cobro RC-50 de factura",
+   "M05-0006 | 000051 | 2026-05-17 | Pago a proveedor OP-51",
+   "M05-0005 | 000052 | 2026-05-14 | Ajuste de inventario AJ-52",
+   "M05-0004 | 000053 | 2026-05-11 | Planilla del mes",
+   "M05-0003 | 000054 | 2026-05-08 | Conciliacion bancaria - comision",
+   "M05-0002 | 000055 | 2026-05-05 | Asiento de reclasificacion 55",
+   "M05-0001 | 000056 | 2026-05-02 | Venta F001-000056 - CLIENTE PRUEBA SAC",
+   "M04-0004 | 000057 | 2026-04-29 | Compra F002-00057 - proveedor DISTRIBUIDORA SAC",
+   "M04-0003 | 000058 | 2026-04-26 | Cobro RC-58 de factura",
+   "M04-0002 | 000059 | 2026-04-23 | Pago a proveedor OP-59",
+   "M04-0001 | 000060 | 2026-04-20 | Ajuste de inventario AJ-60"
+  ],
+  "conciliacion_bcp": [
+   "01117932 S/ -3,000.00 Error",
+   "01104038 S/ -975.00 Error",
+   "01108170 S/ -100.00 Error",
+   "01200001 S/ -500.00 Error"
+  ],
+  "dashboard": "Dashboard Ejecutivo | 2026-10 · FIKA PRUEBA SAC | SALDO BANCARIO | S/ 0.00 | Total en cuentas | VENTAS DEL MES | S/ 2,711.00 | 6 comprobantes | COMPRAS DEL MES | S/ 0.00 | 0 comprobantes | POR COBRAR | S/ 2,947.00 | 6 docs vencidos | POR PAGAR | S/ 0.00 | 0 docs vencidos | FLUJO DEL MES | S/ 0.00 | Ingresos - Egresos |  Clientes con deuda vencida | 6 facturas · S/ 2,947.00 total | CLIENTE PRUEBA SAC | S/ 2,947.00 |  Proveedores por pagar | 0 facturas vencidas · S/ 0.00 total |  Sin deudas pendientes |  Saldos por cuenta | BCP | FIKA SAC | S/ 0.00 | BCP | FIKA SAC | S/ 0.00 | Interbank | FIKA SAC | S/ 0.00 | Cuenta Comisiones | FIKA SAC | S/ 0.00 | Cuenta Retenciones 3% | FIKA SAC | S/ 0.00 | Efectivo / Caja | FIKA SAC | S/ 0.00 |  Últimos movimientos bancarios | FECHA\tDESCRIPCIÓN\tIMPORTE | Sin movimientos | IGV VENTAS DEL MES | S/ 413.54 | IGV COMPRAS DEL MES | S/ 0.00 | IGV NETO A PAGAR | S/ 413.54 |  Antigüedad de Cuentas por Cobrar (CxC) | Facturas de venta pendientes de cobro agrupadas por vencimiento | CLIENTE\tPOR VENCER\t0-30 DÍAS\t31-60 DÍAS\t61-90 DÍAS\t+90 DÍAS\tTOTAL | CLIENTE PRUEBA SAC\t-\tS/ 2,947.00\t-\t-\t-\tS/ 2,947.00 | TOTAL\t-\tS/ 2,947.00\t-\t-\t-\tS/ 2,947.00 |  Antigüedad de Cuentas por Pagar (CxP) | Facturas de compra pendientes de pago agrupadas por vencimiento | PROVEEDOR\tPOR VENCER\t0-30 DÍAS\t31-60 DÍAS\t61-90 DÍAS\t+90 DÍAS\tTOTAL |  Sin cuentas por pagar pendientes"
+ },
+ "aviso_al_entrar": {
+  "aviso": "Respaldo: prioriza siempre una forma automática. Cobro de factura (Cobranza), pago a proveedor (Pagos), comisión o ITF desde Conciliación (botón Pagar), impuestos o alquiler. Registra aquí solo los movimientos que no tienen un flujo automático. Una línea de banco (104) genera su movimiento bancario con el N.° de operación para la Conciliación.",
+  "alto_aviso_px": 50,
+  "desplegable": "no hay",
+  "lista_visible": null,
+  "ayuda_op": "N.° DE OPERACIÓN"
+ },
+ "bancos_para_104101": [
+  "— Cuenta bancaria —",
+  "BCP PEN 191-1111111-0-11",
+  "Cuenta Comisiones PEN COMISIONES",
+  "Cuenta Retenciones 3% PEN RETENCIONES"
+ ]
+}

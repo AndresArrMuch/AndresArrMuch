@@ -1,0 +1,33 @@
+### A) Parametro apagado (por defecto)
+  configuracion: {'habilitado': False, 'permitido': False}
+  items_batch: 403 INVENTORY_BATCH_DISABLED | La carga por lote de inventario no esta activada para esta empresa
+  mov_batch: 403 INVENTORY_BATCH_DISABLED | La carga por lote de inventario no esta activada para esta empresa
+  mov_simple: 201  | Inventory movement created
+  item_simple: 201  | Inventory item created
+
+### B) Parametro encendido: quien puede (pantalla / movimiento por lote / items por lote)
+  central@t.pe                 pantalla SI | movimiento 201 | items 201
+  sistema.fika@t.pe            pantalla SI | movimiento 201 | items 201
+  admin@t.pe                   pantalla SI | movimiento 201 | items 201
+  gerente@t.pe                 pantalla SI | movimiento 201 | items 201
+  tesoreria@t.pe               pantalla no | movimiento 403 | items 403
+  ventas@t.pe                  pantalla no | movimiento 403 | items 403
+  vendedor.fika@t.pe           pantalla no | movimiento 403 | items 403
+  almacenguias.fika@t.pe       pantalla no | movimiento 403 | items 403
+  capon@t.pe                   pantalla no | movimiento 403 | items 403
+
+### C) Documento de origen y costo (central, parametro encendido)
+  sin tipo de documento              400 DOCUMENT_TYPE_REQUIRED | Elige el tipo de documento de origen: Factura de compra, Guia de remision, DUA / Importacion, Nota de credito (devolucion), Acta de inventario (conteo fisico)
+  sin numero de documento            400 DOCUMENT_NUMBER_REQUIRED | Escribe el numero del documento de origen (por ejemplo F001-000123)
+  numero = "para facturar"           400 DOCUMENT_NUMBER_REQUIRED | Escribe el numero del documento de origen (por ejemplo F001-000123)
+  numero sin digitos "SN"            400 DOCUMENT_NUMBER_REQUIRED | Escribe el numero del documento de origen (por ejemplo F001-000123)
+  comentario "correccion de stock"   400 DOCUMENT_TEXT_NOT_ALLOWED | El comentario no puede ser un texto como "para facturar" o "correccion": indica el documento de origen
+  costo 0.01                         400 INVALID_LINES | No se registro ninguna linea: fila 2 YXRP0291C25NYTL: Costo unitario 0.01 no permitido: debe ser mayor a 0 y distinto de 0.01
+  costo 0                            400 INVALID_LINES | No se registro ninguna linea: fila 1 SSG2603FMANG75TM: Costo unitario 0 no permitido: debe ser mayor a 0 y distinto de 0.01
+  ninguno registro movimientos: True
+  con documento y costos validos: 201 2 lineas registradas | comentario guardado: ['[Factura de compra F001-000123] Ingreso de importacion', '[Factura de compra F001-000123] Ingreso de importacion']
+
+### D) Saldos: main (una linea por vez) vs rama (lote con documento)
+  kardex identico: True | costo identico: True
+
+### E) Doble clic (dos envios simultaneos de 20 lineas): [201, 409] | lineas creadas: 20

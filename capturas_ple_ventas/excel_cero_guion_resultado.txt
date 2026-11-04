@@ -1,0 +1,24 @@
+Totales 02d1d29: {"P":"3464.58","R":"623.62","AA":"4088.20"}
+Totales rama:    {"P":"3464.58","R":"623.62","AA":"4088.20"}
+Iguales: true
+Valores O..AA iguales fila por fila: true
+SUBTOTAL encabezado rama: [["P5",null,null],["R5",null,null],["AA5",null,null]]
+Celdas O..AA sin formato en la rama: 0
+
+Como se ve cada fila (rama) — O P R AA (Q y S..Z estan ocultas y tambien llevan el formato):
+  F001-000001  O         - P  1,000.00 R    180.00 AA  1,180.00  AJ=1  ocultas: -
+  B001-000001  O         - P    100.00 R     18.00 AA    118.00  AJ=1  ocultas: -
+  F001-000005  O         - P    400.00 R     72.00 AA    472.00  AJ=1  ocultas: -
+  FC01-000001  O         - P   -200.00 R    -36.00 AA   -236.00  AJ=1  ocultas: -
+  FD01-000001  O         - P     50.00 R      9.00 AA     59.00  AJ=1  ocultas: -
+  F001-000002  O         - P         - R         - AA         -  AJ=2  ocultas: -
+  F001-000003  O         - P    300.00 R     54.00 AA    354.00  AJ=1  ocultas: -
+  F001-000004  O         - P     84.75 R     15.25 AA    100.00  AJ=1  ocultas: -
+  F001-000006  O         - P    862.71 R    155.29 AA  1,018.00  AJ=1  ocultas: -
+  F030-000120  O         - P    457.63 R     82.37 AA    540.00  AJ=1  ocultas: -
+  F030-000119  O         - P    457.63 R     82.37 AA    540.00  AJ=1  ocultas: -
+  B030-000016  O         - P     11.86 R      2.14 AA     14.00  AJ=1  ocultas: -
+  BC40-000001  O         - P    -50.00 R     -9.00 AA    -59.00  AJ=1  ocultas: -
+  FC50-000001  O         - P    -10.00 R     -1.80 AA    -11.80  AJ=1  ocultas: -
+
+Anulados (AJ=2): F001-000002 -> todas las O..AA se ven "-": true

@@ -1,0 +1,50 @@
+{
+ "621_igv_ventas": 560.28,
+ "621_resumen": {
+  "sales_base": 6182.21,
+  "sales_igv": 560.28,
+  "purchases_igv": 0.0,
+  "igv_to_pay": 560.28
+ },
+ "registro_ventas": {
+  "total_base": 3112.72,
+  "total_igv": 560.28,
+  "total_amount": 3673.0,
+  "base_amount": null,
+  "igv_amount": null
+ },
+ "dashboard_ventas": 4145.0,
+ "tendencia": [
+  [
+   null,
+   472.0
+  ],
+  [
+   null,
+   3673.0
+  ]
+ ],
+ "clientes_resumen": {
+  "aging_buckets": {
+   "0_30": 0.0,
+   "31_60": 0.0,
+   "61_90": 0.0,
+   "91_plus": 0.0
+  },
+  "aging_filter": {
+   "aging_max": null,
+   "aging_min": null
+  },
+  "customers": 1,
+  "total_billed": 0.0,
+  "total_pending": 0.0
+ },
+ "clientes": [],
+ "comisiones": [
+  [
+   null,
+   5966.0,
+   59.66
+  ]
+ ]
+}

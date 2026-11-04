@@ -1,0 +1,259 @@
+{
+ "sin_cambios": {
+  "gerencia_fika:clientes_ventas": [
+   200,
+   "90295c6aa1210201"
+  ],
+  "gerencia_fika:ventas": [
+   200,
+   "19b4743fa70d4f02"
+  ],
+  "gerencia_fika:cotizaciones": [
+   200,
+   "438c1bc7dd41b89d"
+  ],
+  "gerencia_fika:items": [
+   200,
+   "91f1c5a2bbd36f25"
+  ],
+  "gerencia_fika:movimientos": [
+   200,
+   "036617dfcb1df5c6"
+  ],
+  "gerencia_fika:transferencias": [
+   200,
+   "563d7ec53ad0096b"
+  ],
+  "gerencia_fika:requerimientos": [
+   200,
+   "c395e33970f3a331"
+  ],
+  "gerencia_flumisa:clientes_ventas": [
+   200,
+   "90295c6aa1210201"
+  ],
+  "gerencia_flumisa:ventas": [
+   200,
+   "4444038a4b790fd4"
+  ],
+  "gerencia_flumisa:cotizaciones": [
+   200,
+   "ae518214e5f1629f"
+  ],
+  "gerencia_flumisa:items": [
+   200,
+   "fb82ac1dad1c8804"
+  ],
+  "gerencia_flumisa:movimientos": [
+   200,
+   "7899dd4aca4c749e"
+  ],
+  "gerencia_flumisa:transferencias": [
+   200,
+   "66b51a3cda29cd4d"
+  ],
+  "gerencia_flumisa:requerimientos": [
+   200,
+   "66b51a3cda29cd4d"
+  ]
+ },
+ "clientes_que_ve_ventas_gerencia_fika": 6514,
+ "clientes_que_ve_ventas_gerencia_flumisa": 6514,
+ "opciones_gerencia_fika": {
+  "status": 200,
+  "clientes_en_lista_fija": 1,
+  "busqueda_desde": null
+ },
+ "busqueda_gerencia_fika": {
+  "1045": [
+   404
+  ],
+  "SANDOVAL": [
+   404
+  ],
+  "sandoval santis": [
+   404
+  ],
+  "flumisa eirl": [
+   404
+  ],
+  "20557450565": [
+   404
+  ],
+  "San Pablo": [
+   404
+  ],
+  "fl": [
+   404
+  ],
+  "CLIENTE 01": [
+   404
+  ],
+  "zzzz%": [
+   404
+  ]
+ },
+ "opciones_gerencia_flumisa": {
+  "status": 200,
+  "clientes_en_lista_fija": 6514,
+  "busqueda_desde": null
+ },
+ "busqueda_gerencia_flumisa": {
+  "1045": [
+   404
+  ],
+  "SANDOVAL": [
+   404
+  ],
+  "sandoval santis": [
+   404
+  ],
+  "flumisa eirl": [
+   404
+  ],
+  "20557450565": [
+   404
+  ],
+  "San Pablo": [
+   404
+  ],
+  "fl": [
+   404
+  ],
+  "CLIENTE 01": [
+   404
+  ],
+  "zzzz%": [
+   404
+  ]
+ },
+ "opciones_tienda_fika_nilton": {
+  "status": 200,
+  "clientes_en_lista_fija": 1,
+  "busqueda_desde": null
+ },
+ "busqueda_tienda_fika_nilton": {
+  "1045": [
+   404
+  ],
+  "SANDOVAL": [
+   404
+  ],
+  "sandoval santis": [
+   404
+  ],
+  "flumisa eirl": [
+   404
+  ],
+  "20557450565": [
+   404
+  ],
+  "San Pablo": [
+   404
+  ],
+  "fl": [
+   404
+  ],
+  "CLIENTE 01": [
+   404
+  ],
+  "zzzz%": [
+   404
+  ]
+ },
+ "opciones_tienda_flumisa_francisco": {
+  "status": 200,
+  "clientes_en_lista_fija": 6514,
+  "busqueda_desde": null
+ },
+ "busqueda_tienda_flumisa_francisco": {
+  "1045": [
+   404
+  ],
+  "SANDOVAL": [
+   404
+  ],
+  "sandoval santis": [
+   404
+  ],
+  "flumisa eirl": [
+   404
+  ],
+  "20557450565": [
+   404
+  ],
+  "San Pablo": [
+   404
+  ],
+  "fl": [
+   404
+  ],
+  "CLIENTE 01": [
+   404
+  ],
+  "zzzz%": [
+   404
+  ]
+ },
+ "crear_fika_cliente_sandoval": [
+  400,
+  "CUSTOMER_NOT_FOUND",
+  "El cliente no existe en esta empresa"
+ ],
+ "crear_fika_cliente_flumisa_eirl": [
+  201,
+  "TGR01-000001",
+  {
+   "customer_id": "cli-flu-eirl-fika",
+   "recipient_name": "FLUMISA EIRL",
+   "recipient_document": "20557450565"
+  }
+ ],
+ "crear_fika_texto_libre": [
+  201,
+  "TGR01-000002",
+  {
+   "customer_id": null,
+   "recipient_name": "cliente generico",
+   "recipient_document": null
+  }
+ ],
+ "crear_tienda_fika_cliente_sandoval": [
+  400,
+  "CUSTOMER_NOT_FOUND",
+  "El cliente no existe en esta empresa"
+ ],
+ "crear_flumisa_cliente_sandoval": [
+  201,
+  "TGR01-000001",
+  {
+   "customer_id": "cli-sandoval",
+   "recipient_name": "SANDOVAL SANTISTEBAN JOSE DEL CARMEN",
+   "recipient_document": "10451705178"
+  }
+ ],
+ "crear_flumisa_cliente_propio_de_fika": [
+  400,
+  "CUSTOMER_NOT_FOUND",
+  "El cliente no existe en esta empresa"
+ ],
+ "crear_flumisa_texto_libre": [
+  201,
+  "TGR01-000002",
+  {
+   "customer_id": null,
+   "recipient_name": "cliente generico",
+   "recipient_document": null
+  }
+ ],
+ "clientes_en_bd_despues": [
+  [
+   "976b2dc9-1a6c-4c6f-ba0e-a32b59ceb433",
+   1
+  ],
+  [
+   "ff8936f6-245c-4ff4-bffa-78b8fc3f8c78",
+   6514
+  ]
+ ]
+}

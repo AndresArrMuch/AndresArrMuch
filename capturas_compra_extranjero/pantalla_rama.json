@@ -1,0 +1,15 @@
+{
+ "errores_js": [],
+ "no_existe": "Sesion iniciada. Cargando modulos del ERP... | No se pudo crear compra extranjero: El proveedor \"BLUE SAIL HK\" no se eligio de la lista ni esta registrado con ese nombre exacto. Escribe parte del nombre y eligelo de la lista; si no aparece, registralo primero en Proveedores",
+ "nombre_exacto": "Compra extranjero creada correctamente | Compra extranjero creada correctamente",
+ "compras": [
+  {
+   "numero": "INV-A260708958H",
+   "subtotal": 238022.4,
+   "igv": 0,
+   "total": 238022.4,
+   "moneda": "USD",
+   "tc": 3.36
+  }
+ ]
+}

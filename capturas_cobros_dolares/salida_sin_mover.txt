@@ -1,0 +1,40 @@
+### G. --sin-mover-periodo (vista previa): SEP-1 no debe aparecer
+$ python scripts/rehacer_asientos_cobros.py --empresa 20000000009 --sin-mover-periodo
+Empresa: FIKA PRUEBA SAC (20000000009)
+
+== 1. Asientos de ventas en dolares ==
+  F001-000004  2026-10-07  US$ 100.00  TC 3.7500  asiento 000121
+      antes:
+        121201   Debe       100.00  Haber         0.00
+        401101   Debe         0.00  Haber        15.25
+        701101   Debe         0.00  Haber        84.75
+      ahora:
+        121202   Debe       375.00  Haber         0.00   US$ D 100.00 / H 0.00
+        401101   Debe         0.00  Haber        57.19   US$ D 0.00 / H 15.25
+        701101   Debe         0.00  Haber       317.81   US$ D 0.00 / H 84.75
+
+== 2. Asientos de cobros ==
+  2026-10-15  op USD-1  F001-000004  banco BCP USD
+      antes:
+        104102   Debe       100.00  Haber         0.00
+        121201   Debe         0.00  Haber       100.00
+      ahora:
+        104102   Debe       376.10  Haber         0.00   US$ D 100.00 / H 0.00
+        121202   Debe         0.00  Haber       375.00   US$ D 0.00 / H 100.00
+        776101   Debe         0.00  Haber         1.10
+  2026-10-15  op COM-1  F030-000119  banco BCP PEN
+      antes:
+        104101   Debe       540.00  Haber         0.00
+        639101   Debe        21.10  Haber         0.00
+        121201   Debe         0.00  Haber       561.10
+      ahora:
+        104101   Debe       518.90  Haber         0.00
+        639101   Debe        21.10  Haber         0.00
+        121201   Debe         0.00  Haber       540.00
+      movimiento de banco: 540.00 -> 518.90
+
+== Para revisar a mano (0) ==
+
+Solo vista previa (3 asientos cambiarian). Para aplicar: repite con --aplicar --usuario <correo>
+(codigo de salida: 0)
+

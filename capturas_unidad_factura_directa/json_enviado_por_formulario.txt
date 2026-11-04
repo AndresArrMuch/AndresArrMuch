@@ -1,0 +1,49 @@
+MAIN ec01b87
+{"caso":"c1_niu_a_caja","selector_antes_de_emitir":["(sin selector)"],"selector_servicio":"(sin selector)"}
+{"caso":"c1_niu_a_caja","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":1,"unit":"NIU"}],"source_workflow_id":null,"serie":"F010","http":201,"ventas":["F010-000001"]}
+{"caso":"c1_niu_a_caja","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"caso":"c2_bx_igual","selector_antes_de_emitir":["(sin selector)"],"selector_servicio":"(sin selector)"}
+{"caso":"c2_bx_igual","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":1,"unit":"BX"}],"source_workflow_id":null,"serie":"F010","http":201,"ventas":["F010-000002"]}
+{"caso":"c2_bx_igual","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"caso":"c3_par","selector_antes_de_emitir":["(sin selector)"],"selector_servicio":"(sin selector)"}
+{"caso":"c3_par","lineas_enviadas":[{"desc":"OXIMETRO DEDO","cant":1,"unit":"PAR"}],"source_workflow_id":null,"serie":"F040","http":201,"ventas":["F040-000001"]}
+{"caso":"c3_par","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"caso":"c4_mano","selector_antes_de_emitir":[],"selector_servicio":"(sin selector)"}
+{"caso":"c4_mano","lineas_enviadas":[{"desc":"Servicio de instalacion","cant":1,"unit":"NIU"}],"source_workflow_id":null,"serie":"F010","http":201,"ventas":["F010-000003"]}
+{"caso":"c4_mano","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"caso":"c5_boleta","selector_antes_de_emitir":["(sin selector)","(sin selector)"],"selector_servicio":"(sin selector)"}
+{"caso":"c5_boleta","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":1,"unit":"NIU"},{"desc":"TENSIOMETRO BRAZO","cant":1,"unit":"BX"}],"source_workflow_id":null,"serie":"B010","http":201,"ventas":["B010-000001"]}
+{"caso":"c5_boleta","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"caso":"c6_guia","selector_antes_de_emitir":["(sin selector)"],"selector_servicio":"(sin selector)"}
+{"caso":"c6_guia","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":2,"unit":"BX"}],"source_workflow_id":"si","serie":"F010","http":201,"ventas":["F010-000004"]}
+{"caso":"c6_guia","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"erroresJS":[]}
+{"caso":"c6_guia","selector_antes_de_emitir":["(sin selector)"],"selector_servicio":"(sin selector)"}
+{"caso":"c6_guia","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":2,"unit":"BX"}],"source_workflow_id":"si","serie":"F010","http":201,"ventas":["F010-000005"]}
+{"caso":"c6_guia","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"erroresJS":[]}
+
+RAMA claude/unidad-factura-directa
+{"caso":"c1_niu_a_caja","selector_antes_de_emitir":[{"unidad":"BX","bloqueado":false,"marcada":true,"texto":"Unidad del producto: UNIDAD (NIU)"}],"selector_servicio":"NIU"}
+{"caso":"c1_niu_a_caja","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":1,"unit":"BX"}],"source_workflow_id":null,"serie":"F010","http":201,"ventas":["F010-000001"]}
+{"caso":"c1_niu_a_caja","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":["Estas lineas tienen una unidad distinta a la del producto:\n\n- TERMOMETRO DIGITAL: CAJA (Unidad del producto: UNIDAD (NIU))\n\nRevisa que la CANTIDAD y el PRECIO UNITARIO correspondan a esa unidad (el stock no se convierte).\n\nAceptar = emitir asi.  Cancelar = volver a revisar."]}
+{"caso":"c2_bx_igual","selector_antes_de_emitir":[{"unidad":"BX","bloqueado":false,"marcada":false,"texto":""}],"selector_servicio":"NIU"}
+{"caso":"c2_bx_igual","lineas_enviadas":[{"desc":"TENSIOMETRO BRAZO","cant":1,"unit":"BX"}],"source_workflow_id":null,"serie":"F010","http":201,"ventas":["F010-000002"]}
+{"caso":"c2_bx_igual","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"caso":"c3_par","selector_antes_de_emitir":[{"unidad":"PAR","bloqueado":false,"marcada":false,"texto":""}],"selector_servicio":"NIU"}
+{"caso":"c3_par","lineas_enviadas":[{"desc":"OXIMETRO DEDO","cant":1,"unit":"PAR"}],"source_workflow_id":null,"serie":"F040","http":201,"ventas":["F040-000001"]}
+{"caso":"c3_par","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"caso":"c4_mano","selector_antes_de_emitir":[],"selector_servicio":"NIU"}
+{"caso":"c4_mano","lineas_enviadas":[{"desc":"Servicio de instalacion","cant":1,"unit":"NIU"}],"source_workflow_id":null,"serie":"F010","http":201,"ventas":["F010-000003"]}
+{"caso":"c4_mano","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"caso":"c5_boleta","selector_antes_de_emitir":[{"unidad":"BX","bloqueado":false,"marcada":true,"texto":"Unidad del producto: UNIDAD (NIU)"},{"unidad":"BX","bloqueado":false,"marcada":false,"texto":""}],"selector_servicio":"NIU"}
+{"caso":"c5_boleta","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":1,"unit":"BX"},{"desc":"TENSIOMETRO BRAZO","cant":1,"unit":"BX"}],"source_workflow_id":null,"serie":"B010","http":201,"ventas":["B010-000001"]}
+{"caso":"c5_boleta","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":["Estas lineas tienen una unidad distinta a la del producto:\n\n- TERMOMETRO DIGITAL: CAJA (Unidad del producto: UNIDAD (NIU))\n\nRevisa que la CANTIDAD y el PRECIO UNITARIO correspondan a esa unidad (el stock no se convierte).\n\nAceptar = emitir asi.  Cancelar = volver a revisar."]}
+{"caso":"c6_guia","selector_antes_de_emitir":[{"unidad":"NIU","bloqueado":true,"marcada":false,"texto":"Unidad de la guia (no editable)"}],"selector_servicio":"NIU"}
+{"caso":"c6_guia","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":2,"unit":"NIU"}],"source_workflow_id":"si","serie":"F010","http":201,"ventas":["F010-000004"]}
+{"caso":"c6_guia","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"erroresJS":[]}
+{"caso":"c6_guia","selector_antes_de_emitir":[{"unidad":"NIU","bloqueado":true,"marcada":false,"texto":"Unidad de la guia (no editable)"}],"selector_servicio":"NIU"}
+{"caso":"c6_guia","lineas_enviadas":[{"desc":"TERMOMETRO DIGITAL","cant":2,"unit":"BX"}],"source_workflow_id":"si","serie":"F010","http":201,"ventas":["F010-000005"]}
+{"caso":"c6_guia","aviso":"Venta registrada, enviada a SUNAT y contabilizada","recordatorio":"no aparece"}
+{"erroresJS":[]}

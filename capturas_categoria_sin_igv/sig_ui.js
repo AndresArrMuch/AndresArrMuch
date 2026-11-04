@@ -1,0 +1,21 @@
+const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const [PORT, EMAIL, TAG] = process.argv.slice(2);
+const CID = '976b2dc9-1a6c-4c6f-ba0e-a32b59ceb433';
+(async () => {
+  const b = await chromium.launch(); const ctx = await b.newContext({ acceptDownloads: true, viewport: { width: 1300, height: 1000 } });
+  const p = await ctx.newPage(); const errs = [];
+  await p.route(/cdnjs\.cloudflare\.com/, r => r.request().url().includes('xlsx') ? r.fulfill({ path: '/tmp/claude-0/xl/package/dist/xlsx.full.min.js' }) : r.abort()); p.on('pageerror', e => errs.push(e.message));
+  await p.goto(`http://127.0.0.1:${PORT}/erp`); await p.waitForTimeout(1200);
+  await p.fill('#email', EMAIL); await p.fill('#password', 'p'); await p.selectOption('#login-company', CID).catch(() => {});
+  await p.evaluate(() => doLogin()); await p.waitForTimeout(5000);
+  console.log(`== ${TAG}: usuario ${await p.evaluate(() => state.user?.email + ' / rol ' + (state.user?.role?.name || '-'))}`);
+  await p.evaluate(() => { state.view = 'sales'; state.salesTab = 'reports'; state.salesReportYear = 2026; state.salesReportMonth = 10; }); await p.evaluate(async () => { await loadModuleData(); renderView(); }); console.log('   ventas en cache:', await p.evaluate(() => (state.cache.sales || []).length)); await p.waitForTimeout(2500);
+  await p.evaluate(async () => { document.getElementById('sr-year').value = 2026; document.getElementById('sr-month').value = 10; await generateSalesPeriodicReport(); renderView(); }); await p.waitForTimeout(2500);
+  const res = await p.evaluate(() => { const h = [...document.querySelectorAll('div')].find(d => d.textContent.trim() === 'Resumen del período seleccionado'); if (!h) return null; h.parentElement.id = 'zz-resumen'; return h.parentElement.innerText; });
+  console.log('   resumen:', String(res).replace(/\s+/g, ' '), '| user ok:', await p.evaluate(() => !!state.token || !!state.user));
+  if (res) await p.locator('#zz-resumen').screenshot({ path: `sig_${TAG}_resumen.png` }); else await p.screenshot({ path: `sig_${TAG}_pagina.png` });
+  const [dl] = await Promise.all([p.waitForEvent('download', { timeout: 30000 }), p.click('#export-categoria-producto-btn')]);
+  await dl.saveAs(`sig_${TAG}_categoria.xlsx`); await p.waitForTimeout(800);
+  console.log('   aviso:', await p.evaluate(() => document.querySelector('[class*=notice]')?.textContent?.trim()));
+  console.log('   errores JS:', JSON.stringify(errs)); await b.close();
+})();
